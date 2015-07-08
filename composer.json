@@ -20,6 +20,6 @@
         "ext-http": "*"
     },
     "autoload": {
-        "classmap": ["core/", "main/", "meta/"]
+        "files": ["global.inc.php.tpl"]
     }
 }
