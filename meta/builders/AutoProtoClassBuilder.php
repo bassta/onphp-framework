@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\meta\builders;
+
+use onPHP\meta\classes\MetaClass;
+
 /***************************************************************************
  *   Copyright (C) 2006-2008 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,87 +14,58 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Builders
-	**/
-	final class AutoProtoClassBuilder extends BaseBuilder
-	{
-		public static function build(MetaClass $class)
-		{
-			$out = self::getHead();
-			
-			$parent = $class->getParent();
-			
-			if ($class->hasBuildableParent())
-				$parentName = 'Proto'.$parent->getName();
-			else
-				$parentName = 'AbstractProtoClass';
-			
-			$out .= <<<EOT
-abstract class AutoProto{$class->getName()} extends {$parentName}
+/**
+ * @ingroup Builders
+ **/
+final class AutoProtoClassBuilder extends BaseBuilder
 {
-EOT;
-			$classDump = self::dumpMetaClass($class);
-			
-			$out .= <<<EOT
+    public static function build(MetaClass $class)
+    {
+        $out    = self::getHead();
+        $parent = $class->getParent();
+        if ($class->hasBuildableParent()) {
+            $parentName = 'Proto'.$parent->getName();
+        } else {
+            $parentName = 'onPHP\\main\\Base\\AbstractProtoClass';
+        }
+        $out .= "abstract class AutoProto{$class->getName()} extends {$parentName}\n{";
+        $classDump = self::dumpMetaClass($class);
+        $out .= "\n{$classDump}\n}\n";
+        return $out.self::getHeel();
+    }
 
-{$classDump}
-}
-
-EOT;
-
-			return $out.self::getHeel();
-		}
-		
-		private static function dumpMetaClass(MetaClass $class)
-		{
-			$propertyList = $class->getWithInternalProperties();
-			
-			$out = <<<EOT
-	protected function makePropertyList()
+    private static function dumpMetaClass(MetaClass $class)
+    {
+        $propertyList = $class->getWithInternalProperties();
+        $out          = '	protected function makePropertyList()
 	{
-
-EOT;
-
-			if ($class->hasBuildableParent()) {
-				$out .= <<<EOT
-		return
+';
+        if ($class->hasBuildableParent()) {
+            $out .= '		return
 			array_merge(
 				parent::makePropertyList(),
 				array(
-
-EOT;
-				if ($class->getIdentifier()) {
-					$propertyList[$class->getIdentifier()->getName()] =
-						$class->getIdentifier();
-				}
-			} else {
-				$out .= <<<EOT
-		return array(
-
-EOT;
-			}
-			
-			$list = array();
-			
-			foreach ($propertyList as $property) {
-				$list[] =
-					"'{$property->getName()}' => "
-					.$property->toLightProperty($class)->toString();
-			}
-			
-			$out .= implode(",\n", $list);
-			
-			if ($class->hasBuildableParent()) {
-				$out .= "\n)";
-			}
-			
-			$out .= <<<EOT
-
+';
+            if ($class->getIdentifier()) {
+                $propertyList[$class->getIdentifier()->getName()] = $class->getIdentifier();
+            }
+        } else {
+            $out .= '		return array(
+';
+        }
+        $list = array();
+        foreach ($propertyList as $property) {
+            $list[] = "'{$property->getName()}' => ".$property->toLightProperty($class)->toString();
+        }
+        $out .= implode(',
+', $list);
+        if ($class->hasBuildableParent()) {
+            $out .= '
+)';
+        }
+        $out .= '
 		);
-	}
-EOT;
-			return $out;
-		}
-	}
-?>
+	}';
+        return $out;
+    }
+}

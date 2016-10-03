@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\Charts\Google;
+
+use onPHP\core\Base\Enumeration;
+
 /***************************************************************************
  *   Copyright (C) 2009 by Denis M. Gabaidulin                             *
  *                                                                         *
@@ -9,32 +14,26 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup GoogleChart
-	**/
-	final class GoogleChartSolidFillType extends Enumeration
-	{
-		const CHART_AREA		= 0x1;
-		const BACKGROUND		= 0x2;
-		const TRANSPARENCY		= 0x3;
-		
-		protected $names = array(
-			self::CHART_AREA 	=> 'c',
-			self::BACKGROUND	=> 'bg',
-			self::TRANSPARENCY	=> 'a'
-		);
-		
-		/**
-		 * @return GoogleChartSolidFillType
-		**/
-		public static function create($id)
-		{
-			return new self($id);
-		}
-		
-		public function toString()
-		{
-			return $this->name;
-		}
-	}
-?>
+/**
+ * @ingroup GoogleChart
+ **/
+final class GoogleChartSolidFillType extends Enumeration
+{
+    const CHART_AREA = 1;
+    const BACKGROUND = 2;
+    const TRANSPARENCY = 3;
+    protected $names = array(self::CHART_AREA => 'c', self::BACKGROUND => 'bg', self::TRANSPARENCY => 'a');
+
+    /**
+     * @return GoogleChartSolidFillType
+     **/
+    public static function create($id)
+    {
+        return new self($id);
+    }
+
+    public function toString()
+    {
+        return $this->name;
+    }
+}

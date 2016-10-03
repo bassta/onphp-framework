@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\OQL\Parsers;
+
+use onPHP\main\OQL\Statements\OqlHavingClause;
+
 /****************************************************************************
  *   Copyright (C) 2009 by Vladlen Y. Koshelev                              *
  *                                                                          *
@@ -8,40 +13,35 @@
  *   License, or (at your option) any later version.                        *
  *                                                                          *
  ****************************************************************************/
+final class OqlHavingParser extends OqlParser
+{
+    const CLASS_NAME = 'HavingProjection';
 
-	final class OqlHavingParser extends OqlParser
-	{
-		const CLASS_NAME = 'HavingProjection';
-		
-		/**
-		 * @return OqlHavingParser
-		**/
-		public static function create()
-		{
-			return new self;
-		}
-		
-		/**
-		 * @return OqlHavingClause
-		**/
-		protected function makeOqlObject()
-		{
-			return OqlHavingClause::create();
-		}
-		
-		protected function handleState()
-		{
-			if ($this->state == self::INITIAL_STATE) {
-				if ($argument = $this->getLogicExpression()) {
-					$this->oqlObject->setExpression(
-						$this->makeQueryExpression(self::CLASS_NAME, $argument)
-					);
-				
-				} else
-					$this->error("expecting 'having' expression");
-			}
-			
-			return self::FINAL_STATE;
-		}
-	}
-?>
+    /**
+     * @return OqlHavingParser
+     **/
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * @return OqlHavingClause
+     **/
+    protected function makeOqlObject()
+    {
+        return OqlHavingClause::create();
+    }
+
+    protected function handleState()
+    {
+        if ($this->state == self::INITIAL_STATE) {
+            if ($argument = $this->getLogicExpression()) {
+                $this->oqlObject->setExpression($this->makeQueryExpression(self::CLASS_NAME, $argument));
+            } else {
+                $this->error('expecting \'having\' expression');
+            }
+        }
+        return self::FINAL_STATE;
+    }
+}

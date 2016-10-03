@@ -1,4 +1,7 @@
 <?php
+
+namespace onPHP\main\Base;
+
 /***************************************************************************
  *   Copyright (C) 2008 by Denis M. Gabaidulin                             *
  *                                                                         *
@@ -8,33 +11,31 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
+interface Collection
+{
+    public function add(CollectionItem $item);
 
-	interface Collection
-	{
-		public function add(CollectionItem $item);
-		
-		public function addAll(array /*of CollectionItem*/ $items);
-		
-		public function clear();
-		
-		public function contains(CollectionItem $item);
-		
-		public function containsAll(array /*of CollectionItem*/ $items);
-		
-		public function isEmpty();
-		
-		public function size();
-		
-		public function remove(CollectionItem $item);
-		
-		public function removeAll(array /*of CollectionItem*/ $items);
-		
-		public function retainAll(array /*of CollectionItem*/ $items);
-		
-		public function getList();
-		
-		public function getByName($name);
-		
-		public function has($name);
-	}
-?>
+    public function addAll(array $items);
+
+    public function clear();
+
+    public function contains(CollectionItem $item);
+
+    public function containsAll(array $items);
+
+    public function isEmpty();
+
+    public function size();
+
+    public function remove(CollectionItem $item);
+
+    public function removeAll(array $items);
+
+    public function retainAll(array $items);
+
+    public function getList();
+
+    public function getByName($name);
+
+    public function has($name);
+}

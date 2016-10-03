@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\core\Form\Filters;
+
+use onPHP\core\Base\Instantiatable;
+use onPHP\core\Base\Singleton;
+
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,13 +15,12 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * Filter's template.
-	 * 
-	 * @ingroup Filters
-	 * @ingroup Module
-	**/
-	abstract class BaseFilter
-		extends Singleton
-		implements Filtrator, Instantiatable {/*_*/}
-?>
+/**
+ * Filter's template.
+ *
+ * @ingroup Filters
+ * @ingroup Module
+ **/
+abstract class BaseFilter extends Singleton implements Filtrator, Instantiatable
+{
+}

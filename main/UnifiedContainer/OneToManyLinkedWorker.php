@@ -1,4 +1,11 @@
 <?php
+
+namespace onPHP\main\UnifiedContainer;
+
+use onPHP\core\Logic\Expression;
+use onPHP\core\OSQL\DBField;
+use onPHP\core\OSQL\SelectQuery;
+
 /***************************************************************************
  *   Copyright (C) 2005-2008 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,26 +16,17 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Containers
-	**/
-	abstract class OneToManyLinkedWorker extends UnifiedContainerWorker
-	{
-		/**
-		 * @return SelectQuery
-		**/
-		protected function targetize(SelectQuery $query)
-		{
-			return
-				$query->andWhere(
-					Expression::eqId(
-						new DBField(
-							$this->container->getParentIdField(),
-							$this->container->getDao()->getTable()
-						),
-						$this->container->getParentObject()
-					)
-				);
-		}
-	}
-?>
+/**
+ * @ingroup Containers
+ **/
+abstract class OneToManyLinkedWorker extends UnifiedContainerWorker
+{
+    /**
+     * @return SelectQuery
+     **/
+    protected function targetize(SelectQuery $query)
+    {
+        return $query->andWhere(Expression::eqId(new DBField($this->container->getParentIdField(), $this->container->getDao()
+                                                                                                                   ->getTable()), $this->container->getParentObject()));
+    }
+}

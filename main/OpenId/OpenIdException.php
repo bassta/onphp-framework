@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\OpenId;
+
+use onPHP\core\Exceptions\BaseException;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Anton E. Lebedevich                             *
  *                                                                         *
@@ -9,8 +14,9 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup OpenId
-	**/
-	class OpenIdException extends BaseException {}
-?>
+/**
+ * @ingroup OpenId
+ **/
+class OpenIdException extends BaseException
+{
+}

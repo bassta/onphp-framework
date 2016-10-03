@@ -1,4 +1,12 @@
 <?php
+
+namespace onPHP\main\Net\Soap;
+
+use onPHP\core\Form\Form;
+use onPHP\main\EntityProto\Builders\FormToObjectConverter;
+use onPHP\main\EntityProto\Builders\ObjectToFormConverter;
+use onPHP\main\EntityProto\PrototypedEntity;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *
  *                                                                         *
@@ -8,26 +16,18 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
+abstract class DTOClass implements PrototypedEntity
+{
+    public final function makeObject(Form $form)
+    {
+        return FormToObjectConverter::create($this->entityProto())->make($form);
+    }
 
-	abstract class DTOClass implements PrototypedEntity
-	{
-		final public function makeObject(Form $form)
-		{
-			return
-				FormToObjectConverter::create($this->entityProto())->
-					make($form);
-		}
-		
-		/**
-		 * @return Form
-		**/
-		final public function toForm()
-		{
-			return
-				ObjectToFormConverter::create(
-					$this->entityProto()
-				)->
-					make($this);
-		}
-	}
-?>
+    /**
+     * @return Form
+     **/
+    public final function toForm()
+    {
+        return ObjectToFormConverter::create($this->entityProto())->make($this);
+    }
+}

@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\DAOs;
+
+use onPHP\core\Base\Identifiable;
+
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,14 +14,13 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * Helper for identifying object's DAO.
-	 * 
-	 * @ingroup DAOs
-	 * @ingroup Module
-	**/
-	interface DAOConnected extends Identifiable
-	{
-		public static function dao();
-	}
-?>
+/**
+ * Helper for identifying object's DAO.
+ *
+ * @ingroup DAOs
+ * @ingroup Module
+ **/
+interface DAOConnected extends Identifiable
+{
+    public static function dao();
+}

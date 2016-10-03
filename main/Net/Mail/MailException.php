@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\Net\Mail;
+
+use onPHP\core\Exceptions\BaseException;
+
 /***************************************************************************
  *   Copyright (C) 2004-2007 by Anton E. Lebedevich                        *
  *                                                                         *
@@ -9,8 +14,9 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Exceptions
-	**/
-	class MailException extends BaseException {/*_*/};
-?>
+/**
+ * @ingroup Exceptions
+ **/
+class MailException extends BaseException
+{
+}

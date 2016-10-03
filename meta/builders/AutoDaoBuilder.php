@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\meta\builders;
+
+use onPHP\meta\classes\MetaClass;
+use onPHP\meta\patterns\InternalClassPattern;
+
 /***************************************************************************
  *   Copyright (C) 2006-2008 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,38 +15,28 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Builders
-	**/
-	final class AutoDaoBuilder extends BaseBuilder
-	{
-		public static function build(MetaClass $class)
-		{
-			if (!$class->hasBuildableParent())
-				return DictionaryDaoBuilder::build($class);
-			else
-				$parent = $class->getParent();
-			
-			if (
-				$class->getParent()->getPattern()
-					instanceof InternalClassPattern
-			) {
-				$parentName = 'StorableDAO';
-			} else {
-				$parentName = $parent->getName().'DAO';
-			}
-			
-			$out = self::getHead();
-			
-			$out .= <<<EOT
-abstract class Auto{$class->getName()}DAO extends {$parentName}
+/**
+ * @ingroup Builders
+ **/
+final class AutoDaoBuilder extends BaseBuilder
 {
-
-EOT;
-			
-			$out .= self::buildPointers($class)."\n}\n";
-			
-			return $out.self::getHeel();
-		}
-	}
-?>
+    public static function build(MetaClass $class)
+    {
+        if (!$class->hasBuildableParent()) {
+            return DictionaryDaoBuilder::build($class);
+        } else {
+            $parent = $class->getParent();
+        }
+        if ($class->getParent()->getPattern() instanceof InternalClassPattern) {
+            $parentName = 'StorableDAO';
+        } else {
+            $parentName = $parent->getName().'DAO';
+        }
+        $out = self::getHead();
+        $out .= "abstract class Auto{$class->getName()}DAO extends {$parentName}\n{\n";
+        $out .= self::buildPointers($class).'
+}
+';
+        return $out.self::getHeel();
+    }
+}

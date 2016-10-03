@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\core\OSQL;
+
+use onPHP\core\DB\ImaginaryDialect;
+use onPHP\core\Exceptions\UnsupportedMethodException;
+
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,25 +15,24 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup OSQL
-	 * @ingroup Module
-	**/
-	abstract class QueryIdentification implements Query
-	{
-		public function getId()
-		{
-			return sha1($this->toString());
-		}
-		
-		final public function setId($id)
-		{
-			throw new UnsupportedMethodException();
-		}
-		
-		public function toString()
-		{
-			return $this->toDialectString(ImaginaryDialect::me());
-		}
-	}
-?>
+/**
+ * @ingroup OSQL
+ * @ingroup Module
+ **/
+abstract class QueryIdentification implements Query
+{
+    public function getId()
+    {
+        return sha1($this->toString());
+    }
+
+    public final function setId($id)
+    {
+        throw new UnsupportedMethodException();
+    }
+
+    public function toString()
+    {
+        return $this->toDialectString(ImaginaryDialect::me());
+    }
+}

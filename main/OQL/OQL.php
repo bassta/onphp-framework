@@ -1,4 +1,15 @@
 <?php
+
+namespace onPHP\main\OQL;
+
+use onPHP\core\Base\StaticFactory;
+use onPHP\main\OQL\Parsers\OqlGroupByParser;
+use onPHP\main\OQL\Parsers\OqlHavingParser;
+use onPHP\main\OQL\Parsers\OqlOrderByParser;
+use onPHP\main\OQL\Parsers\OqlSelectParser;
+use onPHP\main\OQL\Parsers\OqlSelectPropertiesParser;
+use onPHP\main\OQL\Parsers\OqlWhereParser;
+
 /***************************************************************************
  *   Copyright (C) 2008-2009 by Vladlen Y. Koshelev                        *
  *                                                                         *
@@ -9,57 +20,56 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup OQL
-	**/
-	final class OQL extends StaticFactory
-	{
-		/**
-		 * @return OqlSelectQuery
-		**/
-		public static function select($query)
-		{
-			return OqlSelectParser::create()->parse($query);
-		}
-		
-		/**
-		 * @return OqlSelectPropertiesClause
-		**/
-		public static function properties($clause)
-		{
-			return OqlSelectPropertiesParser::create()->parse($clause);
-		}
-		
-		/**
-		 * @return OqlWhereClause
-		**/
-		public static function where($clause)
-		{
-			return OqlWhereParser::create()->parse($clause);
-		}
-		
-		/**
-		 * @return OqlProjectionClause
-		**/
-		public static function groupBy($clause)
-		{
-			return OqlGroupByParser::create()->parse($clause);
-		}
-		
-		/**
-		 * @return OqlOrderByClause
-		**/
-		public static function orderBy($clause)
-		{
-			return OqlOrderByParser::create()->parse($clause);
-		}
-		
-		/**
-		 * @return OqlHavingClause
-		**/
-		public static function having($clause)
-		{
-			return OqlHavingParser::create()->parse($clause);
-		}
-	}
-?>
+/**
+ * @ingroup OQL
+ **/
+final class OQL extends StaticFactory
+{
+    /**
+     * @return OqlSelectQuery
+     **/
+    public static function select($query)
+    {
+        return OqlSelectParser::create()->parse($query);
+    }
+
+    /**
+     * @return OqlSelectPropertiesClause
+     **/
+    public static function properties($clause)
+    {
+        return OqlSelectPropertiesParser::create()->parse($clause);
+    }
+
+    /**
+     * @return OqlWhereClause
+     **/
+    public static function where($clause)
+    {
+        return OqlWhereParser::create()->parse($clause);
+    }
+
+    /**
+     * @return OqlProjectionClause
+     **/
+    public static function groupBy($clause)
+    {
+        return OqlGroupByParser::create()->parse($clause);
+    }
+
+    /**
+     * @return OqlOrderByClause
+     **/
+    public static function orderBy($clause)
+    {
+        return OqlOrderByParser::create()->parse($clause);
+    }
+
+    /**
+     * @return OqlHavingClause
+     **/
+    public static function having($clause)
+    {
+        return OqlHavingParser::create()->parse($clause);
+    }
+}

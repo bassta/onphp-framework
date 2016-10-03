@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\core\Form\Filters;
+
+use onPHP\core\Base\Singleton;
+
 /***************************************************************************
  *   Copyright (C) 2009 by Denis M. Gabaidulin                             *
  *                                                                         *
@@ -9,22 +14,21 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Filters
-	**/
-	final class JsonEncoderFilter extends BaseFilter
-	{
-		/**
-		 * @return JsonEncoderFilter
-		**/
-		public static function me()
-		{
-			return Singleton::getInstance(__CLASS__);
-		}
-		
-		public function apply($value)
-		{
-			return json_encode($value);
-		}
-	}
-?>
+/**
+ * @ingroup Filters
+ **/
+final class JsonEncoderFilter extends BaseFilter
+{
+    /**
+     * @return JsonEncoderFilter
+     **/
+    public static function me()
+    {
+        return Singleton::getInstance(__CLASS__);
+    }
+
+    public function apply($value)
+    {
+        return json_encode($value);
+    }
+}

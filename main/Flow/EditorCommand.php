@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\main\Flow;
+
+use onPHP\core\Base\Prototyped;
+use onPHP\core\Form\Form;
+
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Anton E. Lebedevich                        *
  *                                                                         *
@@ -9,14 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Flow
-	**/
-	interface EditorCommand
-	{
-		/**
-		 * @return ModelAndView
-		**/
-		public function run(Prototyped $subject, Form $form, HttpRequest $request);
-	}
-?>
+/**
+ * @ingroup Flow
+ **/
+interface EditorCommand
+{
+    /**
+     * @return ModelAndView
+     **/
+    public function run(Prototyped $subject, Form $form, HttpRequest $request);
+}

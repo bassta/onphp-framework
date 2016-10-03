@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\Charts\Google;
+
+use onPHP\core\Base\Enumeration;
+
 /***************************************************************************
  *   Copyright (C) 2009 by Denis M. Gabaidulin                             *
  *                                                                         *
@@ -8,35 +13,27 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
+// TODO: support for currency
+/**
+ * @ingroup GoogleChart
+ **/
+final class LabelStyleType extends Enumeration
+{
+    const FLOAT = 1;
+    const PERCENT = 2;
+    const SCIENTIFIC = 3;
+    protected $names = array(self::FLOAT => 'f', self::PERCENT => 'p', self::SCIENTIFIC => 'e');
 
-	// TODO: support for currency
-	
-	/**
-	 * @ingroup GoogleChart
-	**/
-	final class LabelStyleType extends Enumeration
-	{
-		const FLOAT				= 0x1;
-		const PERCENT			= 0x2;
-		const SCIENTIFIC		= 0x3;
-		
-		protected $names = array(
-			self::FLOAT			=> 'f',
-			self::PERCENT		=> 'p',
-			self::SCIENTIFIC	=> 'e'
-		);
-		
-		/**
-		 * @return LabelStyleType
-		**/
-		public static function create($id)
-		{
-			return new self($id);
-		}
-		
-		public function toString()
-		{
-			return $this->name;
-		}
-	}
-?>
+    /**
+     * @return LabelStyleType
+     **/
+    public static function create($id)
+    {
+        return new self($id);
+    }
+
+    public function toString()
+    {
+        return $this->name;
+    }
+}

@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\EntityProto;
+
+use onPHP\core\Exceptions\UnimplementedFeatureException;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *
  *                                                                         *
@@ -8,16 +13,12 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
+abstract class PrototypedGetter extends PrototypedMethodCaller
+{
+    public abstract function get($name);
 
-	abstract class PrototypedGetter extends PrototypedMethodCaller
-	{
-		abstract public function get($name);
-		
-		public function getSetter()
-		{
-			throw new UnimplementedFeatureException(
-				'inverse operation is not defined yet'
-			);
-		}
-	}
-?>
+    public function getSetter()
+    {
+        throw new UnimplementedFeatureException('inverse operation is not defined yet');
+    }
+}

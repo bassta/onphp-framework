@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\main\DAOs\Workers;
+
+use onPHP\core\Base\Assert;
+use onPHP\main\DAOs\Uncachers\UncacherNullDaoWorker;
+
 /***************************************************************************
  *   Copyright (C) 2008 by Denis M. Gabaidulin                             *
  *                                                                         *
@@ -9,49 +15,42 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * DAO worker with dealyed object drop from cache
-	 * 
-	 * @see CommonDaoWorker for manual-caching one.
-	 * @see SmartDaoWorker for transparent one.
-	 * 
-	 * @ingroup DAOs
-	**/
-	final class DalayedDropDaoWorker extends NullDaoWorker
-	{
-		private $modifiedIds = array();
-		
-		/// uncachers
-		//@{
-		public function uncacheById($id)
-		{
-			$this->modifiedIds[$id] = $id;
-			
-			return true;
-		}
-		
-		/**
-		 * @param mixed $id
-		 * @return UncacherBase
-		 */
-		public function getUncacherById($id) {
-			return UncacherNullDaoWorker::create();
-		}
-		
-		public function dropWith($worker)
-		{
-			Assert::classExists($worker);
-			
-			if ($this->modifiedIds) {
-				$workerObject = new $worker($this->dao);
-				
-				$workerObject->uncacheByIds($this->modifiedIds);
-				
-				$this->modifiedIds = array();
-			}
-			
-			return $this;
-		}
-		//@}
-	}
-?>
+/**
+ * DAO worker with dealyed object drop from cache
+ *
+ * @see CommonDaoWorker for manual-caching one.
+ * @see SmartDaoWorker for transparent one.
+ *
+ * @ingroup DAOs
+ **/
+final class DalayedDropDaoWorker extends NullDaoWorker
+{
+    private $modifiedIds = array();
+    /// uncachers
+    //@{
+    public function uncacheById($id)
+    {
+        $this->modifiedIds[$id] = $id;
+        return true;
+    }
+
+    /**
+     * @param mixed $id
+     * @return UncacherBase
+     */
+    public function getUncacherById($id)
+    {
+        return UncacherNullDaoWorker::create();
+    }
+
+    public function dropWith($worker)
+    {
+        Assert::classExists($worker);
+        if ($this->modifiedIds) {
+            $workerObject = new $worker($this->dao);
+            $workerObject->uncacheByIds($this->modifiedIds);
+            $this->modifiedIds = array();
+        }
+        return $this;
+    }
+}

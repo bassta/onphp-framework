@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\core\Form\Filters;
+
+use onPHP\core\Base\Singleton;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Anton E. Lebedevich                             *
  *                                                                         *
@@ -9,26 +14,25 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * Replaces multiple adjacent whitespace by one
-	 * 
-	 * @see RegulatedPrimitive::addImportFilter()
-	 * 
-	 * @ingroup Filters
-	**/
-	final class CompressWhitespaceFilter extends BaseFilter
-	{
-		/**
-		 * @return CompressWhitespaceFilter
-		**/
-		public static function me()
-		{
-			return Singleton::getInstance(__CLASS__);
-		}
-		
-		public function apply($value)
-		{
-			return preg_replace('/[ \t]+/', ' ', $value);
-		}
-	}
-?>
+/**
+ * Replaces multiple adjacent whitespace by one
+ *
+ * @see RegulatedPrimitive::addImportFilter()
+ *
+ * @ingroup Filters
+ **/
+final class CompressWhitespaceFilter extends BaseFilter
+{
+    /**
+     * @return CompressWhitespaceFilter
+     **/
+    public static function me()
+    {
+        return Singleton::getInstance(__CLASS__);
+    }
+
+    public function apply($value)
+    {
+        return preg_replace('/[ \\t]+/', ' ', $value);
+    }
+}

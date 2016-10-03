@@ -1,4 +1,11 @@
 <?php
+
+namespace onPHP\meta\builders;
+
+use onPHP\core\Exceptions\WrongStateException;
+use onPHP\meta\classes\MetaClass;
+use onPHP\meta\classes\MetaClassType;
+
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,52 +16,33 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Builders
-	**/
-	final class DaoBuilder extends OnceBuilder
-	{
-		public static function build(MetaClass $class)
-		{
-			$out = self::getHead();
-			
-			$type = $class->getType();
-			
-			if ($type) {
-				switch ($type->getId()) {
-					
-					case MetaClassType::CLASS_ABSTRACT:
-					
-						$abstract = 'abstract ';
-						$notes = 'nothing here yet';
-						
-						break;
-					
-					case MetaClassType::CLASS_FINAL:
-					
-						$abstract = 'final ';
-						$notes = 'last chance for customization';
-						
-						break;
-					
-					default:
-						
-						throw new WrongStateException('unknown class type');
-				}
-			} else {
-				$abstract = null;
-				$notes = 'your brilliant stuff goes here';
-			}
-			
-			$out .= <<<EOT
-{$abstract}class {$class->getName()}DAO extends Auto{$class->getName()}DAO
+/**
+ * @ingroup Builders
+ **/
+final class DaoBuilder extends OnceBuilder
 {
-	// {$notes}
+    public static function build(MetaClass $class)
+    {
+        $out  = self::getHead();
+        $type = $class->getType();
+        if ($type) {
+            switch ($type->getId()) {
+                case MetaClassType::CLASS_ABSTRACT:
+                    $abstract = 'abstract ';
+                    $notes    = 'nothing here yet';
+                    break;
+                case MetaClassType::CLASS_FINAL:
+                    $abstract = 'final ';
+                    $notes    = 'last chance for customization';
+                    break;
+                default:
+                    throw new WrongStateException('unknown class type');
+            }
+        } else {
+            $abstract = null;
+            $notes    = 'your brilliant stuff goes here';
+        }
+        $out .= "{$abstract}class {$class->getName()}DAO extends Auto{$class->getName()}DAO\n{\n\t// {$notes}\n}\n";
+        return $out.self::getHeel();
+    }
 }
-
-EOT;
-			
-			return $out.self::getHeel();
-		}
-	}
-?>

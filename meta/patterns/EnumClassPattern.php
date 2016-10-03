@@ -1,4 +1,12 @@
 <?php
+
+namespace onPHP\meta\patterns;
+
+use onPHP\meta\builders\EnumClassBuilder;
+use onPHP\meta\classes\Format;
+use onPHP\meta\classes\MetaClass;
+use onPHP\meta\classes\MetaConfiguration;
+
 /***************************************************************************
  *   Copyright (C) 2012 by Georgiy T. Kutsurua                             *
  *                                                                         *
@@ -9,38 +17,30 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Patterns
-	**/
-	class EnumClassPattern extends BasePattern
-	{
-		public function daoExists()
-		{
-			return false;
-		}
-		
-		public function tableExists()
-		{
-			return false;
-		}
-		
-		/**
-		 * @return EnumClassPattern
-		**/
-		public function build(MetaClass $class)
-		{
-			$userFile = ONPHP_META_BUSINESS_DIR.$class->getName().EXT_CLASS;
-			
-			if (
-				MetaConfiguration::me()->isForcedGeneration()
-				|| !file_exists($userFile)
-			)
-				$this->dumpFile(
-					$userFile,
-					Format::indentize(EnumClassBuilder::build($class))
-				);
-			
-			return $this;
-		}
-	}
-?>
+/**
+ * @ingroup Patterns
+ **/
+class EnumClassPattern extends BasePattern
+{
+    public function daoExists()
+    {
+        return false;
+    }
+
+    public function tableExists()
+    {
+        return false;
+    }
+
+    /**
+     * @return EnumClassPattern
+     **/
+    public function build(MetaClass $class)
+    {
+        $userFile = ONPHP_META_BUSINESS_DIR.$class->getName().EXT_CLASS;
+        if (MetaConfiguration::me()->isForcedGeneration() || !file_exists($userFile)) {
+            $this->dumpFile($userFile, Format::indentize(EnumClassBuilder::build($class)));
+        }
+        return $this;
+    }
+}

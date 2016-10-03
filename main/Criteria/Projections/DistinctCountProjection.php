@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\main\Criteria\Projections;
+
+use onPHP\core\OSQL\JoinCapableQuery;
+use onPHP\main\Criteria\Criteria;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Anton E. Lebedevich                             *
  *                                                                         *
@@ -9,22 +15,16 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Projections
-	**/
-	final class DistinctCountProjection extends CountProjection
-	{
-		/**
-		 * @return SQLFunction
-		**/
-		protected function getFunction(
-			Criteria $criteria,
-			JoinCapableQuery $query
-		)
-		{
-			return
-				parent::getFunction($criteria, $query)->
-				setAggregateDistinct();
-		}
-	}
-?>
+/**
+ * @ingroup Projections
+ **/
+final class DistinctCountProjection extends CountProjection
+{
+    /**
+     * @return SQLFunction
+     **/
+    protected function getFunction(Criteria $criteria, JoinCapableQuery $query)
+    {
+        return parent::getFunction($criteria, $query)->setAggregateDistinct();
+    }
+}

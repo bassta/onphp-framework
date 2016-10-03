@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\main\Charts\Google;
+
+use onPHP\core\Base\Assert;
+use onPHP\main\Utils\TuringTest\Color;
+
 /***************************************************************************
  *   Copyright (C) 2009 by Denis M. Gabaidulin                             *
  *                                                                         *
@@ -9,61 +15,53 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup GoogleChart
-	**/
-	final class GoogleChartSolidFill extends BaseGoogleChartParameter
-	{
-		protected static $paramName = 'chf';
-		
-		private $type 	= null;
-		private $color 	= null;
-		
-		/**
-		 * @return GoogleChartSolidFill
-		**/
-		public static function create(GoogleChartSolidFillType $type)
-		{
-			return new self($type);
-		}
-		
-		public function __construct(GoogleChartSolidFillType $type)
-		{
-			$this->type = $type;
-		}
-		
-		/**
-		 * @return GoogleChartSolidFill
-		**/
-		public function setColor(Color $color)
-		{
-			$this->color = $color;
-			
-			return $this;
-		}
-		
-		/**
-		 * @return Color
-		**/
-		public function getColor()
-		{
-			return $this->color;
-		}
-		
-		public function toString()
-		{
-			Assert::isNotNull($this->color, 'Color parameter required!');
-			
-			return
-				$this->type->toString()
-				.',s'
-				.','.$this->color->toString();
-		}
-		
-		
-		public static function getParamName()
-		{
-			return self::$paramName;
-		}
-	}
-?>
+/**
+ * @ingroup GoogleChart
+ **/
+final class GoogleChartSolidFill extends BaseGoogleChartParameter
+{
+    protected static $paramName = 'chf';
+    private $type = null;
+    private $color = null;
+
+    /**
+     * @return GoogleChartSolidFill
+     **/
+    public static function create(GoogleChartSolidFillType $type)
+    {
+        return new self($type);
+    }
+
+    public function __construct(GoogleChartSolidFillType $type)
+    {
+        $this->type = $type;
+    }
+
+    /**
+     * @return GoogleChartSolidFill
+     **/
+    public function setColor(Color $color)
+    {
+        $this->color = $color;
+        return $this;
+    }
+
+    /**
+     * @return Color
+     **/
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    public function toString()
+    {
+        Assert::isNotNull($this->color, 'Color parameter required!');
+        return $this->type->toString().',s'.','.$this->color->toString();
+    }
+
+    public static function getParamName()
+    {
+        return self::$paramName;
+    }
+}

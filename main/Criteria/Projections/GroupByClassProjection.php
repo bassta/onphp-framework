@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\main\Criteria\Projections;
+
+use onPHP\core\OSQL\DBField;
+use onPHP\core\OSQL\JoinCapableQuery;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Dmitry A. Lomash                                *
  *                                                                         *
@@ -9,24 +15,22 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Projections
-	**/
-	final class GroupByClassProjection extends ClassProjection
-	{
-		/**
-		 * @return GroupByClassProjection
-		**/
-		public static function create($class)
-		{
-			return new self($class);
-		}
-		
-		/* void */ protected function subProcess(
-			JoinCapableQuery $query, DBField $field
-		)
-		{
-			$query->groupBy($field);
-		}
-	}
-?>
+/**
+ * @ingroup Projections
+ **/
+final class GroupByClassProjection extends ClassProjection
+{
+    /**
+     * @return GroupByClassProjection
+     **/
+    public static function create($class)
+    {
+        return new self($class);
+    }
+
+    /* void */
+    protected function subProcess(JoinCapableQuery $query, DBField $field)
+    {
+        $query->groupBy($field);
+    }
+}

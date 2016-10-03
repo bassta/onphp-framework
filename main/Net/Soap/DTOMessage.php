@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\main\Net\Soap;
+
+use onPHP\main\EntityProto\Builders\ObjectToDTOConverter;
+use onPHP\main\EntityProto\PrototypedEntity;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *
  *                                                                         *
@@ -8,16 +14,10 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
-
-	abstract class DTOMessage implements PrototypedEntity
-	{
-		final public function makeDto()
-		{
-			return
-				ObjectToDTOConverter::create(
-					$this->entityProto()
-				)->
-					make($this);
-		}
-	}
-?>
+abstract class DTOMessage implements PrototypedEntity
+{
+    public final function makeDto()
+    {
+        return ObjectToDTOConverter::create($this->entityProto())->make($this);
+    }
+}

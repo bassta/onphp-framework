@@ -1,4 +1,11 @@
 <?php
+
+namespace onPHP\main\OQL\Statements;
+
+use onPHP\core\Base\Assert;
+use onPHP\main\OQL\Expressions\OqlInExpression;
+use onPHP\main\OQL\Expressions\OqlQueryExpression;
+
 /****************************************************************************
  *   Copyright (C) 2009 by Vladlen Y. Koshelev                              *
  *                                                                          *
@@ -9,23 +16,23 @@
  *                                                                          *
  ****************************************************************************/
 
-	/**
-	 * @ingroup OQL
-	**/
-	final class OqlWhereClause extends OqlQueryExpressionClause
-	{
-		/**
-		 * @return OqlWhereClause
-		**/
-		public static function create()
-		{
-			return new self;
-		}
-		
-		protected static function checkExpression(OqlQueryExpression $expression)
-		{
-			if (!$expression instanceof OqlInExpression)
-				Assert::isInstance($expression->getClassName(), 'LogicalObject');
-		}
-	}
-?>
+/**
+ * @ingroup OQL
+ **/
+final class OqlWhereClause extends OqlQueryExpressionClause
+{
+    /**
+     * @return OqlWhereClause
+     **/
+    public static function create()
+    {
+        return new self();
+    }
+
+    protected static function checkExpression(OqlQueryExpression $expression)
+    {
+        if (!$expression instanceof OqlInExpression) {
+            Assert::isInstance($expression->getClassName(), 'LogicalObject');
+        }
+    }
+}

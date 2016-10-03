@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\core\OSQL;
+
+use onPHP\core\DB\Dialect;
+
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Anton E. Lebedevich                        *
  *                                                                         *
@@ -9,14 +14,13 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup OSQL
-	**/
-	final class SQLLeftJoin extends SQLBaseJoin
-	{
-		public function toDialectString(Dialect $dialect)
-		{
-			return parent::baseToString($dialect, 'LEFT ');
-		}
-	}
-?>
+/**
+ * @ingroup OSQL
+ **/
+final class SQLLeftJoin extends SQLBaseJoin
+{
+    public function toDialectString(Dialect $dialect)
+    {
+        return parent::baseToString($dialect, 'LEFT ');
+    }
+}

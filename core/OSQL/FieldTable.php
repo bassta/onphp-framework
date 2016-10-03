@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\core\OSQL;
+
+use onPHP\core\DB\Dialect;
+
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Anton E. Lebedevich                        *
  *                                                                         *
@@ -9,32 +14,27 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup OSQL
-	 * @ingroup Module
-	**/
-	abstract class FieldTable extends Castable
-	{
-		protected $field = null;
-		
-		public function __construct($field)
-		{
-			$this->field = $field;
-		}
-		
-		public function getField()
-		{
-			return $this->field;
-		}
-		
-		public function toDialectString(Dialect $dialect)
-		{
-			$out = $dialect->fieldToString($this->field);
-			
-			return
-				$this->cast
-					? $dialect->toCasted($out, $this->cast)
-					: $out;
-		}
-	}
-?>
+/**
+ * @ingroup OSQL
+ * @ingroup Module
+ **/
+abstract class FieldTable extends Castable
+{
+    protected $field = null;
+
+    public function __construct($field)
+    {
+        $this->field = $field;
+    }
+
+    public function getField()
+    {
+        return $this->field;
+    }
+
+    public function toDialectString(Dialect $dialect)
+    {
+        $out = $dialect->fieldToString($this->field);
+        return $this->cast ? $dialect->toCasted($out, $this->cast) : $out;
+    }
+}

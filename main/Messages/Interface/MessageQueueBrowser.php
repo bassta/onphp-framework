@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\Messages\Interface
+
+;
+
 /***************************************************************************
  *   Copyright (C) 2009 by Ivan Y. Khvostishkov                            *
  *                                                                         *
@@ -8,12 +13,10 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
-
-	interface MessageQueueBrowser
-	{
-		/**
-		 * @return Message
-		**/
-		public function getNextMessage();
-	}
-?>
+interface MessageQueueBrowser
+{
+    /**
+     * @return Message
+     **/
+    public function getNextMessage();
+}

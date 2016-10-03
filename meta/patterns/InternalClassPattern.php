@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\meta\patterns;
+
+use onPHP\meta\classes\MetaClass;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Konstantin V. Arkhipov                          *
  *                                                                         *
@@ -9,29 +14,26 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Patterns
-	**/
-	final class InternalClassPattern
-		extends BasePattern
-		implements GenerationPattern
-	{
-		/**
-		 * @return InternalClassPattern
-		**/
-		public function build(MetaClass $class)
-		{
-			return $this;
-		}
-		
-		public function tableExists()
-		{
-			return false;
-		}
-		
-		public function daoExists()
-		{
-			return true;
-		}
-	}
-?>
+/**
+ * @ingroup Patterns
+ **/
+final class InternalClassPattern extends BasePattern implements GenerationPattern
+{
+    /**
+     * @return InternalClassPattern
+     **/
+    public function build(MetaClass $class)
+    {
+        return $this;
+    }
+
+    public function tableExists()
+    {
+        return false;
+    }
+
+    public function daoExists()
+    {
+        return true;
+    }
+}

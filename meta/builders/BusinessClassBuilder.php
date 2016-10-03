@@ -1,4 +1,13 @@
 <?php
+
+namespace onPHP\meta\builders;
+
+use onPHP\meta\classes\MetaClass;
+use onPHP\meta\classes\MetaClassType;
+use onPHP\meta\patterns\AbstractClassPattern;
+use onPHP\meta\patterns\InternalClassPattern;
+use ReflectionClass;
+
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,137 +18,58 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Builders
-	**/
-	final class BusinessClassBuilder extends OnceBuilder
-	{
-		public static function build(MetaClass $class)
-		{
-			$out = self::getHead();
-			
-			if ($type = $class->getType())
-				$typeName = $type->toString().' ';
-			else
-				$typeName = null;
-			
-			$interfaces = ' implements Prototyped';
-			
-			if (
-				$class->getPattern()->daoExists()
-				&& (!$class->getPattern() instanceof AbstractClassPattern)
-			) {
-				$interfaces .= ', DAOConnected';
-				
-				$daoName = $class->getName().'DAO';
-				$dao = <<<EOT
-	/**
-	 * @return {$daoName}
-	**/
-	public static function dao()
-	{
-		return Singleton::getInstance('{$daoName}');
-	}
-
-EOT;
-			} else
-				$dao = null;
-			
-			$out .= <<<EOT
-{$typeName}class {$class->getName()} extends Auto{$class->getName()}{$interfaces}
+/**
+ * @ingroup Builders
+ **/
+final class BusinessClassBuilder extends OnceBuilder
 {
-EOT;
-
-			if (!$type || $type->getId() !== MetaClassType::CLASS_ABSTRACT) {
-				$customCreate = null;
-				
-				if (
-					$class->getFinalParent()->getPattern()
-						instanceof InternalClassPattern
-				) {
-					$parent = $class;
-					
-					while ($parent = $parent->getParent()) {
-						$info = new ReflectionClass($parent->getName());
-						
-						if (
-							$info->hasMethod('create')
-							&& ($info->getMethod('create')->getParameters() > 0)
-						) {
-							$customCreate = true;
-							break;
-						}
-					}
-				}
-				
-				if ($customCreate) {
-					$creator = $info->getMethod('create');
-					
-					$declaration = array();
-					
-					foreach ($creator->getParameters() as $parameter) {
-						$declaration[] =
-							'$'.$parameter->getName()
-							// no one can live without default value @ ::create
-							.' = '
-							.(
-								$parameter->getDefaultValue()
-									? $parameter->getDefaultValue()
-									: 'null'
-							);
-					}
-					
-					$declaration = implode(', ', $declaration);
-					
-					$out .= <<<EOT
-
-	/**
-	 * @return {$class->getName()}
-	**/
-	public static function create({$declaration})
-	{
-		return new self({$declaration});
-	}
-		
-EOT;
-				} else {
-					$out .= <<<EOT
-
-	/**
-	 * @return {$class->getName()}
-	**/
-	public static function create()
-	{
-		return new self;
-	}
-		
-EOT;
-				}
-				
-				$protoName = 'Proto'.$class->getName();
-			
-				$out .= <<<EOT
-
-{$dao}
-	/**
-	 * @return {$protoName}
-	**/
-	public static function proto()
-	{
-		return Singleton::getInstance('{$protoName}');
-	}
-
-EOT;
-
-			}
-			
-			$out .= <<<EOT
-
+    public static function build(MetaClass $class)
+    {
+        $out = self::getHead();
+        if ($type = $class->getType()) {
+            $typeName = $type->toString().' ';
+        } else {
+            $typeName = null;
+        }
+        $interfaces = ' implements Prototyped';
+        if ($class->getPattern()->daoExists() && !$class->getPattern() instanceof AbstractClassPattern) {
+            $interfaces .= ', DAOConnected';
+            $daoName = $class->getName().'DAO';
+            $dao     = "\t/**\n\t * @return {$daoName}\n\t**/\n\tpublic static function dao()\n\t{\n\t\treturn Singleton::getInstance('{$daoName}');\n\t}\n";
+        } else {
+            $dao = null;
+        }
+        $out .= "{$typeName}class {$class->getName()} extends Auto{$class->getName()}{$interfaces}\n{";
+        if (!$type || $type->getId() !== MetaClassType::CLASS_ABSTRACT) {
+            $customCreate = null;
+            if ($class->getFinalParent()->getPattern() instanceof InternalClassPattern) {
+                $parent = $class;
+                while ($parent = $parent->getParent()) {
+                    $info = new ReflectionClass($parent->getName());
+                    if ($info->hasMethod('create') && $info->getMethod('create')->getParameters() > 0) {
+                        $customCreate = true;
+                        break;
+                    }
+                }
+            }
+            if ($customCreate) {
+                $creator     = $info->getMethod('create');
+                $declaration = array();
+                foreach ($creator->getParameters() as $parameter) {
+                    $declaration[] = '$'.$parameter->getName().' = '.($parameter->getDefaultValue() ? $parameter->getDefaultValue() : 'null');
+                }
+                $declaration = implode(', ', $declaration);
+                $out .= "\n\t/**\n\t * @return {$class->getName()}\n\t**/\n\tpublic static function create({$declaration})\n\t{\n\t\treturn new self({$declaration});\n\t}\n\t\t";
+            } else {
+                $out .= "\n\t/**\n\t * @return {$class->getName()}\n\t**/\n\tpublic static function create()\n\t{\n\t\treturn new self;\n\t}\n\t\t";
+            }
+            $protoName = 'Proto'.$class->getName();
+            $out .= "\n{$dao}\n\t/**\n\t * @return {$protoName}\n\t**/\n\tpublic static function proto()\n\t{\n\t\treturn Singleton::getInstance('{$protoName}');\n\t}\n";
+        }
+        $out .= '
 	// your brilliant stuff goes here
 }
-
-EOT;
-			return $out.self::getHeel();
-		}
-	}
-?>
+';
+        return $out.self::getHeel();
+    }
+}

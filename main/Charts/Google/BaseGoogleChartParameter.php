@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\Charts\Google;
+
+use onPHP\core\Base\Stringable;
+
 /***************************************************************************
  *   Copyright (C) 2008 by Denis M. Gabaidulin                             *
  *                                                                         *
@@ -9,26 +14,24 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup GoogleChart
-	**/
-	abstract class BaseGoogleChartParameter implements Stringable
-	{
-		protected $name = null;
-		
-		/**
-		 * @return BaseGoogleChartParameter
-		**/
-		public function setName($name)
-		{
-			$this->name = $name;
-			
-			return $this;
-		}
-		
-		public function getName()
-		{
-			return $this->name;
-		}
-	}
-?>
+/**
+ * @ingroup GoogleChart
+ **/
+abstract class BaseGoogleChartParameter implements Stringable
+{
+    protected $name = null;
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return BaseGoogleChartParameter
+     **/
+    public function setName($name)
+    {
+        $this->name = $name;
+        return $this;
+    }
+}

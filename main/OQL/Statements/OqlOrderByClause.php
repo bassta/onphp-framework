@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\OQL\Statements;
+
+use onPHP\core\OSQL\OrderChain;
+
 /****************************************************************************
  *   Copyright (C) 2009 by Vladlen Y. Koshelev                              *
  *                                                                          *
@@ -9,32 +14,28 @@
  *                                                                          *
  ****************************************************************************/
 
-	/**
-	 * @ingroup OQL
-	**/
-	final class OqlOrderByClause extends OqlQueryListedClause
-	{
-		/**
-		 * @return OqlOrderByClause
-		**/
-		public static function create()
-		{
-			return new self;
-		}
-		
-		/**
-		 * @return OrderChain
-		**/
-		public function toOrder()
-		{
-			$order = OrderChain::create();
-			foreach ($this->list as $property) {
-				$order->add(
-					$property->evaluate($this->parameters)
-				);
-			}
-			
-			return $order;
-		}
-	}
-?>
+/**
+ * @ingroup OQL
+ **/
+final class OqlOrderByClause extends OqlQueryListedClause
+{
+    /**
+     * @return OqlOrderByClause
+     **/
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * @return OrderChain
+     **/
+    public function toOrder()
+    {
+        $order = OrderChain::create();
+        foreach ($this->list as $property) {
+            $order->add($property->evaluate($this->parameters));
+        }
+        return $order;
+    }
+}

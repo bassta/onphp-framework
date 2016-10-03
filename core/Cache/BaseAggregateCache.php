@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\core\Cache;
+
+use onPHP\core\Exceptions\MissingElementException;
+use onPHP\core\Exceptions\WrongArgumentException;
+
 /****************************************************************************
  *   Copyright (C) 2011 by Anton E. Lebedevich, Konstantin V. Arkhipov,     *
  *   Evgeny V. Kokovikhin                                                   *
@@ -9,189 +15,166 @@
  *                                                                          *
  ****************************************************************************/
 
-	/**
-	 * Base common parent for all aggregate caches
-	 *
-	 * @ingroup Cache
-	**/
-	abstract class BaseAggregateCache extends SelectivePeer
-	{
-		protected $peers	= array();
-		
-		/**
-		 * @return BaseAggregateCache
-		**/
-		public function dropPeer($label)
-		{
-			if (!isset($this->peers[$label]))
-				throw new MissingElementException(
-					"there is no peer with '{$label}' label"
-				);
+/**
+ * Base common parent for all aggregate caches
+ *
+ * @ingroup Cache
+ **/
+abstract class BaseAggregateCache extends SelectivePeer
+{
+    protected $peers = array();
 
-			unset($this->peer[$label]);
+    /**
+     * @return BaseAggregateCache
+     **/
+    public function dropPeer($label)
+    {
+        if (!isset($this->peers[$label])) {
+            throw new MissingElementException("there is no peer with '{$label}' label");
+        }
+        unset($this->peer[$label]);
+        return $this;
+    }
 
-			return $this;
-		}
+    /**
+     * @return BaseAggregateCache
+     **/
+    public function checkAlive()
+    {
+        $this->alive = false;
+        foreach ($this->peers as $label => $peer) {
+            if ($peer['object']->isAlive()) {
+                $this->alive = true;
+            } else {
+                unset($this->peers[$label]);
+            }
+        }
+        return $this->alive;
+    }
 
-		/**
-		 * @return BaseAggregateCache
-		**/
-		public function checkAlive()
-		{
-			$this->alive = false;
+    protected abstract function guessLabel($key);
 
-			foreach ($this->peers as $label => $peer)
-				if ($peer['object']->isAlive())
-					$this->alive = true;
-				else
-					unset($this->peers[$label]);
+    /**
+     * @return BaseAggregateCache
+     **/
+    protected function doAddPeer($label, CachePeer $peer)
+    {
+        if (isset($this->peers[$label])) {
+            throw new WrongArgumentException('use unique names for your peers');
+        }
+        if ($peer->isAlive()) {
+            $this->alive = true;
+        }
+        $this->peers[$label]['object'] = $peer;
+        $this->peers[$label]['stat']   = array();
+        return $this;
+    }
 
-			return $this->alive;
-		}
+    /**
+     * low-level cache access
+     **/
+    public function increment($key, $value)
+    {
+        $label = $this->guessLabel($key);
+        if ($this->peers[$label]['object']->isAlive()) {
+            return $this->peers[$label]['object']->increment($key, $value);
+        } else {
+            $this->checkAlive();
+        }
+        return null;
+    }
 
-		abstract protected function guessLabel($key);
+    public function decrement($key, $value)
+    {
+        $label = $this->guessLabel($key);
+        if ($this->peers[$label]['object']->isAlive()) {
+            return $this->peers[$label]['object']->decrement($key, $value);
+        } else {
+            $this->checkAlive();
+        }
+        return null;
+    }
 
-		/**
-		 * @return BaseAggregateCache
-		**/
-		protected function doAddPeer($label, CachePeer $peer)
-		{
-			if (isset($this->peers[$label]))
-				throw new WrongArgumentException(
-					'use unique names for your peers'
-				);
+    public function get($key)
+    {
+        $label = $this->guessLabel($key);
+        if ($this->peers[$label]['object']->isAlive()) {
+            return $this->peers[$label]['object']->get($key);
+        } else {
+            $this->checkAlive();
+        }
+        return null;
+    }
 
-			if ($peer->isAlive())
-				$this->alive = true;
-			
-			$this->peers[$label]['object'] = $peer;
-			$this->peers[$label]['stat'] = array();
-			
-			return $this;
-		}
+    public function getList($indexes)
+    {
+        $labels = array();
+        $out    = array();
+        foreach ($indexes as $index) {
+            $labels[$this->guessLabel($index)][] = $index;
+        }
+        foreach ($labels as $label => $indexList) {
+            if ($this->peers[$label]['object']->isAlive()) {
+                if ($list = $this->peers[$label]['object']->getList($indexList)) {
+                    $out = array_merge($out, $list);
+                }
+            } else {
+                $this->checkAlive();
+            }
+        }
+        return $out;
+    }
 
-		/**
-		 * low-level cache access
-		**/
+    public function delete($key)
+    {
+        $label = $this->guessLabel($key);
+        if (!$this->peers[$label]['object']->isAlive()) {
+            $this->checkAlive();
+            return false;
+        }
+        return $this->peers[$label]['object']->delete($key);
+    }
 
-		public function increment($key, $value)
-		{
-			$label = $this->guessLabel($key);
+    /**
+     * @return AggregateCache
+     **/
+    public function clean()
+    {
+        foreach ($this->peers as $peer) {
+            $peer['object']->clean();
+        }
+        $this->checkAlive();
+        return parent::clean();
+    }
 
-			if ($this->peers[$label]['object']->isAlive())
-				return $this->peers[$label]['object']->increment($key, $value);
-			else
-				$this->checkAlive();
+    public function getStats()
+    {
+        $stats = array();
+        foreach ($this->peers as $level => $peer) {
+            $stats[$level] = $peer['stat'];
+        }
+        return $stats;
+    }
 
-			return null;
-		}
+    public function append($key, $data)
+    {
+        $label = $this->guessLabel($key);
+        if ($this->peers[$label]['object']->isAlive()) {
+            return $this->peers[$label]['object']->append($key, $data);
+        } else {
+            $this->checkAlive();
+        }
+        return false;
+    }
 
-		public function decrement($key, $value)
-		{
-			$label = $this->guessLabel($key);
-
-			if ($this->peers[$label]['object']->isAlive())
-				return $this->peers[$label]['object']->decrement($key, $value);
-			else
-				$this->checkAlive();
-
-			return null;
-		}
-
-		public function get($key)
-		{
-			$label = $this->guessLabel($key);
-
-			if ($this->peers[$label]['object']->isAlive())
-				return $this->peers[$label]['object']->get($key);
-			else
-				$this->checkAlive();
-
-			return null;
-		}
-
-		public function getList($indexes)
-		{
-			$labels = array();
-			$out = array();
-
-			foreach ($indexes as $index)
-				$labels[$this->guessLabel($index)][] = $index;
-
-			foreach ($labels as $label => $indexList)
-				if ($this->peers[$label]['object']->isAlive()) {
-					if ($list = $this->peers[$label]['object']->getList($indexList))
-						$out = array_merge($out, $list);
-				} else
-					$this->checkAlive();
-
-			return $out;
-		}
-
-		public function delete($key)
-		{
-			$label = $this->guessLabel($key);
-
-			if (!$this->peers[$label]['object']->isAlive()) {
-				$this->checkAlive();
-				return false;
-			}
-
-			return $this->peers[$label]['object']->delete($key);
-		}
-
-		/**
-		 * @return AggregateCache
-		**/
-		public function clean()
-		{
-			foreach ($this->peers as $peer)
-				$peer['object']->clean();
-
-			$this->checkAlive();
-
-			return parent::clean();
-		}
-
-		public function getStats()
-		{
-			$stats = array();
-
-			foreach ($this->peers as $level => $peer)
-				$stats[$level] = $peer['stat'];
-
-			return $stats;
-		}
-
-		public function append($key, $data)
-		{
-			$label = $this->guessLabel($key);
-
-			if ($this->peers[$label]['object']->isAlive())
-				return $this->peers[$label]['object']->append($key, $data);
-			else
-				$this->checkAlive();
-
-			return false;
-		}
-
-		protected function store(
-			$action, $key, $value, $expires = Cache::EXPIRES_MINIMUM
-		)
-		{
-			$label = $this->guessLabel($key);
-
-			if ($this->peers[$label]['object']->isAlive())
-				return
-					$this->peers[$label]['object']->$action(
-						$key,
-						$value,
-						$expires
-					);
-			else
-				$this->checkAlive();
-
-			return false;
-		}
-	}
-?>
+    protected function store($action, $key, $value, $expires = Cache::EXPIRES_MINIMUM)
+    {
+        $label = $this->guessLabel($key);
+        if ($this->peers[$label]['object']->isAlive()) {
+            return $this->peers[$label]['object']->{$action}($key, $value, $expires);
+        } else {
+            $this->checkAlive();
+        }
+        return false;
+    }
+}

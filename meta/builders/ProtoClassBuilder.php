@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\meta\builders;
+
+use onPHP\meta\classes\MetaClass;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Konstantin V. Arkhipov                          *
  *                                                                         *
@@ -9,26 +14,20 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Builders
-	**/
-	final class ProtoClassBuilder extends OnceBuilder
-	{
-		public static function build(MetaClass $class)
-		{
-			$out = self::getHead();
-			
-			if ($type = $class->getType())
-				$typeName = $type->toString().' ';
-			else
-				$typeName = null;
-			
-			$out .= <<<EOT
-{$typeName}class Proto{$class->getName()} extends AutoProto{$class->getName()} {/*_*/}
-
-EOT;
-			
-			return $out.self::getHeel();
-		}
-	}
-?>
+/**
+ * @ingroup Builders
+ **/
+final class ProtoClassBuilder extends OnceBuilder
+{
+    public static function build(MetaClass $class)
+    {
+        $out = self::getHead();
+        if ($type = $class->getType()) {
+            $typeName = $type->toString().' ';
+        } else {
+            $typeName = null;
+        }
+        $out .= "{$typeName}class Proto{$class->getName()} extends AutoProto{$class->getName()} {/*_*/}\n";
+        return $out.self::getHeel();
+    }
+}

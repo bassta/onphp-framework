@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\core\Form\Primitives;
+
+use onPHP\core\Base\Assert;
+use onPHP\core\Exceptions\UnimplementedFeatureException;
+
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Sveta A. Smirnova                          *
  *                                                                         *
@@ -9,69 +15,54 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Primitives
-	**/
-	final class ExplodedPrimitive extends PrimitiveString
-	{
-		protected $separator 		= ' ';
-		protected $splitByRegexp	= false;
-		
-		/**
-		 * @return ExplodedPrimitive
-		**/
-		public function setSeparator($separator)
-		{
-			$this->separator = $separator;
-			
-			return $this;
-		}
-		
-		public function getSeparator()
-		{
-			return $this->separator;
-		}
-		
-		public function setSplitByRegexp($splitByRegexp = false)
-		{
-			$this->splitByRegexp = ($splitByRegexp === true);
-			
-			return $this;
-		}
-		
-		public function isSplitByRegexp()
-		{
-			return $this->splitByRegexp;
-		}
-		
-		public function import($scope)
-		{
-			if (!$result = parent::import($scope))
-				return $result;
-			
-			if (
-				$this->value =
-					$this->isSplitByRegexp()
-						?
-							preg_split(
-								$this->separator,
-								$this->value,
-								-1,
-								PREG_SPLIT_NO_EMPTY
-							)
-						: explode($this->separator, $this->value)
-			) {
-				return true;
-			} else {
-				return false;
-			}
-			
-			Assert::isUnreachable();
-		}
-		
-		public function exportValue()
-		{
-			throw new UnimplementedFeatureException();
-		}
-	}
-?>
+/**
+ * @ingroup Primitives
+ **/
+final class ExplodedPrimitive extends PrimitiveString
+{
+    protected $separator = ' ';
+    protected $splitByRegexp = false;
+
+    /**
+     * @return ExplodedPrimitive
+     **/
+    public function setSeparator($separator)
+    {
+        $this->separator = $separator;
+        return $this;
+    }
+
+    public function getSeparator()
+    {
+        return $this->separator;
+    }
+
+    public function setSplitByRegexp($splitByRegexp = false)
+    {
+        $this->splitByRegexp = $splitByRegexp === true;
+        return $this;
+    }
+
+    public function isSplitByRegexp()
+    {
+        return $this->splitByRegexp;
+    }
+
+    public function import($scope)
+    {
+        if (!($result = parent::import($scope))) {
+            return $result;
+        }
+        if ($this->value = $this->isSplitByRegexp() ? preg_split($this->separator, $this->value, -1, PREG_SPLIT_NO_EMPTY) : explode($this->separator, $this->value)) {
+            return true;
+        } else {
+            return false;
+        }
+        Assert::isUnreachable();
+    }
+
+    public function exportValue()
+    {
+        throw new UnimplementedFeatureException();
+    }
+}

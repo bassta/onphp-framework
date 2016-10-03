@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\core\Base;
+
+use onPHP\core\Exceptions\MissingElementException;
+use Serializable;
+
 /***************************************************************************
  *   Copyright (C) 2004-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,93 +15,90 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * Parent of all enumeration classes.
-	 * 
-	 * @see AccessMode for example
-	 * 
-	 * @ingroup Base
-	 * @ingroup Module
-	**/
-	abstract class Enumeration extends NamedObject implements Serializable
-	{
-		protected $names = array(/* override me */);
-		
-		final public function __construct($id)
-		{
-			$this->setId($id);
-		}
-		
-		/// prevent's serialization of names' array
-		//@{
-		public function serialize()
-		{
-			return (string) $this->id;
-		}
-		
-		public function unserialize($serialized)
-		{
-			$this->setId($serialized);
-		}
-		//@}
-		
-		public static function getList(Enumeration $enum)
-		{
-			return $enum->getObjectList();
-		}
-		
-		/**
-		 * must return any existent ID
-		 * 1 should be ok for most enumerations
-		**/
-		public static function getAnyId()
-		{
-			return 1;
-		}
-		
-		/// parent's getId() is too complex in our case
-		public function getId()
-		{
-			return $this->id;
-		}
-		
-		public function getObjectList()
-		{
-			$list = array();
-			$names = $this->getNameList();
-			
-			foreach (array_keys($names) as $id)
-				$list[] = new $this($id);
+/**
+ * Parent of all enumeration classes.
+ *
+ * @see AccessMode for example
+ *
+ * @ingroup Base
+ * @ingroup Module
+ **/
+abstract class Enumeration extends NamedObject implements Serializable
+{
+    protected $names = array();
 
-			return $list;
-		}
+    public final function __construct($id)
+    {
+        $this->setId($id);
+    }
+    /// prevent's serialization of names' array
+    //@{
 
-		public function toString()
-		{
-			return $this->name;
-		}
-		
-		public function getNameList()
-		{
-			return $this->names;
-		}
-		
-		/**
-		 * @return Enumeration
-		**/
-		public function setId($id)
-		{
-			$names = $this->getNameList();
+    /**
+     * @return Enumeration
+     **/
+    public function setId($id)
+    {
+        $names = $this->getNameList();
+        if (isset($names[$id])) {
+            $this->id   = $id;
+            $this->name = $names[$id];
+        } else {
+            throw new MissingElementException(get_class($this).' knows nothing about such id == '.$id);
+        }
+        return $this;
+    }
 
-			if (isset($names[$id])) {
-				$this->id = $id;
-				$this->name = $names[$id];
-			} else
-				throw new MissingElementException(
-					get_class($this) . ' knows nothing about such id == '.$id
-				);
-			
-			return $this;
-		}
-	}
-?>
+    public function getNameList()
+    {
+        return $this->names;
+    }
+
+    //@}
+
+    public static function getList(Enumeration $enum)
+    {
+        return $enum->getObjectList();
+    }
+
+    public function getObjectList()
+    {
+        $list  = array();
+        $names = $this->getNameList();
+        foreach (array_keys($names) as $id) {
+            $list[] = new $this($id);
+        }
+        return $list;
+    }
+
+    /// parent's getId() is too complex in our case
+
+    /**
+     * must return any existent ID
+     * 1 should be ok for most enumerations
+     **/
+    public static function getAnyId()
+    {
+        return 1;
+    }
+
+    public function serialize()
+    {
+        return (string)$this->id;
+    }
+
+    public function unserialize($serialized)
+    {
+        $this->setId($serialized);
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function toString()
+    {
+        return $this->name;
+    }
+}

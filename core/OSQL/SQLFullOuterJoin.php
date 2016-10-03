@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\core\OSQL;
+
+use onPHP\core\DB\Dialect;
+
 /***************************************************************************
  *   Copyright (C) 2012 by Timofey A. Anisimov                             *
  *                                                                         *
@@ -9,18 +14,17 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup OSQL
-	**/
-	final class SQLFullOuterJoin extends SQLBaseJoin
-	{
-		/**
-		 * @param Dialect $dialect
-		 * @return string
-		 */
-		public function toDialectString(Dialect $dialect)
-		{
-			return parent::baseToString($dialect, 'FULL OUTER ');
-		}
-
-	}
+/**
+ * @ingroup OSQL
+ **/
+final class SQLFullOuterJoin extends SQLBaseJoin
+{
+    /**
+     * @param Dialect $dialect
+     * @return string
+     */
+    public function toDialectString(Dialect $dialect)
+    {
+        return parent::baseToString($dialect, 'FULL OUTER ');
+    }
+}

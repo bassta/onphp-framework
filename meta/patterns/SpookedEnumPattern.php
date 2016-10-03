@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\meta\patterns;
+
+use onPHP\meta\classes\MetaClass;
+
 /***************************************************************************
  *   Copyright (C) 2012 by Georgiy T. Kutsurua                             *
  *                                                                         *
@@ -9,22 +14,21 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Patterns
-	**/
-	final class SpookedEnumPattern extends EnumClassPattern
-	{
-		/**
-		 * @return SpookedEnumPattern
-		**/
-		public function build(MetaClass $class)
-		{
-			return $this;
-		}
-		
-		public function daoExists()
-		{
-			return false;
-		}
-	}
-?>
+/**
+ * @ingroup Patterns
+ **/
+final class SpookedEnumPattern extends EnumClassPattern
+{
+    /**
+     * @return SpookedEnumPattern
+     **/
+    public function build(MetaClass $class)
+    {
+        return $this;
+    }
+
+    public function daoExists()
+    {
+        return false;
+    }
+}

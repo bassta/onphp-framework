@@ -1,4 +1,13 @@
 <?php
+
+namespace onPHP\main\DAOs\Workers;
+
+use onPHP\core\Base\Assert;
+use onPHP\core\Base\Identifiable;
+use onPHP\core\Cache\Cache;
+use onPHP\core\OSQL\SelectQuery;
+use onPHP\main\DAOs\Uncachers\UncacherCacheDaoWorkerLists;
+
 /***************************************************************************
  *   Copyright (C) 2008 by Konstantin V. Arkhipov                          *
  *                                                                         *
@@ -9,99 +18,62 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * Transparent and scalable DAO worker, Jedi's best choice.
-	 * 
-	 * @see CommonDaoWorker for manual-caching one.
-	 * @see SmartDaoWorker for locking-based worker.
-	 * @see VoodooDaoWorker for greedy and unscalable one.
-	 * 
-	 * @ingroup DAOs
-	**/
-	class CacheDaoWorker extends TransparentDaoWorker
-	{
-		const MAX_RANDOM_ID = 134217728;
-		
-		/// cachers
-		//@{
-		protected function cacheByQuery(
-			SelectQuery $query,
-			/* Identifiable */ $object,
-			$expires = Cache::EXPIRES_FOREVER
-		)
-		{
-			Cache::me()->mark($this->className)->
-				add(
-					$this->makeQueryKey($query, self::SUFFIX_QUERY),
-					$object,
-					$expires
-				);
-			
-			return $object;
-		}
-		
-		protected function cacheListByQuery(
-			SelectQuery $query,
-			/* array || Cache::NOT_FOUND */ $array
-		)
-		{
-			if ($array !== Cache::NOT_FOUND) {
-				Assert::isArray($array);
-				Assert::isTrue(current($array) instanceof Identifiable);
-			}
-			
-			Cache::me()->mark($this->className)->
-				add(
-					$this->makeQueryKey($query, self::SUFFIX_LIST),
-					$array,
-					Cache::EXPIRES_FOREVER
-				);
-			
-			return $array;
-		}
-		//@}
-		
-		/// uncachers
-		//@{
-		public function uncacheLists()
-		{
-			return $this->registerUncacher(
-				UncacherCacheDaoWorkerLists::create($this->className)
-			);
-		}
-		//@}
-		
-		/// internal helpers
-		//@{
-		protected function gentlyGetByKey($key)
-		{
-			return Cache::me()->mark($this->className)->get($key);
-		}
-		
-		protected function getLayerId()
-		{
-			if (
-				!$result =
-					Cache::me()->mark($this->className)->get($this->className)
-			) {
-				$result = mt_rand(1, self::MAX_RANDOM_ID);
-				
-				Cache::me()->
-				mark($this->className)->
-				set(
-					$this->className,
-					$result,
-					Cache::EXPIRES_FOREVER
-				);
-			}
-			
-			return '@'.$result;
-		}
-		
-		protected function makeQueryKey(SelectQuery $query, $suffix)
-		{
-			return parent::makeQueryKey($query, $suffix).$this->getLayerId();
-		}
-		//@}
-	}
-?>
+/**
+ * Transparent and scalable DAO worker, Jedi's best choice.
+ *
+ * @see CommonDaoWorker for manual-caching one.
+ * @see SmartDaoWorker for locking-based worker.
+ * @see VoodooDaoWorker for greedy and unscalable one.
+ *
+ * @ingroup DAOs
+ **/
+class CacheDaoWorker extends TransparentDaoWorker
+{
+    const MAX_RANDOM_ID = 134217728;
+    /// cachers
+    //@{
+    protected function cacheByQuery(SelectQuery $query, $object, $expires = Cache::EXPIRES_FOREVER)
+    {
+        Cache::me()->mark($this->className)->add($this->makeQueryKey($query, self::SUFFIX_QUERY), $object, $expires);
+        return $object;
+    }
+
+    protected function cacheListByQuery(SelectQuery $query, $array)
+    {
+        if ($array !== Cache::NOT_FOUND) {
+            Assert::isArray($array);
+            Assert::isTrue(current($array) instanceof Identifiable);
+        }
+        Cache::me()->mark($this->className)
+             ->add($this->makeQueryKey($query, self::SUFFIX_LIST), $array, Cache::EXPIRES_FOREVER);
+        return $array;
+    }
+    //@}
+    /// uncachers
+    //@{
+    public function uncacheLists()
+    {
+        return $this->registerUncacher(UncacherCacheDaoWorkerLists::create($this->className));
+    }
+    //@}
+    /// internal helpers
+    //@{
+    protected function gentlyGetByKey($key)
+    {
+        return Cache::me()->mark($this->className)->get($key);
+    }
+
+    protected function getLayerId()
+    {
+        if (!($result = Cache::me()->mark($this->className)->get($this->className))) {
+            $result = mt_rand(1, self::MAX_RANDOM_ID);
+            Cache::me()->mark($this->className)->set($this->className, $result, Cache::EXPIRES_FOREVER);
+        }
+        return '@'.$result;
+    }
+
+    protected function makeQueryKey(SelectQuery $query, $suffix)
+    {
+        return parent::makeQueryKey($query, $suffix).$this->getLayerId();
+    }
+}

@@ -1,4 +1,11 @@
 <?php
+
+namespace onPHP\core\Form\Primitives;
+
+use onPHP\core\Exceptions\MissingElementException;
+use onPHP\core\Exceptions\WrongStateException;
+use onPHP\main\Utils\ClassUtils;
+
 /*****************************************************************************
  *   Copyright (C) 2009 by Denis M. Gabaidulin                               *
  *                                                                           *
@@ -9,45 +16,34 @@
  *                                                                           *
  *****************************************************************************/
 
-	/**
-	 * @ingroup Primitives
-	**/
-	final class PrimitiveEnumerationByValue extends PrimitiveEnumeration
-	{
-		public function import($scope)
-		{
-			if (!$this->className)
-				throw new WrongStateException(
-					"no class defined for PrimitiveEnumeration '{$this->name}'"
-				);
-			
-			if (isset($scope[$this->name])) {
-				$scopedValue = urldecode($scope[$this->name]);
-				
-				$anyId =
-					ClassUtils::callStaticMethod($this->className.'::getAnyId');
-				
-				$object = new $this->className($anyId);
-				
-				$names = $object->getNameList();
-				
-				foreach ($names as $key => $value) {
-					if ($value == $scopedValue) {
-						try {
-							$this->value = new $this->className($key);
-						} catch (MissingElementException $e) {
-							$this->value = null;
-							return false;
-						}
-						
-						return true;
-					}
-				}
-				
-				return false;
-			}
-			
-			return null;
-		}
-	}
-?>
+/**
+ * @ingroup Primitives
+ **/
+final class PrimitiveEnumerationByValue extends PrimitiveEnumeration
+{
+    public function import($scope)
+    {
+        if (!$this->className) {
+            throw new WrongStateException("no class defined for PrimitiveEnumeration '{$this->name}'");
+        }
+        if (isset($scope[$this->name])) {
+            $scopedValue = urldecode($scope[$this->name]);
+            $anyId       = ClassUtils::callStaticMethod($this->className.'::getAnyId');
+            $object      = new $this->className($anyId);
+            $names       = $object->getNameList();
+            foreach ($names as $key => $value) {
+                if ($value == $scopedValue) {
+                    try {
+                        $this->value = new $this->className($key);
+                    } catch (MissingElementException $e) {
+                        $this->value = null;
+                        return false;
+                    }
+                    return true;
+                }
+            }
+            return false;
+        }
+        return null;
+    }
+}

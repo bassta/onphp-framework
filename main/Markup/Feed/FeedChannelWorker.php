@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\Markup\Feed;
+
+use SimpleXMLElement;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Konstantin V. Arkhipov                          *
  *                                                                         *
@@ -9,12 +14,12 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Feed
-	**/
-	interface FeedChannelWorker
-	{
-		public function makeChannel(SimpleXMLElement $xmlFeed);
-		public function toXml(FeedChannel $channel, $itemsXml);
-	}
-?>
+/**
+ * @ingroup Feed
+ **/
+interface FeedChannelWorker
+{
+    public function makeChannel(SimpleXMLElement $xmlFeed);
+
+    public function toXml(FeedChannel $channel, $itemsXml);
+}

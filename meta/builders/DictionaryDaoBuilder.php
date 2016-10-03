@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\meta\builders;
+
+use onPHP\meta\classes\MetaClass;
+
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,30 +14,17 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Builders
-	**/
-	final class DictionaryDaoBuilder extends BaseBuilder
-	{
-		public static function build(MetaClass $class)
-		{
-			$out = self::getHead();
-			
-			$out .= <<<EOT
-abstract class Auto{$class->getName()}DAO extends StorableDAO
+/**
+ * @ingroup Builders
+ **/
+final class DictionaryDaoBuilder extends BaseBuilder
 {
-
-EOT;
-
-			$pointers = self::buildPointers($class);
-			
-			$out .= <<<EOT
-{$pointers}
+    public static function build(MetaClass $class)
+    {
+        $out = self::getHead();
+        $out .= "abstract class Auto{$class->getName()}DAO extends StorableDAO\n{\n";
+        $pointers = self::buildPointers($class);
+        $out .= "{$pointers}\n}\n";
+        return $out.self::getHeel();
+    }
 }
-
-EOT;
-			
-			return $out.self::getHeel();
-		}
-	}
-?>

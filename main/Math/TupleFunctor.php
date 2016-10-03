@@ -1,6 +1,8 @@
 <?php
-	interface TupleFunctor
-	{
-		public function apply($tuple);
-	}
-?>
+
+namespace onPHP\main\Math;
+
+interface TupleFunctor
+{
+    public function apply($tuple);
+}

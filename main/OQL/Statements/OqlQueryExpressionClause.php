@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\main\OQL\Statements;
+
+use onPHP\core\Base\Assert;
+use onPHP\main\OQL\Expressions\OqlQueryExpression;
+
 /****************************************************************************
  *   Copyright (C) 2009 by Vladlen Y. Koshelev                              *
  *                                                                          *
@@ -9,41 +15,38 @@
  *                                                                          *
  ****************************************************************************/
 
-	/**
-	 * @ingroup OQL
-	**/
-	abstract class OqlQueryExpressionClause extends OqlQueryClause
-	{
-		protected $expression = null;
-		
-		/**
-		 * @return OqlQueryExpression
-		**/
-		public function getExpression()
-		{
-			return $this->expression;
-		}
-		
-		/**
-		 * @return OqlQueryExpressionClause
-		**/
-		public function setExpression(OqlQueryExpression $expression)
-		{
-			$this->checkExpression($expression);
-			$this->expression = $expression;
-			
-			return $this;
-		}
-		
-		public function toLogic()
-		{
-			Assert::isNotNull($this->expression);
-			
-			return $this->expression->evaluate($this->parameters);
-		}
-		
-		protected static function checkExpression(OqlQueryExpression $expression)
-		{
-		}
-	}
-?>
+/**
+ * @ingroup OQL
+ **/
+abstract class OqlQueryExpressionClause extends OqlQueryClause
+{
+    protected $expression = null;
+
+    /**
+     * @return OqlQueryExpression
+     **/
+    public function getExpression()
+    {
+        return $this->expression;
+    }
+
+    /**
+     * @return OqlQueryExpressionClause
+     **/
+    public function setExpression(OqlQueryExpression $expression)
+    {
+        $this->checkExpression($expression);
+        $this->expression = $expression;
+        return $this;
+    }
+
+    public function toLogic()
+    {
+        Assert::isNotNull($this->expression);
+        return $this->expression->evaluate($this->parameters);
+    }
+
+    protected static function checkExpression(OqlQueryExpression $expression)
+    {
+    }
+}

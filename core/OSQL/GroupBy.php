@@ -1,4 +1,12 @@
 <?php
+
+namespace onPHP\core\OSQL;
+
+use onPHP\core\DB\Dialect;
+use onPHP\core\Logic\LogicalObject;
+use onPHP\core\Logic\MappableObject;
+use onPHP\main\DAOs\ProtoDAO;
+
 /****************************************************************************
  *   Copyright (C) 2005-2007 by Anton E. Lebedevich, Konstantin V. Arkhipov *
  *                                                                          *
@@ -9,37 +17,34 @@
  *                                                                          *
  ****************************************************************************/
 
-	/**
-	 * @ingroup OSQL
-	 * @ingroup Module
-	**/
-	final class GroupBy extends FieldTable implements MappableObject
-	{
-		/**
-		 * @return GroupBy
-		**/
-		public static function create($field)
-		{
-			return new self($field);
-		}
-		
-		/**
-		 * @return GroupBy
-		**/
-		public function toMapped(ProtoDAO $dao, JoinCapableQuery $query)
-		{
-			return self::create($dao->guessAtom($this->field, $query));
-		}
-		
-		public function toDialectString(Dialect $dialect)
-		{
-			if (
-				$this->field instanceof SelectQuery
-				|| $this->field instanceof LogicalObject
-			)
-				return '('.$dialect->fieldToString($this->field).')';
-			else
-				return parent::toDialectString($dialect);
-		}
-	}
-?>
+/**
+ * @ingroup OSQL
+ * @ingroup Module
+ **/
+final class GroupBy extends FieldTable implements MappableObject
+{
+    /**
+     * @return GroupBy
+     **/
+    public static function create($field)
+    {
+        return new self($field);
+    }
+
+    /**
+     * @return GroupBy
+     **/
+    public function toMapped(ProtoDAO $dao, JoinCapableQuery $query)
+    {
+        return self::create($dao->guessAtom($this->field, $query));
+    }
+
+    public function toDialectString(Dialect $dialect)
+    {
+        if ($this->field instanceof SelectQuery || $this->field instanceof LogicalObject) {
+            return '('.$dialect->fieldToString($this->field).')';
+        } else {
+            return parent::toDialectString($dialect);
+        }
+    }
+}

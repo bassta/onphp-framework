@@ -1,4 +1,10 @@
 <?php
-	// provide fake spooked class
-	class Spook extends IdentifiableObject {/*_*/}
-?>
+
+namespace onPHP\test\misc;
+
+use onPHP\core\Base\IdentifiableObject;
+
+// provide fake spooked class
+class Spook extends IdentifiableObject
+{
+}

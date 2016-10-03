@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\meta\builders;
+
+use onPHP\meta\classes\MetaClass;
+
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,29 +14,20 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Builders
-	**/
-	final class EnumerationClassBuilder extends OnceBuilder
-	{
-		public static function build(MetaClass $class)
-		{
-			$out = self::getHead();
-			
-			if ($type = $class->getType())
-				$type = "{$type->getName()} ";
-			else
-				$type = null;
-			
-			$out .= <<<EOT
-{$type}class {$class->getName()} extends Enumeration
+/**
+ * @ingroup Builders
+ **/
+final class EnumerationClassBuilder extends OnceBuilder
 {
-	// implement me!
+    public static function build(MetaClass $class)
+    {
+        $out = self::getHead();
+        if ($type = $class->getType()) {
+            $type = "{$type->getName()} ";
+        } else {
+            $type = null;
+        }
+        $out .= "{$type}class {$class->getName()} extends Enumeration\n{\n\t// implement me!\n}\n";
+        return $out.self::getHeel();
+    }
 }
-
-EOT;
-			
-			return $out.self::getHeel();
-		}
-	}
-?>

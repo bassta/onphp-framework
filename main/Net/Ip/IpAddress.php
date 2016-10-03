@@ -1,4 +1,13 @@
 <?php
+
+namespace onPHP\main\Net\Ip;
+
+use onPHP\core\Base\Stringable;
+use onPHP\core\DB\Dialect;
+use onPHP\core\Exceptions\WrongArgumentException;
+use onPHP\core\OSQL\DialectString;
+use onPHP\main\Utils\TypesUtils;
+
 /***************************************************************************
  *   Copyright (C) 2007-2008 by Vladimir A. Altuchov                       *
  *                                                                         *
@@ -9,67 +18,64 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Ip
-	**/
-	class IpAddress implements Stringable, DialectString
-	{
-		private $longIp = null;
-		
-		/**
-		 * @return IpAddress
-		**/
-		public static function create($ip)
-		{
-			return new self($ip);
-		}
-		
-		public static function createFromCutted($ip)
-		{
-			if (substr_count($ip, '.') < 3)
-				return self::createFromCutted($ip.'.0');
-			
-			return self::create($ip);
-		}
-		
-		public function __construct($ip)
-		{
-			$this->setIp($ip);
-		}
-		
-		/**
-		 * @return IpAddress
-		**/
-		public function setIp($ip)
-		{
-			$long = ip2long($ip);
-			
-			if ($long === false)
-				throw new WrongArgumentException('wrong ip given');
-			
-			$this->longIp = $long;
-			
-			return $this;
-		}
-		
-		public function getLongIp()
-		{
-			return $this->longIp;
-		}
-		
-		public function toString()
-		{
-			return long2ip($this->longIp);
-		}
-		
-		public function toDialectString(Dialect $dialect)
-		{
-			return $dialect->quoteValue($this->toString());
-		}
-		
-		public function toSignedInt()
-		{
-			return TypesUtils::unsignedToSigned($this->longIp);
-		}
-	}
-?>
+/**
+ * @ingroup Ip
+ **/
+class IpAddress implements Stringable, DialectString
+{
+    private $longIp = null;
+
+    /**
+     * @return IpAddress
+     **/
+    public static function create($ip)
+    {
+        return new self($ip);
+    }
+
+    public static function createFromCutted($ip)
+    {
+        if (substr_count($ip, '.') < 3) {
+            return self::createFromCutted($ip.'.0');
+        }
+        return self::create($ip);
+    }
+
+    public function __construct($ip)
+    {
+        $this->setIp($ip);
+    }
+
+    /**
+     * @return IpAddress
+     **/
+    public function setIp($ip)
+    {
+        $long = ip2long($ip);
+        if ($long === false) {
+            throw new WrongArgumentException('wrong ip given');
+        }
+        $this->longIp = $long;
+        return $this;
+    }
+
+    public function getLongIp()
+    {
+        return $this->longIp;
+    }
+
+    public function toString()
+    {
+        return long2ip($this->longIp);
+    }
+
+    public function toDialectString(Dialect $dialect)
+    {
+        return $dialect->quoteValue($this->toString());
+    }
+
+    public function toSignedInt()
+    {
+        return TypesUtils::unsignedToSigned($this->longIp);
+    }
+}

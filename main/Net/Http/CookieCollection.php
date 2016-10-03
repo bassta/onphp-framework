@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\Net\Http;
+
+use onPHP\main\Base\AbstractCollection;
+
 /***************************************************************************
  *   Copyright (C) 2008 by Evgeny V. Kokovikhin                            *
  *                                                                         *
@@ -10,28 +15,27 @@
  ***************************************************************************/
 /*$id$*/
 
-	/**
-	 * using java.utils.Collection Interface
-	 * see http://java.sun.com/javase/6/docs/api/java/util/Collection.html
-	 * 
-	 * @ingroup Http
-	**/
-	final class CookieCollection extends AbstractCollection
-	{
-		/**
-		 * @return CookieCollection
-		**/
-		public static function create()
-		{
-			return new self;
-		}
-		
-		public function httpSetAll()
-		{
-			foreach ($this->items as $item)
-				$item->httpSet();
-				
-			return $this;
-		}
-	}
-?>
+/**
+ * using java.utils.Collection Interface
+ * see http://java.sun.com/javase/6/docs/api/java/util/Collection.html
+ *
+ * @ingroup Http
+ **/
+final class CookieCollection extends AbstractCollection
+{
+    /**
+     * @return CookieCollection
+     **/
+    public static function create()
+    {
+        return new self();
+    }
+
+    public function httpSetAll()
+    {
+        foreach ($this->items as $item) {
+            $item->httpSet();
+        }
+        return $this;
+    }
+}

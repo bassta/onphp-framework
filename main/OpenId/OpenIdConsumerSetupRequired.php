@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\OpenId;
+
+use onPHP\main\Net\HttpUrl;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Anton E. Lebedevich                             *
  *                                                                         *
@@ -9,29 +14,28 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup OpenId
-	**/
-	final class OpenIdConsumerSetupRequired implements OpenIdConsumerResult
-	{
-		private $url = null;
-		
-		public function __construct(HttpUrl $url)
-		{
-			$this->url = $url;
-		}
-		
-		/**
-		 * @return HttpUrl
-		**/
-		public function getUrl()
-		{
-			return $this->url;
-		}
-		
-		public function isOk()
-		{
-			return false;
-		}
-	}
-?>
+/**
+ * @ingroup OpenId
+ **/
+final class OpenIdConsumerSetupRequired implements OpenIdConsumerResult
+{
+    private $url = null;
+
+    public function __construct(HttpUrl $url)
+    {
+        $this->url = $url;
+    }
+
+    /**
+     * @return HttpUrl
+     **/
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    public function isOk()
+    {
+        return false;
+    }
+}

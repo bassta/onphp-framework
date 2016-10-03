@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\Base;
+
+use onPHP\core\Exceptions\WrongStateException;
+
 /***************************************************************************
  *   Copyright (C) 2008 by Garmonbozia Research Group                      *
  *                                                                         *
@@ -9,62 +14,52 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Helpers
-	**/
-	final class CallChain
-	{
-		private $chain = array();
-		
-		/**
-		 * @return CallChain
-		**/
-		public static function create()
-		{
-			return new self;
-		}
-		
-		/**
-		 * @return CallChain
-		**/
-		public function add($object)
-		{
-			$this->chain[] = $object;
-			
-			return $this;
-		}
-		
-		public function call($method, $args = null /* , ... */)
-		{
-			if (!$this->chain)
-				throw new WrongStateException();
-			
-			$args = func_get_args();
-			array_shift($args);
-			
-			if (count($args)) {
-				$result = $args;
-				foreach ($this->chain as $object)
-					$result = call_user_func_array(
-						array($object, $method),
-						is_array($result)
-							? $result
-							: array($result)
-					);
-			} else {
-				foreach ($this->chain as $object)
-					$result = call_user_func(array($object, $method));
-			}
-			
-			return $result;
-		}
-		
-		public function __call($method, $args = null)
-		{
-			return call_user_func_array(
-				array($this, 'call'),
-				array_merge(array($method), $args)
-			);
-		}
-	}
-?>
+/**
+ * @ingroup Helpers
+ **/
+final class CallChain
+{
+    private $chain = array();
+
+    /**
+     * @return CallChain
+     **/
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * @return CallChain
+     **/
+    public function add($object)
+    {
+        $this->chain[] = $object;
+        return $this;
+    }
+
+    public function call($method, $args = null)
+    {
+        if (!$this->chain) {
+            throw new WrongStateException();
+        }
+        $args = func_get_args();
+        array_shift($args);
+        if (count($args)) {
+            $result = $args;
+            foreach ($this->chain as $object) {
+                $result = call_user_func_array(array($object, $method), is_array($result) ? $result : array($result));
+            }
+        } else {
+            foreach ($this->chain as $object) {
+                $result = call_user_func(array($object, $method));
+            }
+        }
+        return $result;
+    }
+
+    public function __call($method, $args = null)
+    {
+        return call_user_func_array(array($this, 'call'), array_merge(array($method), $args));
+    }
+}

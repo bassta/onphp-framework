@@ -1,4 +1,11 @@
 <?php
+
+namespace onPHP\test\main;
+
+use onPHP\main\Flow\Model;
+use onPHP\main\UI\View\PhpViewResolver;
+use onPHP\test\misc\TestCase;
+
 /***************************************************************************
  *   Copyright (C) 2011 by Igor V. Gulyaev                                 *
  *                                                                         *
@@ -8,31 +15,25 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
+final class ViewTest extends TestCase
+{
+    protected static $resolver;
 
-	final class ViewTest extends TestCase
-	{
-		protected static $resolver;
+    public static function setUpBeforeClass()
+    {
+        self::$resolver = new PhpViewResolver(ONPHP_TEST_PATH.'main/data/views/', EXT_TPL);
+    }
 
-		public static function setUpBeforeClass()
-		{
-			self::$resolver = new PhpViewResolver(ONPHP_TEST_PATH.'main/data/views/', EXT_TPL);
-		}
+    public static function tearDownAfterClass()
+    {
+        self::$resolver = NULL;
+    }
 
-		public static function tearDownAfterClass()
-		{
-			self::$resolver = NULL;
-		}
-
-		public function testToString()
-		{
-			$renderView = self::$resolver->resolveViewName('testView');
-			$toStringView = self::$resolver->resolveViewName('testViewToString');
-
-			$model = Model::create();
-
-			$this->assertTrue(
-				$toStringView->toString($model) == $renderView->toString($model)
-			);
-		}
-	}
-?>
+    public function testToString()
+    {
+        $renderView   = self::$resolver->resolveViewName('testView');
+        $toStringView = self::$resolver->resolveViewName('testViewToString');
+        $model        = Model::create();
+        $this->assertTrue($toStringView->toString($model) == $renderView->toString($model));
+    }
+}

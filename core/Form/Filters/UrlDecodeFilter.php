@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\core\Form\Filters;
+
+use onPHP\core\Base\Singleton;
+
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,22 +14,21 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Filters
-	**/
-	final class UrlDecodeFilter extends BaseFilter
-	{
-		/**
-		 * @return UrlDecodeFilter
-		**/
-		public static function me()
-		{
-			return Singleton::getInstance(__CLASS__);
-		}
-		
-		public function apply($value)
-		{
-			return urldecode($value);
-		}
-	}
-?>
+/**
+ * @ingroup Filters
+ **/
+final class UrlDecodeFilter extends BaseFilter
+{
+    /**
+     * @return UrlDecodeFilter
+     **/
+    public static function me()
+    {
+        return Singleton::getInstance(__CLASS__);
+    }
+
+    public function apply($value)
+    {
+        return urldecode($value);
+    }
+}

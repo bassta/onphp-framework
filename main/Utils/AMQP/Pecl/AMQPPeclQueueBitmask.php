@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\Utils\AMQP\Pecl;
+
+use onPHP\core\Base\Assert;
+
 /***************************************************************************
  *   Copyright (C) 2011 by Sergey S. Sergeev                               *
  *                                                                         *
@@ -9,21 +14,18 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @see http://www.php.net/manual/en/amqp.constants.php
-	**/
-	final class AMQPPeclQueueBitmask extends AMQPPeclBaseBitmask
-	{
-		public function getBitmask($config)
-		{
-			Assert::isInstance($config, 'AMQPQueueConfig');
-
-			$bitmask = parent::getBitmask($config);
-
-			if ($config->getExclusive())
-				$bitmask = $bitmask | AMQP_EXCLUSIVE;
-
-			return $bitmask;
-		}
-	}
-?>
+/**
+ * @see http://www.php.net/manual/en/amqp.constants.php
+ **/
+final class AMQPPeclQueueBitmask extends AMQPPeclBaseBitmask
+{
+    public function getBitmask($config)
+    {
+        Assert::isInstance($config, 'AMQPQueueConfig');
+        $bitmask = parent::getBitmask($config);
+        if ($config->getExclusive()) {
+            $bitmask = $bitmask | AMQP_EXCLUSIVE;
+        }
+        return $bitmask;
+    }
+}

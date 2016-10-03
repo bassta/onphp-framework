@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\main\Messages;
+
+use;
+
+onPHP\main\Messages\Interface\MessageQueue;
 /***************************************************************************
  *   Copyright (C) 2009 by Ivan Y. Khvostishkov                            *
  *                                                                         *
@@ -8,39 +14,35 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
+class TextFileQueue implements MessageQueue
+{
+    private $fileName = null;
+    private $offset = null;
 
-	class TextFileQueue implements MessageQueue
-	{
-		private $fileName	= null;
-		private $offset		= null;
+    public static function create()
+    {
+        return new self();
+    }
 
-		public static function create()
-		{
-			return new self;
-		}
+    public function setFileName($fileName)
+    {
+        $this->fileName = $fileName;
+        return $this;
+    }
 
-		public function setFileName($fileName)
-		{
-			$this->fileName = $fileName;
+    public function getFileName()
+    {
+        return $this->fileName;
+    }
 
-			return $this;
-		}
+    public function setOffset($offset)
+    {
+        $this->offset = $offset;
+        return $this;
+    }
 
-		public function getFileName()
-		{
-			return $this->fileName;
-		}
-
-		public function setOffset($offset)
-		{
-			$this->offset = $offset;
-
-			return $this;
-		}
-
-		public function getOffset()
-		{
-			return $this->offset;
-		}
-	}
-?>
+    public function getOffset()
+    {
+        return $this->offset;
+    }
+}

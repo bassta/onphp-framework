@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\core\OSQL;
+
+use onPHP\core\DB\Dialect;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Konstantin V. Arkhipov                          *
  *                                                                         *
@@ -9,25 +14,24 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * Container for passing binary values into OSQL queries.
-	 * 
-	 * @ingroup OSQL
-	 * @ingroup Module
-	**/
-	final class DBBinary extends DBValue
-	{
-		/**
-		 * @return DBBinary
-		**/
-		public static function create($value)
-		{
-			return new self($value);
-		}
-		
-		public function toDialectString(Dialect $dialect)
-		{
-			return $dialect->quoteBinary($this->getValue());
-		}
-	}
-?>
+/**
+ * Container for passing binary values into OSQL queries.
+ *
+ * @ingroup OSQL
+ * @ingroup Module
+ **/
+final class DBBinary extends DBValue
+{
+    /**
+     * @return DBBinary
+     **/
+    public static function create($value)
+    {
+        return new self($value);
+    }
+
+    public function toDialectString(Dialect $dialect)
+    {
+        return $dialect->quoteBinary($this->getValue());
+    }
+}

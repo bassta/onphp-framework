@@ -1,4 +1,12 @@
 <?php
+
+namespace onPHP\main\EntityProto\Builders;
+
+use onPHP\main\EntityProto\Accessors\DTOGetter;
+use onPHP\main\EntityProto\Accessors\ScopeSetter;
+use onPHP\main\EntityProto\EntityProto;
+use onPHP\main\EntityProto\PrototypedBuilder;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *
  *                                                                         *
@@ -8,36 +16,34 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
+final class DTOToScopeConverter extends PrototypedBuilder
+{
+    /**
+     * @return DTOToScopeConverter
+     **/
+    public static function create(EntityProto $proto)
+    {
+        return new self($proto);
+    }
 
-	final class DTOToScopeConverter extends PrototypedBuilder
-	{
-		/**
-		 * @return DTOToScopeConverter
-		**/
-		public static function create(EntityProto $proto)
-		{
-			return new self($proto);
-		}
-		
-		protected function createEmpty()
-		{
-			return array();
-		}
-		
-		/**
-		 * @return DTOGetter
-		**/
-		protected function getGetter($object)
-		{
-			return new DTOGetter($this->proto, $object);
-		}
-		
-		/**
-		 * @return ScopeSetter
-		**/
-		protected function getSetter(&$object)
-		{
-			return new ScopeSetter($this->proto, $object);
-		}
-	}
-?>
+    protected function createEmpty()
+    {
+        return array();
+    }
+
+    /**
+     * @return DTOGetter
+     **/
+    protected function getGetter($object)
+    {
+        return new DTOGetter($this->proto, $object);
+    }
+
+    /**
+     * @return ScopeSetter
+     **/
+    protected function getSetter(&$object)
+    {
+        return new ScopeSetter($this->proto, $object);
+    }
+}

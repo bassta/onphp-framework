@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\core\OSQL;
+
+use onPHP\core\DB\Dialect;
+
 /****************************************************************************
  *   Copyright (C) 2005-2007 by Anton E. Lebedevich, Konstantin V. Arkhipov *
  *                                                                          *
@@ -9,21 +14,15 @@
  *                                                                          *
  ****************************************************************************/
 
-	/**
-	 * Full-text ranking. Mostly used in "ORDER BY".
-	 * 
-	 * @ingroup OSQL
-	**/
-	final class FullTextRank extends FullText
-	{
-		public function toDialectString(Dialect $dialect)
-		{
-			return
-				$dialect->fullTextRank(
-					$this->field,
-					$this->words,
-					$this->logic
-				);
-		}
-	}
-?>
+/**
+ * Full-text ranking. Mostly used in "ORDER BY".
+ *
+ * @ingroup OSQL
+ **/
+final class FullTextRank extends FullText
+{
+    public function toDialectString(Dialect $dialect)
+    {
+        return $dialect->fullTextRank($this->field, $this->words, $this->logic);
+    }
+}

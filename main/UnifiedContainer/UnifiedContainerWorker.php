@@ -1,4 +1,15 @@
 <?php
+
+namespace onPHP\main\UnifiedContainer;
+
+use onPHP\core\DB\DBPool;
+use onPHP\core\Logic\Expression;
+use onPHP\core\OSQL\DBField;
+use onPHP\core\OSQL\DBValue;
+use onPHP\core\OSQL\OSQL;
+use onPHP\core\OSQL\SQLFunction;
+use onPHP\main\Criteria\Criteria;
+
 /***************************************************************************
  *   Copyright (C) 2005-2009 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,103 +20,78 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @see UnifiedContainer
-	 * 
-	 * @ingroup Containers
-	**/
-	abstract class UnifiedContainerWorker
-	{
-		protected $criteria		= null;
-		protected $container	= null;
-		
-		abstract public function makeFetchQuery();
-		abstract public function sync($insert, $update = array(), $delete);
-		
-		public function __construct(UnifiedContainer $uc)
-		{
-			$this->container = $uc;
-		}
-		
-		/**
-		 * @return UnifiedContainerWorker
-		**/
-		public function setCriteria(Criteria $criteria)
-		{
-			$this->criteria = $criteria;
-			
-			return $this;
-		}
-		
-		/**
-		 * @return Criteria
-		**/
-		public function getCriteria()
-		{
-			return $this->criteria;
-		}
-		
-		/**
-		 * @return SelectQuery
-		**/
-		public function makeCountQuery()
-		{
-			$query = $this->makeFetchQuery();
-			
-			if ($query->isDistinct()) {
-				$countFunction =
-					SQLFunction::create(
-						'count',
-						DBField::create(
-							$this->container->getDao()->getIdName(),
-							$this->container->getDao()->getTable()
-						)
-					)->
-					setAggregateDistinct();
-				
-				$query->unDistinct();
-			
-			} else {
-				$countFunction = SQLFunction::create('count', DBValue::create('*'));
-			}
-			
-			return $query->
-				dropFields()->
-				dropOrder()->
-				dropLimit()->
-				get(
-					$countFunction->setAlias('count')
-				);
-		}
-		
-		public function dropList()
-		{
-			$dao = $this->container->getDao();
-			
-			DBPool::getByDao($dao)->queryNull(
-				OSQL::delete()->from($this->container->getHelperTable())->
-				where(
-					Expression::eq(
-						$this->container->getParentIdField(),
-						$this->container->getParentObject()->getId()
-					)
-				)
-			);
-			
-			$dao->uncacheLists();
-			
-			return $this;
-		}
-		
-		/**
-		 * @return SelectQuery
-		**/
-		protected function makeSelectQuery()
-		{
-			if ($this->criteria)
-				return $this->criteria->toSelectQuery();
-			
-			return $this->container->getDao()->makeSelectHead();
-		}
-	}
-?>
+/**
+ * @see UnifiedContainer
+ *
+ * @ingroup Containers
+ **/
+abstract class UnifiedContainerWorker
+{
+    protected $criteria = null;
+    protected $container = null;
+
+    public abstract function makeFetchQuery();
+
+    public abstract function sync($insert, $update = array(), $delete);
+
+    public function __construct(UnifiedContainer $uc)
+    {
+        $this->container = $uc;
+    }
+
+    /**
+     * @return UnifiedContainerWorker
+     **/
+    public function setCriteria(Criteria $criteria)
+    {
+        $this->criteria = $criteria;
+        return $this;
+    }
+
+    /**
+     * @return Criteria
+     **/
+    public function getCriteria()
+    {
+        return $this->criteria;
+    }
+
+    /**
+     * @return SelectQuery
+     **/
+    public function makeCountQuery()
+    {
+        $query = $this->makeFetchQuery();
+        if ($query->isDistinct()) {
+            $countFunction = SQLFunction::create('count', DBField::create($this->container->getDao()
+                                                                                          ->getIdName(), $this->container->getDao()
+                                                                                                                         ->getTable()))
+                                        ->setAggregateDistinct();
+            $query->unDistinct();
+        } else {
+            $countFunction = SQLFunction::create('count', DBValue::create('*'));
+        }
+        return $query->dropFields()->dropOrder()->dropLimit()->get($countFunction->setAlias('count'));
+    }
+
+    public function dropList()
+    {
+        $dao = $this->container->getDao();
+        DBPool::getByDao($dao)->queryNull(OSQL::delete()->from($this->container->getHelperTable())
+                                              ->where(Expression::eq($this->container->getParentIdField(), $this->container->getParentObject()
+                                                                                                                           ->getId())));
+        $dao->uncacheLists();
+        return $this;
+    }
+
+    /**
+     * @return SelectQuery
+     **/
+    protected function makeSelectQuery()
+    {
+        if ($this->criteria) {
+            return $this->criteria->toSelectQuery();
+        }
+        return $this->container->getDao()->makeSelectHead();
+    }
+}

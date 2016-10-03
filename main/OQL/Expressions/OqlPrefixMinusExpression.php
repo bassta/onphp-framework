@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\OQL\Expressions;
+
+use onPHP\core\Logic\PrefixUnaryExpression;
+
 /****************************************************************************
  *   Copyright (C) 2008 by Vladlen Y. Koshelev                              *
  *                                                                          *
@@ -9,32 +14,27 @@
  *                                                                          *
  ****************************************************************************/
 
-	/**
-	 * @ingroup OQL
-	**/
-	final class OqlPrefixMinusExpression extends OqlQueryExpression
-	{
-		const CLASS_NAME = 'PrefixUnaryExpression';
-		
-		public function __construct(OqlQueryParameter $subject)
-		{
-			$this->
-				setClassName(self::CLASS_NAME)->
-				addParameter(
-					OqlQueryParameter::create()->
-						setValue(PrefixUnaryExpression::MINUS)
-				)->
-				addParameter($subject);
-		}
-		
-		public function evaluate($values)
-		{
-			$value = $this->getParameter(1)->evaluate($values);
-			
-			if (is_numeric($value))
-				return -$value;
-			else
-				return parent::evaluate($values);
-		}
-	}
-?>
+/**
+ * @ingroup OQL
+ **/
+final class OqlPrefixMinusExpression extends OqlQueryExpression
+{
+    const CLASS_NAME = 'PrefixUnaryExpression';
+
+    public function __construct(OqlQueryParameter $subject)
+    {
+        $this->setClassName(self::CLASS_NAME)->addParameter(OqlQueryParameter::create()
+                                                                             ->setValue(PrefixUnaryExpression::MINUS))
+             ->addParameter($subject);
+    }
+
+    public function evaluate($values)
+    {
+        $value = $this->getParameter(1)->evaluate($values);
+        if (is_numeric($value)) {
+            return -$value;
+        } else {
+            return parent::evaluate($values);
+        }
+    }
+}

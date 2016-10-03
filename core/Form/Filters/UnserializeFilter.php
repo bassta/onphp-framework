@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\core\Form\Filters;
+
+use onPHP\core\Base\Singleton;
+
 /***************************************************************************
  *   Copyright (C) 2009 by Denis M. Gabaidulin                             *
  *                                                                         *
@@ -9,25 +14,23 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * Unserialize string
-	 * 
-	 * @ingroup Filters
-	 * @deprecated Because of the potential security problem.
-	**/
-	final class UnserializeFilter extends BaseFilter
-	{
-		/**
-		 * @return UnserializeFilter
-		**/
-		public static function me()
-		{
-			return Singleton::getInstance(__CLASS__);
-		}
-		
-		public function apply($value)
-		{
-			return unserialize($value);
-		}
-	}
-?>
+/**
+ * Unserialize string
+ *
+ * @ingroup Filters
+ **/
+final class UnserializeFilter extends BaseFilter
+{
+    /**
+     * @return UnserializeFilter
+     **/
+    public static function me()
+    {
+        return Singleton::getInstance(__CLASS__);
+    }
+
+    public function apply($value)
+    {
+        return unserialize($value);
+    }
+}

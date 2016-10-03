@@ -1,4 +1,11 @@
 <?php
+
+namespace onPHP\main\Flow;
+
+use onPHP\core\Base\Prototyped;
+use onPHP\core\Form\Form;
+use onPHP\core\Form\FormUtils;
+
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Anton E. Lebedevich                        *
  *                                                                         *
@@ -9,28 +16,27 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Flow
-	**/
-	class EditCommand implements EditorCommand
-	{
-		/**
-		 * @return EditCommand
-		**/
-		public static function create()
-		{
-			return new self;
-		}
-		
-		/**
-		 * @return ModelAndView
-		**/
-		public function run(Prototyped $subject, Form $form, HttpRequest $request)
-		{
-			if ($object = $form->getValue('id'))
-				FormUtils::object2form($object, $form);
-			
-			return ModelAndView::create();
-		}
-	}
-?>
+/**
+ * @ingroup Flow
+ **/
+class EditCommand implements EditorCommand
+{
+    /**
+     * @return EditCommand
+     **/
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * @return ModelAndView
+     **/
+    public function run(Prototyped $subject, Form $form, HttpRequest $request)
+    {
+        if ($object = $form->getValue('id')) {
+            FormUtils::object2form($object, $form);
+        }
+        return ModelAndView::create();
+    }
+}

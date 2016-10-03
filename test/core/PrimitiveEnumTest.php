@@ -1,4 +1,12 @@
 <?php
+
+namespace onPHP\test\core;
+
+use onPHP\core\Form\Form;
+use onPHP\core\Form\Primitive;
+use onPHP\main\Base\MimeType;
+use onPHP\test\misc\TestCase;
+
 /***************************************************************************
  *   Copyright (C) 2012 by Georgiy T. Kutsurua                             *
  *                                                                         *
@@ -8,54 +16,35 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
+final class PrimitiveEnumTest extends TestCase
+{
+    public function testIntegerValues()
+    {
+        $defaultId = 2;
+        $importId  = 1;
+        $default   = MimeType::wrap($defaultId);
+        $imported  = MimeType::wrap($importId);
+        $form      = Form::create()->add(Primitive::enum('enum')->of('MimeType')->setDefault($default));
+        $form->import(array('enum' => $importId));
+        $this->assertEquals($form->getValue('enum')->getId(), $importId);
+        $this->assertSame($form->getValue('enum')->getId(), $importId);
+        $this->assertEquals($form->getChoiceValue('enum'), $imported->getName());
+        $this->assertSame($form->getChoiceValue('enum'), $imported->getName());
+        $form->clean();
+        $this->assertNull($form->getValue('enum'));
+        $this->assertNull($form->getChoiceValue('enum'));
+        $this->assertEquals($form->getActualValue('enum')->getId(), $defaultId);
+        $this->assertEquals($form->getActualChoiceValue('enum'), $default->getName());
+    }
 
-	final class PrimitiveEnumTest extends TestCase
-	{
-		public function testIntegerValues()
-		{
-			$defaultId = 2;
-			$importId = 1;
-
-			$default = MimeType::wrap($defaultId);
-			$imported = MimeType::wrap($importId);
-
-			$form =
-				Form::create()->
-				add(
-					Primitive::enum('enum')
-						->of('MimeType')
-						->setDefault($default)
-				);
-			
-			$form->import(array('enum' => $importId));
-			
-			$this->assertEquals($form->getValue('enum')->getId(), $importId);
-			$this->assertSame($form->getValue('enum')->getId(), $importId);
-
-			$this->assertEquals($form->getChoiceValue('enum'), $imported->getName());
-			$this->assertSame($form->getChoiceValue('enum'), $imported->getName());
-
-			$form->clean();
-
-			$this->assertNull($form->getValue('enum'));
-			$this->assertNull($form->getChoiceValue('enum'));
-			$this->assertEquals($form->getActualValue('enum')->getId(), $defaultId);
-			$this->assertEquals($form->getActualChoiceValue('enum'), $default->getName());
-
-		}
-		
-		public function testGetList()
-		{
-			$primitive = Primitive::enum('enum')->of('MimeType');
-			$enum = MimeType::wrap(1);
-			
-			$this->assertEquals($primitive->getList(), MimeType::getObjectList());
-			
-			$primitive->setDefault($enum);
-			$this->assertEquals($primitive->getList(), MimeType::getObjectList());
-			
-			$primitive->import(array('enum' => MimeType::getAnyId()));
-			$this->assertEquals($primitive->getList(), MimeType::getObjectList());
-		}
-	}
-?>
+    public function testGetList()
+    {
+        $primitive = Primitive::enum('enum')->of('MimeType');
+        $enum      = MimeType::wrap(1);
+        $this->assertEquals($primitive->getList(), MimeType::getObjectList());
+        $primitive->setDefault($enum);
+        $this->assertEquals($primitive->getList(), MimeType::getObjectList());
+        $primitive->import(array('enum' => MimeType::getAnyId()));
+        $this->assertEquals($primitive->getList(), MimeType::getObjectList());
+    }
+}

@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\core\Logic;
+
+use onPHP\core\Form\Form;
+use onPHP\core\OSQL\DialectString;
+
 /***************************************************************************
  *   Copyright (C) 2004-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,13 +15,12 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * Support interface for Form's logic rules.
-	 * 
-	 * @ingroup Logic
-	**/
-	interface LogicalObject extends DialectString
-	{
-		public function toBoolean(Form $form);
-	}
-?>
+/**
+ * Support interface for Form's logic rules.
+ *
+ * @ingroup Logic
+ **/
+interface LogicalObject extends DialectString
+{
+    public function toBoolean(Form $form);
+}

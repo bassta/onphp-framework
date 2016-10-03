@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\main\UnifiedContainer;
+
+use onPHP\core\Base\Identifiable;
+use onPHP\main\DAOs\GenericDAO;
+
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,30 +15,22 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Containers
-	**/
-	abstract class ManyToManyLinked extends UnifiedContainer
-	{
-		abstract public function getHelperTable();
-		
-		public function getParentTableIdField()
-		{
-			return 'id';
-		}
-		
-		public function __construct(
-			Identifiable $parent, GenericDAO $dao, $lazy = true
-		)
-		{
-			parent::__construct($parent, $dao, $lazy);
-			
-			$worker =
-				$lazy
-					? 'ManyToManyLinkedLazy'
-					: 'ManyToManyLinkedFull';
-			
-			$this->worker = new $worker($this);
-		}
-	}
-?>
+/**
+ * @ingroup Containers
+ **/
+abstract class ManyToManyLinked extends UnifiedContainer
+{
+    public abstract function getHelperTable();
+
+    public function getParentTableIdField()
+    {
+        return 'id';
+    }
+
+    public function __construct(Identifiable $parent, GenericDAO $dao, $lazy = true)
+    {
+        parent::__construct($parent, $dao, $lazy);
+        $worker       = $lazy ? 'ManyToManyLinkedLazy' : 'ManyToManyLinkedFull';
+        $this->worker = new $worker($this);
+    }
+}

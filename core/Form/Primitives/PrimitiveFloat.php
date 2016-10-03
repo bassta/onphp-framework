@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\core\Form\Primitives;
+
+use onPHP\core\Base\Assert;
+
 /****************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                      *
  *                                                                          *
@@ -9,19 +14,18 @@
  *                                                                          *
  ****************************************************************************/
 
-	/**
-	 * @ingroup Primitives
-	**/
-	final class PrimitiveFloat extends PrimitiveNumber
-	{
-		protected function checkNumber($number)
-		{
-			Assert::isFloat($number);
-		}
-		
-		protected function castNumber($number)
-		{
-			return (float) $number;
-		}
-	}
-?>
+/**
+ * @ingroup Primitives
+ **/
+final class PrimitiveFloat extends PrimitiveNumber
+{
+    protected function checkNumber($number)
+    {
+        Assert::isFloat($number);
+    }
+
+    protected function castNumber($number)
+    {
+        return (double)$number;
+    }
+}

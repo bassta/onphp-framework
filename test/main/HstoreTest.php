@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\test\main;
+
+use onPHP\main\Base\Hstore;
+use onPHP\test\misc\TestCase;
+
 /***************************************************************************
  *   Copyright (C) by Evgeny M. Stepanov                                   *
  *                                                                         *
@@ -8,23 +14,15 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
-
-	final class HstoreTest extends TestCase
-	{
-		public function testRun()
-		{
-			$array = array(
-				'1' => 'qqer',
-				'f' => 'qs34$9&)_@+#qer',
-				'null' => null
-			);
-
-			$test = Hstore::make($array);
-			$test2= Hstore::create($test->toString());
-
-			$this->assertEquals($test->toString(), $test2->toString());
-
-			$this->assertTrue($test->isExists('null'));
-			$this->assertFalse($test->isExists('notExist'));
-		}
-	}
+final class HstoreTest extends TestCase
+{
+    public function testRun()
+    {
+        $array = array('1' => 'qqer', 'f' => 'qs34$9&)_@+#qer', 'null' => null);
+        $test  = Hstore::make($array);
+        $test2 = Hstore::create($test->toString());
+        $this->assertEquals($test->toString(), $test2->toString());
+        $this->assertTrue($test->isExists('null'));
+        $this->assertFalse($test->isExists('notExist'));
+    }
+}

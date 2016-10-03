@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\meta\types;
+
+use onPHP\main\Base\LightMetaProperty;
+
 /***************************************************************************
  *   Copyright (C) 2007-2008 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,22 +14,19 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Types
-	**/
-	final class UnsignedSmallIntegerType extends SmallIntegerType
-	{
-		public function getSize()
-		{
-			return 2 & LightMetaProperty::UNSIGNED_FLAG;
-		}
-		
-		public function toColumnType()
-		{
-			return
-				parent::toColumnType()
-				."->\n"
-				.'setUnsigned(true)';
-		}
-	}
-?>
+/**
+ * @ingroup Types
+ **/
+final class UnsignedSmallIntegerType extends SmallIntegerType
+{
+    public function getSize()
+    {
+        return 2 & LightMetaProperty::UNSIGNED_FLAG;
+    }
+
+    public function toColumnType()
+    {
+        return parent::toColumnType().'->
+'.'setUnsigned(true)';
+    }
+}

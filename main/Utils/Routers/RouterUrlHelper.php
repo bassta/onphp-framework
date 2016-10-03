@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\Utils\Routers;
+
+use onPHP\core\Base\StaticFactory;
+
 /***************************************************************************
  *   Copyright (C) 2008 by Sergey S. Sergeev                               *
  *                                                                         *
@@ -8,22 +13,13 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
-
-	final class RouterUrlHelper extends StaticFactory
-	{
-		/**
-		 * @return string
-		**/
-		public static function url(
-			array $urlOptions = array(),
-			$name,
-			$reset = false,
-			$encode = true
-		)
-		{
-			return
-				RouterRewrite::me()->
-				assembly($urlOptions, $name, $reset, $encode);
-		}
-	}
-?>
+final class RouterUrlHelper extends StaticFactory
+{
+    /**
+     * @return string
+     **/
+    public static function url(array $urlOptions = array(), $name, $reset = false, $encode = true)
+    {
+        return RouterRewrite::me()->assembly($urlOptions, $name, $reset, $encode);
+    }
+}

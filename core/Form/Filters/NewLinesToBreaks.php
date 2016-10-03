@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\core\Form\Filters;
+
+use onPHP\core\Base\Singleton;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Konstantin V. Arkhipov                          *
  *                                                                         *
@@ -9,24 +14,23 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * Inserts HTML line breaks before all newlines in a string.
-	 * 
-	 * @ingroup Filters
-	**/
-	final class NewLinesToBreaks extends BaseFilter
-	{
-		/**
-		 * @return NewLinesToBreaks
-		**/
-		public static function me()
-		{
-			return Singleton::getInstance(__CLASS__);
-		}
-		
-		public function apply($value)
-		{
-			return nl2br($value);
-		}
-	}
-?>
+/**
+ * Inserts HTML line breaks before all newlines in a string.
+ *
+ * @ingroup Filters
+ **/
+final class NewLinesToBreaks extends BaseFilter
+{
+    /**
+     * @return NewLinesToBreaks
+     **/
+    public static function me()
+    {
+        return Singleton::getInstance(__CLASS__);
+    }
+
+    public function apply($value)
+    {
+        return nl2br($value);
+    }
+}

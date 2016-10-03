@@ -1,89 +1,91 @@
 <?php
-	/***************************************************************************
-	 *   Copyright (C) 2011 by Alexander A. Klestov                            *
-	 *                                                                         *
-	 *   This program is free software; you can redistribute it and/or modify  *
-	 *   it under the terms of the GNU Lesser General Public License as        *
-	 *   published by the Free Software Foundation; either version 3 of the    *
-	 *   License, or (at your option) any later version.                       *
-	 *                                                                         *
-	 ***************************************************************************/
 
-	/**
-	 * Cache with read-only access.
-	 *
-	 * @ingroup Cache
-	**/
-	final class ReadOnlyPeer extends CachePeer
-	{
-		/**
-		 * @var CachePeer
-		 */
-		private $innerPeer = null;
+namespace onPHP\core\Cache;
 
-		/**
-		 * @return ReadOnlyPeer
-		 */
-		public static function create(CachePeer $peer)
-		{
-			return new ReadOnlyPeer($peer);
-		}
+use onPHP\core\Exceptions\UnsupportedMethodException;
 
-		public function __construct(CachePeer $peer)
-		{
-			$this->innerPeer = $peer;
-		}
+/***************************************************************************
+ *   Copyright (C) 2011 by Alexander A. Klestov                            *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU Lesser General Public License as        *
+ *   published by the Free Software Foundation; either version 3 of the    *
+ *   License, or (at your option) any later version.                       *
+ *                                                                         *
+ ***************************************************************************/
 
-		public function isAlive()
-		{
-			return $this->innerPeer->isAlive();
-		}
+/**
+ * Cache with read-only access.
+ *
+ * @ingroup Cache
+ **/
+final class ReadOnlyPeer extends CachePeer
+{
+    /**
+     * @var CachePeer
+     */
+    private $innerPeer = null;
 
-		public function mark($className)
-		{
-			return $this->innerPeer->mark($className);
-		}
+    public function __construct(CachePeer $peer)
+    {
+        $this->innerPeer = $peer;
+    }
 
-		public function get($key)
-		{
-			return $this->innerPeer->get($key);
-		}
+    /**
+     * @return ReadOnlyPeer
+     */
+    public static function create(CachePeer $peer)
+    {
+        return new ReadOnlyPeer($peer);
+    }
 
-		public function getList($indexes)
-		{
-			return $this->innerPeer->getList($indexes);
-		}
+    public function isAlive()
+    {
+        return $this->innerPeer->isAlive();
+    }
 
-		public function clean()
-		{
-			throw new UnsupportedMethodException();
-		}
+    public function mark($className)
+    {
+        return $this->innerPeer->mark($className);
+    }
 
-		public function increment($key, $value)
-		{
-			throw new UnsupportedMethodException();
-		}
+    public function get($key)
+    {
+        return $this->innerPeer->get($key);
+    }
 
-		public function decrement($key, $value)
-		{
-			throw new UnsupportedMethodException();
-		}
+    public function getList($indexes)
+    {
+        return $this->innerPeer->getList($indexes);
+    }
 
-		public function delete($index, $time = null)
-		{
-			throw new UnsupportedMethodException();
-		}
+    public function clean()
+    {
+        throw new UnsupportedMethodException();
+    }
 
-		public function append($key, $data)
-		{
-			throw new UnsupportedMethodException();
-		}
+    public function increment($key, $value)
+    {
+        throw new UnsupportedMethodException();
+    }
 
-		protected function store(
-			$method, $index, $value, $expires = Cache::EXPIRES_MINIMUM
-		)
-		{
-			throw new UnsupportedMethodException();
-		}
-	}
-?>
+    public function decrement($key, $value)
+    {
+        throw new UnsupportedMethodException();
+    }
+
+    public function delete($index, $time = null)
+    {
+        throw new UnsupportedMethodException();
+    }
+
+    public function append($key, $data)
+    {
+        throw new UnsupportedMethodException();
+    }
+
+    protected function store($method, $index, $value, $expires = Cache::EXPIRES_MINIMUM)
+    {
+        throw new UnsupportedMethodException();
+    }
+}

@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\Utils\AMQP\Exceptions;
+
+use onPHP\core\Exceptions\BaseException;
+
 /***************************************************************************
  *   Copyright (C) 2011 by Sergey S. Sergeev                               *
  *                                                                         *
@@ -8,6 +13,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-
-	class AMQPServerException extends BaseException {/**/}
-?>
+class AMQPServerException extends BaseException
+{
+}

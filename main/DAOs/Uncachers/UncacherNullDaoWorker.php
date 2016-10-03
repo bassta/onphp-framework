@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\DAOs\Uncachers;
+
+use onPHP\core\Base\Assert;
+
 /***************************************************************************
  *   Copyright (C) 2012 by Aleksey S. Denisov                              *
  *                                                                         *
@@ -9,28 +14,27 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Uncachers
-	**/
-	class UncacherNullDaoWorker implements UncacherBase
-	{
-		public static function create()
-		{
-			return new self;
-		}
-		/**
-		 * @param $uncacher UncacherNullDaoWorker same as self class
-		 * @return BaseUncacher (this)
-		 */
-		public function merge(UncacherBase $uncacher)
-		{
-			Assert::isInstance($uncacher, 'UncacherNullDaoWorker');
-			return $this;
-		}
-		
-		public function uncache()
-		{
-			/* do nothing */
-		}
-	}
-?>
+/**
+ * @ingroup Uncachers
+ **/
+class UncacherNullDaoWorker implements UncacherBase
+{
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * @param $uncacher UncacherNullDaoWorker same as self class
+     * @return BaseUncacher (this)
+     */
+    public function merge(UncacherBase $uncacher)
+    {
+        Assert::isInstance($uncacher, 'UncacherNullDaoWorker');
+        return $this;
+    }
+
+    public function uncache()
+    {
+    }
+}

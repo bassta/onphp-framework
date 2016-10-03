@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\OQL\Statements;
+
+use onPHP\main\Criteria\Projection;
+
 /****************************************************************************
  *   Copyright (C) 2009 by Vladlen Y. Koshelev                              *
  *                                                                          *
@@ -9,32 +14,28 @@
  *                                                                          *
  ****************************************************************************/
 
-	/**
-	 * @ingroup OQL
-	**/
-	class OqlProjectionClause extends OqlQueryListedClause
-	{
-		/**
-		 * @return OqlProjectionClause
-		**/
-		public static function create()
-		{
-			return new self;
-		}
-		
-		/**
-		 * @return ProjectionChain
-		**/
-		public function toProjection()
-		{
-			$projection = Projection::chain();
-			foreach ($this->list as $property) {
-				$projection->add(
-					$property->evaluate($this->parameters)
-				);
-			}
-			
-			return $projection;
-		}
-	}
-?>
+/**
+ * @ingroup OQL
+ **/
+class OqlProjectionClause extends OqlQueryListedClause
+{
+    /**
+     * @return OqlProjectionClause
+     **/
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * @return ProjectionChain
+     **/
+    public function toProjection()
+    {
+        $projection = Projection::chain();
+        foreach ($this->list as $property) {
+            $projection->add($property->evaluate($this->parameters));
+        }
+        return $projection;
+    }
+}

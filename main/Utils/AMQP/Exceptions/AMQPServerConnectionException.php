@@ -1,4 +1,7 @@
 <?php
+
+namespace onPHP\main\Utils\AMQP\Exceptions;
+
 /***************************************************************************
  *   Copyright (C) 2011 by Sergey S. Sergeev                               *
  *                                                                         *
@@ -8,6 +11,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-
-	class AMQPServerConnectionException extends AMQPServerException {/**/}
-?>
+class AMQPServerConnectionException extends AMQPServerException
+{
+}

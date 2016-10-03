@@ -1,4 +1,11 @@
 <?php
+
+namespace onPHP\core\Form\Primitives;
+
+use onPHP\core\Exceptions\MissingElementException;
+use onPHP\core\Exceptions\WrongStateException;
+use onPHP\main\Utils\ClassUtils;
+
 /***************************************************************************
  *   Copyright (C) 2012 by Georgiy T. Kutsurua                             *
  *                                                                         *
@@ -9,40 +16,32 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Primitives
-	**/
-	final class PrimitiveEnumByValue extends PrimitiveEnum
-	{
-		public function import($scope)
-		{
-			if (!$this->className)
-				throw new WrongStateException(
-					"no class defined for PrimitiveEnum '{$this->name}'"
-				);
-			
-			if (isset($scope[$this->name])) {
-				$scopedValue = urldecode($scope[$this->name]);
-				
-				$names = ClassUtils::callStaticMethod($this->className.'::getNameList');
-				
-				foreach ($names as $key => $value) {
-					if ($value == $scopedValue) {
-						try {
-							$this->value = new $this->className($key);
-						} catch (MissingElementException $e) {
-							$this->value = null;
-							return false;
-						}
-						
-						return true;
-					}
-				}
-				
-				return false;
-			}
-			
-			return null;
-		}
-	}
-?>
+/**
+ * @ingroup Primitives
+ **/
+final class PrimitiveEnumByValue extends PrimitiveEnum
+{
+    public function import($scope)
+    {
+        if (!$this->className) {
+            throw new WrongStateException("no class defined for PrimitiveEnum '{$this->name}'");
+        }
+        if (isset($scope[$this->name])) {
+            $scopedValue = urldecode($scope[$this->name]);
+            $names       = ClassUtils::callStaticMethod($this->className.'::getNameList');
+            foreach ($names as $key => $value) {
+                if ($value == $scopedValue) {
+                    try {
+                        $this->value = new $this->className($key);
+                    } catch (MissingElementException $e) {
+                        $this->value = null;
+                        return false;
+                    }
+                    return true;
+                }
+            }
+            return false;
+        }
+        return null;
+    }
+}

@@ -1,4 +1,11 @@
 <?php
+
+namespace onPHP\main\Criteria\Projections;
+
+use onPHP\core\Logic\LogicalObject;
+use onPHP\core\OSQL\JoinCapableQuery;
+use onPHP\main\Criteria\Criteria;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Dmitry E. Demidov                               *
  *                                                                         *
@@ -9,27 +16,23 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Projections
-	**/
-	final class HavingProjection implements ObjectProjection
-	{
-		private $logic = null;
-		
-		public function __construct(LogicalObject $logic)
-		{
-			$this->logic = $logic;
-		}
-		
-		/**
-		 * @return JoinCapableQuery
-		**/
-		public function process(Criteria $criteria, JoinCapableQuery $query)
-		{
-			return
-				$query->having(
-					$this->logic->toMapped($criteria->getDao(), $query)
-				);
-		}
-	}
-?>
+/**
+ * @ingroup Projections
+ **/
+final class HavingProjection implements ObjectProjection
+{
+    private $logic = null;
+
+    public function __construct(LogicalObject $logic)
+    {
+        $this->logic = $logic;
+    }
+
+    /**
+     * @return JoinCapableQuery
+     **/
+    public function process(Criteria $criteria, JoinCapableQuery $query)
+    {
+        return $query->having($this->logic->toMapped($criteria->getDao(), $query));
+    }
+}

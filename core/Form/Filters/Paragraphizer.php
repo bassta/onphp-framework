@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\core\Form\Filters;
+
+use onPHP\core\Base\Singleton;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Konstantin V. Arkhipov                          *
  *                                                                         *
@@ -9,26 +14,22 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Filters
-	**/
-	final class Paragraphizer extends BaseFilter
-	{
-		/**
-		 * @return Paragraphizer
-		**/
-		public static function me()
-		{
-			return Singleton::getInstance(__CLASS__);
-		}
-		
-		public function apply($value)
-		{
-			return preg_replace(
-				'~^([^<].+)\s$~Uums',
-				'<p>$1</p>'."\n",
-				$value
-			);
-		}
-	}
-?>
+/**
+ * @ingroup Filters
+ **/
+final class Paragraphizer extends BaseFilter
+{
+    /**
+     * @return Paragraphizer
+     **/
+    public static function me()
+    {
+        return Singleton::getInstance(__CLASS__);
+    }
+
+    public function apply($value)
+    {
+        return preg_replace('~^([^<].+)\\s$~Uums', '<p>$1</p>'.'
+', $value);
+    }
+}

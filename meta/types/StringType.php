@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\meta\types;
+
+use onPHP\core\Base\Assert;
+
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,51 +14,42 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Types
-	**/
-	class StringType extends BasePropertyType
-	{
-		public function getPrimitiveName()
-		{
-			return 'string';
-		}
-		
-		/**
-		 * @throws WrongArgumentException
-		 * @return StringType
-		**/
-		public function setDefault($default)
-		{
-			Assert::isString(
-				$default,
-				"strange default value given - '{$default}'"
-			);
-			
-			$this->default = $default;
-			
-			return $this;
-		}
-		
-		public function getDeclaration()
-		{
-			if ($this->hasDefault())
-				return "'{$this->default}'";
-			
-			return 'null';
-		}
-		
-		public function isMeasurable()
-		{
-			return true;
-		}
-		
-		public function toColumnType($length = null)
-		{
-			return
-				$length
-					? 'DataType::create(DataType::VARCHAR)'
-					: 'DataType::create(DataType::TEXT)';
-		}
-	}
-?>
+/**
+ * @ingroup Types
+ **/
+class StringType extends BasePropertyType
+{
+    public function getPrimitiveName()
+    {
+        return 'string';
+    }
+
+    /**
+     * @throws WrongArgumentException
+     * @return StringType
+     **/
+    public function setDefault($default)
+    {
+        Assert::isString($default, "strange default value given - '{$default}'");
+        $this->default = $default;
+        return $this;
+    }
+
+    public function getDeclaration()
+    {
+        if ($this->hasDefault()) {
+            return "'{$this->default}'";
+        }
+        return 'null';
+    }
+
+    public function isMeasurable()
+    {
+        return true;
+    }
+
+    public function toColumnType($length = null)
+    {
+        return $length ? 'DataType::create(DataType::VARCHAR)' : 'DataType::create(DataType::TEXT)';
+    }
+}

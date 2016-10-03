@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\main\OQL\Parsers;
+
+use onPHP\main\OQL\Expressions\OqlQueryExpression;
+use onPHP\main\OQL\Statements\OqlWhereClause;
+
 /****************************************************************************
  *   Copyright (C) 2009 by Vladlen Y. Koshelev                              *
  *                                                                          *
@@ -8,36 +14,34 @@
  *   License, or (at your option) any later version.                        *
  *                                                                          *
  ****************************************************************************/
+final class OqlWhereParser extends OqlParser
+{
+    /**
+     * @return OqlWhereParser
+     **/
+    public static function create()
+    {
+        return new self();
+    }
 
-	final class OqlWhereParser extends OqlParser
-	{
-		/**
-		 * @return OqlWhereParser
-		**/
-		public static function create()
-		{
-			return new self;
-		}
-		
-		/**
-		 * @return OqlWhereClause
-		**/
-		protected function makeOqlObject()
-		{
-			return OqlWhereClause::create();
-		}
-		
-		protected function handleState()
-		{
-			if ($this->state == self::INITIAL_STATE) {
-				$argument = $this->getLogicExpression();
-				if ($argument instanceof OqlQueryExpression)
-					$this->oqlObject->setExpression($argument);
-				else
-					$this->error("expecting 'where' expression");
-			}
-			
-			return self::FINAL_STATE;
-		}
-	}
-?>
+    /**
+     * @return OqlWhereClause
+     **/
+    protected function makeOqlObject()
+    {
+        return OqlWhereClause::create();
+    }
+
+    protected function handleState()
+    {
+        if ($this->state == self::INITIAL_STATE) {
+            $argument = $this->getLogicExpression();
+            if ($argument instanceof OqlQueryExpression) {
+                $this->oqlObject->setExpression($argument);
+            } else {
+                $this->error('expecting \'where\' expression');
+            }
+        }
+        return self::FINAL_STATE;
+    }
+}

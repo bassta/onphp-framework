@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\Base;
+
+use onPHP\core\Form\Primitives\PrimitiveInteger;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Denis M. Gabaidulin                             *
  *                                                                         *
@@ -9,30 +14,24 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * Integer's set.
-	 * 
-	 * @ingroup Helpers
-	**/
-	final class IntegerSet extends Range
-	{
-		public static function create(
-			$min = PrimitiveInteger::SIGNED_MIN,
-			$max = PrimitiveInteger::SIGNED_MAX
-		)
-		{
-			return new IntegerSet($min, $max);
-		}
-		
-		public function contains($value)
-		{
-			if (
-				$this->getMin() <= $value
-				&& $value <= $this->getMax()
-			)
-				return true;
-			else
-				return false;
-		}
-	}
-?>
+/**
+ * Integer's set.
+ *
+ * @ingroup Helpers
+ **/
+final class IntegerSet extends Range
+{
+    public static function create($min = PrimitiveInteger::SIGNED_MIN, $max = PrimitiveInteger::SIGNED_MAX)
+    {
+        return new IntegerSet($min, $max);
+    }
+
+    public function contains($value)
+    {
+        if ($this->getMin() <= $value && $value <= $this->getMax()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}

@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\OQL\Statements;
+
+use onPHP\main\DAOs\ProtoDAO;
+
 /****************************************************************************
  *   Copyright (C) 2008-2009 by Vladlen Y. Koshelev                         *
  *                                                                          *
@@ -9,29 +14,27 @@
  *                                                                          *
  ****************************************************************************/
 
-	/**
-	 * @ingroup OQL
-	**/
-	abstract class OqlQuery extends OqlQueryClause
-	{
-		protected $dao = null;
-		
-		/**
-		 * @return ProtoDAO
-		**/
-		public function getDao()
-		{
-			return $this->dao;
-		}
-		
-		/**
-		 * @return OqlQuery
-		**/
-		public function setDao(ProtoDAO $dao)
-		{
-			$this->dao = $dao;
-			
-			return $this;
-		}
-	}
-?>
+/**
+ * @ingroup OQL
+ **/
+abstract class OqlQuery extends OqlQueryClause
+{
+    protected $dao = null;
+
+    /**
+     * @return ProtoDAO
+     **/
+    public function getDao()
+    {
+        return $this->dao;
+    }
+
+    /**
+     * @return OqlQuery
+     **/
+    public function setDao(ProtoDAO $dao)
+    {
+        $this->dao = $dao;
+        return $this;
+    }
+}

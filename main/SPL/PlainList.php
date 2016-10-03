@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\main\SPL;
+
+use onPHP\core\Base\Assert;
+use onPHP\core\Base\Identifiable;
+
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,31 +15,28 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * Ordered unindexed list of Identifiable objects.
-	 * 
-	 * @ingroup onSPL
-	**/
-	final class PlainList extends AbstractList
-	{
-		/**
-		 * @return PlainList
-		**/
-		public static function create()
-		{
-			return new self;
-		}
-		
-		/**
-		 * @return PlainList
-		**/
-		public function offsetSet($offset, $value)
-		{
-			Assert::isTrue($value instanceof Identifiable);
-			
-			$this->list[] = $value;
-			
-			return $this;
-		}
-	}
-?>
+/**
+ * Ordered unindexed list of Identifiable objects.
+ *
+ * @ingroup onSPL
+ **/
+final class PlainList extends AbstractList
+{
+    /**
+     * @return PlainList
+     **/
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * @return PlainList
+     **/
+    public function offsetSet($offset, $value)
+    {
+        Assert::isTrue($value instanceof Identifiable);
+        $this->list[] = $value;
+        return $this;
+    }
+}

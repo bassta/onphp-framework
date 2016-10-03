@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\Net\Ip;
+
+use onPHP\core\Base\StaticFactory;
+
 /***************************************************************************
  *   Copyright (C) 2009 by Denis M. Gabaidulin                             *
  *                                                                         *
@@ -9,36 +14,29 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Ip
-	**/
-	final class IpUtils extends StaticFactory
-	{
-		public static function makeRanges(array $ips)
-		{
-			$ipsAsIntegers = array();
-
-			foreach ($ips as $ip)
-				$ipsAsIntegers[] = ip2long($ip);
-
-			sort($ipsAsIntegers);
-			
-			$size = count($ipsAsIntegers);
-
-			$ranges = array();
-
-			$j = 0;
-
-			$ranges[$j][] = long2ip($ipsAsIntegers[0]);
-
-			for ($i = 1; $i < $size; ++$i) {
-				if ($ipsAsIntegers[$i] != $ipsAsIntegers[$i - 1] + 1) {
-					$ranges[++$j][] = long2ip($ipsAsIntegers[$i]); // start new range
-				} else
-					$ranges[$j][] = long2ip($ipsAsIntegers[$i]);
-			}
-			
-			return $ranges;
-		}
-	}
-?>
+/**
+ * @ingroup Ip
+ **/
+final class IpUtils extends StaticFactory
+{
+    public static function makeRanges(array $ips)
+    {
+        $ipsAsIntegers = array();
+        foreach ($ips as $ip) {
+            $ipsAsIntegers[] = ip2long($ip);
+        }
+        sort($ipsAsIntegers);
+        $size         = count($ipsAsIntegers);
+        $ranges       = array();
+        $j            = 0;
+        $ranges[$j][] = long2ip($ipsAsIntegers[0]);
+        for ($i = 1; $i < $size; ++$i) {
+            if ($ipsAsIntegers[$i] != $ipsAsIntegers[$i - 1] + 1) {
+                $ranges[++$j][] = long2ip($ipsAsIntegers[$i]);
+            } else {
+                $ranges[$j][] = long2ip($ipsAsIntegers[$i]);
+            }
+        }
+        return $ranges;
+    }
+}

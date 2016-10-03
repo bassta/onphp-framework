@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\EntityProto\Builders;
+
+use onPHP\main\EntityProto\PrototypedBuilder;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *
  *                                                                         *
@@ -8,14 +13,11 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
-
-	abstract class DTOBuilder extends PrototypedBuilder
-	{
-		protected function createEmpty()
-		{
-			$className = $this->proto->className().'DTO';
-			
-			return new $className;
-		}
-	}
-?>
+abstract class DTOBuilder extends PrototypedBuilder
+{
+    protected function createEmpty()
+    {
+        $className = $this->proto->className().'DTO';
+        return new $className();
+    }
+}

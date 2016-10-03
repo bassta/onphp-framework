@@ -1,4 +1,13 @@
 <?php
+
+namespace onPHP\core\Logic;
+
+use onPHP\core\Base\Assert;
+use onPHP\core\Exceptions\WrongArgumentException;
+use onPHP\core\Form\Form;
+use onPHP\core\OSQL\SelectQuery;
+use onPHP\core\OSQL\SQLChain;
+
 /****************************************************************************
  *   Copyright (C) 2004-2007 by Konstantin V. Arkhipov, Anton E. Lebedevich *
  *                                                                          *
@@ -9,104 +18,74 @@
  *                                                                          *
  ****************************************************************************/
 
-	/**
-	 * Wrapper around given childs of LogicalObject with custom logic-glue's.
-	 * 
-	 * @ingroup Logic
-	**/
-	final class LogicalChain extends SQLChain
-	{
-		/**
-		 * @return LogicalChain
-		**/
-		public static function block($args, $logic)
-		{
-			Assert::isTrue(
-				($logic == BinaryExpression::EXPRESSION_AND)
-				|| ($logic == BinaryExpression::EXPRESSION_OR),
-				
-				"unknown logic '{$logic}'"
-			);
-			
-			$logicalChain = new self;
-			
-			foreach ($args as $arg) {
-				if (
-					!$arg instanceof LogicalObject
-					&& !$arg instanceof SelectQuery
-				)
-					throw new WrongArgumentException(
-						'unsupported object type: '.get_class($arg)
-					);
-				
-				$logicalChain->exp($arg, $logic);
-			}
-			
-			return $logicalChain;
-		}
-		
-		/**
-		 * @return LogicalChain
-		**/
-		public function expAnd(LogicalObject $exp)
-		{
-			return $this->exp($exp, BinaryExpression::EXPRESSION_AND);
-		}
-		
-		/**
-		 * @return LogicalChain
-		**/
-		public function expOr(LogicalObject $exp)
-		{
-			return $this->exp($exp, BinaryExpression::EXPRESSION_OR);
-		}
-		
-		public function toBoolean(Form $form)
-		{
-			$chain = &$this->chain;
-			
-			$size = count($chain);
-			
-			if (!$size)
-				throw new WrongArgumentException(
-					'empty chain can not be calculated'
-				);
-			elseif ($size == 1)
-				return $chain[0]->toBoolean($form);
-			else { // size > 1
-				$out = $chain[0]->toBoolean($form);
-				
-				for ($i = 1; $i < $size; ++$i) {
-					$out =
-						self::calculateBoolean(
-							$this->logic[$i],
-							$out,
-							$chain[$i]->toBoolean($form)
-						);
-				}
-				
-				return $out;
-			}
-			
-			Assert::isUnreachable();
-		}
-		
-		private static function calculateBoolean($logic, $left, $right)
-		{
-			switch ($logic) {
-				case BinaryExpression::EXPRESSION_AND:
-					return $left && $right;
+/**
+ * Wrapper around given childs of LogicalObject with custom logic-glue's.
+ *
+ * @ingroup Logic
+ **/
+final class LogicalChain extends SQLChain
+{
+    /**
+     * @return LogicalChain
+     **/
+    public static function block($args, $logic)
+    {
+        Assert::isTrue($logic == BinaryExpression::EXPRESSION_AND || $logic == BinaryExpression::EXPRESSION_OR, "unknown logic '{$logic}'");
+        $logicalChain = new self();
+        foreach ($args as $arg) {
+            if (!$arg instanceof LogicalObject && !$arg instanceof SelectQuery) {
+                throw new WrongArgumentException('unsupported object type: '.get_class($arg));
+            }
+            $logicalChain->exp($arg, $logic);
+        }
+        return $logicalChain;
+    }
 
-				case BinaryExpression::EXPRESSION_OR:
-					return $left || $right;
+    /**
+     * @return LogicalChain
+     **/
+    public function expAnd(LogicalObject $exp)
+    {
+        return $this->exp($exp, BinaryExpression::EXPRESSION_AND);
+    }
 
-				default:
-					throw new WrongArgumentException(
-						"unknown logic - '{$logic}'"
-					);
-			}
+    /**
+     * @return LogicalChain
+     **/
+    public function expOr(LogicalObject $exp)
+    {
+        return $this->exp($exp, BinaryExpression::EXPRESSION_OR);
+    }
 
-			Assert::isUnreachable();
-		}
-	}
-?>
+    public function toBoolean(Form $form)
+    {
+        $chain =& $this->chain;
+        $size  = count($chain);
+        if (!$size) {
+            throw new WrongArgumentException('empty chain can not be calculated');
+        } elseif ($size == 1) {
+            return $chain[0]->toBoolean($form);
+        } else {
+            // size > 1
+            $out = $chain[0]->toBoolean($form);
+            for ($i = 1; $i < $size; ++$i) {
+                $out = self::calculateBoolean($this->logic[$i], $out, $chain[$i]->toBoolean($form));
+            }
+            return $out;
+        }
+        Assert::isUnreachable();
+    }
+
+    private static function calculateBoolean($logic, $left, $right)
+    {
+        switch ($logic) {
+            case BinaryExpression::EXPRESSION_AND:
+                return $left && $right;
+            case BinaryExpression::EXPRESSION_OR:
+                return $left || $right;
+            default:
+                throw new WrongArgumentException("unknown logic - '{$logic}'");
+        }
+        Assert::isUnreachable();
+    }
+}

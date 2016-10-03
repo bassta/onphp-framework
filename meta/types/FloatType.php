@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\meta\types;
+
+use onPHP\core\Base\Assert;
+
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Nickolay G. Korolyov                       *
  *                                                                         *
@@ -9,57 +14,50 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Types
-	**/
-	class FloatType extends IntegerType
-	{
-		protected $precision = 0;
-		
-		public function getPrimitiveName()
-		{
-			return 'float';
-		}
-		
-		/**
-		 * @throws WrongArgumentException
-		 * @return FloatType
-		**/
-		public function setDefault($default)
-		{
-			Assert::isFloat(
-				$default,
-				"strange default value given - '{$default}'"
-			);
+/**
+ * @ingroup Types
+ **/
+class FloatType extends IntegerType
+{
+    protected $precision = 0;
 
-			$this->default = $default;
+    public function getPrimitiveName()
+    {
+        return 'float';
+    }
 
-			return $this;
-		}
+    /**
+     * @throws WrongArgumentException
+     * @return FloatType
+     **/
+    public function setDefault($default)
+    {
+        Assert::isFloat($default, "strange default value given - '{$default}'");
+        $this->default = $default;
+        return $this;
+    }
 
-		/**
-		 * @return NumericType
-		**/
-		public function setPrecision($precision)
-		{
-			$this->precision = $precision;
-			
-			return $this;
-		}
-		
-		public function getPrecision()
-		{
-			return $this->precision;
-		}
-		
-		public function isMeasurable()
-		{
-			return true;
-		}
-		
-		public function toColumnType()
-		{
-			return 'DataType::create(DataType::REAL)';
-		}
-	}
-?>
+    public function getPrecision()
+    {
+        return $this->precision;
+    }
+
+    /**
+     * @return NumericType
+     **/
+    public function setPrecision($precision)
+    {
+        $this->precision = $precision;
+        return $this;
+    }
+
+    public function isMeasurable()
+    {
+        return true;
+    }
+
+    public function toColumnType()
+    {
+        return 'DataType::create(DataType::REAL)';
+    }
+}

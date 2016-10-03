@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\main\Utils\AMQP\Pecl;
+
+use onPHP\core\Base\Assert;
+use onPHP\main\Utils\AMQP\AMQPBitmaskResolver;
+
 /***************************************************************************
  *   Copyright (C) 2011 by Sergey S. Sergeev                               *
  *                                                                         *
@@ -9,24 +15,21 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @see http://www.php.net/manual/en/amqp.constants.php
-	**/
-	final class AMQPPeclOutgoingMessageBitmask implements AMQPBitmaskResolver
-	{
-		public function getBitmask($config)
-		{
-			Assert::isInstance($config, 'AMQPOutgoingMessage');
-
-			$bitmask = 0;
-
-			if ($config->getMandatory())
-				$bitmask = $bitmask | AMQP_MANDATORY;
-
-			if ($config->getImmediate())
-				$bitmask = $bitmask | AMQP_IMMEDIATE;
-
-			return $bitmask;
-		}
-	}
-?>
+/**
+ * @see http://www.php.net/manual/en/amqp.constants.php
+ **/
+final class AMQPPeclOutgoingMessageBitmask implements AMQPBitmaskResolver
+{
+    public function getBitmask($config)
+    {
+        Assert::isInstance($config, 'AMQPOutgoingMessage');
+        $bitmask = 0;
+        if ($config->getMandatory()) {
+            $bitmask = $bitmask | AMQP_MANDATORY;
+        }
+        if ($config->getImmediate()) {
+            $bitmask = $bitmask | AMQP_IMMEDIATE;
+        }
+        return $bitmask;
+    }
+}

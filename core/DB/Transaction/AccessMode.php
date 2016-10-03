@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\core\DB\Transaction;
+
+use onPHP\core\Base\Enumeration;
+
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,21 +14,16 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * Transaction access modes.
-	 * 
-	 * @see http://www.postgresql.org/docs/current/interactive/sql-start-transaction.html
-	 * 
-	 * @ingroup Transaction
-	**/
-	final class AccessMode extends Enumeration
-	{
-		const READ_ONLY		= 0x01;
-		const READ_WRITE	= 0x02;
-		
-		protected $names	= array(
-			self::READ_ONLY		=> 'read only',
-			self::READ_WRITE	=> 'read write'
-		);
-	}
-?>
+/**
+ * Transaction access modes.
+ *
+ * @see http://www.postgresql.org/docs/current/interactive/sql-start-transaction.html
+ *
+ * @ingroup Transaction
+ **/
+final class AccessMode extends Enumeration
+{
+    const READ_ONLY = 1;
+    const READ_WRITE = 2;
+    protected $names = array(self::READ_ONLY => 'read only', self::READ_WRITE => 'read write');
+}

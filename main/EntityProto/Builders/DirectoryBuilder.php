@@ -1,4 +1,14 @@
 <?php
+
+namespace onPHP\main\EntityProto\Builders;
+
+use onPHP\core\Base\Identifiable;
+use onPHP\core\Exceptions\WrongArgumentException;
+use onPHP\core\Exceptions\WrongStateException;
+use onPHP\main\EntityProto\DirectoryContext;
+use onPHP\main\EntityProto\EntityProto;
+use onPHP\main\EntityProto\PrototypedBuilder;
+
 /***************************************************************************
  *   Copyright (C) 2009 by Ivan Y. Khvostishkov                            *
  *                                                                         *
@@ -8,139 +18,107 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
+abstract class DirectoryBuilder extends PrototypedBuilder
+{
+    protected $directory = null;
+    protected $permissions = 448;
+    protected $identityMap = null;
 
-	abstract class DirectoryBuilder extends PrototypedBuilder
-	{
-		protected $directory	= null;
-		protected $permissions	= 0700;
-		protected $identityMap	= null;
+    public function __construct(EntityProto $proto)
+    {
+        parent::__construct($proto);
+        $this->identityMap = new DirectoryContext();
+    }
 
-		public function __construct(EntityProto $proto)
-		{
-			parent::__construct($proto);
+    public function setDirectory($directory)
+    {
+        $this->directory = $directory;
+        return $this;
+    }
 
-			$this->identityMap = new DirectoryContext;
-		}
+    public function getDirectory()
+    {
+        return $this->directory;
+    }
 
-		public function setDirectory($directory)
-		{
-			$this->directory = $directory;
-			
-			return $this;
-		}
-		
-		public function getDirectory()
-		{
-			return $this->directory;
-		}
+    public function setPermissions($permissions)
+    {
+        $this->permissions = $permissions;
+        return $this;
+    }
 
-		public function setPermissions($permissions)
-		{
-			$this->permissions = $permissions;
+    public function getPermissions()
+    {
+        return $this->permissions;
+    }
 
-			return $this;
-		}
+    public function setIdentityMap(DirectoryContext $identityMap)
+    {
+        $this->identityMap = $identityMap;
+        return $this;
+    }
 
-		public function getPermissions()
-		{
-			return $this->permissions;
-		}
+    public function getIdentityMap()
+    {
+        return $this->identityMap;
+    }
 
-		public function setIdentityMap(DirectoryContext $identityMap)
-		{
-			$this->identityMap = $identityMap;
+    /**
+     * @return PrototypedBuilder
+     **/
+    public function cloneBuilder(EntityProto $proto)
+    {
+        $result = parent::cloneBuilder($proto);
+        $result->setDirectory($this->directory)->setPermissions($this->permissions)->setIdentityMap($this->identityMap);
+        return $result;
+    }
 
-			return $this;
-		}
+    public function cloneInnerBuilder($property)
+    {
+        $this->checkDirectory();
+        $result = parent::cloneInnerBuilder($property);
+        $result->setDirectory($this->directory.'/'.$property)->setPermissions($this->permissions)
+               ->setIdentityMap($this->identityMap);
+        return $result;
+    }
 
-		public function getIdentityMap()
-		{
-			return $this->identityMap;
-		}
+    public function makeListItemBuilder($object)
+    {
+        $this->checkDirectory();
+        if (!$object instanceof Identifiable) {
+            throw new WrongArgumentException('cannot build list of items without identity');
+        }
+        return $this->cloneBuilder($this->proto)->setPermissions($this->permissions)
+                    ->setDirectory($this->directory.'/'.$object->getId());
+    }
 
-		/**
-		 * @return PrototypedBuilder
-		**/
-		public function cloneBuilder(EntityProto $proto)
-		{
-			$result = parent::cloneBuilder($proto);
+    protected function createEmpty()
+    {
+        $result = $this->directory;
+        if (!file_exists($result)) {
+            mkdir($result, $this->permissions, true);
+        } elseif (is_link($result)) {
+            throw new WrongStateException('cannot make object by reference: '.$this->directory);
+        }
+        return $result;
+    }
 
-			$result->
-				setDirectory($this->directory)->
-				setPermissions($this->permissions)->
-				setIdentityMap($this->identityMap);
+    protected function safeClean()
+    {
+        if (file_exists($this->directory) || is_link($this->directory)) {
+            if (!is_link($this->directory)) {
+                throw new WrongStateException('you should remove the storage '.$this->directory.' by your hands');
+            }
+            unlink($this->directory);
+        }
+        return $this;
+    }
 
-			return $result;
-		}
-
-		public function cloneInnerBuilder($property)
-		{
-			$this->checkDirectory();
-
-			$result = parent::cloneInnerBuilder($property);
-
-			$result->
-				setDirectory($this->directory.'/'.$property)->
-				setPermissions($this->permissions)->
-				setIdentityMap($this->identityMap);
-
-			return $result;
-		}
-
-		public function makeListItemBuilder($object)
-		{
-			$this->checkDirectory();
-
-			if (!$object instanceof Identifiable)
-				throw new WrongArgumentException(
-					'cannot build list of items without identity'
-				);
-
-			return $this->cloneBuilder($this->proto)->
-				setPermissions($this->permissions)->
-				setDirectory($this->directory.'/'.$object->getId());
-		}
-
-		protected function createEmpty()
-		{
-			$result = $this->directory;
-
-			if (!file_exists($result))
-				mkdir($result, $this->permissions, true);
-			elseif (is_link($result)) {
-				throw new WrongStateException(
-					'cannot make object by reference: '.$this->directory
-				);
-			}
-
-			return $result;
-		}
-
-		protected function safeClean()
-		{
-			if (file_exists($this->directory) || is_link($this->directory)) {
-				if (!is_link($this->directory)) {
-					throw new WrongStateException(
-						'you should remove the storage '
-						.$this->directory
-						.' by your hands'
-					);
-				}
-
-				unlink($this->directory);
-			}
-
-			return $this;
-		}
-
-		protected function checkDirectory()
-		{
-			if (!$this->directory)
-				throw new WrongStateException(
-					'you must specify the context for this builder'
-				);
-
-			return $this;
-		}
-	}
-?>
+    protected function checkDirectory()
+    {
+        if (!$this->directory) {
+            throw new WrongStateException('you must specify the context for this builder');
+        }
+        return $this;
+    }
+}

@@ -1,4 +1,11 @@
 <?php
+
+namespace onPHP\main\Base;
+
+use onPHP\core\Base\Assert;
+use onPHP\core\Base\Instantiatable;
+use onPHP\core\Base\Singleton;
+
 /***************************************************************************
  *   Copyright (C) 2009 by Denis M. Gabaidulin                             *
  *                                                                         *
@@ -8,27 +15,22 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
+final class DateObjectComparator extends Singleton implements Comparator, Instantiatable
+{
+    public static function me()
+    {
+        return Singleton::getInstance(__CLASS__);
+    }
 
-	final class DateObjectComparator extends Singleton
-		implements Comparator, Instantiatable
-	{
-		public static function me()
-		{
-			return Singleton::getInstance(__CLASS__);
-		}
-
-		public function compare(/*Date*/ $one,/*Date*/ $two)
-		{
-			Assert::isInstance($one, 'Date');
-			Assert::isInstance($two, 'Date');
-
-			$stamp1 = $one->toStamp();
-			$stamp2 = $two->toStamp();
-
-			if ($stamp1 == $stamp2)
-				return 0;
-
-			return ($stamp1 < $stamp2) ? -1 : 1;
-		}
-	}
-?>
+    public function compare($one, $two)
+    {
+        Assert::isInstance($one, 'Date');
+        Assert::isInstance($two, 'Date');
+        $stamp1 = $one->toStamp();
+        $stamp2 = $two->toStamp();
+        if ($stamp1 == $stamp2) {
+            return 0;
+        }
+        return $stamp1 < $stamp2 ? -1 : 1;
+    }
+}

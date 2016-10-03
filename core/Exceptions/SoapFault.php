@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\core\Exceptions;
+
+use Exception;
+
 /****************************************************************************
  *   Copyright (C) 2008 by Konstantin V. Arkhipov                           *
  *                                                                          *
@@ -9,10 +14,11 @@
  *                                                                          *
  ****************************************************************************/
 
-	/**
-	 * In case we're soapless.
-	 * 
-	 * @ingroup Exceptions
-	**/
-	class SoapFault extends Exception {/*_*/}
-?>
+/**
+ * In case we're soapless.
+ *
+ * @ingroup Exceptions
+ **/
+class SoapFault extends Exception
+{
+}

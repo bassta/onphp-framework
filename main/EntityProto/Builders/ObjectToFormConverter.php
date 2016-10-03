@@ -1,4 +1,11 @@
 <?php
+
+namespace onPHP\main\EntityProto\Builders;
+
+use onPHP\main\EntityProto\Accessors\FormSetter;
+use onPHP\main\EntityProto\Accessors\ObjectGetter;
+use onPHP\main\EntityProto\EntityProto;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *
  *                                                                         *
@@ -8,31 +15,29 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
+final class ObjectToFormConverter extends FormBuilder
+{
+    /**
+     * @return ObjectToFormConverter
+     **/
+    public static function create(EntityProto $proto)
+    {
+        return new self($proto);
+    }
 
-	final class ObjectToFormConverter extends FormBuilder
-	{
-		/**
-		 * @return ObjectToFormConverter
-		**/
-		public static function create(EntityProto $proto)
-		{
-			return new self($proto);
-		}
-		
-		/**
-		 * @return ObjectGetter
-		**/
-		protected function getGetter($object)
-		{
-			return new ObjectGetter($this->proto, $object);
-		}
-		
-		/**
-		 * @return FormSetter
-		**/
-		protected function getSetter(&$object)
-		{
-			return new FormSetter($this->proto, $object);
-		}
-	}
-?>
+    /**
+     * @return ObjectGetter
+     **/
+    protected function getGetter($object)
+    {
+        return new ObjectGetter($this->proto, $object);
+    }
+
+    /**
+     * @return FormSetter
+     **/
+    protected function getSetter(&$object)
+    {
+        return new FormSetter($this->proto, $object);
+    }
+}

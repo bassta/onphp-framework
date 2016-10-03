@@ -1,4 +1,12 @@
 <?php
+
+namespace onPHP\main\Utils\CommandLine;
+
+use onPHP\core\Base\StaticFactory;
+use onPHP\core\Form\Form;
+use onPHP\core\Form\Primitives\BasePrimitive;
+use onPHP\core\Form\Primitives\PrimitiveNoValue;
+
 /***************************************************************************
  *   Copyright (C) 2009 by Denis M. Gabaidulin                             *
  *                                                                         *
@@ -8,44 +16,39 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
+final class FormToArgumentsConverter extends StaticFactory
+{
+    public static function getShort(Form $form)
+    {
+        $short = null;
+        foreach ($form->getPrimitiveList() as $primitive) {
+            if (strlen($primitive->getName()) == 1) {
+                $short .= $primitive->getName().self::getValueType($primitive);
+            }
+        }
+        return $short;
+    }
 
-	final class FormToArgumentsConverter extends StaticFactory
-	{
-		public static function getShort(Form $form)
-		{
-			$short = null;
-			
-			foreach ($form->getPrimitiveList() as $primitive)
-				if (strlen($primitive->getName()) == 1)
-					$short .=
-						$primitive->getName()
-						.self::getValueType($primitive);
-			
-			return $short;
-		}
-		
-		public static function getLong(Form $form)
-		{
-			$long = array();
-			
-			foreach ($form->getPrimitiveList() as $primitive)
-				if (strlen($primitive->getName()) > 1)
-					$long[] =
-						$primitive->getName()
-						.self::getValueType($primitive);
-			
-			return $long;
-		}
-		
-		private static function getValueType(BasePrimitive $primitive)
-		{
-			if ($primitive instanceof PrimitiveNoValue)
-				return null;
-			
-			if ($primitive->isRequired())
-				return ':';
-			else
-				return '::';
-		}
-	}
-?>
+    public static function getLong(Form $form)
+    {
+        $long = array();
+        foreach ($form->getPrimitiveList() as $primitive) {
+            if (strlen($primitive->getName()) > 1) {
+                $long[] = $primitive->getName().self::getValueType($primitive);
+            }
+        }
+        return $long;
+    }
+
+    private static function getValueType(BasePrimitive $primitive)
+    {
+        if ($primitive instanceof PrimitiveNoValue) {
+            return null;
+        }
+        if ($primitive->isRequired()) {
+            return ':';
+        } else {
+            return '::';
+        }
+    }
+}

@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\core\DB\Transaction;
+
+use onPHP\core\Base\StaticFactory;
+use onPHP\core\DB\DB;
+
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,35 +15,34 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * Transaction's factory.
-	 * 
-	 * @ingroup Transaction
-	**/
-	final class Transaction extends StaticFactory
-	{
-		/**
-		 * @return DBTransaction
-		**/
-		public static function immediate(DB $db)
-		{
-			return new DBTransaction($db);
-		}
-		
-		/**
-		 * @return TransactionQueue
-		**/
-		public static function deferred(DB $db)
-		{
-			return new TransactionQueue($db);
-		}
-		
-		/**
-		 * @return FakeTransaction
-		**/
-		public static function fake(DB $db)
-		{
-			return new FakeTransaction($db);
-		}
-	}
-?>
+/**
+ * Transaction's factory.
+ *
+ * @ingroup Transaction
+ **/
+final class Transaction extends StaticFactory
+{
+    /**
+     * @return DBTransaction
+     **/
+    public static function immediate(DB $db)
+    {
+        return new DBTransaction($db);
+    }
+
+    /**
+     * @return TransactionQueue
+     **/
+    public static function deferred(DB $db)
+    {
+        return new TransactionQueue($db);
+    }
+
+    /**
+     * @return FakeTransaction
+     **/
+    public static function fake(DB $db)
+    {
+        return new FakeTransaction($db);
+    }
+}

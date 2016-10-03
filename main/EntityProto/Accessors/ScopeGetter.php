@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\main\EntityProto\Accessors;
+
+use onPHP\core\Exceptions\WrongArgumentException;
+use onPHP\main\EntityProto\PrototypedGetter;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *
  *                                                                         *
@@ -8,24 +14,15 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
-
-	final class ScopeGetter extends PrototypedGetter
-	{
-		public function get($name)
-		{
-			if (!isset($this->mapping[$name]))
-				throw new WrongArgumentException(
-					"knows nothing about property '{$name}'"
-				);
-			
-			$primitive = $this->mapping[$name];
-			
-			$key = $primitive->getName();
-			
-			return
-				isset($this->object[$key])
-				? $this->object[$key]
-				: null;
-		}
-	}
-?>
+final class ScopeGetter extends PrototypedGetter
+{
+    public function get($name)
+    {
+        if (!isset($this->mapping[$name])) {
+            throw new WrongArgumentException("knows nothing about property '{$name}'");
+        }
+        $primitive = $this->mapping[$name];
+        $key       = $primitive->getName();
+        return isset($this->object[$key]) ? $this->object[$key] : null;
+    }
+}

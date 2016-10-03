@@ -1,4 +1,12 @@
 <?php
+
+namespace onPHP\meta\types;
+
+use onPHP\core\Base\Assert;
+use onPHP\core\Exceptions\WrongArgumentException;
+use onPHP\meta\classes\MetaClass;
+use onPHP\meta\classes\MetaClassProperty;
+
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,158 +17,75 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Types
-	**/
-	class BooleanType extends BasePropertyType
-	{
-		public function getPrimitiveName()
-		{
-			return 'boolean';
-		}
-		
-		/**
-		 * @throws WrongArgumentException
-		 * @return BooleanType
-		**/
-		public function setDefault($default)
-		{
-			static $boolean = array('true' => true, 'false' => false);
-
-			if (!isset($boolean[$default]))
-				throw new WrongArgumentException(
-					"strange default value given - '{$default}'"
-				);
-
-			$this->default = $boolean[$default];
-
-			return $this;
-		}
-
-		public function getDeclaration()
-		{
-			if ($this->hasDefault())
-				return
-					$this->default
-						? 'true'
-						: 'false';
-
-			return 'null';
-		}
-
-		public function isMeasurable()
-		{
-			return false;
-		}
-
-		public function toColumnType()
-		{
-			return 'DataType::create(DataType::BOOLEAN)';
-		}
-
-		public function toGetter(
-			MetaClass $class,
-			MetaClassProperty $property,
-			MetaClassProperty $holder = null
-		)
-		{
-			$name = $property->getName();
-			$camelName = ucfirst($name);
-
-			$methodName = "is{$camelName}";
-			$compatName = "get{$camelName}";
-			
-			if ($holder) {
-				return <<<EOT
-
-public function {$compatName}()
-{
-	return \$this->{$holder->getName()}->{$compatName}();
-}
-
-public function {$methodName}()
-{
-	return \$this->{$holder->getName()}->{$methodName}();
-}
-
-EOT;
-			} else {
-				return <<<EOT
-
-public function {$compatName}()
-{
-	return \$this->{$name};
-}
-
-public function {$methodName}()
-{
-	return \$this->{$name};
-}
-
-EOT;
-			}
-			
-			Assert::isUnreachable();
-		}
-
-		public function toSetter(
-			MetaClass $class,
-			MetaClassProperty $property,
-			MetaClassProperty $holder = null
-		)
-		{
-			$name = $property->getName();
-			$methodName = 'set'.ucfirst($name);
-			
-			if ($holder) {
-				return <<<EOT
-
 /**
- * @return {$holder->getClass()->getName()}
-**/
-public function {$methodName}(\${$name})
+ * @ingroup Types
+ **/
+class BooleanType extends BasePropertyType
 {
-	\$this->{$holder->getName()}->{$methodName}(\${$name});
+    public function getPrimitiveName()
+    {
+        return 'boolean';
+    }
 
-	return \$this;
+    /**
+     * @throws WrongArgumentException
+     * @return BooleanType
+     **/
+    public function setDefault($default)
+    {
+        static $boolean = array('true' => true, 'false' => false);
+        if (!isset($boolean[$default])) {
+            throw new WrongArgumentException("strange default value given - '{$default}'");
+        }
+        $this->default = $boolean[$default];
+        return $this;
+    }
+
+    public function getDeclaration()
+    {
+        if ($this->hasDefault()) {
+            return $this->default ? 'true' : 'false';
+        }
+        return 'null';
+    }
+
+    public function isMeasurable()
+    {
+        return false;
+    }
+
+    public function toColumnType()
+    {
+        return 'DataType::create(DataType::BOOLEAN)';
+    }
+
+    public function toGetter(MetaClass $class, MetaClassProperty $property, MetaClassProperty $holder = null)
+    {
+        $name       = $property->getName();
+        $camelName  = ucfirst($name);
+        $methodName = "is{$camelName}";
+        $compatName = "get{$camelName}";
+        if ($holder) {
+            return "\npublic function {$compatName}()\n{\n\treturn \$this->{$holder->getName()}->{$compatName}();\n}\n\npublic function {$methodName}()\n{\n\treturn \$this->{$holder->getName()}->{$methodName}();\n}\n";
+        } else {
+            return "\npublic function {$compatName}()\n{\n\treturn \$this->{$name};\n}\n\npublic function {$methodName}()\n{\n\treturn \$this->{$name};\n}\n";
+        }
+        Assert::isUnreachable();
+    }
+
+    public function toSetter(MetaClass $class, MetaClassProperty $property, MetaClassProperty $holder = null)
+    {
+        $name       = $property->getName();
+        $methodName = 'set'.ucfirst($name);
+        if ($holder) {
+            return "\n/**\n * @return {$holder->getClass()->getName()}\n**/\npublic function {$methodName}(\${$name})\n{\n\t\$this->{$holder->getName()}->{$methodName}(\${$name});\n\n\treturn \$this;\n}\n";
+        } else {
+            if ($property->isRequired()) {
+                $method = "\n/**\n * @return {$class->getName()}\n**/\npublic function {$methodName}(\${$name} = false)\n{\n\t\$this->{$name} = (\${$name} === true);\n\n\treturn \$this;\n}\n";
+            } else {
+                $method = "\n/**\n * @return {$class->getName()}\n**/\npublic function {$methodName}(\${$name} = null)\n{\n\tAssert::isTernaryBase(\${$name});\n\t\n\t\$this->{$name} = \${$name};\n\n\treturn \$this;\n}\n";
+            }
+        }
+        return $method;
+    }
 }
-
-EOT;
-			} else {
-				if ($property->isRequired()) {
-					$method = <<<EOT
-
-/**
- * @return {$class->getName()}
-**/
-public function {$methodName}(\${$name} = false)
-{
-	\$this->{$name} = (\${$name} === true);
-
-	return \$this;
-}
-
-EOT;
-				} else {
-					$method = <<<EOT
-
-/**
- * @return {$class->getName()}
-**/
-public function {$methodName}(\${$name} = null)
-{
-	Assert::isTernaryBase(\${$name});
-	
-	\$this->{$name} = \${$name};
-
-	return \$this;
-}
-
-EOT;
-				}
-			}
-			
-			return $method;
-		}
-	}
-?>

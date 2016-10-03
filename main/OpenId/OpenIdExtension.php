@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\main\OpenId;
+
+use onPHP\main\Flow\HttpRequest;
+use onPHP\main\Flow\Model;
+
 /***************************************************************************
  *   Copyright (C) 2010 by Alexander V. Solomatin                          *
  *                                                                         *
@@ -9,12 +15,12 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup OpenId
-	**/
-	interface OpenIdExtension
-	{
-		public function addParamsToModel(Model $model);
-		public function parseResponce(HttpRequest $request, array $params);
-	}
-?>
+/**
+ * @ingroup OpenId
+ **/
+interface OpenIdExtension
+{
+    public function addParamsToModel(Model $model);
+
+    public function parseResponce(HttpRequest $request, array $params);
+}

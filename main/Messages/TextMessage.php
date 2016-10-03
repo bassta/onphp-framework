@@ -1,4 +1,11 @@
 <?php
+
+namespace onPHP\main\Messages;
+
+use;
+use onPHP\core\Base\Timestamp;
+
+onPHP\main\Messages\Interface\Message;
 /***************************************************************************
  *   Copyright (C) 2009 by Ivan Y. Khvostishkov                            *
  *                                                                         *
@@ -8,45 +15,40 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
+final class TextMessage implements Message
+{
+    private $timestamp = null;
+    private $text = null;
 
+    public static function create(Timestamp $timestamp = null)
+    {
+        return new self($timestamp);
+    }
 
-	final class TextMessage implements Message
-	{
-		private $timestamp	= null;
-		private $text		= null;
+    public function __construct(Timestamp $timestamp = null)
+    {
+        $this->timestamp = $timestamp ?: Timestamp::makeNow();
+    }
 
-		public static function create(Timestamp $timestamp = null)
-		{
-			return new self($timestamp);
-		}
+    public function setTimestamp(Timestamp $timestamp)
+    {
+        $this->timestamp = $timestamp;
+        return $this;
+    }
 
-		public function __construct(Timestamp $timestamp = null)
-		{
-			$this->timestamp = $timestamp ?: Timestamp::makeNow();
-		}
+    public function getTimestamp()
+    {
+        return $this->timestamp;
+    }
 
-		public function setTimestamp(Timestamp $timestamp)
-		{
-			$this->timestamp = $timestamp;
+    public function setText($text)
+    {
+        $this->text = $text;
+        return $this;
+    }
 
-			return $this;
-		}
-
-		public function getTimestamp()
-		{
-			return $this->timestamp;
-		}
-
-		public function setText($text)
-		{
-			$this->text = $text;
-
-			return $this;
-		}
-
-		public function getText()
-		{
-			return $this->text;
-		}
-	}
-?>
+    public function getText()
+    {
+        return $this->text;
+    }
+}

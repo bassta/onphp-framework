@@ -1,4 +1,11 @@
 <?php
+
+namespace onPHP\main\Base;
+
+use onPHP\core\Base\Assert;
+use onPHP\core\Base\Instantiatable;
+use onPHP\core\Base\Singleton;
+
 /***************************************************************************
  *   Copyright (C) 2009 by Denis M. Gabaidulin                             *
  *                                                                         *
@@ -8,27 +15,22 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
+final class ImmutableObjectComparator extends Singleton implements Comparator, Instantiatable
+{
+    public static function me()
+    {
+        return Singleton::getInstance(__CLASS__);
+    }
 
-	final class ImmutableObjectComparator extends Singleton
-		implements Comparator, Instantiatable
-	{
-		public static function me()
-		{
-			return Singleton::getInstance(__CLASS__);
-		}
-
-		public function compare($one, $two)
-		{
-			Assert::isInstance($one, 'Identifiable');
-			Assert::isInstance($two, 'Identifiable');
-
-			$oneId = $one->getId();
-			$twoId = $two->getId();
-
-			if ($oneId === $twoId)
-				return 0;
-
-			return ($oneId < $twoId) ? -1 : 1;
-		}
-	}
-?>
+    public function compare($one, $two)
+    {
+        Assert::isInstance($one, 'Identifiable');
+        Assert::isInstance($two, 'Identifiable');
+        $oneId = $one->getId();
+        $twoId = $two->getId();
+        if ($oneId === $twoId) {
+            return 0;
+        }
+        return $oneId < $twoId ? -1 : 1;
+    }
+}

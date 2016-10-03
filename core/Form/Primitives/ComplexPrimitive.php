@@ -1,4 +1,11 @@
 <?php
+
+namespace onPHP\core\Form\Primitives;
+
+use onPHP\core\Base\Assert;
+use onPHP\core\Base\Ternary;
+use onPHP\core\Exceptions\UnimplementedFeatureException;
+
 /***************************************************************************
  *   Copyright (C) 2004-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,96 +16,92 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * Basis for primitives which can be scattered across import scope.
-	 * 
-	 * @ingroup Primitives
-	 * @ingroup Module
-	**/
-	abstract class ComplexPrimitive extends RangedPrimitive
-	{
-		private $single = null;	// single, not single or fsck it
+/**
+ * Basis for primitives which can be scattered across import scope.
+ *
+ * @ingroup Primitives
+ * @ingroup Module
+ **/
+abstract class ComplexPrimitive extends RangedPrimitive
+{
+    private $single = null;
 
-		public function __construct($name)
-		{
-			$this->single = new Ternary(null);
-			parent::__construct($name);
-		}
+    // single, not single or fsck it
+    public function __construct($name)
+    {
+        $this->single = new Ternary(null);
+        parent::__construct($name);
+    }
 
-		/**
-		 * @return Ternary
-		**/
-		public function getState()
-		{
-			return $this->single;
-		}
+    /**
+     * @return Ternary
+     **/
+    public function getState()
+    {
+        return $this->single;
+    }
 
-		/**
-		 * @return ComplexPrimitive
-		**/
-		public function setState(Ternary $ternary)
-		{
-			$this->single->setValue($ternary->getValue());
+    /**
+     * @return ComplexPrimitive
+     **/
+    public function setState(Ternary $ternary)
+    {
+        $this->single->setValue($ternary->getValue());
+        return $this;
+    }
 
-			return $this;
-		}
+    /**
+     * @return ComplexPrimitive
+     **/
+    public function setSingle()
+    {
+        $this->single->setTrue();
+        return $this;
+    }
 
-		/**
-		 * @return ComplexPrimitive
-		**/
-		public function setSingle()
-		{
-			$this->single->setTrue();
+    /**
+     * @return ComplexPrimitive
+     **/
+    public function setComplex()
+    {
+        $this->single->setFalse();
+        return $this;
+    }
 
-			return $this;
-		}
+    /**
+     * @return ComplexPrimitive
+     **/
+    public function setAnyState()
+    {
+        $this->single->setNull();
+        return $this;
+    }
 
-		/**
-		 * @return ComplexPrimitive
-		**/
-		public function setComplex()
-		{
-			$this->single->setFalse();
+    // implement me, child :-)
+    public abstract function importSingle($scope);
 
-			return $this;
-		}
+    public abstract function importMarried($scope);
 
-		/**
-		 * @return ComplexPrimitive
-		**/
-		public function setAnyState()
-		{
-			$this->single->setNull();
+    public function import($scope)
+    {
+        if (!BasePrimitive::import($scope)) {
+            return null;
+        }
+        if ($this->single->isTrue()) {
+            return $this->importSingle($scope);
+        } elseif ($this->single->isFalse()) {
+            return $this->importMarried($scope);
+        } else {
+            if (!$this->importMarried($scope)) {
+                return $this->importSingle($scope);
+            }
+            return true;
+        }
+        Assert::isUnreachable();
+    }
 
-			return $this;
-		}
-
-		// implement me, child :-)
-		abstract public function importSingle($scope);
-		abstract public function importMarried($scope);
-
-		public function import($scope)
-		{
-			if (!BasePrimitive::import($scope))
-				return null;
-			
-			if ($this->single->isTrue())
-				return $this->importSingle($scope);
-			elseif ($this->single->isFalse())
-				return $this->importMarried($scope);
-			else {
-				if (!$this->importMarried($scope))
-					return $this->importSingle($scope);
-
-				return true;
-			}
-
-			Assert::isUnreachable();
-		}
-		
-		public function exportValue()
-		{
-			throw new UnimplementedFeatureException();
-		}
-	}
-?>
+    public function exportValue()
+    {
+        throw new UnimplementedFeatureException();
+    }
+}

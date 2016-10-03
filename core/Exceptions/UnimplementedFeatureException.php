@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\core\Exceptions;
+
+use Exception;
+
 /****************************************************************************
  *   Copyright (C) 2004-2007 by Konstantin V. Arkhipov, Anton E. Lebedevich *
  *                                                                          *
@@ -12,9 +17,10 @@
 	$Id$
 */
 
-	/**
-	 * @ingroup Exceptions
-	 * @ingroup Module
-	**/
-	class UnimplementedFeatureException extends Exception {/*_*/}
-?>
+/**
+ * @ingroup Exceptions
+ * @ingroup Module
+ **/
+class UnimplementedFeatureException extends Exception
+{
+}

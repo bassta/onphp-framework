@@ -1,4 +1,14 @@
 <?php
+
+namespace onPHP\test\main;
+
+use onPHP\core\Base\Assert;
+use onPHP\core\Base\Stringable;
+use onPHP\core\Exceptions\WrongArgumentException;
+use onPHP\main\Flow\Model;
+use onPHP\main\UI\View\JsonPView;
+use onPHP\test\misc\TestCase;
+
 /***************************************************************************
  *   Copyright (C) 2012 by Georgiy T. Kutsurua                             *
  *                                                                         *
@@ -8,92 +18,76 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
+final class JsonPViewTest extends TestCase
+{
+    protected $array = array('<foo>', '\'bar\'', '"baz"', '&blong&');
 
-	final class JsonPViewTest extends TestCase
-	{
-		protected $array = array('<foo>',"'bar'",'"baz"','&blong&');
+    public function testMain()
+    {
+        $model    = Model::create()->set('array', $this->array);
+        $data     = array('array' => $this->array);
+        $callback = 'myFunc';
+        //setup
+        $view = JsonPView::create();
+        try {
+            // empty js callback function name
+            $view->toString($model);
+            $this->fail('empty callback javascript function name expected!');
+        } catch (WrongArgumentException $e) {
+        }
+        try {
+            $view->setCallback('34_callback');
+            // invalid javascript function name
+            $this->fail('invalid javascript function name expected!');
+        } catch (WrongArgumentException $e) {
+        }
+        $view->setCallback($callback);
+        $this->assertEquals($this->makeString($callback, $data), $view->toString($model));
+        $simpleStringableObject = SimpleStringableObject::create()->setString($callback);
+        $view->setCallback($simpleStringableObject);
+        $this->assertEquals($this->makeString($callback, $data), $view->toString($model));
+    }
 
+    /**
+     * @param $callback
+     * @param $data
+     * @return string
+     */
+    protected function makeString($callback, $data)
+    {
+        return $callback.'('.json_encode($data).');';
+    }
+}
 
-		public function testMain()
-		{
-			$model = Model::create()->set('array', $this->array);
-			$data = array('array' => $this->array);
-			$callback = 'myFunc';
+class SimpleStringableObject implements Stringable
+{
+    protected $string = null;
 
-			//setup
-			$view = JsonPView::create();
+    /**
+     * @static
+     * @return SimpleStringableObject
+     */
+    public static function create()
+    {
+        return new self();
+    }
 
-			try{
-				// empty js callback function name
-				$view->toString($model);
+    /**
+     * @param $value
+     * @return SimpleStringableObject
+     */
+    public function setString($value)
+    {
+        Assert::isString($value);
+        $this->string = $value;
+        return $this;
+    }
 
-				$this->fail('empty callback javascript function name expected!');
-			} catch(WrongArgumentException $e) {}
-
-			try{
-				$view->setCallback('34_callback'); // invalid javascript function name
-
-				$this->fail('invalid javascript function name expected!');
-			} catch(WrongArgumentException $e) {}
-
-			$view->setCallback($callback);
-
-			$this->assertEquals($this->makeString($callback, $data), $view->toString($model) );
-
-			$simpleStringableObject = SimpleStringableObject::create()->setString($callback);
-
-			$view->setCallback($simpleStringableObject);
-
-			$this->assertEquals($this->makeString($callback, $data), $view->toString($model) );
-		}
-
-		/**
-		 * @param $callback
-		 * @param $data
-		 * @return string
-		 */
-		protected function makeString($callback, $data)
-		{
-			return $callback.'('.json_encode(
-					$data
-				).');';
-		}
-
-	}
-
-	class SimpleStringableObject implements Stringable
-	{
-		protected $string		= null;
-
-
-		/**
-		 * @static
-		 * @return SimpleStringableObject
-		 */
-		public static function create()
-		{
-			return new self();
-		}
-
-		/**
-		 * @param $value
-		 * @return SimpleStringableObject
-		 */
-		public function setString($value)
-		{
-			Assert::isString($value);
-
-			$this->string = $value;
-
-			return $this;
-		}
-
-		/**
-		 * @return str
-		 */
-		public function toString()
-		{
-			return $this->string;
-		}
-	}
-?>
+    /**
+     * @return str
+     */
+    public function toString()
+    {
+        return $this->string;
+    }
+}

@@ -1,4 +1,7 @@
 <?php
+
+namespace onPHP\main\Utils\AMQP;
+
 /***************************************************************************
  *   Copyright (C) 2011 by Sergey S. Sergeev                               *
  *                                                                         *
@@ -8,9 +11,7 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-
-	interface AMQPBitmaskResolver
-	{
-		public function getBitmask($config);
-	}
-?>
+interface AMQPBitmaskResolver
+{
+    public function getBitmask($config);
+}

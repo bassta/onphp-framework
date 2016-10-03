@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\meta\types;
+
+use onPHP\core\Base\Assert;
+
 /***************************************************************************
  *   Copyright (C) 2007-2009 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,33 +14,28 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Types
-	**/
-	final class InetType extends IntegerType
-	{
-		public function getPrimitiveName()
-		{
-			return 'inet';
-		}
-		
-		public function getSize()
-		{
-			return null;
-		}
-		
-		/**
-		 * @throws WrongArgumentException
-		 * @return InetType
-		**/
-		public function setDefault($default)
-		{
-			Assert::isTrue(
-				long2ip(ip2long($default)) == $default,
-				"strange default value given - '{$default}'"
-			);
-			
-			return parent::setDefault($default);
-		}
-	}
-?>
+/**
+ * @ingroup Types
+ **/
+final class InetType extends IntegerType
+{
+    public function getPrimitiveName()
+    {
+        return 'inet';
+    }
+
+    public function getSize()
+    {
+        return null;
+    }
+
+    /**
+     * @throws WrongArgumentException
+     * @return InetType
+     **/
+    public function setDefault($default)
+    {
+        Assert::isTrue(long2ip(ip2long($default)) == $default, "strange default value given - '{$default}'");
+        return parent::setDefault($default);
+    }
+}

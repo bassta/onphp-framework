@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\Charts\Google;
+
+use onPHP\core\Base\Enumeration;
+
 /***************************************************************************
  *   Copyright (C) 2008-2009 by Denis M. Gabaidulin                        *
  *                                                                         *
@@ -9,24 +14,18 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup GoogleChart
-	**/
-	final class GoogleChartType extends Enumeration
-	{
-		const LINE					= 0x1;
-		const TWO_DIMENSIONAL_PIE	= 0x2;
-		
-		protected $names = array(
-			self::LINE					=> 'lc',
-			self::TWO_DIMENSIONAL_PIE	=> 'p'
-		);
-		
-		private $paramName = 'cht';
-		
-		public function toString()
-		{
-			return $this->paramName.'='.$this->name;
-		}
-	}
-?>
+/**
+ * @ingroup GoogleChart
+ **/
+final class GoogleChartType extends Enumeration
+{
+    const LINE = 1;
+    const TWO_DIMENSIONAL_PIE = 2;
+    protected $names = array(self::LINE => 'lc', self::TWO_DIMENSIONAL_PIE => 'p');
+    private $paramName = 'cht';
+
+    public function toString()
+    {
+        return $this->paramName.'='.$this->name;
+    }
+}

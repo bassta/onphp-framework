@@ -1,4 +1,12 @@
 <?php
+
+namespace onPHP\main\EntityProto\Accessors;
+
+use onPHP\core\Base\Assert;
+use onPHP\core\Exceptions\WrongArgumentException;
+use onPHP\main\EntityProto\EntityProto;
+use onPHP\main\EntityProto\PrototypedGetter;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *
  *                                                                         *
@@ -8,26 +16,20 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
+final class FormGetter extends PrototypedGetter
+{
+    public function __construct(EntityProto $proto, &$object)
+    {
+        Assert::isInstance($object, 'Form');
+        return parent::__construct($proto, $object);
+    }
 
-	final class FormGetter extends PrototypedGetter
-	{
-		public function __construct(EntityProto $proto, &$object)
-		{
-			Assert::isInstance($object, 'Form');
-			
-			return parent::__construct($proto, $object);
-		}
-		
-		public function get($name)
-		{
-			if (!isset($this->mapping[$name]))
-				throw new WrongArgumentException(
-					"knows nothing about property '{$name}'"
-				);
-			
-			$primitive = $this->mapping[$name];
-			
-			return $this->object->getValue($primitive->getName());
-		}
-	}
-?>
+    public function get($name)
+    {
+        if (!isset($this->mapping[$name])) {
+            throw new WrongArgumentException("knows nothing about property '{$name}'");
+        }
+        $primitive = $this->mapping[$name];
+        return $this->object->getValue($primitive->getName());
+    }
+}

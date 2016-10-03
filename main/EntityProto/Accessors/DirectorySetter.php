@@ -1,4 +1,12 @@
 <?php
+
+namespace onPHP\main\EntityProto\Accessors;
+
+use onPHP\core\Exceptions\UnimplementedFeatureException;
+use onPHP\core\Exceptions\WrongArgumentException;
+use onPHP\core\Form\Primitives\PrimitiveFile;
+use onPHP\core\Form\Primitives\PrimitiveForm;
+
 /***************************************************************************
  *   Copyright (C) 2009 by Ivan Y. Khvostishkov                            *
  *                                                                         *
@@ -8,43 +16,29 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
-
-	final class DirectorySetter extends DirectoryMutator
-	{
-		public function set($name, $value)
-		{
-			if (!isset($this->mapping[$name]))
-				throw new WrongArgumentException(
-					"knows nothing about property '{$name}'"
-				);
-			
-			$primitive = $this->mapping[$name];
-			
-			if ($value && !is_scalar($value) && !is_array($value)) {
-				throw new UnimplementedFeatureException(
-					"directory services for property $name is unsupported yet"
-				);
-			}
-
-			$path = $this->object.'/'.$primitive->getName();
-
-			if ($primitive instanceof PrimitiveFile) {
-				if ($value && $value != $path && file_exists($value)) {
-					copy($value, $path);
-				}
-
-				touch($path);
-
-				return $this;
-
-			} elseif ($primitive instanceof PrimitiveForm) {
-				// under builder control
-				return $this;
-			}
-
-			file_put_contents($path, $value);
-			
-			return $this;
-		}
-	}
-?>
+final class DirectorySetter extends DirectoryMutator
+{
+    public function set($name, $value)
+    {
+        if (!isset($this->mapping[$name])) {
+            throw new WrongArgumentException("knows nothing about property '{$name}'");
+        }
+        $primitive = $this->mapping[$name];
+        if ($value && !is_scalar($value) && !is_array($value)) {
+            throw new UnimplementedFeatureException("directory services for property {$name} is unsupported yet");
+        }
+        $path = $this->object.'/'.$primitive->getName();
+        if ($primitive instanceof PrimitiveFile) {
+            if ($value && $value != $path && file_exists($value)) {
+                copy($value, $path);
+            }
+            touch($path);
+            return $this;
+        } elseif ($primitive instanceof PrimitiveForm) {
+            // under builder control
+            return $this;
+        }
+        file_put_contents($path, $value);
+        return $this;
+    }
+}

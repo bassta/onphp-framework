@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\core\Base;
+
+use onPHP\core\Exceptions\MissingElementException;
+use onPHP\core\Exceptions\UnsupportedMethodException;
+
 /***************************************************************************
  *   Copyright (C) 2012 by Georgiy T. Kutsurua                             *
  *                                                                         *
@@ -9,136 +15,130 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * Parent of all enumeration classes.
-	 *
-	 * @see MimeType for example
-	 *
-	 * @ingroup Base
-	 * @ingroup Module
-	**/
-	abstract class Enum extends NamedObject
-		implements
-			Serializable
-	{
-		protected static $names = array(/* override me */);
+/**
+ * Parent of all enumeration classes.
+ *
+ * @see MimeType for example
+ *
+ * @ingroup Base
+ * @ingroup Module
+ **/
+abstract class Enum extends NamedObject implements Serializable
+{
+    protected static $names = array();
 
-		/**
-		 * @param integer $id
-		 * @return Enum
-		 */
-		public static function create($id)
-		{
-			return new static($id);
-		}
+    /**
+     * @param integer $id
+     * @return Enum
+     */
+    public static function create($id)
+    {
+        return new static($id);
+    }
 
-		public function __construct($id)
-		{
-			$this->setInternalId($id);
-		}
+    public function __construct($id)
+    {
+        $this->setInternalId($id);
+    }
 
-		/**
-		 * @param $id
-		 * @return Enum
-		 * @throws MissingElementException
-		 */
-		protected function setInternalId($id)
-		{
-			if (isset(static::$names[$id])) {
-				$this->id = $id;
-				$this->name = static::$names[$id];
-			} else
-				throw new MissingElementException(
-					get_class($this) . ' knows nothing about such id == '.$id
-				);
+    /**
+     * @param $id
+     * @return Enum
+     * @throws MissingElementException
+     */
+    protected function setInternalId($id)
+    {
+        if (isset(static::$names[$id])) {
+            $this->id   = $id;
+            $this->name = static::$names[$id];
+        } else {
+            throw new MissingElementException(get_class($this).' knows nothing about such id == '.$id);
+        }
+        return $this;
+    }
 
-			return $this;
-		}
+    /**
+     * @return string
+     */
+    public function serialize()
+    {
+        return (string)$this->id;
+    }
 
-		/**
-		 * @return string
-		 */
-		public function serialize()
-		{
-			return (string) $this->id;
-		}
+    /**
+     * @param $serialized
+     */
+    public function unserialize($serialized)
+    {
+        $this->setInternalId($serialized);
+    }
 
-		/**
-		 * @param $serialized
-		 */
-		public function unserialize($serialized)
-		{
-			$this->setInternalId($serialized);
-		}
+    /**
+     * Array of object
+     * @static
+     * @return array
+     */
+    public static function getList()
+    {
+        $list = array();
+        foreach (array_keys(static::$names) as $id) {
+            $list[] = static::create($id);
+        }
+        return $list;
+    }
 
-		/**
-		 * Array of object
-		 * @static
-		 * @return array
-		 */
-		public static function getList()
-		{
-			$list = array();
-			foreach (array_keys(static::$names) as $id)
-				$list[] = static::create($id);
+    /**
+     * must return any existent ID
+     * 1 should be ok for most enumerations
+     * @return integer
+     **/
+    public static function getAnyId()
+    {
+        return 1;
+    }
 
-			return $list;
-		}
+    /**
+     * @return null|integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
-		/**
-		 * must return any existent ID
-		 * 1 should be ok for most enumerations
-		 * @return integer
-		**/
-		public static function getAnyId()
-		{
-			return 1;
-		}
+    /**
+     * Alias for getList()
+     * @static
+     * @deprecated
+     * @return array
+     */
+    public static function getObjectList()
+    {
+        return static::getList();
+    }
 
-		/**
-		 * @return null|integer
-		 */
-		public function getId()
-		{
-			return $this->id;
-		}
+    /**
+     * @return string
+     */
+    public function toString()
+    {
+        return $this->name;
+    }
 
+    /**
+     * Plain list
+     * @static
+     * @return array
+     */
+    public static function getNameList()
+    {
+        return static::$names;
+    }
 
-		/**
-		 * Alias for getList()
-		 * @static
-		 * @deprecated
-		 * @return array
-		 */
-		public static function getObjectList()
-		{
-			return static::getList();
-		}
-
-		/**
-		 * @return string
-		 */
-		public function toString()
-		{
-			return $this->name;
-		}
-
-		/**
-		 * Plain list
-		 * @static
-		 * @return array
-		 */
-		public static function getNameList()
-		{
-			return static::$names;
-		}
-
-		/**
-		 * @return Enum
-		**/
-		public function setId($id)
-		{
-			throw new UnsupportedMethodException('You can not change id here, because it is politics for Enum!');
-		}
-	}
-?>
+    /**
+     * @return Enum
+     **/
+    public function setId($id)
+    {
+        throw new UnsupportedMethodException('You can not change id here, because it is politics for Enum!');
+    }
+}

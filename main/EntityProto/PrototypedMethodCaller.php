@@ -1,4 +1,7 @@
 <?php
+
+namespace onPHP\main\EntityProto;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Konstantin V. Arkhipov                          *
  *                                                                         *
@@ -8,20 +11,16 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
+abstract class PrototypedMethodCaller
+{
+    protected $proto = null;
+    protected $object = null;
+    protected $mapping = array();
 
-	abstract class PrototypedMethodCaller
-	{
-		protected $proto = null;
-		protected $object = null;
-		
-		protected $mapping = array();
-		
-		public function __construct(EntityProto $proto, &$object)
-		{
-			$this->proto = $proto;
-			$this->object = &$object;
-			
-			$this->mapping = $proto->getFormMapping();
-		}
-	}
-?>
+    public function __construct(EntityProto $proto, &$object)
+    {
+        $this->proto   = $proto;
+        $this->object  =& $object;
+        $this->mapping = $proto->getFormMapping();
+    }
+}

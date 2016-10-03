@@ -1,4 +1,12 @@
 <?php
+
+namespace onPHP\main\EntityProto\Accessors;
+
+use onPHP\core\Base\Assert;
+use onPHP\core\Exceptions\WrongArgumentException;
+use onPHP\main\EntityProto\EntityProto;
+use onPHP\main\EntityProto\PrototypedSetter;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *
  *                                                                         *
@@ -8,44 +16,35 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
+final class ScopeSetter extends PrototypedSetter
+{
+    private $getter = null;
 
-	final class ScopeSetter extends PrototypedSetter
-	{
-		private $getter = null;
-		
-		public function __construct(EntityProto $proto, &$object)
-		{
-			Assert::isArray($object);
-			
-			return parent::__construct($proto, $object);
-		}
-		
-		public function set($name, $value)
-		{
-			if (!isset($this->mapping[$name]))
-				throw new WrongArgumentException(
-					"knows nothing about property '{$name}'"
-				);
-			
-			Assert::isTrue(!is_object($value), 'cannot put objects into scope');
-			
-			$primitive = $this->mapping[$name];
-			
-			$this->object[$primitive->getName()] =  $value;
-			
-			return $this;
-		}
-		
-		/**
-		 * @return ScopeGetter
-		**/
-		public function getGetter()
-		{
-			if (!$this->getter) {
-				$this->getter = new ScopeGetter($this->proto, $this->object);
-			}
-			
-			return $this->getter;
-		}
-	}
-?>
+    public function __construct(EntityProto $proto, &$object)
+    {
+        Assert::isArray($object);
+        return parent::__construct($proto, $object);
+    }
+
+    public function set($name, $value)
+    {
+        if (!isset($this->mapping[$name])) {
+            throw new WrongArgumentException("knows nothing about property '{$name}'");
+        }
+        Assert::isTrue(!is_object($value), 'cannot put objects into scope');
+        $primitive                           = $this->mapping[$name];
+        $this->object[$primitive->getName()] = $value;
+        return $this;
+    }
+
+    /**
+     * @return ScopeGetter
+     **/
+    public function getGetter()
+    {
+        if (!$this->getter) {
+            $this->getter = new ScopeGetter($this->proto, $this->object);
+        }
+        return $this->getter;
+    }
+}

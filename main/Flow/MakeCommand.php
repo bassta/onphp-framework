@@ -1,4 +1,11 @@
 <?php
+
+namespace onPHP\main\Flow;
+
+use onPHP\core\Base\Prototyped;
+use onPHP\core\Form\Form;
+use onPHP\core\Form\FormUtils;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Konstantin V. Arkhipov                          *
  *                                                                         *
@@ -9,25 +16,21 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Flow
-	**/
-	abstract class MakeCommand extends TakeCommand
-	{
-		/**
-		 * @return ModelAndView
-		**/
-		public function run(Prototyped $subject, Form $form, HttpRequest $request)
-		{
-			$form->markGood('id');
-			
-			if (!$form->getErrors()) {
-				FormUtils::form2object($form, $subject);
-				
-				return parent::run($subject, $form, $request);
-			}
-			
-			return new ModelAndView();
-		}
-	}
-?>
+/**
+ * @ingroup Flow
+ **/
+abstract class MakeCommand extends TakeCommand
+{
+    /**
+     * @return ModelAndView
+     **/
+    public function run(Prototyped $subject, Form $form, HttpRequest $request)
+    {
+        $form->markGood('id');
+        if (!$form->getErrors()) {
+            FormUtils::form2object($form, $subject);
+            return parent::run($subject, $form, $request);
+        }
+        return new ModelAndView();
+    }
+}

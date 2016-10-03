@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\UI\View;
+
+use onPHP\main\Net\Http\HeaderUtils;
+
 /***************************************************************************
  *   Copyright (C) 2009 by Ivan Y. Khvostishkov                            *
  *                                                                         *
@@ -9,39 +14,38 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Flow
-	**/
-	class CleanRedirectView implements View
-	{
-		protected $url = null;
-		
-		public function __construct($url)
-		{
-			$this->url = $url;
-		}
-		
-		/**
-		 * @return CleanRedirectView
-		**/
-		public static function create($url)
-		{
-			return new self($url);
-		}
-		
-		public function render($model = null)
-		{
-			HeaderUtils::redirectRaw($this->getLocationUrl($model));
-		}
-		
-		public function getUrl()
-		{
-			return $this->url;
-		}
-		
-		protected function getLocationUrl($model = null)
-		{
-			return $this->getUrl();
-		}
-	}
-?>
+/**
+ * @ingroup Flow
+ **/
+class CleanRedirectView implements View
+{
+    protected $url = null;
+
+    public function __construct($url)
+    {
+        $this->url = $url;
+    }
+
+    /**
+     * @return CleanRedirectView
+     **/
+    public static function create($url)
+    {
+        return new self($url);
+    }
+
+    public function render($model = null)
+    {
+        HeaderUtils::redirectRaw($this->getLocationUrl($model));
+    }
+
+    protected function getLocationUrl($model = null)
+    {
+        return $this->getUrl();
+    }
+
+    public function getUrl()
+    {
+        return $this->url;
+    }
+}

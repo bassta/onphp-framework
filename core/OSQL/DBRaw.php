@@ -1,4 +1,12 @@
 <?php
+
+namespace onPHP\core\OSQL;
+
+use onPHP\core\DB\Dialect;
+use onPHP\core\Exceptions\UnsupportedMethodException;
+use onPHP\core\Form\Form;
+use onPHP\core\Logic\LogicalObject;
+
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,35 +17,32 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * Karma's destroyer.
-	 * 
-	 * @deprecated since the begining of time
-	 * 
-	 * @ingroup OSQL
-	**/
-	final class DBRaw implements LogicalObject
-	{
-		private $string = null;
-		
-		public function __construct($rawString)
-		{
-			if (!defined('__I_HATE_MY_KARMA__'))
-				throw new UnsupportedMethodException(
-					'do not use it. please.'
-				);
-			
-			$this->string = $rawString;
-		}
-		
-		public function toDialectString(Dialect $dialect)
-		{
-			return $this->string;
-		}
-		
-		public function toBoolean(Form $form)
-		{
-			throw new UnsupportedMethodException();
-		}
-	}
-?>
+/**
+ * Karma's destroyer.
+ *
+ * @deprecated since the begining of time
+ *
+ * @ingroup OSQL
+ **/
+final class DBRaw implements LogicalObject
+{
+    private $string = null;
+
+    public function __construct($rawString)
+    {
+        if (!defined('__I_HATE_MY_KARMA__')) {
+            throw new UnsupportedMethodException('do not use it. please.');
+        }
+        $this->string = $rawString;
+    }
+
+    public function toDialectString(Dialect $dialect)
+    {
+        return $this->string;
+    }
+
+    public function toBoolean(Form $form)
+    {
+        throw new UnsupportedMethodException();
+    }
+}

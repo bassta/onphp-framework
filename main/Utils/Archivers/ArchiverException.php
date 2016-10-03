@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\Utils\Archivers;
+
+use onPHP\core\Exceptions\BaseException;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *
  *                                                                         *
@@ -9,8 +14,9 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Utils
-	**/
-	class ArchiverException extends BaseException {/*_*/}
-?>
+/**
+ * @ingroup Utils
+ **/
+class ArchiverException extends BaseException
+{
+}

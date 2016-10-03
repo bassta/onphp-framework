@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\Charts\Google;
+
+use onPHP\core\Base\Enumeration;
+
 /***************************************************************************
  *   Copyright (C) 2008-2009 by Denis M. Gabaidulin                        *
  *                                                                         *
@@ -9,36 +14,28 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup GoogleChart
-	**/
-	final class GoogleChartLegendPositionType extends Enumeration
-	{
-		const BOTTOM	= 0x1;
-		const TOP		= 0x2;
-		const LEFT		= 0x3;
-		const RIGHT		= 0x4;
-		
-		protected $names = array(
-			self::BOTTOM	=> 'b',
-			self::TOP		=> 't',
-			self::LEFT		=> 'l',
-			self::RIGHT		=> 'r'
-		);
-		
-		private $paramName = 'chdlp';
-		
-		/**
-		 * @return GoogleChartLegendPositionType
-		**/
-		public static function create($id)
-		{
-			return new self($id);
-		}
-		
-		public function toString()
-		{
-			return $this->paramName.'='.$this->name;
-		}
-	}
-?>
+/**
+ * @ingroup GoogleChart
+ **/
+final class GoogleChartLegendPositionType extends Enumeration
+{
+    const BOTTOM = 1;
+    const TOP = 2;
+    const LEFT = 3;
+    const RIGHT = 4;
+    protected $names = array(self::BOTTOM => 'b', self::TOP => 't', self::LEFT => 'l', self::RIGHT => 'r');
+    private $paramName = 'chdlp';
+
+    /**
+     * @return GoogleChartLegendPositionType
+     **/
+    public static function create($id)
+    {
+        return new self($id);
+    }
+
+    public function toString()
+    {
+        return $this->paramName.'='.$this->name;
+    }
+}

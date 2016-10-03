@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\main\Flow;
+
+use onPHP\core\Base\Prototyped;
+use onPHP\core\Form\Form;
+
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,28 +15,24 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Flow
-	**/
-	final class ForbiddenCommand implements EditorCommand
-	{
-		/**
-		 * @return ForbiddenCommand
-		**/
-		public static function create()
-		{
-			return new self;
-		}
-		
-		/**
-		 * @return ModelAndView
-		**/
-		public function run(Prototyped $subject, Form $form, HttpRequest $request)
-		{
-			return
-				ModelAndView::create()->setView(
-					EditorController::COMMAND_FAILED
-				);
-		}
-	}
-?>
+/**
+ * @ingroup Flow
+ **/
+final class ForbiddenCommand implements EditorCommand
+{
+    /**
+     * @return ForbiddenCommand
+     **/
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * @return ModelAndView
+     **/
+    public function run(Prototyped $subject, Form $form, HttpRequest $request)
+    {
+        return ModelAndView::create()->setView(EditorController::COMMAND_FAILED);
+    }
+}

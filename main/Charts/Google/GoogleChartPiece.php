@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\Charts\Google;
+
+use onPHP\main\Utils\TuringTest\Color;
+
 /***************************************************************************
  *   Copyright (C) 2008-2009 by Denis M. Gabaidulin                        *
  *                                                                         *
@@ -9,69 +14,65 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup GoogleChart
-	**/
-	class GoogleChartPiece
-	{
-		private $title	= null;
-		private $color	= null;
-		private $value	= null;
-		
-		/**
-		 * @return GoogleChartPiece
-		**/
-		public static function create()
-		{
-			return new self;
-		}
-		
-		/**
-		 * @return GoogleChartPiece
-		**/
-		public function setTitle($title)
-		{
-			$this->title = $title;
-			
-			return $this;
-		}
-		
-		public function getTitle()
-		{
-			return $this->title;
-		}
-		
-		/**
-		 * @return GoogleChartPiece
-		**/
-		public function setColor(Color $color)
-		{
-			$this->color = $color;
-			
-			return $this;
-		}
-		
-		/**
-		 * @return Color
-		**/
-		public function getColor()
-		{
-			return $this->color;
-		}
-		
-		/**
-		 * @return GoogleChartPiece
-		**/
-		public function setValue($value)
-		{
-			$this->value = $value;
-			
-			return $this;
-		}
-		
-		public function getValue()
-		{
-			return $this->value;
-		}
-	}
-?>
+/**
+ * @ingroup GoogleChart
+ **/
+class GoogleChartPiece
+{
+    private $title = null;
+    private $color = null;
+    private $value = null;
+
+    /**
+     * @return GoogleChartPiece
+     **/
+    public static function create()
+    {
+        return new self();
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @return GoogleChartPiece
+     **/
+    public function setTitle($title)
+    {
+        $this->title = $title;
+        return $this;
+    }
+
+    /**
+     * @return Color
+     **/
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * @return GoogleChartPiece
+     **/
+    public function setColor(Color $color)
+    {
+        $this->color = $color;
+        return $this;
+    }
+
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * @return GoogleChartPiece
+     **/
+    public function setValue($value)
+    {
+        $this->value = $value;
+        return $this;
+    }
+}

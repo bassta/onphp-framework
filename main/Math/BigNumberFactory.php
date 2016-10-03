@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\Math;
+
+use onPHP\core\Base\Singleton;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Anton E. Lebedevich                             *
  *                                                                         *
@@ -9,26 +14,25 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Math
-	**/
-	abstract class BigNumberFactory extends Singleton
-	{
-		/**
-		 * @return BigInteger
-		**/
-		abstract public function makeNumber($number, $base = 10);
-		
-		/**
-		 * make number from big-endian signed two's complement binary notation
-		 * @return BigInteger
-		**/
-		abstract public function makeFromBinary($binary);
-		
-		/**
-		 * @param $stop maximum random number
-		 * @return BigInteger
-		**/
-		abstract public function makeRandom($stop, RandomSource $source);
-	}
-?>
+/**
+ * @ingroup Math
+ **/
+abstract class BigNumberFactory extends Singleton
+{
+    /**
+     * @return BigInteger
+     **/
+    public abstract function makeNumber($number, $base = 10);
+
+    /**
+     * make number from big-endian signed two's complement binary notation
+     * @return BigInteger
+     **/
+    public abstract function makeFromBinary($binary);
+
+    /**
+     * @param $stop maximum random number
+     * @return BigInteger
+     **/
+    public abstract function makeRandom($stop, RandomSource $source);
+}

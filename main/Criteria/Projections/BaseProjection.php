@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\Criteria\Projections;
+
+use onPHP\core\Base\Aliased;
+
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,23 +14,22 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Projections
-	**/
-	abstract class BaseProjection implements ObjectProjection, Aliased
-	{
-		protected $property	= null;
-		protected $alias	= null;
-		
-		public function __construct($propertyName = null, $alias = null)
-		{
-			$this->property = $propertyName;
-			$this->alias = $alias;
-		}
-		
-		public function getAlias()
-		{
-			return $this->alias;
-		}
-	}
-?>
+/**
+ * @ingroup Projections
+ **/
+abstract class BaseProjection implements ObjectProjection, Aliased
+{
+    protected $property = null;
+    protected $alias = null;
+
+    public function __construct($propertyName = null, $alias = null)
+    {
+        $this->property = $propertyName;
+        $this->alias    = $alias;
+    }
+
+    public function getAlias()
+    {
+        return $this->alias;
+    }
+}

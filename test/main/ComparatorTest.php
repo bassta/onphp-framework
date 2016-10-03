@@ -1,96 +1,75 @@
 <?php
-	final class CompatatorTest extends TestCase
-	{
-		/**
-		 * @dataProvider serializedTestObjects
-		**/
-		public function testSerializedObjectComparator($one, $two, $result)
-		{
-			$this->assertEquals(
-				$result,
-				SerializedObjectComparator::me()->compare($one, $two)
-			);
-		}
 
-		/**
-		 * @dataProvider immutableTestObjects
-		**/
-		public function testImmutableObjectComparator($one, $two, $result)
-		{
-			$this->assertEquals(
-				$result,
-				ImmutableObjectComparator::me()->compare($one, $two)
-			);
-		}
+namespace onPHP\test\main;
 
-		/**
-		 * @dataProvider dateTestData
-		**/
-		public function testDateObjectComparator($one, $two, $result)
-		{
-			$this->assertEquals(
-				$result,
-				DateObjectComparator::me()->compare($one, $two)
-			);
-		}
+use onPHP\core\Base\Date;
+use onPHP\core\Base\IdentifiableObject;
+use onPHP\main\Base\DateObjectComparator;
+use onPHP\main\Base\ImmutableObjectComparator;
+use onPHP\main\Base\SerializedObjectComparator;
+use onPHP\test\misc\TestCase;
 
-		public static function serializedTestObjects()
-		{
-			$object = new CompatatorTestObject();
-			$object->testVariable = 1;
-			$object->anotherObject =  new CompatatorTest();
+final class CompatatorTest extends TestCase
+{
+    /**
+     * @dataProvider serializedTestObjects
+     **/
+    public function testSerializedObjectComparator($one, $two, $result)
+    {
+        $this->assertEquals($result, SerializedObjectComparator::me()->compare($one, $two));
+    }
 
-			$secondObject = clone $object;
+    /**
+     * @dataProvider immutableTestObjects
+     **/
+    public function testImmutableObjectComparator($one, $two, $result)
+    {
+        $this->assertEquals($result, ImmutableObjectComparator::me()->compare($one, $two));
+    }
 
-			$modifiedObject = clone $secondObject;
-			$modifiedObject->testVariable = 2;
+    /**
+     * @dataProvider dateTestData
+     **/
+    public function testDateObjectComparator($one, $two, $result)
+    {
+        $this->assertEquals($result, DateObjectComparator::me()->compare($one, $two));
+    }
 
-			return
-				array(
-					array($object, $object, 0),
-					array($object, $secondObject, 0),
-					array($object, $modifiedObject, -1)
-				);
-		}
+    public static function serializedTestObjects()
+    {
+        $object                       = new CompatatorTestObject();
+        $object->testVariable         = 1;
+        $object->anotherObject        = new CompatatorTest();
+        $secondObject                 = clone $object;
+        $modifiedObject               = clone $secondObject;
+        $modifiedObject->testVariable = 2;
+        return array(array($object, $object, 0), array($object, $secondObject, 0), array($object, $modifiedObject, -1));
+    }
 
-		public static function immutableTestObjects()
-		{
-			$object = new CompatatorTestObject();
-			$object->testVariable = 1;
-			$object->anotherObject =  new CompatatorTest();
+    public static function immutableTestObjects()
+    {
+        $object                       = new CompatatorTestObject();
+        $object->testVariable         = 1;
+        $object->anotherObject        = new CompatatorTest();
+        $secondObject                 = clone $object;
+        $modifiedObject               = clone $secondObject;
+        $modifiedObject->testVariable = 2;
+        $anotherModifiedObject        = clone $modifiedObject;
+        $anotherModifiedObject->id    = 3;
+        return array(array($object, $object, 0), array($object, $secondObject, 0), array($object, $modifiedObject, 0), array($modifiedObject, $anotherModifiedObject, -1));
+    }
 
-			$secondObject = clone $object;
+    public static function dateTestData()
+    {
+        return array(array(Date::makeToday(), Date::makeToday(), 0), array(Date::makeToday(), Date::makeToday()
+                                                                                                  ->modify('-1 day'), 1), array(Date::makeToday()
+                                                                                                                                    ->modify('-1 day'), Date::makeToday(), -1));
+    }
+}
 
-			$modifiedObject = clone $secondObject;
-			$modifiedObject->testVariable = 2;
-
-			$anotherModifiedObject = clone $modifiedObject;
-			$anotherModifiedObject->id = 3;
-
-			return
-				array(
-					array($object, $object, 0),
-					array($object, $secondObject, 0),
-					array($object, $modifiedObject, 0),
-					array($modifiedObject, $anotherModifiedObject, -1)
-				);
-		}
-
-		public static function dateTestData()
-		{
-			return
-				array(
-					array(Date::makeToday(), Date::makeToday(), 0),
-					array(Date::makeToday(), Date::makeToday()->modify('-1 day'), 1),
-					array(Date::makeToday()->modify('-1 day'), Date::makeToday(), -1)
-				);
-		}
-	}
-
-	final class CompatatorTestObject extends IdentifiableObject
-	{
-		public $anotherObject	= null;
-		public $testVariable	= null;
-		public $id = 1;
-	}
-?>
+final class CompatatorTestObject extends IdentifiableObject
+{
+    public $anotherObject = null;
+    public $testVariable = null;
+    public $id = 1;
+}

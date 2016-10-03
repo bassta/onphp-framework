@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\core\Cache;
+
+use onPHP\core\Base\Singleton;
+
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,29 +14,30 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Lockers
-	**/
-	abstract class BaseLocker extends Singleton
-	{
-		protected $pool = array();
-		
-		/// acquire lock
-		abstract public function get($key);
-		
-		/// release lock
-		abstract public function free($key);
-		
-		/// completely remove lock
-		abstract public function drop($key);
-		
-		/// drop all acquired/released locks
-		public function clean()
-		{
-			foreach (array_keys($this->pool) as $key)
-				$this->drop($key);
-			
-			return true;
-		}
-	}
-?>
+/**
+ * @ingroup Lockers
+ **/
+abstract class BaseLocker extends Singleton
+{
+    protected $pool = array();
+
+    /// acquire lock
+    public abstract function get($key);
+
+    /// release lock
+    public abstract function free($key);
+
+    /// completely remove lock
+
+    public function clean()
+    {
+        foreach (array_keys($this->pool) as $key) {
+            $this->drop($key);
+        }
+        return true;
+    }
+
+    /// drop all acquired/released locks
+
+    public abstract function drop($key);
+}

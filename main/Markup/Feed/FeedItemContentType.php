@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\Markup\Feed;
+
+use onPHP\core\Base\Enumeration;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Dmitry A. Lomash                                *
  *                                                                         *
@@ -9,19 +14,13 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Feed
-	**/
-	final class FeedItemContentType extends Enumeration
-	{
-		const TEXT		= 1;
-		const HTML		= 2;
-		const XHTML		= 3;
-		
-		protected $names = array(
-			self::TEXT		=> 'text',
-			self::HTML		=> 'html',
-			self::XHTML		=> 'xhtml'
-		);
-	}
-?>
+/**
+ * @ingroup Feed
+ **/
+final class FeedItemContentType extends Enumeration
+{
+    const TEXT = 1;
+    const HTML = 2;
+    const XHTML = 3;
+    protected $names = array(self::TEXT => 'text', self::HTML => 'html', self::XHTML => 'xhtml');
+}

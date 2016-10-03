@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\meta\patterns;
+
+use onPHP\core\Base\Singleton;
+use onPHP\meta\classes\MetaClass;
+
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,24 +15,23 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Patterns
-	**/
-	final class SpookedClassPattern extends Singleton implements GenerationPattern
-	{
-		public function build(MetaClass $class)
-		{
-			return $this;
-		}
-		
-		public function daoExists()
-		{
-			return false;
-		}
-		
-		public function tableExists()
-		{
-			return false;
-		}
-	}
-?>
+/**
+ * @ingroup Patterns
+ **/
+final class SpookedClassPattern extends Singleton implements GenerationPattern
+{
+    public function build(MetaClass $class)
+    {
+        return $this;
+    }
+
+    public function daoExists()
+    {
+        return false;
+    }
+
+    public function tableExists()
+    {
+        return false;
+    }
+}

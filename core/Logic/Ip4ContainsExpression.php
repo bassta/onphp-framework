@@ -1,4 +1,13 @@
 <?php
+
+namespace onPHP\core\Logic;
+
+use onPHP\core\DB\Dialect;
+use onPHP\core\Exceptions\UnimplementedFeatureException;
+use onPHP\core\Form\Form;
+use onPHP\core\OSQL\JoinCapableQuery;
+use onPHP\main\DAOs\ProtoDAO;
+
 /****************************************************************************
  *   Copyright (C) 2011 by Evgeny V. Kokovikhin                             *
  *                                                                          *
@@ -9,36 +18,32 @@
  *                                                                          *
  ****************************************************************************/
 
-	/**
-	 * @ingroup Logic
-	**/
-	final class Ip4ContainsExpression implements LogicalObject, MappableObject
-	{
-		private $range = null;
-		private $ip = null;
-		
-		public function __construct($range, $ip)
-		{
-			$this->range = $range;
-			$this->ip = $ip;
-		}
-		
-		public function toDialectString(Dialect $dialect)
-		{
-			return $dialect->quoteIpInRange($this->range, $this->ip);
-		}
-		
-		public function toMapped(ProtoDAO $dao, JoinCapableQuery $query)
-		{
-			return new self(
-				$dao->guessAtom($this->range, $query),
-				$dao->guessAtom($this->ip, $query)
-			);
-		}
-		
-		public function toBoolean(Form $form)
-		{
-			throw new UnimplementedFeatureException('Author was too lazy to make it');
-		}
-	}
-?>
+/**
+ * @ingroup Logic
+ **/
+final class Ip4ContainsExpression implements LogicalObject, MappableObject
+{
+    private $range = null;
+    private $ip = null;
+
+    public function __construct($range, $ip)
+    {
+        $this->range = $range;
+        $this->ip    = $ip;
+    }
+
+    public function toDialectString(Dialect $dialect)
+    {
+        return $dialect->quoteIpInRange($this->range, $this->ip);
+    }
+
+    public function toMapped(ProtoDAO $dao, JoinCapableQuery $query)
+    {
+        return new self($dao->guessAtom($this->range, $query), $dao->guessAtom($this->ip, $query));
+    }
+
+    public function toBoolean(Form $form)
+    {
+        throw new UnimplementedFeatureException('Author was too lazy to make it');
+    }
+}

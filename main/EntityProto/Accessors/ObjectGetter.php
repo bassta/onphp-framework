@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\EntityProto\Accessors;
+
+use onPHP\main\EntityProto\PrototypedGetter;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *
  *                                                                         *
@@ -8,14 +13,11 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
-
-	final class ObjectGetter extends PrototypedGetter
-	{
-		public function get($name)
-		{
-			$method = 'get'.ucfirst($name);
-			
-			return $this->object->$method();
-		}
-	}
-?>
+final class ObjectGetter extends PrototypedGetter
+{
+    public function get($name)
+    {
+        $method = 'get'.ucfirst($name);
+        return $this->object->{$method}();
+    }
+}

@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\test\main;
+
+use onPHP\main\Net\HttpUrl;
+use onPHP\test\misc\TestCase;
+
 /***************************************************************************
  *   Copyright (C) 2013 by Vyacheslav Yu. Tsyrulnik                        *
  *                                                                         *
@@ -8,35 +14,27 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
-	
-	final class HttpUrlTest extends TestCase
-	{
-		private $urlWithPrivilegedPort = "https://path.to.some.com:444/hey.html";
-		
-		/**
-		 * @test
-		 */
-		public function privilegedPortsValidationEnabled()
-		{
-			$url =
-				HttpUrl::create()->
-					parse($this->urlWithPrivilegedPort)->
-					setCheckPrivilegedPorts();
-			
-			$this->assertFalse($url->isValid());
-			$this->assertTrue($url->isPrivilegedPortUsed());
-		}
-		
-		/**
-		 * @test
-		 */
-		public function privilegdPortsValidationDisabled()
-		{
-			$url = HttpUrl::create()->parse($this->urlWithPrivilegedPort);
-				
-			$this->assertTrue($url->isValid());
-			$this->assertTrue($url->isPrivilegedPortUsed());
-		}
-		
-	}
-?>
+final class HttpUrlTest extends TestCase
+{
+    private $urlWithPrivilegedPort = 'https://path.to.some.com:444/hey.html';
+
+    /**
+     * @test
+     */
+    public function privilegedPortsValidationEnabled()
+    {
+        $url = HttpUrl::create()->parse($this->urlWithPrivilegedPort)->setCheckPrivilegedPorts();
+        $this->assertFalse($url->isValid());
+        $this->assertTrue($url->isPrivilegedPortUsed());
+    }
+
+    /**
+     * @test
+     */
+    public function privilegdPortsValidationDisabled()
+    {
+        $url = HttpUrl::create()->parse($this->urlWithPrivilegedPort);
+        $this->assertTrue($url->isValid());
+        $this->assertTrue($url->isPrivilegedPortUsed());
+    }
+}

@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\core\Cache;
+
+use onPHP\core\Base\Instantiatable;
+use onPHP\core\Base\Singleton;
+
 /***************************************************************************
  *   Copyright (C) 2009 by Denis M. Gabaidulin                             *
  *                                                                         *
@@ -9,47 +15,40 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * Memcached based locking.
-	 * No synchronization between local pool and memcached daemons!
-	 *
-	 * @ingroup Lockers
-	**/
-	final class MemcachedLocker extends BaseLocker implements Instantiatable
-	{
-		const VALUE = 0x1;
-		
-		private $memcachedClient = null;
+/**
+ * Memcached based locking.
+ * No synchronization between local pool and memcached daemons!
+ *
+ * @ingroup Lockers
+ **/
+final class MemcachedLocker extends BaseLocker implements Instantiatable
+{
+    const VALUE = 1;
+    private $memcachedClient = null;
 
-		public static function me()
-		{
-			return Singleton::getInstance(__CLASS__);
-		}
+    public static function me()
+    {
+        return Singleton::getInstance(__CLASS__);
+    }
 
-		public function setMemcachedClient(CachePeer $memcachedPeer)
-		{
-			$this->memcachedClient = $memcachedPeer;
+    public function setMemcachedClient(CachePeer $memcachedPeer)
+    {
+        $this->memcachedClient = $memcachedPeer;
+        return $this;
+    }
 
-			return $this;
-		}
+    public function get($key)
+    {
+        return $this->memcachedClient->add($key, self::VALUE, 2 * Cache::EXPIRES_MINIMUM);
+    }
 
-		public function get($key)
-		{
-			return $this->memcachedClient->add(
-				$key,
-				self::VALUE,
-				2 * Cache::EXPIRES_MINIMUM
-			);
-		}
+    public function free($key)
+    {
+        return $this->memcachedClient->delete($key);
+    }
 
-		public function free($key)
-		{
-			return $this->memcachedClient->delete($key);
-		}
-
-		public function drop($key)
-		{
-			return $this->free($key);
-		}
-	}
-?>
+    public function drop($key)
+    {
+        return $this->free($key);
+    }
+}

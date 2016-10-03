@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\core\OSQL;
+
+use onPHP\core\Base\Identifiable;
+use onPHP\core\Base\Stringable;
+
 /***************************************************************************
  *   Copyright (C) 2004-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,9 +15,10 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup OSQL
-	 * @ingroup Module
-	**/
-	interface Query extends DialectString, Identifiable, Stringable {/*_*/}
-?>
+/**
+ * @ingroup OSQL
+ * @ingroup Module
+ **/
+interface Query extends DialectString, Identifiable, Stringable
+{
+}

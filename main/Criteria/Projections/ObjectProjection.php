@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\main\Criteria\Projections;
+
+use onPHP\core\OSQL\JoinCapableQuery;
+use onPHP\main\Criteria\Criteria;
+
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,14 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Projections
-	**/
-	interface ObjectProjection
-	{
-		/**
-		 * @return JoinCapableQuery
-		**/
-		public function process(Criteria $criteria, JoinCapableQuery $query);
-	}
-?>
+/**
+ * @ingroup Projections
+ **/
+interface ObjectProjection
+{
+    /**
+     * @return JoinCapableQuery
+     **/
+    public function process(Criteria $criteria, JoinCapableQuery $query);
+}

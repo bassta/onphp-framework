@@ -1,4 +1,12 @@
 <?php
+
+namespace onPHP\meta\builders;
+
+use onPHP\core\Exceptions\UnsupportedMethodException;
+use onPHP\meta\classes\MetaClass;
+use onPHP\meta\classes\MetaClassProperty;
+use onPHP\meta\classes\MetaRelation;
+
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,86 +17,34 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Builders
-	**/
-	final class ContainerClassBuilder extends OnceBuilder
-	{
-		public static function build(MetaClass $class)
-		{
-			throw new UnsupportedMethodException();
-		}
-		
-		public static function buildContainer(
-			MetaClass $class, MetaClassProperty $holder
-		)
-		{
-			$out = self::getHead();
-			
-			$containerName = $class->getName().ucfirst($holder->getName()).'DAO';
-			
-			$out .=
-				'final class '
-				.$containerName
-				.' extends '
-				.$holder->getRelation()->toString().'Linked'
-				."\n{\n";
-
-			$className = $class->getName();
-			$propertyName = strtolower($className[0]).substr($className, 1);
-			
-			$remoteColumnName = $holder->getType()->getClass()->getTableName();
-			
-			$out .= <<<EOT
-public function __construct({$className} \${$propertyName}, \$lazy = false)
-{
-	parent::__construct(
-		\${$propertyName},
-		{$holder->getType()->getClassName()}::dao(),
-		\$lazy
-	);
-}
-
 /**
- * @return {$containerName}
-**/
-public static function create({$className} \${$propertyName}, \$lazy = false)
+ * @ingroup Builders
+ **/
+final class ContainerClassBuilder extends OnceBuilder
 {
-	return new self(\${$propertyName}, \$lazy);
-}
+    public static function build(MetaClass $class)
+    {
+        throw new UnsupportedMethodException();
+    }
 
-EOT;
-
-			if ($holder->getRelation()->getId() == MetaRelation::MANY_TO_MANY) {
-				$out .= <<<EOT
-
-public function getHelperTable()
+    public static function buildContainer(MetaClass $class, MetaClassProperty $holder)
+    {
+        $out           = self::getHead();
+        $containerName = $class->getName().ucfirst($holder->getName()).'DAO';
+        $out .= 'final class '.$containerName.' extends '.$holder->getRelation()->toString().'Linked'.'
 {
-	return '{$class->getTableName()}_{$remoteColumnName}';
+';
+        $className        = $class->getName();
+        $propertyName     = strtolower($className[0]).substr($className, 1);
+        $remoteColumnName = $holder->getType()->getClass()->getTableName();
+        $out .= "public function __construct({$className} \${$propertyName}, \$lazy = false)\n{\n\tparent::__construct(\n\t\t\${$propertyName},\n\t\t{$holder->getType()->getClassName()}::dao(),\n\t\t\$lazy\n\t);\n}\n\n/**\n * @return {$containerName}\n**/\npublic static function create({$className} \${$propertyName}, \$lazy = false)\n{\n\treturn new self(\${$propertyName}, \$lazy);\n}\n";
+        if ($holder->getRelation()->getId() == MetaRelation::MANY_TO_MANY) {
+            $out .= "\npublic function getHelperTable()\n{\n\treturn '{$class->getTableName()}_{$remoteColumnName}';\n}\n\npublic function getChildIdField()\n{\n\treturn '{$remoteColumnName}_id';\n}\n";
+        }
+        $out .= "\npublic function getParentIdField()\n{\n\treturn '{$class->getTableName()}_id';\n}\n";
+        $out .= '}
+';
+        $out .= self::getHeel();
+        return $out;
+    }
 }
-
-public function getChildIdField()
-{
-	return '{$remoteColumnName}_id';
-}
-
-EOT;
-			}
-			
-			$out .= <<<EOT
-
-public function getParentIdField()
-{
-	return '{$class->getTableName()}_id';
-}
-
-EOT;
-			
-			
-			$out .= "}\n";
-			$out .= self::getHeel();
-			
-			return $out;
-		}
-	}
-?>

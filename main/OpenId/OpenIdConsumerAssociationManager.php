@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\main\OpenId;
+
+use onPHP\core\Base\Timestamp;
+use onPHP\main\Net\HttpUrl;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Anton E. Lebedevich                             *
  *                                                                         *
@@ -9,40 +15,33 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup OpenId
-	**/
-	interface OpenIdConsumerAssociationManager
-	{
-		/**
-		 * @return OpenIdConsumerAssociation
-		**/
-		public function findByHandle($handle, $type);
-		
-		/**
-		 * @return OpenIdConsumerAssociation
-		**/
-		public function findByServer(HttpUrl $server);
-		
-		/**
-		 * @return OpenIdConsumerAssociation
-		**/
-		public function makeAndSave(
-			$handle,
-			$type,
-			$secred,
-			Timestamp $expires,
-			HttpUrl $server
-		);
-		
-		/**
-		 * @return OpenIdConsumerAssociationManager
-		**/
-		public function purgeExpired();
-		
-		/**
-		 * @return OpenIdConsumerAssociationManager
-		**/
-		public function purgeByHandle($handle);
-	}
-?>
+/**
+ * @ingroup OpenId
+ **/
+interface OpenIdConsumerAssociationManager
+{
+    /**
+     * @return OpenIdConsumerAssociation
+     **/
+    public function findByHandle($handle, $type);
+
+    /**
+     * @return OpenIdConsumerAssociation
+     **/
+    public function findByServer(HttpUrl $server);
+
+    /**
+     * @return OpenIdConsumerAssociation
+     **/
+    public function makeAndSave($handle, $type, $secred, Timestamp $expires, HttpUrl $server);
+
+    /**
+     * @return OpenIdConsumerAssociationManager
+     **/
+    public function purgeExpired();
+
+    /**
+     * @return OpenIdConsumerAssociationManager
+     **/
+    public function purgeByHandle($handle);
+}

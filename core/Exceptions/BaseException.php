@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\core\Exceptions;
+
+use Exception;
+
 /****************************************************************************
  *   Copyright (C) 2004-2007 by Konstantin V. Arkhipov, Anton E. Lebedevich *
  *                                                                          *
@@ -9,17 +14,14 @@
  *                                                                          *
  ****************************************************************************/
 
-	/**
-	 * @ingroup Exceptions
-	 * @ingroup Module
-	**/
-	class BaseException extends Exception
-	{
-		public function __toString()
-		{
-			return
-				"[$this->message] in: \n".
-				$this->getTraceAsString();
-		}
-	}
-?>
+/**
+ * @ingroup Exceptions
+ * @ingroup Module
+ **/
+class BaseException extends Exception
+{
+    public function __toString()
+    {
+        return "[{$this->message}] in: \n".$this->getTraceAsString();
+    }
+}

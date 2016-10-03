@@ -1,4 +1,12 @@
 <?php
+
+namespace onPHP\meta\types;
+
+use onPHP\core\Base\Assert;
+use onPHP\core\Exceptions\UnsupportedMethodException;
+use onPHP\meta\classes\MetaClass;
+use onPHP\meta\classes\MetaClassProperty;
+
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *
  *                                                                         *
@@ -9,119 +17,71 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Types
-	**/
-	abstract class BasePropertyType
-	{
-		abstract public function getDeclaration();
-		abstract public function isMeasurable();
-		abstract public function toColumnType();
-		abstract public function getPrimitiveName();
-		
-		protected $default = null;
-		
-		public function isGeneric()
-		{
-			return true;
-		}
-		
-		public function toMethods(
-			MetaClass $class,
-			MetaClassProperty $property,
-			MetaClassProperty $holder = null
-		)
-		{
-			return
-				$this->toGetter($class, $property, $holder)
-				.$this->toSetter($class, $property, $holder);
-		}
-		
-		public function hasDefault()
-		{
-			return ($this->default !== null);
-		}
-		
-		public function getDefault()
-		{
-			return $this->default;
-		}
-		
-		public function setDefault($default)
-		{
-			throw new UnsupportedMethodException(
-				'only generic non-object types can have default values atm'
-			);
-		}
-		
-		public function toGetter(
-			MetaClass $class,
-			MetaClassProperty $property,
-			MetaClassProperty $holder = null
-		)
-		{
-			if ($holder)
-				$name = $holder->getName().'->get'.ucfirst($property->getName()).'()';
-			else
-				$name = $property->getName();
-			
-			$methodName = 'get'.ucfirst($property->getName());
-			
-			return <<<EOT
-
-public function {$methodName}()
-{
-	return \$this->{$name};
-}
-
-EOT;
-		}
-		
-		public function toSetter(
-			MetaClass $class,
-			MetaClassProperty $property,
-			MetaClassProperty $holder = null
-		)
-		{
-			$name = $property->getName();
-			$methodName = 'set'.ucfirst($name);
-			
-			if ($holder) {
-				return <<<EOT
-
 /**
- * @return {$holder->getClass()->getName()}
-**/
-public function {$methodName}(\${$name})
+ * @ingroup Types
+ **/
+abstract class BasePropertyType
 {
-	\$this->{$holder->getName()}->{$methodName}(\${$name});
+    public abstract function getDeclaration();
 
-	return \$this;
+    public abstract function isMeasurable();
+
+    public abstract function toColumnType();
+
+    public abstract function getPrimitiveName();
+
+    protected $default = null;
+
+    public function isGeneric()
+    {
+        return true;
+    }
+
+    public function toMethods(MetaClass $class, MetaClassProperty $property, MetaClassProperty $holder = null)
+    {
+        return $this->toGetter($class, $property, $holder).$this->toSetter($class, $property, $holder);
+    }
+
+    public function hasDefault()
+    {
+        return $this->default !== null;
+    }
+
+    public function getDefault()
+    {
+        return $this->default;
+    }
+
+    public function setDefault($default)
+    {
+        throw new UnsupportedMethodException('only generic non-object types can have default values atm');
+    }
+
+    public function toGetter(MetaClass $class, MetaClassProperty $property, MetaClassProperty $holder = null)
+    {
+        if ($holder) {
+            $name = $holder->getName().'->get'.ucfirst($property->getName()).'()';
+        } else {
+            $name = $property->getName();
+        }
+        $methodName = 'get'.ucfirst($property->getName());
+        return "\npublic function {$methodName}()\n{\n\treturn \$this->{$name};\n}\n";
+    }
+
+    public function toSetter(MetaClass $class, MetaClassProperty $property, MetaClassProperty $holder = null)
+    {
+        $name       = $property->getName();
+        $methodName = 'set'.ucfirst($name);
+        if ($holder) {
+            return "\n/**\n * @return {$holder->getClass()->getName()}\n**/\npublic function {$methodName}(\${$name})\n{\n\t\$this->{$holder->getName()}->{$methodName}(\${$name});\n\n\treturn \$this;\n}\n";
+        } else {
+            return "\n/**\n * @return {$class->getName()}\n**/\npublic function {$methodName}(\${$name})\n{\n\t\$this->{$name} = \${$name};\n\n\treturn \$this;\n}\n";
+        }
+        Assert::isUnreachable();
+    }
+
+    public function getHint()
+    {
+        return null;
+    }
 }
-
-EOT;
-			} else {
-				return <<<EOT
-
-/**
- * @return {$class->getName()}
-**/
-public function {$methodName}(\${$name})
-{
-	\$this->{$name} = \${$name};
-
-	return \$this;
-}
-
-EOT;
-			}
-
-			Assert::isUnreachable();
-		}
-		
-		public function getHint()
-		{
-			return null;
-		}
-	}
-?>

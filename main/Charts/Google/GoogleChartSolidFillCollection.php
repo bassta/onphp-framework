@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\Charts\Google;
+
+use onPHP\main\Utils\TuringTest\Color;
+
 /***************************************************************************
  *   Copyright (C) 2009 by Denis M. Gabaidulin                             *
  *                                                                         *
@@ -9,43 +14,38 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup GoogleChart
-	**/
-	final class GoogleChartSolidFillCollection extends BaseGoogleChartParameter
-	{
-		private $fillers = array();
-		
-		/**
-		 * @return GoogleChartSolidFillCollection
-		**/
-		public static function create()
-		{
-			return new self;
-		}
-		
-		public function addFiller(GoogleChartSolidFillType $type, Color $color)
-		{
-			$this->fillers[] =
-				GoogleChartSolidFill::create($type)->
-				setColor($color);
-			
-			return $this;
-		}
-		
-		public function hasFillers()
-		{
-			return !empty($this->fillers);
-		}
-		
-		public function toString()
-		{
-			$fillerString = GoogleChartSolidFill::getParamName().'=';
-			
-			foreach ($this->fillers as $filler)
-				$fillers[] = $filler->toString();
-			
-			return $fillerString.implode('|', $fillers);
-		}
-	}
-?>
+/**
+ * @ingroup GoogleChart
+ **/
+final class GoogleChartSolidFillCollection extends BaseGoogleChartParameter
+{
+    private $fillers = array();
+
+    /**
+     * @return GoogleChartSolidFillCollection
+     **/
+    public static function create()
+    {
+        return new self();
+    }
+
+    public function addFiller(GoogleChartSolidFillType $type, Color $color)
+    {
+        $this->fillers[] = GoogleChartSolidFill::create($type)->setColor($color);
+        return $this;
+    }
+
+    public function hasFillers()
+    {
+        return !empty($this->fillers);
+    }
+
+    public function toString()
+    {
+        $fillerString = GoogleChartSolidFill::getParamName().'=';
+        foreach ($this->fillers as $filler) {
+            $fillers[] = $filler->toString();
+        }
+        return $fillerString.implode('|', $fillers);
+    }
+}

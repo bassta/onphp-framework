@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\core\Cache;
+
+use onPHP\core\Base\Assert;
+
 /****************************************************************************
  *   Copyright (C) 2011 by Evgeny V. Kokovikhin                             *
  *   This program is free software; you can redistribute it and/or modify   *
@@ -8,91 +13,75 @@
  *                                                                          *
  ****************************************************************************/
 
-	/**
-	 * One more Aggregate cache.
-	 *
-	 * @ingroup Cache
-	**/
-	final class CyclicAggregateCache extends BaseAggregateCache
-	{
-		const DEFAULT_SUMMARY_WEIGHT = 1000;
-		
-		private $summaryWeight = self::DEFAULT_SUMMARY_WEIGHT;
-		private $sorted = false;
+/**
+ * One more Aggregate cache.
+ *
+ * @ingroup Cache
+ **/
+final class CyclicAggregateCache extends BaseAggregateCache
+{
+    const DEFAULT_SUMMARY_WEIGHT = 1000;
+    private $summaryWeight = self::DEFAULT_SUMMARY_WEIGHT;
+    private $sorted = false;
 
-		/**
-		 * @return CyclicAggregateCache
-		**/
-		public static function create()
-		{
-			return new self();
-		}
+    /**
+     * @return CyclicAggregateCache
+     **/
+    public static function create()
+    {
+        return new self();
+    }
 
-		public function setSummaryWeight($weight)
-		{
-			Assert::isPositiveInteger($weight);
-			
-			$this->summaryWeight = $weight;
-			$this->sorted = false;
-			
-			return $this;
-		}
+    public function setSummaryWeight($weight)
+    {
+        Assert::isPositiveInteger($weight);
+        $this->summaryWeight = $weight;
+        $this->sorted        = false;
+        return $this;
+    }
 
-		public function addPeer($label, CachePeer $peer, $mountPoint)
-		{
-			Assert::isLesserOrEqual($mountPoint, $this->summaryWeight);
-			Assert::isGreaterOrEqual($mountPoint, 0);
+    public function addPeer($label, CachePeer $peer, $mountPoint)
+    {
+        Assert::isLesserOrEqual($mountPoint, $this->summaryWeight);
+        Assert::isGreaterOrEqual($mountPoint, 0);
+        $this->doAddPeer($label, $peer);
+        $this->peers[$label]['mountPoint'] = $mountPoint;
+        $this->sorted                      = false;
+        return $this;
+    }
 
-			$this->doAddPeer($label, $peer);
+    protected function guessLabel($key)
+    {
+        if (!$this->sorted) {
+            $this->sortPeers();
+        }
+        $point     = hexdec(substr(sha1($key), 0, 5)) % $this->summaryWeight;
+        $firstPeer = reset($this->peers);
+        while ($peer = current($this->peers)) {
+            if ($point <= $peer['mountPoint']) {
+                return key($this->peers);
+            }
+            next($this->peers);
+        }
+        if ($point <= $firstPeer['mountPoint'] + $this->summaryWeight) {
+            reset($this->peers);
+            return key($this->peers);
+        }
+        Assert::isUnreachable();
+    }
 
-			$this->peers[$label]['mountPoint'] = $mountPoint;
-			$this->sorted = false;
-			
-			return $this;
-		}
+    private function sortPeers()
+    {
+        uasort($this->peers, array('self', 'comparePeers'));
+        $this->sorted = true;
+        return $this;
+    }
 
-		protected function guessLabel($key)
-		{
-			if (!$this->sorted)
-				$this->sortPeers();
-
-			$point = hexdec(substr(sha1($key), 0, 5)) % $this->summaryWeight;
-
-			$firstPeer = reset($this->peers);
-
-			while ($peer = current($this->peers)) {
-				
-				if ($point <= $peer['mountPoint'])
-					return key($this->peers);
-
-				next($this->peers);
-			}
-
-			if ($point <= ($firstPeer['mountPoint'] + $this->summaryWeight)) {
-				reset($this->peers);
-				
-				return key($this->peers);
-			}
-
-			Assert::isUnreachable();
-		}
-
-		private function sortPeers()
-		{
-			uasort($this->peers, array('self', 'comparePeers'));
-			
-			$this->sorted = true;
-			
-			return $this;
-		}
-
-		private static function comparePeers(array $first, array $second)
-		{
-			if ($first['mountPoint'] == $second['mountPoint'])
-				return 0;
-
-			 return
-				($first['mountPoint'] < $second['mountPoint']) ? -1 : 1;
-		}
-	}
-?>
+    private static function comparePeers(array $first, array $second)
+    {
+        if ($first['mountPoint'] == $second['mountPoint']) {
+            return 0;
+        }
+        return $first['mountPoint'] < $second['mountPoint'] ? -1 : 1;
+    }
+}

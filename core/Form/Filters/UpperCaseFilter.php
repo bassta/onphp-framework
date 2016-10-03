@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\core\Form\Filters;
+
+use onPHP\core\Base\Singleton;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Sergey M. Skachkov                              *
  *                                                                         *
@@ -9,22 +14,21 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	  * @ingroup Filters
-	**/
-	final class UpperCaseFilter extends BaseFilter
-	{
-		/**
-		 * @return LowerCaseFilter
-		**/
-		public static function me()
-		{
-			return Singleton::getInstance(__CLASS__);
-		}
-		
-		public function apply($value)
-		{
-			return mb_strtoupper($value);
-		}
-	}
-?>
+/**
+ * @ingroup Filters
+ **/
+final class UpperCaseFilter extends BaseFilter
+{
+    /**
+     * @return LowerCaseFilter
+     **/
+    public static function me()
+    {
+        return Singleton::getInstance(__CLASS__);
+    }
+
+    public function apply($value)
+    {
+        return mb_strtoupper($value);
+    }
+}

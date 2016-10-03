@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\core\Form\Filters;
+
+use onPHP\core\Base\Singleton;
+
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Anton E. Lebedevich                        *
  *                                                                         *
@@ -9,24 +14,23 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * HTML Special Characters replacer.
-	 * 
-	 * @ingroup Filters
-	**/
-	final class HtmlSpecialCharsFilter extends BaseFilter
-	{
-		/**
-		 * @return HtmlSpecialCharsFilter
-		**/
-		public static function me()
-		{
-			return Singleton::getInstance(__CLASS__);
-		}
-		
-		public function apply($value)
-		{
-			return htmlspecialchars($value);
-		}
-	}
-?>
+/**
+ * HTML Special Characters replacer.
+ *
+ * @ingroup Filters
+ **/
+final class HtmlSpecialCharsFilter extends BaseFilter
+{
+    /**
+     * @return HtmlSpecialCharsFilter
+     **/
+    public static function me()
+    {
+        return Singleton::getInstance(__CLASS__);
+    }
+
+    public function apply($value)
+    {
+        return htmlspecialchars($value);
+    }
+}

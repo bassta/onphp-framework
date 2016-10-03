@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\main\Base;
+
+use onPHP\core\Exceptions\BaseException;
+use onPHP\main\Utils\FileUtils;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *
  *                                                                         *
@@ -8,30 +14,25 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
+final class TempDirectory
+{
+    private $path = null;
 
-	final class TempDirectory
-	{
-		private $path = null;
-		
-		public function __construct(
-			$directory = 'temp-garbage/', $prefix = 'TmpDir'
-		)
-		{
-			$this->path = FileUtils::makeTempDirectory($directory, $prefix);
-		}
-		
-		public function __destruct()
-		{
-			try {
-				FileUtils::removeDirectory($this->path, true);
-			} catch (BaseException $e) {
-				// boo! deal with garbage yourself.
-			}
-		}
-		
-		public function getPath()
-		{
-			return $this->path;
-		}
-	}
-?>
+    public function __construct($directory = 'temp-garbage/', $prefix = 'TmpDir')
+    {
+        $this->path = FileUtils::makeTempDirectory($directory, $prefix);
+    }
+
+    public function __destruct()
+    {
+        try {
+            FileUtils::removeDirectory($this->path, true);
+        } catch (BaseException $e) {
+        }
+    }
+
+    public function getPath()
+    {
+        return $this->path;
+    }
+}

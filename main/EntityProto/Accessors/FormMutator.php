@@ -1,4 +1,11 @@
 <?php
+
+namespace onPHP\main\EntityProto\Accessors;
+
+use onPHP\core\Base\Assert;
+use onPHP\main\EntityProto\EntityProto;
+use onPHP\main\EntityProto\PrototypedSetter;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *
  *                                                                         *
@@ -8,28 +15,24 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
+abstract class FormMutator extends PrototypedSetter
+{
+    private $getter = null;
 
-	abstract class FormMutator extends PrototypedSetter
-	{
-		private $getter = null;
-		
-		public function __construct(EntityProto $proto, &$object)
-		{
-			Assert::isInstance($object, 'Form');
-			
-			return parent::__construct($proto, $object);
-		}
-		
-		/**
-		 * @return FormGetter
-		**/
-		public function getGetter()
-		{
-			if (!$this->getter) {
-				$this->getter = new FormGetter($this->proto, $this->object);
-			}
-			
-			return $this->getter;
-		}
-	}
-?>
+    public function __construct(EntityProto $proto, &$object)
+    {
+        Assert::isInstance($object, 'Form');
+        return parent::__construct($proto, $object);
+    }
+
+    /**
+     * @return FormGetter
+     **/
+    public function getGetter()
+    {
+        if (!$this->getter) {
+            $this->getter = new FormGetter($this->proto, $this->object);
+        }
+        return $this->getter;
+    }
+}

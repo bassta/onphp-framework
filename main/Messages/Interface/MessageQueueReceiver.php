@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\Messages\Interface
+
+;
+
 /***************************************************************************
  *   Copyright (C) 2009 by Ivan Y. Khvostishkov                            *
  *                                                                         *
@@ -8,17 +13,15 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
+interface MessageQueueReceiver
+{
+    /**
+     * @return Message
+     **/
+    public function receive($uTimeout = null);
 
-	interface MessageQueueReceiver
-	{
-		/**
-		 * @return Message
-		**/
-		public function receive($uTimeout = null);
-		
-		/**
-		 * @return MessageQueue
-		**/
-		public function getQueue();
-	}
-?>
+    /**
+     * @return MessageQueue
+     **/
+    public function getQueue();
+}

@@ -1,4 +1,10 @@
 <?php
+
+namespace onPHP\main\Markup\Feed;
+
+use onPHP\core\Base\Instantiatable;
+use SimpleXMLElement;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Konstantin V. Arkhipov                          *
  *                                                                         *
@@ -9,12 +15,12 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Feed
-	**/
-	interface FeedItemWorker extends Instantiatable
-	{
-		public function makeItems(SimpleXMLElement $xmlFeed);
-		public function toXml(FeedItem $item);
-	}
-?>
+/**
+ * @ingroup Feed
+ **/
+interface FeedItemWorker extends Instantiatable
+{
+    public function makeItems(SimpleXMLElement $xmlFeed);
+
+    public function toXml(FeedItem $item);
+}

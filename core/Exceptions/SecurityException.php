@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\core\Exceptions;
+
+use Exception;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *
  *                                                                         *
@@ -9,9 +14,10 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Exceptions
-	 * @ingroup Module
-	**/
-	class SecurityException extends Exception {/*_*/}
-?>
+/**
+ * @ingroup Exceptions
+ * @ingroup Module
+ **/
+class SecurityException extends Exception
+{
+}

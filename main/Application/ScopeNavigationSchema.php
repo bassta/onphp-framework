@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\main\Application;
+
+use onPHP\core\Base\Singleton;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *
  *                                                                         *
@@ -8,10 +13,9 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
+abstract class ScopeNavigationSchema extends Singleton
+{
+    public abstract function extractPath(&$scope);
 
-	abstract class ScopeNavigationSchema extends Singleton
-	{
-		abstract public function extractPath(&$scope);
-		abstract public function getScope($path);
-	}
-?>
+    public abstract function getScope($path);
+}

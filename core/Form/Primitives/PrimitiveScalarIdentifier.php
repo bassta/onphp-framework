@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\core\Form\Primitives;
+
+use onPHP\core\Exceptions\WrongStateException;
+
 /***************************************************************************
  *   Copyright (C) 2009 by Konstantin V. Arkhipov                          *
  *                                                                         *
@@ -9,16 +14,15 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Primitives
-	**/
-	final class PrimitiveScalarIdentifier extends PrimitiveIdentifier
-	{
-		protected $scalar = true;
-		
-		public function setScalar($orly = false)
-		{
-			throw new WrongStateException();
-		}
-	}
-?>
+/**
+ * @ingroup Primitives
+ **/
+final class PrimitiveScalarIdentifier extends PrimitiveIdentifier
+{
+    protected $scalar = true;
+
+    public function setScalar($orly = false)
+    {
+        throw new WrongStateException();
+    }
+}

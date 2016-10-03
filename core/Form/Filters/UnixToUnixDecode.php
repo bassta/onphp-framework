@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\core\Form\Filters;
+
+use onPHP\core\Base\Singleton;
+
 /***************************************************************************
  *   Copyright (C) 2007 by Konstantin V. Arkhipov                          *
  *                                                                         *
@@ -9,24 +14,23 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * Decode a uuencoded string.
-	 * 
-	 * @ingroup Filters
-	**/
-	final class UnixToUnixDecode extends BaseFilter
-	{
-		/**
-		 * @return UnixToUnixDecode
-		**/
-		public static function me()
-		{
-			return Singleton::getInstance(__CLASS__);
-		}
-		
-		public function apply($value)
-		{
-			return convert_uudecode($value);
-		}
-	}
-?>
+/**
+ * Decode a uuencoded string.
+ *
+ * @ingroup Filters
+ **/
+final class UnixToUnixDecode extends BaseFilter
+{
+    /**
+     * @return UnixToUnixDecode
+     **/
+    public static function me()
+    {
+        return Singleton::getInstance(__CLASS__);
+    }
+
+    public function apply($value)
+    {
+        return convert_uudecode($value);
+    }
+}

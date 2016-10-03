@@ -1,4 +1,9 @@
 <?php
+
+namespace onPHP\core\Form\Filters;
+
+use Closure;
+
 /***************************************************************************
  *   Copyright (C) 2011 by Alexey S. Denisov                               *
  *                                                                         *
@@ -9,32 +14,31 @@
  *                                                                         *
  ***************************************************************************/
 
-	/**
-	 * @ingroup Filters
-	**/
-	final class CallbackFilter implements Filtrator
-	{
-		/**
-		 * @var Closure
-		 */
-		private $callback = null;
-		
-		/**
-		 * @return CallbackFilter
-		**/
-		public static function create(Closure $callback)
-		{
-			return new self($callback);
-		}
-		
-		public function __construct(Closure $callback)
-		{
-			$this->callback = $callback;
-		}
-		
-		public function apply($value)
-		{
-			return $this->callback->__invoke($value);
-		}
-	}
-?>
+/**
+ * @ingroup Filters
+ **/
+final class CallbackFilter implements Filtrator
+{
+    /**
+     * @var Closure
+     */
+    private $callback = null;
+
+    public function __construct(Closure $callback)
+    {
+        $this->callback = $callback;
+    }
+
+    /**
+     * @return CallbackFilter
+     **/
+    public static function create(Closure $callback)
+    {
+        return new self($callback);
+    }
+
+    public function apply($value)
+    {
+        return $this->callback->__invoke($value);
+    }
+}
