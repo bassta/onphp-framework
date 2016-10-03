@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\main\Autoloader;
+namespace onphp\test\main\Autoloader;
 
 use onPHP\main\Autoloader\NamespaceResolverPSR0;
 use onPHP\main\Autoloader\NamespaceResolverOnPHP;

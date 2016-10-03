@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\meta\types;
+namespace onphp\meta\types;
 
 use onPHP\core\Base\Assert;
 use onPHP\core\Exceptions\WrongArgumentException;

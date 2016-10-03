@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\db;
+namespace onphp\test\db;
 
 use onPHP\core\Base\Timestamp;
 use onPHP\core\Cache\Cache;

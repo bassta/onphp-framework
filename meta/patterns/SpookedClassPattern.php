@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\meta\patterns;
+namespace onphp\meta\patterns;
 
 use onPHP\core\Base\Singleton;
 use onPHP\meta\classes\MetaClass;

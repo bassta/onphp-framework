@@ -20,6 +20,8 @@
         "ext-http": "*"
     },
     "autoload": {
-        "files": ["global.inc.php.tpl"]
+        "psr-4": {
+            "onphp\\": "src/"
+        }
     }
 }

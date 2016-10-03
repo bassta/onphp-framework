@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\misc;
+namespace onphp\test\misc;
 
 use onPHP\core\Base\Assert;
 use onPHP\core\Exceptions\DatabaseException;

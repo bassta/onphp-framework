@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\main;
+namespace onphp\test\main;
 
 use onPHP\core\Exceptions\NetworkException;
 use onPHP\main\Flow\HttpRequest;

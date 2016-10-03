@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\meta\patterns;
+namespace onphp\meta\patterns;
 
     /***************************************************************************
      *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

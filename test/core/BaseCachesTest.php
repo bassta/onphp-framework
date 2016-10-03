@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\core;
+namespace onphp\test\core;
 
 use onPHP\core\Cache\Cache;
 use onPHP\core\Cache\CachePeer;

@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\meta\builders;
+namespace onphp\meta\builders;
 
 use onPHP\meta\classes\MetaClass;
 use onPHP\meta\classes\MetaRelation;

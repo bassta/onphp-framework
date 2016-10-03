@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\meta\builders;
+namespace onphp\meta\builders;
 
     /***************************************************************************
      *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

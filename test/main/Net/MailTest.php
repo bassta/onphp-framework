@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\main\Net;
+namespace onphp\test\main\Net;
 
 use onPHP\core\Exceptions\WrongArgumentException;
 use onPHP\main\Net\Mail\Mail;

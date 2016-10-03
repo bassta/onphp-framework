@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\core;
+namespace onphp\test\core;
 
 use onPHP\core\Base\Prototyped;
 use onPHP\test\meta\Business\TestUserWithContactExtended;

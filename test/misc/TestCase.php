@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\misc;
+namespace onphp\test\misc;
 
 /* $Id$ */
 abstract class TestCase extends PHPUnit_Framework_TestCase

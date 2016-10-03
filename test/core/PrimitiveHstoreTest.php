@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\core;
+namespace onphp\test\core;
 
 use onPHP\core\Exceptions\ObjectNotFoundException;
 use onPHP\core\Form\Form;

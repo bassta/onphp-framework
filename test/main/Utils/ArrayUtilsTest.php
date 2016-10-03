@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\main\Utils;
+namespace onphp\test\main\Utils;
 
 use onPHP\main\Base\StandardComparator;
 use onPHP\core\Base\Date;

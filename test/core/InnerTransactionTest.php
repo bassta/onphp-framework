@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\core;
+namespace onphp\test\core;
 
 use Exception;
 use onPHP\core\DB\Transaction\InnerTransaction;

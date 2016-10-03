@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\main;
+namespace onphp\test\main;
 
 use onPHP\main\Charts\Google\GoogleChartLabelStyleNumberType;
 use onPHP\main\Charts\Google\ChartLabelStyle;

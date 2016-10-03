@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\main\data\
+namespace onphp\test\main\data\
 namespace\onPHP\Up;
 
 ?>

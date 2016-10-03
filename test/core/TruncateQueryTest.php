@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\core;
+namespace onphp\test\core;
 
 use onPHP\core\DB\ImaginaryDialect;
 use onPHP\core\Exceptions\WrongArgumentException;

@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\main;
+namespace onphp\test\main;
 
 use onPHP\main\Markup\Feed\FeedChannel;
 use onPHP\main\Markup\Feed\FeedReader;

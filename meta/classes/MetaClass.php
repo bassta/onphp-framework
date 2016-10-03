@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\meta\classes;
+namespace onphp\meta\classes;
 
 use onPHP\core\Exceptions\MissingElementException;
 use onPHP\core\Exceptions\WrongArgumentException;

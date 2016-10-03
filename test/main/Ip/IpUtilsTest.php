@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\main\Ip;
+namespace onphp\test\main\Ip;
 
 use onPHP\main\Net\Ip\IpUtils;
 use onPHP\test\misc\TestCase;

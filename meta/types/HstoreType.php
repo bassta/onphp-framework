@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\meta\types;
+namespace onphp\meta\types;
 
     /***************************************************************************
      *   Copyright (C) 2009 by Sergey S. Sergeev                               *

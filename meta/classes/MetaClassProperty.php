@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\meta\classes;
+namespace onphp\meta\classes;
 
 use onPHP\meta\types\BooleanType;
 use onPHP\meta\patterns\InternalClassPattern;

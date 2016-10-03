@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\meta\classes;
+namespace onphp\meta\classes;
 
     /***************************************************************************
      *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

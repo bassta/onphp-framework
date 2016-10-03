@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\main\Utils;
+namespace onphp\test\main\Utils;
 
 use onPHP\core\Exceptions\BaseException;
 use onPHP\main\Utils\UrlParamsUtils;

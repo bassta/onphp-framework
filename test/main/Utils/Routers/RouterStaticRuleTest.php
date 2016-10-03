@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\main\Utils\Routers;
+namespace onphp\test\main\Utils\Routers;
 
 use onPHP\main\Flow\HttpRequest;
 use onPHP\main\Utils\Routers\RouterStaticRule;

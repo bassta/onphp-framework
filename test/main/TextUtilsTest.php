@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\main;
+namespace onphp\test\main;
 
 use onPHP\main\Utils\TextUtils;
 use onPHP\test\misc\TestCase;

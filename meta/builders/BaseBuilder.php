@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\meta\builders;
+namespace onphp\meta\builders;
 
 use onPHP\core\Base\StaticFactory;
 use onPHP\core\Exceptions\UnimplementedFeatureException;

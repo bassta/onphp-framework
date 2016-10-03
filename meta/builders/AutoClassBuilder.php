@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\meta\builders;
+namespace onphp\meta\builders;
 
 use onPHP\main\Criteria\FetchStrategy;
 use onPHP\meta\classes\MetaClass;

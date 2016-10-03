@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\main\Autoloader;
+namespace onphp\test\main\Autoloader;
 
 use onPHP\core\Base\Assert;
 use onPHP\core\Exceptions\BaseException;

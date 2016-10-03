@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\main;
+namespace onphp\test\main;
 
 use Exception;
 use onPHP\core\Exceptions\UnsupportedMethodException;

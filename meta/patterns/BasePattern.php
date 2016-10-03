@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\meta\patterns;
+namespace onphp\meta\patterns;
 
 use onPHP\meta\builders\DaoBuilder;
 use onPHP\meta\builders\AutoDaoBuilder;

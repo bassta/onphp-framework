@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\main\Utils\AMQP;
+namespace onphp\test\main\Utils\AMQP;
 
 use onPHP\main\Utils\AMQP\AMQPExchangeConfig;
 use onPHP\core\Base\Timestamp;

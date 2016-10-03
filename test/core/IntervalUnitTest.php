@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\core;
+namespace onphp\test\core;
 
 use onPHP\main\Base\TimestampRange;
 use onPHP\core\Base\Timestamp;

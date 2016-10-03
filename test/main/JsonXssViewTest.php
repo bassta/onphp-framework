@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\main;
+namespace onphp\test\main;
 
 use onPHP\main\Flow\Model;
 use onPHP\main\UI\View\JsonXssView;

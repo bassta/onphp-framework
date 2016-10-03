@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\main;
+namespace onphp\test\main;
 
 use onPHP\main\OQL\Parsers\OqlToken;
 use onPHP\main\OQL\Parsers\OqlTokenizer;

@@ -1,0 +1,67 @@
+<?php
+
+namespace onphp\main\Messages;
+
+use;
+use;
+use;
+use onPHP\core\Base\Assert;
+use onPHP\core\Exceptions\WrongStateException;
+use onPHP\main\Utils\IO\FileOutputStream;
+
+onPHP\main\Messages\Interface\Message;
+onPHP\main\Messages\Interface\MessageQueue;
+onPHP\main\Messages\Interface\MessageQueueSender;
+/***************************************************************************
+ *   Copyright (C) 2009 by Ivan Y. Khvostishkov                            *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU Lesser General Public License as        *
+ *   published by the Free Software Foundation; either version 3 of the    *
+ *   License, or (at your option) any later version.                       *
+ *                                                                         *
+ ***************************************************************************/
+final class TextFileSender implements MessageQueueSender
+{
+    private $queue = null;
+    private $stream = null;
+
+    public static function create()
+    {
+        return new self();
+    }
+
+    public function setQueue(MessageQueue $queue)
+    {
+        Assert::isInstance($queue, 'TextFileQueue');
+        $this->queue = $queue;
+        return $this;
+    }
+
+    /**
+     * @return MessageQueue
+     **/
+    public function getQueue()
+    {
+        return $this->queue;
+    }
+
+    public function send(Message $message)
+    {
+        if (!$this->queue) {
+            throw new WrongStateException('you must set the queue first');
+        }
+        Assert::isInstance($message, 'TextMessage');
+        $this->getStream()->write($message->getTimestamp()
+                                          ->toString().'	'.str_replace(PHP_EOL, ' ', $message->getText()).PHP_EOL);
+    }
+
+    private function getStream()
+    {
+        if (!$this->stream) {
+            Assert::isNotNull($this->queue->getFileName());
+            $this->stream = FileOutputStream::create($this->queue->getFileName(), true);
+        }
+        return $this->stream;
+    }
+}

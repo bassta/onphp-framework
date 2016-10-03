@@ -1,6 +1,6 @@
 <?php
 
-namespace onPHP\test\misc;
+namespace onphp\test\misc;
 
 abstract class TestCaseDB extends TestCase
 {
