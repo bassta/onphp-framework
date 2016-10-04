@@ -2,10 +2,10 @@
 
 namespace onphp\core\Cache;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\BaseException;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\main\Utils\FileUtils;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\BaseException;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\main\Utils\FileUtils;
 
 /***************************************************************************
  *   Copyright (C) 2005-2008 by Konstantin V. Arkhipov                     *

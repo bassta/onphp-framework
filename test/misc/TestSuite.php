@@ -2,7 +2,7 @@
 
 namespace onphp\test\misc;
 
-use onPHP\core\Cache\Cache;
+use onphp\core\Cache\Cache;
 
 final class TestSuite extends PHPUnit_Framework_TestSuite
 {

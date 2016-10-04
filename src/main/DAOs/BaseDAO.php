@@ -2,9 +2,9 @@
 
 namespace onphp\main\DAOs;
 
-use onPHP\core\Base\Identifiable;
-use onPHP\core\Logic\LogicalObject;
-use onPHP\core\OSQL\SelectQuery;
+use onphp\core\Base\Identifiable;
+use onphp\core\Logic\LogicalObject;
+use onphp\core\OSQL\SelectQuery;
 
 /***************************************************************************
  *   Copyright (C) 2005-2008 by Konstantin V. Arkhipov                     *

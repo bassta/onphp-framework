@@ -2,8 +2,8 @@
 
 namespace onphp\main\OQL\Parsers;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Logic\BinaryExpression;
+use onphp\core\Base\Assert;
+use onphp\core\Logic\BinaryExpression;
 
 /****************************************************************************
  *   Copyright (C) 2008-2009 by Vladlen Y. Koshelev                         *

@@ -2,9 +2,9 @@
 
 namespace onphp\test\core;
 
-use onPHP\core\Base\Time;
-use onPHP\core\Form\Primitive;
-use onPHP\test\misc\TestCase;
+use onphp\core\Base\Time;
+use onphp\core\Form\Primitive;
+use onphp\test\misc\TestCase;
 
 /* $Id$ */
 

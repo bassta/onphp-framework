@@ -2,8 +2,8 @@
 
 namespace onphp\test\main;
 
-use onPHP\main\Base\FloatRange;
-use onPHP\test\misc\TestCase;
+use onphp\main\Base\FloatRange;
+use onphp\test\misc\TestCase;
 
 final class FloatRangeTest extends TestCase
 {

@@ -2,14 +2,14 @@
 
 namespace onphp\main\OpenId;
 
-use onPHP\main\Flow\HttpRequest;
-use onPHP\main\Markup\Html\HtmlTokenizer;
-use onPHP\main\Markup\Html\SgmlEndTag;
-use onPHP\main\Markup\Html\SgmlOpenTag;
-use onPHP\main\Net\Http\HttpClient;
-use onPHP\main\Net\Http\HttpMethod;
-use onPHP\main\Net\HttpUrl;
-use onPHP\main\Utils\IO\StringInputStream;
+use onphp\main\Flow\HttpRequest;
+use onphp\main\Markup\Html\HtmlTokenizer;
+use onphp\main\Markup\Html\SgmlEndTag;
+use onphp\main\Markup\Html\SgmlOpenTag;
+use onphp\main\Net\Http\HttpClient;
+use onphp\main\Net\Http\HttpMethod;
+use onphp\main\Net\HttpUrl;
+use onphp\main\Utils\IO\StringInputStream;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Anton E. Lebedevich                             *

@@ -2,7 +2,7 @@
 
 namespace onphp\meta\builders;
 
-use onPHP\meta\classes\MetaClass;
+use onphp\meta\classes\MetaClass;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Georgiy T. Kutsurua                             *

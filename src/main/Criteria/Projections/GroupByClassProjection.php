@@ -2,8 +2,8 @@
 
 namespace onphp\main\Criteria\Projections;
 
-use onPHP\core\OSQL\DBField;
-use onPHP\core\OSQL\JoinCapableQuery;
+use onphp\core\OSQL\DBField;
+use onphp\core\OSQL\JoinCapableQuery;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Dmitry A. Lomash                                *

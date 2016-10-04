@@ -2,15 +2,15 @@
 
 namespace onphp\core\OSQL;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Identifiable;
-use onPHP\core\Base\Stringable;
-use onPHP\core\Base\Time;
-use onPHP\core\DB\Dialect;
-use onPHP\core\Exceptions\MissingElementException;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\main\Base\DateRange;
-use onPHP\main\Base\Range;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Identifiable;
+use onphp\core\Base\Stringable;
+use onphp\core\Base\Time;
+use onphp\core\DB\Dialect;
+use onphp\core\Exceptions\MissingElementException;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\main\Base\DateRange;
+use onphp\main\Base\Range;
 
 /***************************************************************************
  *   Copyright (C) 2004-2008 by Konstantin V. Arkhipov                     *

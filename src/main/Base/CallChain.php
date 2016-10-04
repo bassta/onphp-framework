@@ -2,7 +2,7 @@
 
 namespace onphp\main\Base;
 
-use onPHP\core\Exceptions\WrongStateException;
+use onphp\core\Exceptions\WrongStateException;
 
 /***************************************************************************
  *   Copyright (C) 2008 by Garmonbozia Research Group                      *

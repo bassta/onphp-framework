@@ -2,8 +2,8 @@
 
 namespace onphp\main\Base;
 
-use onPHP\core\Base\Stringable;
-use onPHP\core\Exceptions\WrongArgumentException;
+use onphp\core\Base\Stringable;
+use onphp\core\Exceptions\WrongArgumentException;
 
 /***************************************************************************
  *    Copyright (C) 2009 by Denis M. Gabaidulin                            *

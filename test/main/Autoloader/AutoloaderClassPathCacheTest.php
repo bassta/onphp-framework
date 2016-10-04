@@ -2,10 +2,10 @@
 
 namespace onphp\test\main\Autoloader;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\BaseException;
-use onPHP\main\Utils\FileUtils;
-use onPHP\test\misc\TestCase;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\BaseException;
+use onphp\main\Utils\FileUtils;
+use onphp\test\misc\TestCase;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Alexey S. Denisov                               *

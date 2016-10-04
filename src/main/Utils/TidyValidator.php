@@ -2,7 +2,7 @@
 
 namespace onphp\main\Utils;
 
-use onPHP\core\Base\Assert;
+use onphp\core\Base\Assert;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Sergey M. Skachkov                              *

@@ -2,12 +2,12 @@
 
 namespace onphp\test\main;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Stringable;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\main\Flow\Model;
-use onPHP\main\UI\View\JsonPView;
-use onPHP\test\misc\TestCase;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Stringable;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\main\Flow\Model;
+use onphp\main\UI\View\JsonPView;
+use onphp\test\misc\TestCase;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Georgiy T. Kutsurua                             *

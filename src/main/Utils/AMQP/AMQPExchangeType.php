@@ -2,7 +2,7 @@
 
 namespace onphp\main\Utils\AMQP;
 
-use onPHP\core\Base\Enumeration;
+use onphp\core\Base\Enumeration;
 
 /***************************************************************************
  *   Copyright (C) 2011 by Sergey S. Sergeev                               *

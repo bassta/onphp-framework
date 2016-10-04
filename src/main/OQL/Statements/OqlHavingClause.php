@@ -2,8 +2,8 @@
 
 namespace onphp\main\OQL\Statements;
 
-use onPHP\core\Base\Assert;
-use onPHP\main\OQL\Expressions\OqlQueryExpression;
+use onphp\core\Base\Assert;
+use onphp\main\OQL\Expressions\OqlQueryExpression;
 
 /****************************************************************************
  *   Copyright (C) 2009 by Vladlen Y. Koshelev                              *

@@ -2,16 +2,16 @@
 
 namespace onphp\meta\patterns;
 
-use onPHP\meta\builders\DaoBuilder;
-use onPHP\meta\builders\AutoDaoBuilder;
-use onPHP\meta\builders\BusinessClassBuilder;
-use onPHP\meta\builders\AutoClassBuilder;
-use onPHP\meta\builders\ProtoClassBuilder;
-use onPHP\meta\builders\AutoProtoClassBuilder;
-use onPHP\meta\classes\Format;
-use onPHP\meta\classes\MetaClass;
-use onPHP\meta\classes\MetaConfiguration;
-use onPHP\core\Base\Singleton;
+use onphp\meta\builders\DaoBuilder;
+use onphp\meta\builders\AutoDaoBuilder;
+use onphp\meta\builders\BusinessClassBuilder;
+use onphp\meta\builders\AutoClassBuilder;
+use onphp\meta\builders\ProtoClassBuilder;
+use onphp\meta\builders\AutoProtoClassBuilder;
+use onphp\meta\classes\Format;
+use onphp\meta\classes\MetaClass;
+use onphp\meta\classes\MetaConfiguration;
+use onphp\core\Base\Singleton;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

@@ -2,12 +2,12 @@
 
 namespace onphp\core\Logic;
 
-use onPHP\core\Base\Identifiable;
-use onPHP\core\Base\StaticFactory;
-use onPHP\core\DB\DB;
-use onPHP\core\OSQL\DBValue;
-use onPHP\core\OSQL\FullTextRank;
-use onPHP\core\OSQL\FullTextSearch;
+use onphp\core\Base\Identifiable;
+use onphp\core\Base\StaticFactory;
+use onphp\core\DB\DB;
+use onphp\core\OSQL\DBValue;
+use onphp\core\OSQL\FullTextRank;
+use onphp\core\OSQL\FullTextSearch;
 
 /***************************************************************************
  *   Copyright (C) 2004-2007 by Konstantin V. Arkhipov                     *

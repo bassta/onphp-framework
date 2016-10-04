@@ -2,16 +2,16 @@
 
 namespace onphp\test\main\Utils\Routers;
 
-use onPHP\main\Flow\HttpRequest;
-use onPHP\main\Utils\Routers\RouterRegexpRule;
-use onPHP\main\Utils\Routers\RouterTransparentRule;
-use onPHP\main\Utils\Routers\RouterStaticRule;
-use onPHP\main\Utils\Routers\RouterHostnameRule;
-use onPHP\main\Utils\Routers\RouterChainRule;
-use onPHP\main\Net\HttpUrl;
-use onPHP\main\Utils\Routers\RouterRewrite;
-use onPHP\test\misc\ServerVarUtils;
-use onPHP\test\misc\TestCase;
+use onphp\main\Flow\HttpRequest;
+use onphp\main\Utils\Routers\RouterRegexpRule;
+use onphp\main\Utils\Routers\RouterTransparentRule;
+use onphp\main\Utils\Routers\RouterStaticRule;
+use onphp\main\Utils\Routers\RouterHostnameRule;
+use onphp\main\Utils\Routers\RouterChainRule;
+use onphp\main\Net\HttpUrl;
+use onphp\main\Utils\Routers\RouterRewrite;
+use onphp\test\misc\ServerVarUtils;
+use onphp\test\misc\TestCase;
 
 /* $Id$ */
 

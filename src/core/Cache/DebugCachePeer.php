@@ -2,9 +2,9 @@
 
 namespace onphp\core\Cache;
 
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\main\Utils\IO\FileOutputStream;
-use onPHP\main\Utils\Logging\StreamLogger;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\main\Utils\IO\FileOutputStream;
+use onphp\main\Utils\Logging\StreamLogger;
 
 /***************************************************************************
  *   Copyright (C) 2009 by Denis M. Gabaidulin                             *

@@ -2,12 +2,12 @@
 
 namespace onphp\core\Form\Primitives;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Enum;
-use onPHP\core\Exceptions\MissingElementException;
-use onPHP\core\Exceptions\UnsupportedMethodException;
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\main\Utils\ClassUtils;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Enum;
+use onphp\core\Exceptions\MissingElementException;
+use onphp\core\Exceptions\UnsupportedMethodException;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\main\Utils\ClassUtils;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Georgiy T. Kutsurua                             *

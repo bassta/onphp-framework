@@ -3,7 +3,7 @@
 namespace onphp\test\misc;
 
 /* $Id$ */
-abstract class TestCase extends PHPUnit_Framework_TestCase
+abstract class TestCase extends \PHPUnit_Framework_TestCase
 {
     protected $backupGlobals = false;
 }

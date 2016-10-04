@@ -2,12 +2,12 @@
 
 namespace onphp\main\Base;
 
-use onPHP\main\Utils\ClassUtils;
-use onPHP\core\Base\Date;
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Timestamp;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\Base\Stringable;
+use onphp\main\Utils\ClassUtils;
+use onphp\core\Base\Date;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Timestamp;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\Base\Stringable;
 
 /***************************************************************************
  *   Copyright (C) 2004-2007 by Anton E. Lebedevich                        *

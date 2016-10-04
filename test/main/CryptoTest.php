@@ -2,17 +2,17 @@
 
 namespace onphp\test\main;
 
-use onPHP\core\Exceptions\BaseException;
-use onPHP\main\Crypto\CryptoFunctions;
-use onPHP\main\Crypto\DiffieHellmanKeyPair;
-use onPHP\main\Crypto\DiffieHellmanParameters;
-use onPHP\main\Math\BigNumberFactory;
-use onPHP\main\Math\FileRandomSource;
-use onPHP\main\Math\GmpBigIntegerFactory;
-use onPHP\main\Math\MtRandomSource;
-use onPHP\main\Math\RandomSource;
-use onPHP\main\Utils\TextUtils;
-use onPHP\test\misc\TestCase;
+use onphp\core\Exceptions\BaseException;
+use onphp\main\Crypto\CryptoFunctions;
+use onphp\main\Crypto\DiffieHellmanKeyPair;
+use onphp\main\Crypto\DiffieHellmanParameters;
+use onphp\main\Math\BigNumberFactory;
+use onphp\main\Math\FileRandomSource;
+use onphp\main\Math\GmpBigIntegerFactory;
+use onphp\main\Math\MtRandomSource;
+use onphp\main\Math\RandomSource;
+use onphp\main\Utils\TextUtils;
+use onphp\test\misc\TestCase;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Anton E. Lebedevich                             *

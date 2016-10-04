@@ -2,10 +2,10 @@
 
 namespace onphp\test\main;
 
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\Logic\Expression;
-use onPHP\core\OSQL\OSQL;
-use onPHP\test\misc\TestCaseDB;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\Logic\Expression;
+use onphp\core\OSQL\OSQL;
+use onphp\test\misc\TestCaseDB;
 
 final class OsqlDeleteTest extends TestCaseDB
 {

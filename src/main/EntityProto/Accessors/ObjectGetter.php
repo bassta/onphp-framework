@@ -2,7 +2,7 @@
 
 namespace onphp\main\EntityProto\Accessors;
 
-use onPHP\main\EntityProto\PrototypedGetter;
+use onphp\main\EntityProto\PrototypedGetter;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *

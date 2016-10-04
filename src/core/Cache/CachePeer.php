@@ -2,8 +2,8 @@
 
 namespace onphp\core\Cache;
 
-use onPHP\core\Base\Singleton;
-use onPHP\main\DAOs\GenericDAO;
+use onphp\core\Base\Singleton;
+use onphp\main\DAOs\GenericDAO;
 
 /****************************************************************************
  *   Copyright (C) 2005-2008 by Anton E. Lebedevich, Konstantin V. Arkhipov *

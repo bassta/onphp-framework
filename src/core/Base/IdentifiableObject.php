@@ -2,8 +2,8 @@
 
 namespace onphp\core\Base;
 
-use onPHP\core\DB\Dialect;
-use onPHP\core\OSQL\DialectString;
+use onphp\core\DB\Dialect;
+use onphp\core\OSQL\DialectString;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Garmonbozia Research Group                 *

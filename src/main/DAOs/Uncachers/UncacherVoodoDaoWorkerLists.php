@@ -2,10 +2,10 @@
 
 namespace onphp\main\DAOs\Uncachers;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Cache\Cache;
-use onPHP\main\DAOs\Handlers\SegmentHandler;
-use onPHP\main\Utils\ClassUtils;
+use onphp\core\Base\Assert;
+use onphp\core\Cache\Cache;
+use onphp\main\DAOs\Handlers\SegmentHandler;
+use onphp\main\Utils\ClassUtils;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Aleksey S. Denisov                              *

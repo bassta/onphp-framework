@@ -2,10 +2,10 @@
 
 namespace onphp\main\Net;
 
-use onPHP\core\Exceptions\UnsupportedMethodException;
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\Base\Stringable;
+use onphp\core\Exceptions\UnsupportedMethodException;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\Base\Stringable;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *

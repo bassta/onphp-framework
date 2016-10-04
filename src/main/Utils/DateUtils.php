@@ -2,12 +2,12 @@
 
 namespace onphp\main\Utils;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Date;
-use onPHP\core\Base\IntervalUnit;
-use onPHP\core\Base\StaticFactory;
-use onPHP\core\Base\Timestamp;
-use onPHP\main\Base\DateRange;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Date;
+use onphp\core\Base\IntervalUnit;
+use onphp\core\Base\StaticFactory;
+use onphp\core\Base\Timestamp;
+use onphp\main\Base\DateRange;
 
 /***************************************************************************
  *   Copyright (C) 2007-2009 by Ivan Y. Khvostishkov                       *

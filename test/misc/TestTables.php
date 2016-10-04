@@ -2,9 +2,9 @@
 
 namespace onphp\test\misc;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\DatabaseException;
-use onPHP\core\OSQL\OSQL;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\DatabaseException;
+use onphp\core\OSQL\OSQL;
 
 abstract class TestTables extends TestCase
 {

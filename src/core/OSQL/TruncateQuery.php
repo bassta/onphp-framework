@@ -2,9 +2,9 @@
 
 namespace onphp\core\OSQL;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\DB\Dialect;
-use onPHP\core\Exceptions\UnsupportedMethodException;
+use onphp\core\Base\Assert;
+use onphp\core\DB\Dialect;
+use onphp\core\Exceptions\UnsupportedMethodException;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

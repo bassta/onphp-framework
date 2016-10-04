@@ -2,7 +2,7 @@
 
 namespace onphp\core\Form\Filters;
 
-use onPHP\core\Base\Singleton;
+use onphp\core\Base\Singleton;
 
 /***************************************************************************
  *   Copyright (C) 2009 by Denis M. Gabaidulin                             *

@@ -2,14 +2,14 @@
 
 namespace onphp\test\main\Net;
 
-use onPHP\core\Exceptions\NetworkException;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\main\Flow\HttpRequest;
-use onPHP\main\Net\Http\CurlHttpClient;
-use onPHP\main\Net\Http\HttpMethod;
-use onPHP\main\Net\HttpUrl;
-use onPHP\main\Utils\UrlParamsUtils;
-use onPHP\test\misc\TestCase;
+use onphp\core\Exceptions\NetworkException;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\main\Flow\HttpRequest;
+use onphp\main\Net\Http\CurlHttpClient;
+use onphp\main\Net\Http\HttpMethod;
+use onphp\main\Net\HttpUrl;
+use onphp\main\Utils\UrlParamsUtils;
+use onphp\test\misc\TestCase;
 
 final class CurlHttpClientTest extends TestCase
 {

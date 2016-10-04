@@ -2,7 +2,7 @@
 
 namespace onphp\main\Monitoring;
 
-use onPHP\core\Cache\SocketMemcached;
+use onphp\core\Cache\SocketMemcached;
 
 /****************************************************************************
  *   Copyright (C) 2011 by Evgeny V. Kokovikhin                             *

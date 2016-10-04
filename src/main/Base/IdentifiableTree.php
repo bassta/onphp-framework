@@ -2,9 +2,9 @@
 
 namespace onphp\main\Base;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\IdentifiableObject;
-use onPHP\core\Base\Stringable;
+use onphp\core\Base\Assert;
+use onphp\core\Base\IdentifiableObject;
+use onphp\core\Base\Stringable;
 
 /****************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov, Anton E. Lebedevich *

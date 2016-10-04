@@ -2,7 +2,7 @@
 
 namespace onphp\main\OQL\Statements;
 
-use onPHP\main\Criteria\Projection;
+use onphp\main\Criteria\Projection;
 
 /****************************************************************************
  *   Copyright (C) 2009 by Vladlen Y. Koshelev                              *

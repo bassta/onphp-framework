@@ -2,11 +2,11 @@
 
 namespace onphp\test\main\Utils\Routers;
 
-use onPHP\main\Flow\HttpRequest;
-use onPHP\main\Net\HttpUrl;
-use onPHP\main\Utils\Routers\RouterBaseRule;
-use onPHP\main\Utils\Routers\RouterRewrite;
-use onPHP\test\misc\TestCase;
+use onphp\main\Flow\HttpRequest;
+use onphp\main\Net\HttpUrl;
+use onphp\main\Utils\Routers\RouterBaseRule;
+use onphp\main\Utils\Routers\RouterRewrite;
+use onphp\test\misc\TestCase;
 
 /** $Id$ **/
 class RouterBaseRuleStub extends RouterBaseRule

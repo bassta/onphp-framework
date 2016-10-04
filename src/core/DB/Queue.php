@@ -2,9 +2,9 @@
 
 namespace onphp\core\DB;
 
-use onPHP\core\Exceptions\MissingElementException;
-use onPHP\core\Exceptions\UnsupportedMethodException;
-use onPHP\core\OSQL\Query;
+use onphp\core\Exceptions\MissingElementException;
+use onphp\core\Exceptions\UnsupportedMethodException;
+use onphp\core\OSQL\Query;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *

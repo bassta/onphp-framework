@@ -2,7 +2,7 @@
 
 namespace onphp\core\Base;
 
-use onPHP\core\Exceptions\MissingElementException;
+use onphp\core\Exceptions\MissingElementException;
 
 /***************************************************************************
  *   Copyright (C) 2004-2009 by Sveta A. Smirnova                          *

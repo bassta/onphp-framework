@@ -2,8 +2,8 @@
 
 namespace onphp\meta\builders;
 
-use onPHP\meta\classes\MetaClass;
-use onPHP\meta\classes\MetaRelation;
+use onphp\meta\classes\MetaClass;
+use onphp\meta\classes\MetaRelation;
 
 /***************************************************************************
  *   Copyright (C) 2006-2008 by Konstantin V. Arkhipov                     *

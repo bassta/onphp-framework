@@ -2,21 +2,21 @@
 
 namespace onphp\test\main\Utils\AMQP;
 
-use onPHP\main\Utils\AMQP\AMQPExchangeConfig;
-use onPHP\core\Base\Timestamp;
-use onPHP\main\Utils\AMQP\AMQPOutgoingMessage;
-use onPHP\main\Utils\AMQP\AMQPSelective;
-use onPHP\core\Exceptions\ObjectNotFoundException;
-use onPHP\core\Exceptions\MissingElementException;
+use onphp\main\Utils\AMQP\AMQPExchangeConfig;
+use onphp\core\Base\Timestamp;
+use onphp\main\Utils\AMQP\AMQPOutgoingMessage;
+use onphp\main\Utils\AMQP\AMQPSelective;
+use onphp\core\Exceptions\ObjectNotFoundException;
+use onphp\core\Exceptions\MissingElementException;
 use Exception;
-use onPHP\main\Utils\AMQP\AMQPCredentials;
-use onPHP\main\Utils\AMQP\Pecl\AMQPPecl;
-use onPHP\main\Utils\AMQP\AMQPQueueConfig;
-use onPHP\main\Utils\AMQP\AMQPChannelInterface;
-use onPHP\main\Utils\AMQP\AMQPExchangeType;
-use onPHP\test\misc\TestCase;
-use onPHP\main\Utils\AMQP\AMQPIncomingMessage;
-use onPHP\main\Utils\AMQP\Pecl\AMQPPeclQueueConsumer;
+use onphp\main\Utils\AMQP\AMQPCredentials;
+use onphp\main\Utils\AMQP\Pecl\AMQPPecl;
+use onphp\main\Utils\AMQP\AMQPQueueConfig;
+use onphp\main\Utils\AMQP\AMQPChannelInterface;
+use onphp\main\Utils\AMQP\AMQPExchangeType;
+use onphp\test\misc\TestCase;
+use onphp\main\Utils\AMQP\AMQPIncomingMessage;
+use onphp\main\Utils\AMQP\Pecl\AMQPPeclQueueConsumer;
 
 /***************************************************************************
  *   Copyright (C) 2011 by Sergey S. Sergeev                               *

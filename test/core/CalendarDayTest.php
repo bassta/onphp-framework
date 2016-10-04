@@ -2,8 +2,8 @@
 
 namespace onphp\test\core;
 
-use onPHP\main\Base\CalendarDay;
-use onPHP\test\misc\TestCase;
+use onphp\main\Base\CalendarDay;
+use onphp\test\misc\TestCase;
 
 final class CalendarDayTest extends TestCase
 {

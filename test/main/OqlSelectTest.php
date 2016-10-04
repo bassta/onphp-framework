@@ -2,17 +2,17 @@
 
 namespace onphp\test\main;
 
-use onPHP\core\Exceptions\SyntaxErrorException;
-use onPHP\core\Base\Identifiable;
-use onPHP\core\OSQL\OrderChain;
-use onPHP\core\OSQL\OrderBy;
-use onPHP\core\OSQL\SQLFunction;
-use onPHP\main\OQL\OQL;
-use onPHP\core\Logic\Expression;
-use onPHP\main\Criteria\Projection;
-use onPHP\test\meta\Business\TestUser;
-use onPHP\main\Criteria\Criteria;
-use onPHP\test\misc\TestCaseDB;
+use onphp\core\Exceptions\SyntaxErrorException;
+use onphp\core\Base\Identifiable;
+use onphp\core\OSQL\OrderChain;
+use onphp\core\OSQL\OrderBy;
+use onphp\core\OSQL\SQLFunction;
+use onphp\main\OQL\OQL;
+use onphp\core\Logic\Expression;
+use onphp\main\Criteria\Projection;
+use onphp\test\meta\Business\TestUser;
+use onphp\main\Criteria\Criteria;
+use onphp\test\misc\TestCaseDB;
 
 /* $Id$ */
 

@@ -2,7 +2,7 @@
 
 namespace onphp\main\Math;
 
-use onPHP\core\Base\Singleton;
+use onphp\core\Base\Singleton;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Anton E. Lebedevich                             *

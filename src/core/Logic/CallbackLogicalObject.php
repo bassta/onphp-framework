@@ -3,9 +3,9 @@
 namespace onphp\core\Logic;
 
 use Closure;
-use onPHP\core\DB\Dialect;
-use onPHP\core\Exceptions\UnimplementedFeatureException;
-use onPHP\core\Form\Form;
+use onphp\core\DB\Dialect;
+use onphp\core\Exceptions\UnimplementedFeatureException;
+use onphp\core\Form\Form;
 
 /****************************************************************************
  *   Copyright (C) 2011 Victor V. Bolshov                                   *

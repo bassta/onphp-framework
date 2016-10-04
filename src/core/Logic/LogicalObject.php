@@ -2,8 +2,8 @@
 
 namespace onphp\core\Logic;
 
-use onPHP\core\Form\Form;
-use onPHP\core\OSQL\DialectString;
+use onphp\core\Form\Form;
+use onphp\core\OSQL\DialectString;
 
 /***************************************************************************
  *   Copyright (C) 2004-2007 by Konstantin V. Arkhipov                     *

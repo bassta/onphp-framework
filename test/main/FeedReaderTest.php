@@ -2,10 +2,10 @@
 
 namespace onphp\test\main;
 
-use onPHP\main\Markup\Feed\FeedChannel;
-use onPHP\main\Markup\Feed\FeedReader;
-use onPHP\main\Markup\Feed\YandexRssFeedItem;
-use onPHP\test\misc\TestCase;
+use onphp\main\Markup\Feed\FeedChannel;
+use onphp\main\Markup\Feed\FeedReader;
+use onphp\main\Markup\Feed\YandexRssFeedItem;
+use onphp\test\misc\TestCase;
 
 /* $Id$ */
 

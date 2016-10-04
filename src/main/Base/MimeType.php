@@ -2,8 +2,8 @@
 
 namespace onphp\main\Base;
 
-use onPHP\core\Base\Enum;
-use onPHP\core\Exceptions\MissingElementException;
+use onphp\core\Base\Enum;
+use onphp\core\Exceptions\MissingElementException;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Georgiy T. Kutsurua                             *

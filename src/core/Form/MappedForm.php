@@ -2,9 +2,9 @@
 
 namespace onphp\core\Form;
 
-use onPHP\core\Exceptions\MissingElementException;
-use onPHP\main\Base\RequestType;
-use onPHP\main\Flow\HttpRequest;
+use onphp\core\Exceptions\MissingElementException;
+use onphp\main\Base\RequestType;
+use onphp\main\Flow\HttpRequest;
 
 /***************************************************************************
  *   Copyright (C) 2006-2008 by Konstantin V. Arkhipov                     *

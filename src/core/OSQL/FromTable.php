@@ -2,10 +2,10 @@
 
 namespace onphp\core\OSQL;
 
-use onPHP\core\Base\Aliased;
-use onPHP\core\DB\Dialect;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\Logic\LogicalObject;
+use onphp\core\Base\Aliased;
+use onphp\core\DB\Dialect;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\Logic\LogicalObject;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Anton E. Lebedevich                        *

@@ -2,9 +2,9 @@
 
 namespace onphp\meta\builders;
 
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\meta\classes\MetaClass;
-use onPHP\meta\classes\MetaClassType;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\meta\classes\MetaClass;
+use onphp\meta\classes\MetaClassType;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

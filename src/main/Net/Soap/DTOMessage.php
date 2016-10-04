@@ -2,8 +2,8 @@
 
 namespace onphp\main\Net\Soap;
 
-use onPHP\main\EntityProto\Builders\ObjectToDTOConverter;
-use onPHP\main\EntityProto\PrototypedEntity;
+use onphp\main\EntityProto\Builders\ObjectToDTOConverter;
+use onphp\main\EntityProto\PrototypedEntity;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *

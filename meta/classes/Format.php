@@ -2,7 +2,7 @@
 
 namespace onphp\meta\classes;
 
-use onPHP\core\Base\StaticFactory;
+use onphp\core\Base\StaticFactory;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

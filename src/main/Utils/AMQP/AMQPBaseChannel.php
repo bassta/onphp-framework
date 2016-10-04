@@ -2,7 +2,7 @@
 
 namespace onphp\main\Utils\AMQP;
 
-use onPHP\main\Utils\AMQP\Exceptions\AMQPServerConnectionException;
+use onphp\main\Utils\AMQP\Exceptions\AMQPServerConnectionException;
 
 /***************************************************************************
  *   Copyright (C) 2011 by Sergey S. Sergeev                               *

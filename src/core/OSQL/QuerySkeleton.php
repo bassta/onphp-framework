@@ -2,13 +2,13 @@
 
 namespace onphp\core\OSQL;
 
-use onPHP\core\Base\Aliased;
-use onPHP\core\Base\Assert;
-use onPHP\core\DB\Dialect;
-use onPHP\core\DB\ImaginaryDialect;
-use onPHP\core\Exceptions\UnimplementedFeatureException;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\Logic\LogicalObject;
+use onphp\core\Base\Aliased;
+use onphp\core\Base\Assert;
+use onphp\core\DB\Dialect;
+use onphp\core\DB\ImaginaryDialect;
+use onphp\core\Exceptions\UnimplementedFeatureException;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\Logic\LogicalObject;
 
 /***************************************************************************
  *   Copyright (C) 2004-2008 by Konstantin V. Arkhipov                     *

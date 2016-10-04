@@ -2,7 +2,7 @@
 
 namespace onphp\main\Utils\Archivers;
 
-use onPHP\core\Exceptions\BaseException;
+use onphp\core\Exceptions\BaseException;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *

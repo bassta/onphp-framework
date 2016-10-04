@@ -2,10 +2,10 @@
 
 namespace onphp\meta\builders;
 
-use onPHP\core\Exceptions\UnsupportedMethodException;
-use onPHP\meta\classes\MetaClass;
-use onPHP\meta\classes\MetaClassProperty;
-use onPHP\meta\classes\MetaRelation;
+use onphp\core\Exceptions\UnsupportedMethodException;
+use onphp\meta\classes\MetaClass;
+use onphp\meta\classes\MetaClassProperty;
+use onphp\meta\classes\MetaRelation;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

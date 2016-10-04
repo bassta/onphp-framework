@@ -2,7 +2,7 @@
 
 namespace onphp\main\Utils;
 
-use onPHP\core\Base\StaticFactory;
+use onphp\core\Base\StaticFactory;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *

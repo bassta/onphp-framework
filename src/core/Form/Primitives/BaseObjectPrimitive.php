@@ -2,8 +2,8 @@
 
 namespace onphp\core\Form\Primitives;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\WrongArgumentException;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\WrongArgumentException;
 
 /****************************************************************************
  *   Copyright (C) 2011 by Evgeny V. Kokovikhin                             *

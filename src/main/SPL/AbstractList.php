@@ -2,7 +2,7 @@
 
 namespace onphp\main\SPL;
 
-use onPHP\core\Exceptions\MissingElementException;
+use onphp\core\Exceptions\MissingElementException;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

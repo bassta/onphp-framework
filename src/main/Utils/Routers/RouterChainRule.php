@@ -2,7 +2,7 @@
 
 namespace onphp\main\Utils\Routers;
 
-use onPHP\main\Flow\HttpRequest;
+use onphp\main\Flow\HttpRequest;
 
 /***************************************************************************
  *   Copyright (C) 2008 by Sergey S. Sergeev                               *

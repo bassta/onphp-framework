@@ -2,8 +2,8 @@
 
 namespace onphp\test\main;
 
-use onPHP\main\Net\HttpUrl;
-use onPHP\test\misc\TestCase;
+use onphp\main\Net\HttpUrl;
+use onphp\test\misc\TestCase;
 
 /***************************************************************************
  *   Copyright (C) 2013 by Vyacheslav Yu. Tsyrulnik                        *

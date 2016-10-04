@@ -2,7 +2,7 @@
 
 namespace onphp\main\Base;
 
-use onPHP\core\Exceptions\WrongArgumentException;
+use onphp\core\Exceptions\WrongArgumentException;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *

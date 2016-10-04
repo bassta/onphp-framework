@@ -2,12 +2,12 @@
 
 namespace onphp\core\Form\Primitives;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Singleton;
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\core\Form\Form;
-use onPHP\main\Base\AbstractProtoClass;
-use onPHP\main\EntityProto\EntityProto;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Singleton;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\core\Form\Form;
+use onphp\main\Base\AbstractProtoClass;
+use onphp\main\EntityProto\EntityProto;
 
 /***************************************************************************
  *   Copyright (C) 2007-2009 by Ivan Y. Khvostishkov                       *

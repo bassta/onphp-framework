@@ -2,8 +2,8 @@
 
 namespace onphp\core\OSQL;
 
-use onPHP\core\Base\Aliased;
-use onPHP\core\DB\Dialect;
+use onphp\core\Base\Aliased;
+use onphp\core\DB\Dialect;
 
 /***************************************************************************
  *   Copyright (C) 2005-2008 by Anton E. Lebedevich                        *

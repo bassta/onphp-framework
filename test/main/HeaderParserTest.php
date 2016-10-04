@@ -2,8 +2,8 @@
 
 namespace onphp\test\main;
 
-use onPHP\main\Net\Http\HeaderParser;
-use onPHP\test\misc\TestCase;
+use onphp\main\Net\Http\HeaderParser;
+use onphp\test\misc\TestCase;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Anton E. Lebedevich                             *

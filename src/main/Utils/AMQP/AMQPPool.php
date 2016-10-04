@@ -2,10 +2,10 @@
 
 namespace onphp\main\Utils\AMQP;
 
-use onPHP\core\Base\Instantiatable;
-use onPHP\core\Base\Singleton;
-use onPHP\core\Exceptions\MissingElementException;
-use onPHP\core\Exceptions\WrongArgumentException;
+use onphp\core\Base\Instantiatable;
+use onphp\core\Base\Singleton;
+use onphp\core\Exceptions\MissingElementException;
+use onphp\core\Exceptions\WrongArgumentException;
 
 /***************************************************************************
  *   Copyright (C) 2011 by Sergey S. Sergeev                               *

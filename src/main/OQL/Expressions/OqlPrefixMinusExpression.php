@@ -2,7 +2,7 @@
 
 namespace onphp\main\OQL\Expressions;
 
-use onPHP\core\Logic\PrefixUnaryExpression;
+use onphp\core\Logic\PrefixUnaryExpression;
 
 /****************************************************************************
  *   Copyright (C) 2008 by Vladlen Y. Koshelev                              *

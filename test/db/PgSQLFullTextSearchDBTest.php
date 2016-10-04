@@ -2,10 +2,10 @@
 
 namespace onphp\test\db;
 
-use onPHP\core\DB\DB;
-use onPHP\core\DB\PgSQL;
-use onPHP\test\misc\DBTestPool;
-use onPHP\test\misc\TestCaseDB;
+use onphp\core\DB\DB;
+use onphp\core\DB\PgSQL;
+use onphp\test\misc\DBTestPool;
+use onphp\test\misc\TestCaseDB;
 
 /**
  * @group pgsf

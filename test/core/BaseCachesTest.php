@@ -2,12 +2,12 @@
 
 namespace onphp\test\core;
 
-use onPHP\core\Cache\Cache;
-use onPHP\core\Cache\CachePeer;
-use onPHP\core\Cache\RuntimeMemory;
-use onPHP\core\Cache\SocketMemcached;
-use onPHP\core\Cache\WatermarkedPeer;
-use onPHP\test\misc\TestCase;
+use onphp\core\Cache\Cache;
+use onphp\core\Cache\CachePeer;
+use onphp\core\Cache\RuntimeMemory;
+use onphp\core\Cache\SocketMemcached;
+use onphp\core\Cache\WatermarkedPeer;
+use onphp\test\misc\TestCase;
 
 final class BaseCachesTest extends TestCase
 {

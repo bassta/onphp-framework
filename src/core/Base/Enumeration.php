@@ -2,7 +2,7 @@
 
 namespace onphp\core\Base;
 
-use onPHP\core\Exceptions\MissingElementException;
+use onphp\core\Exceptions\MissingElementException;
 use Serializable;
 
 /***************************************************************************

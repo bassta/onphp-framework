@@ -2,9 +2,9 @@
 
 namespace onphp\test\main;
 
-use onPHP\main\OQL\Parsers\OqlToken;
-use onPHP\main\OQL\Parsers\OqlTokenizer;
-use onPHP\test\misc\TestCase;
+use onphp\main\OQL\Parsers\OqlToken;
+use onphp\main\OQL\Parsers\OqlTokenizer;
+use onphp\test\misc\TestCase;
 
 /* $Id$ */
 

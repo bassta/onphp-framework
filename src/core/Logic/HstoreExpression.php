@@ -2,8 +2,8 @@
 
 namespace onphp\core\Logic;
 
-use onPHP\core\Base\StaticFactory;
-use onPHP\main\Base\Hstore;
+use onphp\core\Base\StaticFactory;
+use onphp\main\Base\Hstore;
 
 /***************************************************************************
  *   Copyright (C) 2009 by Sergey S. Sergeev                               *

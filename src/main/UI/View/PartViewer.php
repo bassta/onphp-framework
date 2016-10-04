@@ -3,8 +3,8 @@
 namespace onphp\main\UI\View;
 
 use Exception;
-use onPHP\core\Base\Assert;
-use onPHP\main\Flow\Model;
+use onphp\core\Base\Assert;
+use onphp\main\Flow\Model;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Anton E. Lebedevich                        *

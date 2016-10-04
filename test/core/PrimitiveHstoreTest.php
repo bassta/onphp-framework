@@ -2,10 +2,10 @@
 
 namespace onphp\test\core;
 
-use onPHP\core\Exceptions\ObjectNotFoundException;
-use onPHP\core\Form\Form;
-use onPHP\core\Form\Primitive;
-use onPHP\test\misc\TestCase;
+use onphp\core\Exceptions\ObjectNotFoundException;
+use onphp\core\Form\Form;
+use onphp\core\Form\Primitive;
+use onphp\test\misc\TestCase;
 
 final class PrimitiveHstoreTest extends TestCase
 {

@@ -2,8 +2,8 @@
 
 namespace onphp\main\Utils\TuringTest;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Stringable;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Stringable;
 
 /***************************************************************************
  *   Copyright (C) 2004-2007 by Dmitry E. Demidov                          *

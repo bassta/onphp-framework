@@ -3,11 +3,11 @@
 namespace onphp\main\Utils;
 
 use DirectoryIterator;
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\StaticFactory;
-use onPHP\core\Exceptions\BaseException;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\Exceptions\WrongStateException;
+use onphp\core\Base\Assert;
+use onphp\core\Base\StaticFactory;
+use onphp\core\Exceptions\BaseException;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\Exceptions\WrongStateException;
 
 /***************************************************************************
  *   Copyright (C) 2004-2008 by Sveta A. Smirnova                          *

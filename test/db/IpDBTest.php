@@ -2,21 +2,21 @@
 
 namespace onphp\test\db;
 
-use onPHP\core\Base\Timestamp;
-use onPHP\core\DB\DBPool;
-use onPHP\core\Logic\Expression;
-use onPHP\core\OSQL\DBField;
-use onPHP\core\OSQL\OSQL;
-use onPHP\main\Criteria\Criteria;
-use onPHP\main\Criteria\Projection;
-use onPHP\main\Net\Ip\IpAddress;
-use onPHP\main\Net\Ip\IpRange;
-use onPHP\test\meta\Business\Credentials;
-use onPHP\test\meta\Business\TestCity;
-use onPHP\test\meta\Business\TestInternetProvider;
-use onPHP\test\meta\Business\TestUser;
-use onPHP\test\misc\DBTestPool;
-use onPHP\test\misc\TestCaseDAO;
+use onphp\core\Base\Timestamp;
+use onphp\core\DB\DBPool;
+use onphp\core\Logic\Expression;
+use onphp\core\OSQL\DBField;
+use onphp\core\OSQL\OSQL;
+use onphp\main\Criteria\Criteria;
+use onphp\main\Criteria\Projection;
+use onphp\main\Net\Ip\IpAddress;
+use onphp\main\Net\Ip\IpRange;
+use onphp\test\meta\Business\Credentials;
+use onphp\test\meta\Business\TestCity;
+use onphp\test\meta\Business\TestInternetProvider;
+use onphp\test\meta\Business\TestUser;
+use onphp\test\misc\DBTestPool;
+use onphp\test\misc\TestCaseDAO;
 
 /**
  * @group ipdb

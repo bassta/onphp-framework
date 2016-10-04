@@ -2,23 +2,23 @@
 
 namespace onphp\test\main;
 
-use onPHP\main\Charts\Google\GoogleChartLabelStyleNumberType;
-use onPHP\main\Charts\Google\ChartLabelStyle;
-use onPHP\main\Charts\Google\GoogleChartGrid;
-use onPHP\main\Charts\Google\GoogleGridedLineChart;
-use onPHP\main\Charts\Google\ChartLineStyle;
-use onPHP\main\Charts\Google\GoogleChartAxisLabel;
-use onPHP\main\Charts\Google\GoogleChartLine;
-use onPHP\main\Base\IntegerSet;
-use onPHP\main\Charts\Google\GoogleChartAxisType;
-use onPHP\main\Charts\Google\GoogleChartAxis;
-use onPHP\main\Charts\Google\GoogleLineChart;
-use onPHP\main\Charts\Google\GoogleChartDataSet;
-use onPHP\main\Utils\TuringTest\Color;
-use onPHP\main\Charts\Google\GoogleChartPiece;
-use onPHP\main\Charts\Google\GoogleChartSize;
-use onPHP\main\Charts\Google\GooglePieChart;
-use onPHP\test\misc\TestCase;
+use onphp\main\Charts\Google\GoogleChartLabelStyleNumberType;
+use onphp\main\Charts\Google\ChartLabelStyle;
+use onphp\main\Charts\Google\GoogleChartGrid;
+use onphp\main\Charts\Google\GoogleGridedLineChart;
+use onphp\main\Charts\Google\ChartLineStyle;
+use onphp\main\Charts\Google\GoogleChartAxisLabel;
+use onphp\main\Charts\Google\GoogleChartLine;
+use onphp\main\Base\IntegerSet;
+use onphp\main\Charts\Google\GoogleChartAxisType;
+use onphp\main\Charts\Google\GoogleChartAxis;
+use onphp\main\Charts\Google\GoogleLineChart;
+use onphp\main\Charts\Google\GoogleChartDataSet;
+use onphp\main\Utils\TuringTest\Color;
+use onphp\main\Charts\Google\GoogleChartPiece;
+use onphp\main\Charts\Google\GoogleChartSize;
+use onphp\main\Charts\Google\GooglePieChart;
+use onphp\test\misc\TestCase;
 
 /* $Id$ */
 

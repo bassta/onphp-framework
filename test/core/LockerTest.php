@@ -2,8 +2,8 @@
 
 namespace onphp\test\core;
 
-use onPHP\core\Cache\FileLocker;
-use onPHP\test\misc\TestCase;
+use onphp\core\Cache\FileLocker;
+use onphp\test\misc\TestCase;
 
 /* $Id$ */
 

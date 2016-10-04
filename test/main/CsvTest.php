@@ -2,7 +2,7 @@
 
 namespace onphp\test\main;
 
-use onPHP\main\Markup\Csv;
+use onphp\main\Markup\Csv;
 
 /***************************************************************************
  *   Copyright (C) 2008 by Michael V. Tchervyakov                          *
@@ -13,7 +13,7 @@ use onPHP\main\Markup\Csv;
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
-final class CsvTest extends PHPUnit_Framework_TestCase
+final class CsvTest extends \PHPUnit_Framework_TestCase
 {
     public function testRender()
     {

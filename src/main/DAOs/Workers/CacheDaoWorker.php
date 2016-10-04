@@ -2,11 +2,11 @@
 
 namespace onphp\main\DAOs\Workers;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Identifiable;
-use onPHP\core\Cache\Cache;
-use onPHP\core\OSQL\SelectQuery;
-use onPHP\main\DAOs\Uncachers\UncacherCacheDaoWorkerLists;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Identifiable;
+use onphp\core\Cache\Cache;
+use onphp\core\OSQL\SelectQuery;
+use onphp\main\DAOs\Uncachers\UncacherCacheDaoWorkerLists;
 
 /***************************************************************************
  *   Copyright (C) 2008 by Konstantin V. Arkhipov                          *

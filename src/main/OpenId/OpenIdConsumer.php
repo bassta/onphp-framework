@@ -2,22 +2,22 @@
 
 namespace onphp\main\OpenId;
 
-use onPHP\main\Crypto\CryptoFunctions;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\main\Flow\ModelAndView;
-use onPHP\main\Flow\Model;
-use onPHP\main\UI\View\RedirectView;
-use onPHP\core\Base\Timestamp;
-use onPHP\main\Net\Http\HttpStatus;
-use onPHP\main\Net\Http\HttpMethod;
-use onPHP\main\Flow\HttpRequest;
-use onPHP\main\Crypto\DiffieHellmanKeyPair;
-use onPHP\main\Crypto\DiffieHellmanParameters;
-use onPHP\core\Base\Assert;
-use onPHP\main\Net\HttpUrl;
-use onPHP\main\Net\Http\HttpClient;
-use onPHP\main\Math\BigNumberFactory;
-use onPHP\main\Math\RandomSource;
+use onphp\main\Crypto\CryptoFunctions;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\main\Flow\ModelAndView;
+use onphp\main\Flow\Model;
+use onphp\main\UI\View\RedirectView;
+use onphp\core\Base\Timestamp;
+use onphp\main\Net\Http\HttpStatus;
+use onphp\main\Net\Http\HttpMethod;
+use onphp\main\Flow\HttpRequest;
+use onphp\main\Crypto\DiffieHellmanKeyPair;
+use onphp\main\Crypto\DiffieHellmanParameters;
+use onphp\core\Base\Assert;
+use onphp\main\Net\HttpUrl;
+use onphp\main\Net\Http\HttpClient;
+use onphp\main\Math\BigNumberFactory;
+use onphp\main\Math\RandomSource;
 
 /***************************************************************************
  *   Copyright (C) 2007-2008 by Anton E. Lebedevich                        *

@@ -2,8 +2,8 @@
 
 namespace onphp\main\OQL\Parsers;
 
-use onPHP\main\OQL\Expressions\OqlQueryExpression;
-use onPHP\main\OQL\Statements\OqlWhereClause;
+use onphp\main\OQL\Expressions\OqlQueryExpression;
+use onphp\main\OQL\Statements\OqlWhereClause;
 
 /****************************************************************************
  *   Copyright (C) 2009 by Vladlen Y. Koshelev                              *

@@ -2,17 +2,17 @@
 
 namespace onphp\core\Logic;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\DB\Dialect;
-use onPHP\core\Exceptions\UnsupportedMethodException;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\Form\Form;
-use onPHP\core\OSQL\DialectString;
-use onPHP\core\OSQL\JoinCapableQuery;
-use onPHP\core\OSQL\Query;
-use onPHP\core\OSQL\SQLArray;
-use onPHP\main\Criteria\Criteria;
-use onPHP\main\DAOs\ProtoDAO;
+use onphp\core\Base\Assert;
+use onphp\core\DB\Dialect;
+use onphp\core\Exceptions\UnsupportedMethodException;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\Form\Form;
+use onphp\core\OSQL\DialectString;
+use onphp\core\OSQL\JoinCapableQuery;
+use onphp\core\OSQL\Query;
+use onphp\core\OSQL\SQLArray;
+use onphp\main\Criteria\Criteria;
+use onphp\main\DAOs\ProtoDAO;
 
 /****************************************************************************
  *   Copyright (C) 2004-2009 by Konstantin V. Arkhipov, Anton E. Lebedevich *

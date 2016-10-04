@@ -2,7 +2,7 @@
 
 namespace onphp\core\DB\Transaction;
 
-use onPHP\core\DB\DB;
+use onphp\core\DB\DB;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *

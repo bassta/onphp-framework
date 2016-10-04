@@ -2,11 +2,11 @@
 
 namespace onphp\main\Flow;
 
-use onPHP\core\Base\Prototyped;
-use onPHP\core\Form\MappedForm;
-use onPHP\core\Form\Primitive;
-use onPHP\main\Base\RequestType;
-use onPHP\main\UI\View\RedirectToView;
+use onphp\core\Base\Prototyped;
+use onphp\core\Form\MappedForm;
+use onphp\core\Form\Primitive;
+use onphp\main\Base\RequestType;
+use onphp\main\UI\View\RedirectToView;
 
 /***************************************************************************
  *   Copyright (C) 2006-2008 by Konstantin V. Arkhipov                     *

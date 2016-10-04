@@ -2,9 +2,9 @@
 
 namespace onphp\main\EntityProto\Builders;
 
-use onPHP\main\EntityProto\Accessors\ObjectGetter;
-use onPHP\main\EntityProto\Accessors\ObjectSetter;
-use onPHP\main\EntityProto\EntityProto;
+use onphp\main\EntityProto\Accessors\ObjectGetter;
+use onphp\main\EntityProto\Accessors\ObjectSetter;
+use onphp\main\EntityProto\EntityProto;
 
 /***************************************************************************
  *   Copyright (C) 2008 by Ivan Y. Khvostishkov                            *

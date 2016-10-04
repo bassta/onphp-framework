@@ -2,8 +2,8 @@
 
 namespace onphp\core\Form\Primitives;
 
-use onPHP\core\Base\TimestampTZ;
-use onPHP\core\Exceptions\WrongArgumentException;
+use onphp\core\Base\TimestampTZ;
+use onphp\core\Exceptions\WrongArgumentException;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

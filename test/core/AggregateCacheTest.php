@@ -2,14 +2,14 @@
 
 namespace onphp\test\core;
 
-use onPHP\core\Cache\AggregateCache;
-use onPHP\core\Cache\Cache;
-use onPHP\core\Cache\CyclicAggregateCache;
-use onPHP\core\Cache\PeclMemcached;
-use onPHP\core\Cache\SelectivePeer;
-use onPHP\core\Cache\SimpleAggregateCache;
-use onPHP\core\Cache\SocketMemcached;
-use onPHP\test\misc\TestCase;
+use onphp\core\Cache\AggregateCache;
+use onphp\core\Cache\Cache;
+use onphp\core\Cache\CyclicAggregateCache;
+use onphp\core\Cache\PeclMemcached;
+use onphp\core\Cache\SelectivePeer;
+use onphp\core\Cache\SimpleAggregateCache;
+use onphp\core\Cache\SocketMemcached;
+use onphp\test\misc\TestCase;
 
 final class AggregateCacheTest extends TestCase
 {

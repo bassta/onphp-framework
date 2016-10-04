@@ -2,8 +2,8 @@
 
 namespace onphp\core\Form\Primitives;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\UnimplementedFeatureException;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\UnimplementedFeatureException;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Sveta A. Smirnova                          *

@@ -2,7 +2,7 @@
 
 namespace onphp\test\misc;
 
-use onPHP\core\Base\StaticFactory;
+use onphp\core\Base\StaticFactory;
 
 /** $Id$ **/
 class ServerVarUtils extends StaticFactory

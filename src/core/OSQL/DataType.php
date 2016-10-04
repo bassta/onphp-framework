@@ -2,10 +2,10 @@
 
 namespace onphp\core\OSQL;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Enumeration;
-use onPHP\core\DB\Dialect;
-use onPHP\core\Exceptions\WrongStateException;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Enumeration;
+use onphp\core\DB\Dialect;
+use onphp\core\Exceptions\WrongStateException;
 
 /***************************************************************************
  *   Copyright (C) 2006-2008 by Konstantin V. Arkhipov                     *

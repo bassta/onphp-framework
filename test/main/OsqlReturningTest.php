@@ -2,15 +2,15 @@
 
 namespace onphp\test\main;
 
-use onPHP\core\DB\ImaginaryDialect;
-use onPHP\core\Exceptions\UnimplementedFeatureException;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\Logic\Expression;
-use onPHP\core\OSQL\DBField;
-use onPHP\core\OSQL\InsertOrUpdateQuery;
-use onPHP\core\OSQL\OSQL;
-use onPHP\core\OSQL\SQLFunction;
-use onPHP\test\misc\TestCaseDB;
+use onphp\core\DB\ImaginaryDialect;
+use onphp\core\Exceptions\UnimplementedFeatureException;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\Logic\Expression;
+use onphp\core\OSQL\DBField;
+use onphp\core\OSQL\InsertOrUpdateQuery;
+use onphp\core\OSQL\OSQL;
+use onphp\core\OSQL\SQLFunction;
+use onphp\test\misc\TestCaseDB;
 
 final class OsqlReturningTest extends TestCaseDB
 {

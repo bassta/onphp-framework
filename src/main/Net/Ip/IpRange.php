@@ -3,12 +3,12 @@
 namespace onphp\main\Net\Ip;
 
 use Exception;
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Stringable;
-use onPHP\core\DB\Dialect;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\OSQL\DialectString;
-use onPHP\main\Base\SingleRange;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Stringable;
+use onphp\core\DB\Dialect;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\OSQL\DialectString;
+use onphp\main\Base\SingleRange;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Vladimir A. Altuchov                            *

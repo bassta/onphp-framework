@@ -2,8 +2,8 @@
 
 namespace onphp\main\Flow;
 
-use onPHP\core\Base\Prototyped;
-use onPHP\core\Form\Form;
+use onphp\core\Base\Prototyped;
+use onphp\core\Form\Form;
 
 /****************************************************************************
  *   Copyright (C) 2006-2008 by Anton E. Lebedevich, Konstantin V. Arkhipov *

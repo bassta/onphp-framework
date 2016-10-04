@@ -2,12 +2,12 @@
 
 namespace onphp\core\DB;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Identifier;
-use onPHP\core\Base\Instantiatable;
-use onPHP\core\Logic\PostfixUnaryExpression;
-use onPHP\core\OSQL\DataType;
-use onPHP\core\OSQL\DBColumn;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Identifier;
+use onphp\core\Base\Instantiatable;
+use onphp\core\Logic\PostfixUnaryExpression;
+use onphp\core\OSQL\DataType;
+use onphp\core\OSQL\DBColumn;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *

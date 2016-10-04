@@ -2,11 +2,11 @@
 
 namespace onphp\test\main\Utils;
 
-use onPHP\main\Base\StandardComparator;
-use onPHP\core\Base\Date;
-use onPHP\main\Base\DateObjectComparator;
-use onPHP\main\Utils\ArrayUtils;
-use onPHP\test\misc\TestCase;
+use onphp\main\Base\StandardComparator;
+use onphp\core\Base\Date;
+use onphp\main\Base\DateObjectComparator;
+use onphp\main\Utils\ArrayUtils;
+use onphp\test\misc\TestCase;
 
 final class ArrayUtilsTest extends TestCase
 {

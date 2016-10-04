@@ -2,7 +2,7 @@
 
 namespace onphp\main\OQL\Statements;
 
-use onPHP\core\OSQL\OrderChain;
+use onphp\core\OSQL\OrderChain;
 
 /****************************************************************************
  *   Copyright (C) 2009 by Vladlen Y. Koshelev                              *

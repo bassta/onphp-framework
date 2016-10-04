@@ -4,9 +4,9 @@ namespace onphp\core\Base;
 
 use DateTime;
 use Exception;
-use onPHP\core\DB\Dialect;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\OSQL\DialectString;
+use onphp\core\DB\Dialect;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\OSQL\DialectString;
 
 /***************************************************************************
  *   Copyright (C) 2006-2009 by Garmonbozia Research Group                 *

@@ -2,11 +2,11 @@
 
 namespace onphp\meta\classes;
 
-use onPHP\core\Exceptions\MissingElementException;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\main\Criteria\FetchStrategy;
-use onPHP\meta\patterns\GenerationPattern;
-use onPHP\meta\patterns\InternalClassPattern;
+use onphp\core\Exceptions\MissingElementException;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\main\Criteria\FetchStrategy;
+use onphp\meta\patterns\GenerationPattern;
+use onphp\meta\patterns\InternalClassPattern;
 
 /***************************************************************************
  *   Copyright (C) 2006-2008 by Konstantin V. Arkhipov                     *

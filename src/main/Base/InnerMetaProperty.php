@@ -2,10 +2,10 @@
 
 namespace onphp\main\Base;
 
-use onPHP\core\Base\Prototyped;
-use onPHP\core\Form\Form;
-use onPHP\core\OSQL\InsertOrUpdateQuery;
-use onPHP\main\DAOs\ProtoDAO;
+use onphp\core\Base\Prototyped;
+use onphp\core\Form\Form;
+use onphp\core\OSQL\InsertOrUpdateQuery;
+use onphp\main\DAOs\ProtoDAO;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Konstantin V. Arkhipov                          *

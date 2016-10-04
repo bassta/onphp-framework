@@ -2,9 +2,9 @@
 
 namespace onphp\main\Flow;
 
-use onPHP\core\Base\Assert;
-use onPHP\main\UI\View\CleanRedirectView;
-use onPHP\main\UI\View\View;
+use onphp\core\Base\Assert;
+use onphp\main\UI\View\CleanRedirectView;
+use onphp\main\UI\View\View;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Anton E. Lebedevich                        *

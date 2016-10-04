@@ -2,8 +2,8 @@
 
 namespace onphp\core\Form\Primitives;
 
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\main\Net\HttpUrl;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\main\Net\HttpUrl;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *

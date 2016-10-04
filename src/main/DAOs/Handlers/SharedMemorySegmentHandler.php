@@ -2,7 +2,7 @@
 
 namespace onphp\main\DAOs\Handlers;
 
-use onPHP\core\Exceptions\BaseException;
+use onphp\core\Exceptions\BaseException;
 
 /***************************************************************************
  *   Copyright (C) 2006-2008 by Konstantin V. Arkhipov                     *

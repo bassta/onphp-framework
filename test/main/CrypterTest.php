@@ -2,8 +2,8 @@
 
 namespace onphp\test\main;
 
-use onPHP\main\Crypto\Crypter;
-use onPHP\test\misc\TestCase;
+use onphp\main\Crypto\Crypter;
+use onphp\test\misc\TestCase;
 
 final class CrypterTest extends TestCase
 {

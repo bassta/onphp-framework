@@ -2,8 +2,8 @@
 
 namespace onphp\main\Base;
 
-use onPHP\core\Exceptions\BaseException;
-use onPHP\main\Utils\FileUtils;
+use onphp\core\Exceptions\BaseException;
+use onphp\main\Utils\FileUtils;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *

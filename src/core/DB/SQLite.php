@@ -2,12 +2,12 @@
 
 namespace onphp\core\DB;
 
-use onPHP\core\Exceptions\BaseException;
-use onPHP\core\Exceptions\DatabaseException;
-use onPHP\core\Exceptions\TooManyRowsException;
-use onPHP\core\Exceptions\UnimplementedFeatureException;
-use onPHP\core\Exceptions\UnsupportedMethodException;
-use onPHP\core\OSQL\Query;
+use onphp\core\Exceptions\BaseException;
+use onphp\core\Exceptions\DatabaseException;
+use onphp\core\Exceptions\TooManyRowsException;
+use onphp\core\Exceptions\UnimplementedFeatureException;
+use onphp\core\Exceptions\UnsupportedMethodException;
+use onphp\core\OSQL\Query;
 
 /***************************************************************************
  *   Copyright (C) 2005-2008 by Konstantin V. Arkhipov                     *

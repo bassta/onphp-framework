@@ -2,8 +2,8 @@
 
 namespace onphp\meta\builders;
 
-use onPHP\meta\classes\MetaClass;
-use onPHP\meta\patterns\InternalClassPattern;
+use onphp\meta\classes\MetaClass;
+use onphp\meta\patterns\InternalClassPattern;
 
 /***************************************************************************
  *   Copyright (C) 2006-2008 by Konstantin V. Arkhipov                     *

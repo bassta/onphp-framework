@@ -2,8 +2,8 @@
 
 namespace onphp\main\Utils\Logging;
 
-use onPHP\core\Exceptions\BaseException;
-use onPHP\main\Utils\IO\OutputStream;
+use onphp\core\Exceptions\BaseException;
+use onphp\main\Utils\IO\OutputStream;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *

@@ -2,9 +2,9 @@
 
 namespace onphp\main\DAOs\Uncachers;
 
-use onPHP\core\Base\Assert;
-use onPHP\main\DAOs\GenericDAO;
-use onPHP\main\Utils\ArrayUtils;
+use onphp\core\Base\Assert;
+use onphp\main\DAOs\GenericDAO;
+use onphp\main\Utils\ArrayUtils;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Aleksey S. Denisov                              *

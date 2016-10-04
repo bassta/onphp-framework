@@ -2,9 +2,9 @@
 
 namespace onphp\core\Form\Primitives;
 
-use onPHP\core\Base\Timestamp;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\main\Base\TimestampRange;
+use onphp\core\Base\Timestamp;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\main\Base\TimestampRange;
 
 /***************************************************************************
  *   Copyright (C) 2008 by Konstantin V. Arkhipov                          *

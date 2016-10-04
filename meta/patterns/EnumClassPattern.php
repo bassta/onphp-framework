@@ -2,10 +2,10 @@
 
 namespace onphp\meta\patterns;
 
-use onPHP\meta\builders\EnumClassBuilder;
-use onPHP\meta\classes\Format;
-use onPHP\meta\classes\MetaClass;
-use onPHP\meta\classes\MetaConfiguration;
+use onphp\meta\builders\EnumClassBuilder;
+use onphp\meta\classes\Format;
+use onphp\meta\classes\MetaClass;
+use onphp\meta\classes\MetaConfiguration;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Georgiy T. Kutsurua                             *

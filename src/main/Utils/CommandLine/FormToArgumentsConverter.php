@@ -2,10 +2,10 @@
 
 namespace onphp\main\Utils\CommandLine;
 
-use onPHP\core\Base\StaticFactory;
-use onPHP\core\Form\Form;
-use onPHP\core\Form\Primitives\BasePrimitive;
-use onPHP\core\Form\Primitives\PrimitiveNoValue;
+use onphp\core\Base\StaticFactory;
+use onphp\core\Form\Form;
+use onphp\core\Form\Primitives\BasePrimitive;
+use onphp\core\Form\Primitives\PrimitiveNoValue;
 
 /***************************************************************************
  *   Copyright (C) 2009 by Denis M. Gabaidulin                             *

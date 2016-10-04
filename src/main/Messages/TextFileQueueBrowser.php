@@ -4,7 +4,7 @@ namespace onphp\main\Messages;
 
 use;
 use;
-use onPHP\core\Exceptions\UnimplementedFeatureException;
+use onphp\core\Exceptions\UnimplementedFeatureException;
 
 onPHP\main\Messages\Interface\MessageQueue;
 onPHP\main\Messages\Interface\MessageQueueBrowser;

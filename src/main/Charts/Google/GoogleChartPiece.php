@@ -2,7 +2,7 @@
 
 namespace onphp\main\Charts\Google;
 
-use onPHP\main\Utils\TuringTest\Color;
+use onphp\main\Utils\TuringTest\Color;
 
 /***************************************************************************
  *   Copyright (C) 2008-2009 by Denis M. Gabaidulin                        *

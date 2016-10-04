@@ -2,7 +2,7 @@
 
 namespace onphp\main\Markup\Feed;
 
-use onPHP\core\Base\Singleton;
+use onphp\core\Base\Singleton;
 use SimpleXMLElement;
 
 /***************************************************************************

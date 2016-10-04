@@ -2,11 +2,11 @@
 
 namespace onphp\main\Utils;
 
-use onPHP\main\Flow\Model;
-use onPHP\main\Flow\ModelAndView;
-use onPHP\core\DB\DBPool;
-use onPHP\core\OSQL\Query;
-use onPHP\core\Base\StaticFactory;
+use onphp\main\Flow\Model;
+use onphp\main\Flow\ModelAndView;
+use onphp\core\DB\DBPool;
+use onphp\core\OSQL\Query;
+use onphp\core\Base\StaticFactory;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Anton E. Lebedevich                        *

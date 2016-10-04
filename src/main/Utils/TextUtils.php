@@ -2,9 +2,9 @@
 
 namespace onphp\main\Utils;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\StaticFactory;
-use onPHP\main\Net\GenericUri;
+use onphp\core\Base\Assert;
+use onphp\core\Base\StaticFactory;
+use onphp\main\Net\GenericUri;
 
 /***************************************************************************
  *   Copyright (C) 2006-2009 by Anton E. Lebedevich                        *

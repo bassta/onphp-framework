@@ -2,10 +2,10 @@
 
 namespace onphp\core\OSQL;
 
-use onPHP\core\DB\Dialect;
-use onPHP\core\Exceptions\UnsupportedMethodException;
-use onPHP\core\Form\Form;
-use onPHP\core\Logic\LogicalObject;
+use onphp\core\DB\Dialect;
+use onphp\core\Exceptions\UnsupportedMethodException;
+use onphp\core\Form\Form;
+use onphp\core\Logic\LogicalObject;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *

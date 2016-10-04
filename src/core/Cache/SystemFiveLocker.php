@@ -2,8 +2,8 @@
 
 namespace onphp\core\Cache;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\BaseException;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\BaseException;
 
 /***************************************************************************
  *   Copyright (C) 2005-2008 by Konstantin V. Arkhipov                     *

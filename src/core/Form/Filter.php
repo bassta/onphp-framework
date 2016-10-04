@@ -2,15 +2,15 @@
 
 namespace onphp\core\Form;
 
-use onPHP\core\Base\Singleton;
-use onPHP\core\Base\StaticFactory;
-use onPHP\core\Form\Filters\CropFilter;
-use onPHP\core\Form\Filters\FilterChain;
-use onPHP\core\Form\Filters\HashFilter;
-use onPHP\core\Form\Filters\PCREFilter;
-use onPHP\core\Form\Filters\StringReplaceFilter;
-use onPHP\core\Form\Filters\StripTagsFilter;
-use onPHP\core\Form\Filters\TrimFilter;
+use onphp\core\Base\Singleton;
+use onphp\core\Base\StaticFactory;
+use onphp\core\Form\Filters\CropFilter;
+use onphp\core\Form\Filters\FilterChain;
+use onphp\core\Form\Filters\HashFilter;
+use onphp\core\Form\Filters\PCREFilter;
+use onphp\core\Form\Filters\StringReplaceFilter;
+use onphp\core\Form\Filters\StripTagsFilter;
+use onphp\core\Form\Filters\TrimFilter;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *

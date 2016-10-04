@@ -2,10 +2,10 @@
 
 namespace onphp\core\DB\Transaction;
 
-use onPHP\core\DB\DB;
-use onPHP\core\Exceptions\DatabaseException;
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\core\OSQL\Query;
+use onphp\core\DB\DB;
+use onphp\core\Exceptions\DatabaseException;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\core\OSQL\Query;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *

@@ -2,7 +2,7 @@
 
 namespace onphp\core\Cache;
 
-use onPHP\core\Base\Assert;
+use onphp\core\Base\Assert;
 
 /****************************************************************************
  *   Copyright (C) 2010 by Evgeny V. Kokovikhin                             *

@@ -2,10 +2,10 @@
 
 namespace onphp\main\EntityProto\Accessors;
 
-use onPHP\core\Exceptions\UnimplementedFeatureException;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\Form\Primitives\PrimitiveFile;
-use onPHP\core\Form\Primitives\PrimitiveForm;
+use onphp\core\Exceptions\UnimplementedFeatureException;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\Form\Primitives\PrimitiveFile;
+use onphp\core\Form\Primitives\PrimitiveForm;
 
 /***************************************************************************
  *   Copyright (C) 2009 by Ivan Y. Khvostishkov                            *

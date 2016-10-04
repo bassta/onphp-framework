@@ -2,9 +2,9 @@
 
 namespace onphp\main\Markup\Html;
 
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\core\Base\Assert;
-use onPHP\main\Utils\IO\InputStream;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\core\Base\Assert;
+use onphp\main\Utils\IO\InputStream;
 
 /***************************************************************************
  *   Copyright (C) 2007-2008 by Ivan Y. Khvostishkov                       *

@@ -2,9 +2,9 @@
 
 namespace onphp\core\OSQL;
 
-use onPHP\core\DB\Dialect;
-use onPHP\core\Exceptions\UnsupportedMethodException;
-use onPHP\core\Exceptions\WrongArgumentException;
+use onphp\core\DB\Dialect;
+use onphp\core\Exceptions\UnsupportedMethodException;
+use onphp\core\Exceptions\WrongArgumentException;
 
 /***************************************************************************
  *   Copyright (C) 2004-2007 by Konstantin V. Arkhipov                     *

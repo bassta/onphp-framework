@@ -2,11 +2,11 @@
 
 namespace onphp\test\main;
 
-use onPHP\main\Messages\TextFileQueue;
-use onPHP\main\Messages\TextFileReceiver;
-use onPHP\main\Messages\TextFileSender;
-use onPHP\main\Messages\TextMessage;
-use onPHP\test\misc\TestCase;
+use onphp\main\Messages\TextFileQueue;
+use onphp\main\Messages\TextFileReceiver;
+use onphp\main\Messages\TextFileSender;
+use onphp\main\Messages\TextMessage;
+use onphp\test\misc\TestCase;
 
 /* $Id$ */
 

@@ -2,13 +2,13 @@
 
 namespace onphp\test\db;
 
-use onPHP\core\Base\Singleton;
-use onPHP\core\DB\DBPool;
-use onPHP\main\Criteria\FetchStrategy;
-use onPHP\test\meta\Business\TestObject;
-use onPHP\test\meta\Business\TestType;
-use onPHP\test\misc\DBTestPool;
-use onPHP\test\misc\TestCaseDAO;
+use onphp\core\Base\Singleton;
+use onphp\core\DB\DBPool;
+use onphp\main\Criteria\FetchStrategy;
+use onphp\test\meta\Business\TestObject;
+use onphp\test\meta\Business\TestType;
+use onphp\test\misc\DBTestPool;
+use onphp\test\misc\TestCaseDAO;
 
 /**
  * @group rdb

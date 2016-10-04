@@ -3,20 +3,20 @@
 namespace onphp\main\Utils\AMQP\Pecl;
 
 use Exception;
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\ObjectNotFoundException;
-use onPHP\core\Exceptions\UnimplementedFeatureException;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\main\Utils\AMQP\AMQPBaseChannel;
-use onPHP\main\Utils\AMQP\AMQPConsumer;
-use onPHP\main\Utils\AMQP\AMQPExchangeConfig;
-use onPHP\main\Utils\AMQP\AMQPExchangeType;
-use onPHP\main\Utils\AMQP\AMQPInterface;
-use onPHP\main\Utils\AMQP\AMQPOutgoingMessage;
-use onPHP\main\Utils\AMQP\AMQPQueueConfig;
-use onPHP\main\Utils\AMQP\Exceptions\AMQPServerConnectionException;
-use onPHP\main\Utils\AMQP\Exceptions\AMQPServerException;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\ObjectNotFoundException;
+use onphp\core\Exceptions\UnimplementedFeatureException;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\main\Utils\AMQP\AMQPBaseChannel;
+use onphp\main\Utils\AMQP\AMQPConsumer;
+use onphp\main\Utils\AMQP\AMQPExchangeConfig;
+use onphp\main\Utils\AMQP\AMQPExchangeType;
+use onphp\main\Utils\AMQP\AMQPInterface;
+use onphp\main\Utils\AMQP\AMQPOutgoingMessage;
+use onphp\main\Utils\AMQP\AMQPQueueConfig;
+use onphp\main\Utils\AMQP\Exceptions\AMQPServerConnectionException;
+use onphp\main\Utils\AMQP\Exceptions\AMQPServerException;
 
 /***************************************************************************
  *   Copyright (C) 2011 by Sergey S. Sergeev                               *

@@ -2,8 +2,8 @@
 
 namespace onphp\main\DAOs\Handlers;
 
-use onPHP\core\Cache\Cache;
-use onPHP\core\Cache\SemaphorePool;
+use onphp\core\Cache\Cache;
+use onphp\core\Cache\SemaphorePool;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

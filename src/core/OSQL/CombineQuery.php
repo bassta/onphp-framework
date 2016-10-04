@@ -2,7 +2,7 @@
 
 namespace onphp\core\OSQL;
 
-use onPHP\core\Base\StaticFactory;
+use onphp\core\Base\StaticFactory;
 
 /***************************************************************************
  *   Copyright (C) 2004-2008 by Sergey S. Sergeev                          *

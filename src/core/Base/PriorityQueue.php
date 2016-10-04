@@ -2,7 +2,7 @@
 
 namespace onphp\core\Base;
 
-use onPHP\core\Form\Primitives\PrimitiveInteger;
+use onphp\core\Form\Primitives\PrimitiveInteger;
 
 /***************************************************************************
  *   Copyright (C) 2009 by Denis M. Gabaidulin                             *

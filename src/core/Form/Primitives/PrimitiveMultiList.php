@@ -2,9 +2,9 @@
 
 namespace onphp\core\Form\Primitives;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\UnimplementedFeatureException;
-use onPHP\core\Exceptions\WrongStateException;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\UnimplementedFeatureException;
+use onphp\core\Exceptions\WrongStateException;
 
 /***************************************************************************
  *   Copyright (C) 2004-2007 by Anton E. Lebedevich                        *

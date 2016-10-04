@@ -2,7 +2,7 @@
 
 namespace onphp\main\Markup\Feed;
 
-use onPHP\core\Base\Enumeration;
+use onphp\core\Base\Enumeration;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Dmitry A. Lomash                                *

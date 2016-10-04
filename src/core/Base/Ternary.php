@@ -2,8 +2,8 @@
 
 namespace onphp\core\Base;
 
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\Exceptions\WrongStateException;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\Exceptions\WrongStateException;
 
 /***************************************************************************
  *   Copyright (C) 2004-2007 by Konstantin V. Arkhipov                     *

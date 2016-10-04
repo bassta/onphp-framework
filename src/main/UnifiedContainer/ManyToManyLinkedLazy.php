@@ -2,9 +2,9 @@
 
 namespace onphp\main\UnifiedContainer;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\DB\DBPool;
-use onPHP\core\OSQL\DBField;
+use onphp\core\Base\Assert;
+use onphp\core\DB\DBPool;
+use onphp\core\OSQL\DBField;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *

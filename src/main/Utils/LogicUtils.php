@@ -2,11 +2,11 @@
 
 namespace onphp\main\Utils;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\StaticFactory;
-use onPHP\core\Logic\Expression;
-use onPHP\core\Logic\LogicalChain;
-use onPHP\core\OSQL\DBValue;
+use onphp\core\Base\Assert;
+use onphp\core\Base\StaticFactory;
+use onphp\core\Logic\Expression;
+use onphp\core\Logic\LogicalChain;
+use onphp\core\OSQL\DBValue;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *

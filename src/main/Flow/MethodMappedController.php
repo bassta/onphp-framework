@@ -2,9 +2,9 @@
 
 namespace onphp\main\Flow;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Form\Form;
-use onPHP\core\Form\Primitive;
+use onphp\core\Base\Assert;
+use onphp\core\Form\Form;
+use onphp\core\Form\Primitive;
 
 /****************************************************************************
  *   Copyright (C) 2007 by Anton E. Lebedevich                              *

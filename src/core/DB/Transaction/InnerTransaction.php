@@ -2,10 +2,10 @@
 
 namespace onphp\core\DB\Transaction;
 
-use onPHP\core\DB\DB;
-use onPHP\core\DB\DBPool;
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\main\DAOs\GenericDAO;
+use onphp\core\DB\DB;
+use onphp\core\DB\DBPool;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\main\DAOs\GenericDAO;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Alexey S. Denisov                               *

@@ -2,8 +2,8 @@
 
 namespace onphp\meta\patterns;
 
-use onPHP\core\Base\Singleton;
-use onPHP\meta\classes\MetaClass;
+use onphp\core\Base\Singleton;
+use onphp\meta\classes\MetaClass;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

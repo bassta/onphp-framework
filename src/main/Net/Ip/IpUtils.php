@@ -2,7 +2,7 @@
 
 namespace onphp\main\Net\Ip;
 
-use onPHP\core\Base\StaticFactory;
+use onphp\core\Base\StaticFactory;
 
 /***************************************************************************
  *   Copyright (C) 2009 by Denis M. Gabaidulin                             *

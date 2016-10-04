@@ -2,10 +2,10 @@
 
 namespace onphp\main\UnifiedContainer;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\DB\DBPool;
-use onPHP\core\Logic\Expression;
-use onPHP\core\OSQL\OSQL;
+use onphp\core\Base\Assert;
+use onphp\core\DB\DBPool;
+use onphp\core\Logic\Expression;
+use onphp\core\OSQL\OSQL;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *

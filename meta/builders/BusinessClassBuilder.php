@@ -2,10 +2,10 @@
 
 namespace onphp\meta\builders;
 
-use onPHP\meta\classes\MetaClass;
-use onPHP\meta\classes\MetaClassType;
-use onPHP\meta\patterns\AbstractClassPattern;
-use onPHP\meta\patterns\InternalClassPattern;
+use onphp\meta\classes\MetaClass;
+use onphp\meta\classes\MetaClassType;
+use onphp\meta\patterns\AbstractClassPattern;
+use onphp\meta\patterns\InternalClassPattern;
 use ReflectionClass;
 
 /***************************************************************************

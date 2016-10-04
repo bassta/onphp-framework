@@ -2,7 +2,7 @@
 
 namespace onphp\main\Flow;
 
-use onPHP\main\SPL\SimplifiedArrayAccess;
+use onphp\main\SPL\SimplifiedArrayAccess;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Anton E. Lebedevich                        *

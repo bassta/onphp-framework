@@ -2,8 +2,8 @@
 
 namespace onphp\test\main;
 
-use onPHP\main\Base\Range;
-use onPHP\test\misc\TestCase;
+use onphp\main\Base\Range;
+use onphp\test\misc\TestCase;
 
 final class RangeTest extends TestCase
 {

@@ -2,7 +2,7 @@
 
 namespace onphp\main\Net\Http;
 
-use onPHP\core\Exceptions\UnsupportedMethodException;
+use onphp\core\Exceptions\UnsupportedMethodException;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Anton E. Lebedevich                             *

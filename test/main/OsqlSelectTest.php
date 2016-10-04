@@ -2,13 +2,13 @@
 
 namespace onphp\test\main;
 
-use onPHP\core\Logic\Expression;
-use onPHP\core\OSQL\DBValue;
-use onPHP\core\Logic\BinaryExpression;
-use onPHP\core\OSQL\SQLFunction;
-use onPHP\core\OSQL\DBField;
-use onPHP\core\OSQL\OSQL;
-use onPHP\test\misc\TestCaseDB;
+use onphp\core\Logic\Expression;
+use onphp\core\OSQL\DBValue;
+use onphp\core\Logic\BinaryExpression;
+use onphp\core\OSQL\SQLFunction;
+use onphp\core\OSQL\DBField;
+use onphp\core\OSQL\OSQL;
+use onphp\test\misc\TestCaseDB;
 
 final class OsqlSelectTest extends TestCaseDB
 {

@@ -2,12 +2,12 @@
 
 namespace onphp\test\core;
 
-use onPHP\core\Cache\AggregateCache;
-use onPHP\core\Cache\CyclicAggregateCache;
-use onPHP\core\Cache\PeclMemcached;
-use onPHP\core\Cache\SequentialCache;
-use onPHP\core\Cache\SocketMemcached;
-use onPHP\test\misc\TestCase;
+use onphp\core\Cache\AggregateCache;
+use onphp\core\Cache\CyclicAggregateCache;
+use onphp\core\Cache\PeclMemcached;
+use onphp\core\Cache\SequentialCache;
+use onphp\core\Cache\SocketMemcached;
+use onphp\test\misc\TestCase;
 
 /****************************************************************************
  *   Copyright (C) 2012 by Artem Naumenko                                   *

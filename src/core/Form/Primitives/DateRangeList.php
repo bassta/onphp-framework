@@ -2,11 +2,11 @@
 
 namespace onphp\core\Form\Primitives;
 
-use onPHP\core\Base\Date;
-use onPHP\core\Base\Stringable;
-use onPHP\core\Exceptions\UnimplementedFeatureException;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\main\Base\DateRange;
+use onphp\core\Base\Date;
+use onphp\core\Base\Stringable;
+use onphp\core\Exceptions\UnimplementedFeatureException;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\main\Base\DateRange;
 
 /***************************************************************************
  *   Copyright (C) 2005-2008 by Konstantin V. Arkhipov, Igor V. Gulyaev    *

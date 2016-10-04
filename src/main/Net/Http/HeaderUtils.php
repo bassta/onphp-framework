@@ -2,8 +2,8 @@
 
 namespace onphp\main\Net\Http;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\StaticFactory;
+use onphp\core\Base\Assert;
+use onphp\core\Base\StaticFactory;
 
 /***************************************************************************
  *   Copyright (C) 2004-2008 by Konstantin V. Arkhipov                     *

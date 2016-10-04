@@ -2,21 +2,21 @@
 
 namespace onphp\main\DAOs;
 
-use onPHP\core\OSQL\DialectString;
-use onPHP\core\Logic\MappableObject;
-use onPHP\core\OSQL\SelectQuery;
-use onPHP\core\OSQL\DBValue;
-use onPHP\core\Exceptions\MissingElementException;
-use onPHP\core\OSQL\JoinCapableQuery;
-use onPHP\main\Base\AbstractProtoClass;
-use onPHP\core\OSQL\InsertOrUpdateQuery;
-use onPHP\core\Exceptions\ObjectNotFoundException;
-use onPHP\meta\classes\MetaRelation;
-use onPHP\core\Logic\Expression;
-use onPHP\core\OSQL\OSQL;
-use onPHP\core\OSQL\DBField;
-use onPHP\main\Utils\ArrayUtils;
-use onPHP\core\Base\Assert;
+use onphp\core\OSQL\DialectString;
+use onphp\core\Logic\MappableObject;
+use onphp\core\OSQL\SelectQuery;
+use onphp\core\OSQL\DBValue;
+use onphp\core\Exceptions\MissingElementException;
+use onphp\core\OSQL\JoinCapableQuery;
+use onphp\main\Base\AbstractProtoClass;
+use onphp\core\OSQL\InsertOrUpdateQuery;
+use onphp\core\Exceptions\ObjectNotFoundException;
+use onphp\meta\classes\MetaRelation;
+use onphp\core\Logic\Expression;
+use onphp\core\OSQL\OSQL;
+use onphp\core\OSQL\DBField;
+use onphp\main\Utils\ArrayUtils;
+use onphp\core\Base\Assert;
 
 /***************************************************************************
  *   Copyright (C) 2007-2008 by Konstantin V. Arkhipov                     *

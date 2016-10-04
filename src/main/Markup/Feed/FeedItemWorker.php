@@ -2,7 +2,7 @@
 
 namespace onphp\main\Markup\Feed;
 
-use onPHP\core\Base\Instantiatable;
+use onphp\core\Base\Instantiatable;
 use SimpleXMLElement;
 
 /***************************************************************************

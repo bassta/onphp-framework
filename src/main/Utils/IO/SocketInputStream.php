@@ -2,8 +2,8 @@
 
 namespace onphp\main\Utils\IO;
 
-use onPHP\core\Exceptions\IOException;
-use onPHP\core\Exceptions\NetworkException;
+use onphp\core\Exceptions\IOException;
+use onphp\core\Exceptions\NetworkException;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *

@@ -2,10 +2,10 @@
 
 namespace onphp\main\EntityProto\Builders;
 
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\main\EntityProto\Accessors\DirectorySetter;
-use onPHP\main\EntityProto\Accessors\ObjectGetter;
-use onPHP\main\EntityProto\EntityProto;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\main\EntityProto\Accessors\DirectorySetter;
+use onphp\main\EntityProto\Accessors\ObjectGetter;
+use onphp\main\EntityProto\EntityProto;
 
 /***************************************************************************
  *   Copyright (C) 2009 by Ivan Y. Khvostishkov                            *

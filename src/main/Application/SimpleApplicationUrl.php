@@ -2,7 +2,7 @@
 
 namespace onphp\main\Application;
 
-use onPHP\core\Exceptions\UnimplementedFeatureException;
+use onphp\core\Exceptions\UnimplementedFeatureException;
 
 final class SimpleApplicationUrl extends ApplicationUrl
 {

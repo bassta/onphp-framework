@@ -2,9 +2,9 @@
 
 namespace onphp\main\Flow;
 
-use onPHP\core\Base\Assert;
-use onPHP\main\Base\RequestType;
-use onPHP\main\Utils\TextUtils;
+use onphp\core\Base\Assert;
+use onphp\main\Base\RequestType;
+use onphp\main\Utils\TextUtils;
 
 /****************************************************************************
  *   Copyright (C) 2008 by Dmitry V. Sokolov                                *

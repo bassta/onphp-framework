@@ -2,8 +2,8 @@
 
 namespace onphp\test\main\Utils;
 
-use onPHP\main\Utils\FileUtils;
-use onPHP\test\misc\TestCase;
+use onphp\main\Utils\FileUtils;
+use onphp\test\misc\TestCase;
 
 final class FileUtilsTest extends TestCase
 {

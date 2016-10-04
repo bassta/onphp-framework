@@ -2,8 +2,8 @@
 
 namespace onphp\test\main;
 
-use onPHP\main\Utils\TextUtils;
-use onPHP\test\misc\TestCase;
+use onphp\main\Utils\TextUtils;
+use onphp\test\misc\TestCase;
 
 /* $Id$ */
 

@@ -2,10 +2,10 @@
 
 namespace onphp\main\Utils\AMQP;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\MissingElementException;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\main\Utils\AMQP\Exceptions\AMQPServerConnectionException;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\MissingElementException;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\main\Utils\AMQP\Exceptions\AMQPServerConnectionException;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Evgeniya Tekalin                                *

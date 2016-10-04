@@ -2,10 +2,10 @@
 
 namespace onphp\main\Utils;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Logic\Expression;
-use onPHP\main\Criteria\Criteria;
-use onPHP\main\Criteria\Projections\ObjectProjection;
+use onphp\core\Base\Assert;
+use onphp\core\Logic\Expression;
+use onphp\main\Criteria\Criteria;
+use onphp\main\Criteria\Projections\ObjectProjection;
 
 /***************************************************************************
  *   Copyright (C) 2009 by Ivan Y. Khvostishkov                            *

@@ -2,7 +2,7 @@
 
 namespace onphp\main\OQL\Statements;
 
-use onPHP\main\OQL\Expressions\OqlQueryParameter;
+use onphp\main\OQL\Expressions\OqlQueryParameter;
 
 /****************************************************************************
  *   Copyright (C) 2009 by Vladlen Y. Koshelev                              *

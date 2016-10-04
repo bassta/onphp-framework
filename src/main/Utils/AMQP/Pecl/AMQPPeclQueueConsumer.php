@@ -2,8 +2,8 @@
 
 namespace onphp\main\Utils\AMQP\Pecl;
 
-use onPHP\main\Utils\AMQP\AMQPDefaultConsumer;
-use onPHP\main\Utils\AMQP\AMQPIncomingMessage;
+use onphp\main\Utils\AMQP\AMQPDefaultConsumer;
+use onphp\main\Utils\AMQP\AMQPIncomingMessage;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Evgeniya Tekalin                                *

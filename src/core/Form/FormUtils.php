@@ -2,11 +2,11 @@
 
 namespace onphp\core\Form;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Identifiable;
-use onPHP\core\Base\Prototyped;
-use onPHP\core\Base\StaticFactory;
-use onPHP\core\Form\Primitives\ListedPrimitive;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Identifiable;
+use onphp\core\Base\Prototyped;
+use onphp\core\Base\StaticFactory;
+use onphp\core\Form\Primitives\ListedPrimitive;
 use ReflectionClass;
 
 /***************************************************************************

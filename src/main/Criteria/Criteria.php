@@ -2,27 +2,27 @@
 
 namespace onphp\main\Criteria;
 
-use onPHP\core\OSQL\DBField;
-use onPHP\meta\classes\MetaRelation;
-use onPHP\main\Base\LightMetaProperty;
-use onPHP\core\OSQL\SelectQuery;
-use onPHP\core\DB\Dialect;
-use onPHP\core\DB\ImaginaryDialect;
-use onPHP\core\DB\DBPool;
-use onPHP\core\Exceptions\MissingElementException;
-use onPHP\core\Exceptions\ObjectNotFoundException;
-use onPHP\main\Criteria\Projections\ProjectionChain;
-use onPHP\main\Criteria\Projections\ObjectProjection;
-use onPHP\core\OSQL\OrderBy;
-use onPHP\core\Logic\MappableObject;
-use onPHP\core\Logic\LogicalObject;
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\core\Base\Singleton;
-use onPHP\core\OSQL\OrderChain;
-use onPHP\core\Logic\Expression;
-use onPHP\main\DAOs\ProtoDAO;
-use onPHP\core\Base\Assert;
-use onPHP\core\OSQL\QueryIdentification;
+use onphp\core\OSQL\DBField;
+use onphp\meta\classes\MetaRelation;
+use onphp\main\Base\LightMetaProperty;
+use onphp\core\OSQL\SelectQuery;
+use onphp\core\DB\Dialect;
+use onphp\core\DB\ImaginaryDialect;
+use onphp\core\DB\DBPool;
+use onphp\core\Exceptions\MissingElementException;
+use onphp\core\Exceptions\ObjectNotFoundException;
+use onphp\main\Criteria\Projections\ProjectionChain;
+use onphp\main\Criteria\Projections\ObjectProjection;
+use onphp\core\OSQL\OrderBy;
+use onphp\core\Logic\MappableObject;
+use onphp\core\Logic\LogicalObject;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\core\Base\Singleton;
+use onphp\core\OSQL\OrderChain;
+use onphp\core\Logic\Expression;
+use onphp\main\DAOs\ProtoDAO;
+use onphp\core\Base\Assert;
+use onphp\core\OSQL\QueryIdentification;
 
 /****************************************************************************
  *   Copyright (C) 2006-2008 by Konstantin V. Arkhipov, Anton E. Lebedevich *

@@ -2,9 +2,9 @@
 
 namespace onphp\main\Flow;
 
-use onPHP\main\Base\RequestType;
-use onPHP\main\Net\Http\HttpMethod;
-use onPHP\main\Net\HttpUrl;
+use onphp\main\Base\RequestType;
+use onphp\main\Net\Http\HttpMethod;
+use onphp\main\Net\HttpUrl;
 
 /***************************************************************************
  *   Copyright (C) 2006-2008 by Anton E. Lebedevich                        *

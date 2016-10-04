@@ -2,22 +2,22 @@
 
 namespace onphp\main\Criteria;
 
-use onPHP\core\Base\StaticFactory;
-use onPHP\core\Logic\LogicalObject;
-use onPHP\core\Logic\MappableObject;
-use onPHP\main\Criteria\Projections\AverageNumberProjection;
-use onPHP\main\Criteria\Projections\ClassProjection;
-use onPHP\main\Criteria\Projections\DistinctCountProjection;
-use onPHP\main\Criteria\Projections\GroupByClassProjection;
-use onPHP\main\Criteria\Projections\GroupByPropertyProjection;
-use onPHP\main\Criteria\Projections\HavingProjection;
-use onPHP\main\Criteria\Projections\MappableObjectProjection;
-use onPHP\main\Criteria\Projections\MaximalNumberProjection;
-use onPHP\main\Criteria\Projections\MinimalNumberProjection;
-use onPHP\main\Criteria\Projections\ProjectionChain;
-use onPHP\main\Criteria\Projections\PropertyProjection;
-use onPHP\main\Criteria\Projections\RowCountProjection;
-use onPHP\main\Criteria\Projections\SumProjection;
+use onphp\core\Base\StaticFactory;
+use onphp\core\Logic\LogicalObject;
+use onphp\core\Logic\MappableObject;
+use onphp\main\Criteria\Projections\AverageNumberProjection;
+use onphp\main\Criteria\Projections\ClassProjection;
+use onphp\main\Criteria\Projections\DistinctCountProjection;
+use onphp\main\Criteria\Projections\GroupByClassProjection;
+use onphp\main\Criteria\Projections\GroupByPropertyProjection;
+use onphp\main\Criteria\Projections\HavingProjection;
+use onphp\main\Criteria\Projections\MappableObjectProjection;
+use onphp\main\Criteria\Projections\MaximalNumberProjection;
+use onphp\main\Criteria\Projections\MinimalNumberProjection;
+use onphp\main\Criteria\Projections\ProjectionChain;
+use onphp\main\Criteria\Projections\PropertyProjection;
+use onphp\main\Criteria\Projections\RowCountProjection;
+use onphp\main\Criteria\Projections\SumProjection;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

@@ -2,7 +2,7 @@
 
 namespace onphp\main\UI\View;
 
-use onPHP\core\Base\Assert;
+use onphp\core\Base\Assert;
 
 /***************************************************************************
  *   Copyright (C) 2006-2008 by Konstantin V. Arkhipov                     *

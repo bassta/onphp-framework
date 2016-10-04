@@ -2,11 +2,11 @@
 
 namespace onphp\test\main\Net;
 
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\main\Net\Mail\Mail;
-use onPHP\main\Net\Mail\MailAddress;
-use onPHP\main\Net\Mail\MailNotSentException;
-use onPHP\test\misc\TestCase;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\main\Net\Mail\Mail;
+use onphp\main\Net\Mail\MailAddress;
+use onphp\main\Net\Mail\MailNotSentException;
+use onphp\test\misc\TestCase;
 
 /***************************************************************************
  *   Copyright (C) 2009-2010 by Ivan Y. Khvostishkov                       *

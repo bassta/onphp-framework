@@ -2,8 +2,8 @@
 
 namespace onphp\main\Utils\AMQP\Pecl;
 
-use onPHP\core\Base\StaticFactory;
-use onPHP\main\Utils\AMQP\AMQPIncomingMessage;
+use onphp\core\Base\StaticFactory;
+use onphp\main\Utils\AMQP\AMQPIncomingMessage;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Evgeniya Tekalin                                *

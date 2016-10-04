@@ -2,7 +2,7 @@
 
 namespace onphp\main\Net\Mail;
 
-use onPHP\core\Exceptions\BaseException;
+use onphp\core\Exceptions\BaseException;
 
 /***************************************************************************
  *   Copyright (C) 2004-2007 by Anton E. Lebedevich                        *

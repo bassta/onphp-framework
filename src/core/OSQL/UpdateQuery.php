@@ -2,8 +2,8 @@
 
 namespace onphp\core\OSQL;
 
-use onPHP\core\DB\Dialect;
-use onPHP\core\Logic\LogicalObject;
+use onphp\core\DB\Dialect;
+use onphp\core\Logic\LogicalObject;
 
 /***************************************************************************
  *   Copyright (C) 2004-2007 by Anton E. Lebedevich                        *

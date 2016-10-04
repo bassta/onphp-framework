@@ -3,10 +3,10 @@
 namespace onphp\main\Utils\AMQP\Pecl;
 
 use Exception;
-use onPHP\main\Utils\AMQP\AMQP;
-use onPHP\main\Utils\AMQP\AMQPCredentials;
-use onPHP\main\Utils\AMQP\AMQPInterface;
-use onPHP\main\Utils\AMQP\Exceptions\AMQPServerConnectionException;
+use onphp\main\Utils\AMQP\AMQP;
+use onphp\main\Utils\AMQP\AMQPCredentials;
+use onphp\main\Utils\AMQP\AMQPInterface;
+use onphp\main\Utils\AMQP\Exceptions\AMQPServerConnectionException;
 
 /***************************************************************************
  *   Copyright (C) 2011 by Sergey S. Sergeev                               *

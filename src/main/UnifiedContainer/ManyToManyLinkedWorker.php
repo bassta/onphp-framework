@@ -2,11 +2,11 @@
 
 namespace onphp\main\UnifiedContainer;
 
-use onPHP\core\Logic\Expression;
-use onPHP\core\OSQL\DBField;
-use onPHP\core\OSQL\DBValue;
-use onPHP\core\OSQL\OSQL;
-use onPHP\core\OSQL\SelectQuery;
+use onphp\core\Logic\Expression;
+use onphp\core\OSQL\DBField;
+use onphp\core\OSQL\DBValue;
+use onphp\core\OSQL\OSQL;
+use onphp\core\OSQL\SelectQuery;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *

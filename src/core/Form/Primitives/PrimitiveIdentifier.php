@@ -2,12 +2,12 @@
 
 namespace onphp\core\Form\Primitives;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Identifiable;
-use onPHP\core\Exceptions\ObjectNotFoundException;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\main\Utils\ClassUtils;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Identifiable;
+use onphp\core\Exceptions\ObjectNotFoundException;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\main\Utils\ClassUtils;
 
 /***************************************************************************
  *   Copyright (C) 2006-2009 by Konstantin V. Arkhipov                     *

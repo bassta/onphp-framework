@@ -3,9 +3,9 @@
 namespace onphp\test\core;
 
 use Exception;
-use onPHP\core\DB\DB;
-use onPHP\core\DB\DBPool;
-use onPHP\test\misc\TestCase;
+use onphp\core\DB\DB;
+use onphp\core\DB\DBPool;
+use onphp\test\misc\TestCase;
 
 final class DbConnectionTest extends TestCase
 {

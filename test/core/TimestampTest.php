@@ -2,10 +2,10 @@
 
 namespace onphp\test\core;
 
-use onPHP\core\Base\Date;
-use onPHP\core\Base\Timestamp;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\test\misc\TestCase;
+use onphp\core\Base\Date;
+use onphp\core\Base\Timestamp;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\test\misc\TestCase;
 
 /* $Id$ */
 

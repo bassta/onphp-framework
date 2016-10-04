@@ -2,7 +2,7 @@
 
 namespace onphp\main\OQL\Statements;
 
-use onPHP\main\DAOs\ProtoDAO;
+use onphp\main\DAOs\ProtoDAO;
 
 /****************************************************************************
  *   Copyright (C) 2008-2009 by Vladlen Y. Koshelev                         *

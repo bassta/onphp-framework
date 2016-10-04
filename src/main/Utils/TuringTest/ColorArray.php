@@ -2,7 +2,7 @@
 
 namespace onphp\main\Utils\TuringTest;
 
-use onPHP\core\Exceptions\MissingElementException;
+use onphp\core\Exceptions\MissingElementException;
 
 /***************************************************************************
  *   Copyright (C) 2004-2007 by Dmitry E. Demidov                          *

@@ -2,11 +2,11 @@
 
 namespace onphp\core\DB;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Identifier;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\OSQL\DataType;
-use onPHP\core\OSQL\DBColumn;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Identifier;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\OSQL\DataType;
+use onphp\core\OSQL\DBColumn;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *

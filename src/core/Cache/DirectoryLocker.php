@@ -2,8 +2,8 @@
 
 namespace onphp\core\Cache;
 
-use onPHP\core\Exceptions\BaseException;
-use onPHP\core\Exceptions\WrongArgumentException;
+use onphp\core\Exceptions\BaseException;
+use onphp\core\Exceptions\WrongArgumentException;
 
 /***************************************************************************
  *   Copyright (C) 2006-2008 by Konstantin V. Arkhipov                     *

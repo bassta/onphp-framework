@@ -2,7 +2,7 @@
 
 namespace onphp\main\Autoloader;
 
-use onPHP\core\Exceptions\ClassNotFoundException;
+use onphp\core\Exceptions\ClassNotFoundException;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Aleksey S. Denisov                              *

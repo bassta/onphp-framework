@@ -2,7 +2,7 @@
 
 namespace onphp\main\Net\Http;
 
-use onPHP\main\Flow\HttpRequest;
+use onphp\main\Flow\HttpRequest;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Anton E. Lebedevich                             *

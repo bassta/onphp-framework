@@ -2,7 +2,7 @@
 
 namespace onphp\core\Form\Filters;
 
-use onPHP\core\Base\Assert;
+use onphp\core\Base\Assert;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Denis M. Gabaidulin                             *

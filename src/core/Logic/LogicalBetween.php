@@ -2,10 +2,10 @@
 
 namespace onphp\core\Logic;
 
-use onPHP\core\DB\Dialect;
-use onPHP\core\Form\Form;
-use onPHP\core\OSQL\JoinCapableQuery;
-use onPHP\main\DAOs\ProtoDAO;
+use onphp\core\DB\Dialect;
+use onphp\core\Form\Form;
+use onphp\core\OSQL\JoinCapableQuery;
+use onphp\main\DAOs\ProtoDAO;
 
 /****************************************************************************
  *   Copyright (C) 2004-2007 by Konstantin V. Arkhipov, Anton E. Lebedevich *

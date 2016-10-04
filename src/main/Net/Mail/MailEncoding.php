@@ -2,7 +2,7 @@
 
 namespace onphp\main\Net\Mail;
 
-use onPHP\core\Base\Enumeration;
+use onphp\core\Base\Enumeration;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

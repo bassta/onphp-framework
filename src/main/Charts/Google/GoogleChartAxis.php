@@ -2,8 +2,8 @@
 
 namespace onphp\main\Charts\Google;
 
-use onPHP\core\Base\Assert;
-use onPHP\main\Base\BaseRange;
+use onphp\core\Base\Assert;
+use onphp\main\Base\BaseRange;
 
 /***************************************************************************
  *   Copyright (C) 2008-2009 by Denis M. Gabaidulin                        *

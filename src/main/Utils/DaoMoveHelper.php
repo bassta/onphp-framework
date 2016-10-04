@@ -2,13 +2,13 @@
 
 namespace onphp\main\Utils;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\StaticFactory;
-use onPHP\core\Logic\Expression;
-use onPHP\core\Logic\LogicalObject;
-use onPHP\core\OSQL\OrderBy;
-use onPHP\main\Criteria\Criteria;
-use onPHP\main\DAOs\DAOConnected;
+use onphp\core\Base\Assert;
+use onphp\core\Base\StaticFactory;
+use onphp\core\Logic\Expression;
+use onphp\core\Logic\LogicalObject;
+use onphp\core\OSQL\OrderBy;
+use onphp\main\Criteria\Criteria;
+use onphp\main\DAOs\DAOConnected;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Dmitry E. Demidov                               *

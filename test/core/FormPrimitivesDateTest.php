@@ -2,10 +2,10 @@
 
 namespace onphp\test\core;
 
-use onPHP\core\Form\Form;
-use onPHP\core\Form\Primitive;
-use onPHP\core\Form\Primitives\PrimitiveDate;
-use onPHP\test\misc\TestCase;
+use onphp\core\Form\Form;
+use onphp\core\Form\Primitive;
+use onphp\core\Form\Primitives\PrimitiveDate;
+use onphp\test\misc\TestCase;
 
 /* $Id$ */
 

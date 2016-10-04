@@ -2,17 +2,17 @@
 
 namespace onphp\test\db;
 
-use onPHP\core\Base\Timestamp;
-use onPHP\core\Cache\Cache;
-use onPHP\core\DB\DBPool;
-use onPHP\core\Form\FormUtils;
-use onPHP\core\Form\Primitive;
-use onPHP\main\Base\Hstore;
-use onPHP\test\meta\Business\Credentials;
-use onPHP\test\meta\Business\TestCity;
-use onPHP\test\meta\Business\TestUser;
-use onPHP\test\misc\DBTestPool;
-use onPHP\test\misc\TestCaseDAO;
+use onphp\core\Base\Timestamp;
+use onphp\core\Cache\Cache;
+use onphp\core\DB\DBPool;
+use onphp\core\Form\FormUtils;
+use onphp\core\Form\Primitive;
+use onphp\main\Base\Hstore;
+use onphp\test\meta\Business\Credentials;
+use onphp\test\meta\Business\TestCity;
+use onphp\test\meta\Business\TestUser;
+use onphp\test\misc\DBTestPool;
+use onphp\test\misc\TestCaseDAO;
 
 class HstoreDBTest extends TestCaseDAO
 {

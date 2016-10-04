@@ -2,7 +2,7 @@
 
 namespace onphp\main\UI\View;
 
-use onPHP\core\Base\Stringable;
+use onphp\core\Base\Stringable;
 
 /***************************************************************************
  *   Copyright (C) 2008 by Ivan Y. Khvostishkov                            *

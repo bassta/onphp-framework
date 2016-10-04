@@ -2,7 +2,7 @@
 
 namespace onphp\main\Utils\AMQP;
 
-use onPHP\core\Base\Assert;
+use onphp\core\Base\Assert;
 
 /***************************************************************************
  *   Copyright (C) 2011 by Sergey S. Sergeev                               *

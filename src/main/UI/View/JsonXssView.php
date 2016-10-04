@@ -2,7 +2,7 @@
 
 namespace onphp\main\UI\View;
 
-use onPHP\core\Exceptions\WrongArgumentException;
+use onphp\core\Exceptions\WrongArgumentException;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Georgiy T. Kutsurua                             *

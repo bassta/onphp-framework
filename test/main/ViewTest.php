@@ -2,9 +2,9 @@
 
 namespace onphp\test\main;
 
-use onPHP\main\Flow\Model;
-use onPHP\main\UI\View\PhpViewResolver;
-use onPHP\test\misc\TestCase;
+use onphp\main\Flow\Model;
+use onphp\main\UI\View\PhpViewResolver;
+use onphp\test\misc\TestCase;
 
 /***************************************************************************
  *   Copyright (C) 2011 by Igor V. Gulyaev                                 *

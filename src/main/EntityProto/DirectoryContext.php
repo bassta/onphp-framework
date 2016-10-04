@@ -2,8 +2,8 @@
 
 namespace onphp\main\EntityProto;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\WrongArgumentException;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\WrongArgumentException;
 
 /***************************************************************************
  *   Copyright (C) 2009 by Ivan Y. Khvostishkov                            *

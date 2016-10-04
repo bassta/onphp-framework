@@ -2,8 +2,8 @@
 
 namespace onphp\test\main\Ip;
 
-use onPHP\main\Net\Ip\IpUtils;
-use onPHP\test\misc\TestCase;
+use onphp\main\Net\Ip\IpUtils;
+use onphp\test\misc\TestCase;
 
 /* $Id$ */
 

@@ -2,9 +2,9 @@
 
 namespace onphp\test\core;
 
-use onPHP\core\Base\Date;
-use onPHP\core\Base\Timestamp;
-use onPHP\test\misc\TestCase;
+use onphp\core\Base\Date;
+use onphp\core\Base\Timestamp;
+use onphp\test\misc\TestCase;
 
 /* $Id$ */
 

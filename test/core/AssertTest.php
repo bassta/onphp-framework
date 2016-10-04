@@ -2,9 +2,9 @@
 
 namespace onphp\test\core;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\test\misc\TestCase;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\test\misc\TestCase;
 
 /* $Id$ */
 

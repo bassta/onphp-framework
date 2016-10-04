@@ -2,8 +2,8 @@
 
 namespace onphp\main\Base;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\NamedObject;
+use onphp\core\Base\Assert;
+use onphp\core\Base\NamedObject;
 
 /****************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov, Anton E. Lebedevich *

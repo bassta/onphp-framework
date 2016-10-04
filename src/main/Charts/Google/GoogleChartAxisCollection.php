@@ -2,7 +2,7 @@
 
 namespace onphp\main\Charts\Google;
 
-use onPHP\core\Exceptions\WrongArgumentException;
+use onphp\core\Exceptions\WrongArgumentException;
 
 /***************************************************************************
  *   Copyright (C) 2008-2009 by Denis M. Gabaidulin                        *

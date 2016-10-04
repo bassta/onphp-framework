@@ -2,22 +2,22 @@
 
 namespace onphp\main\DAOs;
 
-use onPHP\core\OSQL\InsertOrUpdateQuery;
-use onPHP\core\DB\DBPool;
-use onPHP\main\DAOs\Uncachers\UncacherBase;
-use onPHP\main\DAOs\Uncachers\UncacherGenericDAO;
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\main\Utils\ArrayUtils;
-use onPHP\core\OSQL\SelectQuery;
-use onPHP\core\Logic\LogicalObject;
-use onPHP\core\Base\Assert;
-use onPHP\core\Cache\Cache;
-use onPHP\core\OSQL\DBValue;
-use onPHP\core\OSQL\SQLFunction;
-use onPHP\core\OSQL\DBField;
-use onPHP\core\OSQL\OSQL;
-use onPHP\core\Base\Identifiable;
-use onPHP\core\Base\Singleton;
+use onphp\core\OSQL\InsertOrUpdateQuery;
+use onphp\core\DB\DBPool;
+use onphp\main\DAOs\Uncachers\UncacherBase;
+use onphp\main\DAOs\Uncachers\UncacherGenericDAO;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\main\Utils\ArrayUtils;
+use onphp\core\OSQL\SelectQuery;
+use onphp\core\Logic\LogicalObject;
+use onphp\core\Base\Assert;
+use onphp\core\Cache\Cache;
+use onphp\core\OSQL\DBValue;
+use onphp\core\OSQL\SQLFunction;
+use onphp\core\OSQL\DBField;
+use onphp\core\OSQL\OSQL;
+use onphp\core\Base\Identifiable;
+use onphp\core\Base\Singleton;
 
 /***************************************************************************
  *   Copyright (C) 2005-2008 by Konstantin V. Arkhipov                     *

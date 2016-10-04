@@ -2,8 +2,8 @@
 
 namespace onphp\test\main;
 
-use onPHP\core\DB\NoSQL\RedisNoSQL;
-use onPHP\test\misc\TestCase;
+use onphp\core\DB\NoSQL\RedisNoSQL;
+use onphp\test\misc\TestCase;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Artem Naumenko                                  *

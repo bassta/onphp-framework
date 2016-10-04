@@ -2,10 +2,10 @@
 
 namespace onphp\main\EntityProto\Builders;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Form\Form;
-use onPHP\core\Form\Primitives\PrimitiveForm;
-use onPHP\main\EntityProto\PrototypedBuilder;
+use onphp\core\Base\Assert;
+use onphp\core\Form\Form;
+use onphp\core\Form\Primitives\PrimitiveForm;
+use onphp\main\EntityProto\PrototypedBuilder;
 
 /***************************************************************************
  *   Copyright (C) 2007-2008 by Ivan Y. Khvostishkov                       *

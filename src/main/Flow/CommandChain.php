@@ -2,10 +2,10 @@
 
 namespace onphp\main\Flow;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Prototyped;
-use onPHP\core\Exceptions\BaseException;
-use onPHP\core\Form\Form;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Prototyped;
+use onphp\core\Exceptions\BaseException;
+use onphp\core\Form\Form;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

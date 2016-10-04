@@ -2,13 +2,13 @@
 
 namespace onphp\core\DB\Transaction;
 
-use onPHP\core\DB\DB;
-use onPHP\core\DB\Dialect;
-use onPHP\core\DB\ImaginaryDialect;
-use onPHP\core\DB\Queue;
-use onPHP\core\Exceptions\DatabaseException;
-use onPHP\core\Exceptions\UnsupportedMethodException;
-use onPHP\core\OSQL\Query;
+use onphp\core\DB\DB;
+use onphp\core\DB\Dialect;
+use onphp\core\DB\ImaginaryDialect;
+use onphp\core\DB\Queue;
+use onphp\core\Exceptions\DatabaseException;
+use onphp\core\Exceptions\UnsupportedMethodException;
+use onphp\core\OSQL\Query;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *

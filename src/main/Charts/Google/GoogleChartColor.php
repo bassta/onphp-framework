@@ -2,8 +2,8 @@
 
 namespace onphp\main\Charts\Google;
 
-use onPHP\core\Base\Assert;
-use onPHP\main\Utils\TuringTest\Color;
+use onphp\core\Base\Assert;
+use onphp\main\Utils\TuringTest\Color;
 
 /***************************************************************************
  *   Copyright (C) 2008 by Denis M. Gabaidulin                             *

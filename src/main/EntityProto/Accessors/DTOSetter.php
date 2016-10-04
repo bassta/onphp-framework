@@ -2,18 +2,18 @@
 
 namespace onphp\main\EntityProto\Accessors;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Identifiable;
-use onPHP\core\Base\Stringable;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\Form\Primitives\BasePrimitive;
-use onPHP\core\Form\Primitives\PrimitiveAnyType;
-use onPHP\core\Form\Primitives\PrimitiveBoolean;
-use onPHP\core\Form\Primitives\PrimitivePolymorphicIdentifier;
-use onPHP\main\EntityProto\Builders\ObjectToDTOConverter;
-use onPHP\main\EntityProto\PrototypedEntity;
-use onPHP\main\EntityProto\PrototypedSetter;
-use onPHP\main\Net\Soap\DTOClass;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Identifiable;
+use onphp\core\Base\Stringable;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\Form\Primitives\BasePrimitive;
+use onphp\core\Form\Primitives\PrimitiveAnyType;
+use onphp\core\Form\Primitives\PrimitiveBoolean;
+use onphp\core\Form\Primitives\PrimitivePolymorphicIdentifier;
+use onphp\main\EntityProto\Builders\ObjectToDTOConverter;
+use onphp\main\EntityProto\PrototypedEntity;
+use onphp\main\EntityProto\PrototypedSetter;
+use onphp\main\Net\Soap\DTOClass;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *

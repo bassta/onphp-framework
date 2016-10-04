@@ -2,19 +2,19 @@
 
 namespace onphp\test\core;
 
-use onPHP\core\Base\IdentifiableObject;
-use onPHP\core\Exceptions\BaseException;
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\core\Form\Filter;
-use onPHP\core\Form\Filters\CallbackFilter;
-use onPHP\core\Form\Filters\CropFilter;
-use onPHP\core\Form\Filters\JsonDecoderFilter;
-use onPHP\core\Form\Filters\JsonEncoderFilter;
-use onPHP\core\Form\Filters\RussianTypograph;
-use onPHP\core\Form\Filters\TrimFilter;
-use onPHP\core\Form\Filters\Utf16ConverterFilter;
-use onPHP\main\Base\CallChain;
-use onPHP\test\misc\TestCase;
+use onphp\core\Base\IdentifiableObject;
+use onphp\core\Exceptions\BaseException;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\core\Form\Filter;
+use onphp\core\Form\Filters\CallbackFilter;
+use onphp\core\Form\Filters\CropFilter;
+use onphp\core\Form\Filters\JsonDecoderFilter;
+use onphp\core\Form\Filters\JsonEncoderFilter;
+use onphp\core\Form\Filters\RussianTypograph;
+use onphp\core\Form\Filters\TrimFilter;
+use onphp\core\Form\Filters\Utf16ConverterFilter;
+use onphp\main\Base\CallChain;
+use onphp\test\misc\TestCase;
 
 /* $Id$ */
 

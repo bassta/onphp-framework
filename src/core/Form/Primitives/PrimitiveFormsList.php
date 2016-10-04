@@ -2,9 +2,9 @@
 
 namespace onphp\core\Form\Primitives;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\UnsupportedMethodException;
-use onPHP\core\Exceptions\WrongStateException;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\UnsupportedMethodException;
+use onphp\core\Exceptions\WrongStateException;
 
 /***************************************************************************
  *   Copyright (C) 2007-2008 by Ivan Y. Khvostishkov                       *

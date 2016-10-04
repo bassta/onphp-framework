@@ -2,10 +2,10 @@
 
 namespace onphp\core\Cache;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Instantiatable;
-use onPHP\core\Base\StaticFactory;
-use onPHP\main\DAOs\Workers\CommonDaoWorker;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Instantiatable;
+use onphp\core\Base\StaticFactory;
+use onphp\main\DAOs\Workers\CommonDaoWorker;
 
 /****************************************************************************
  *   Copyright (C) 2005-2008 by Anton E. Lebedevich, Konstantin V. Arkhipov *

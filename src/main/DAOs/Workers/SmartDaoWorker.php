@@ -2,13 +2,13 @@
 
 namespace onphp\main\DAOs\Workers;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Identifiable;
-use onPHP\core\Cache\Cache;
-use onPHP\core\Cache\SemaphorePool;
-use onPHP\core\OSQL\SelectQuery;
-use onPHP\main\DAOs\GenericDAO;
-use onPHP\main\DAOs\Uncachers\UncacherSmartDaoWorkerLists;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Identifiable;
+use onphp\core\Cache\Cache;
+use onphp\core\Cache\SemaphorePool;
+use onphp\core\OSQL\SelectQuery;
+use onphp\main\DAOs\GenericDAO;
+use onphp\main\DAOs\Uncachers\UncacherSmartDaoWorkerLists;
 
 /***************************************************************************
  *   Copyright (C) 2005-2008 by Konstantin V. Arkhipov                     *

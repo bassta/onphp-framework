@@ -2,10 +2,10 @@
 
 namespace onphp\main\Utils\CommandLine;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Singleton;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\Form\Form;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Singleton;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\Form\Form;
 
 /***************************************************************************
  *   Copyright (C) 2009 by Denis M. Gabaidulin                             *

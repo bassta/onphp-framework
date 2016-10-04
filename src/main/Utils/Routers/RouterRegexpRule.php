@@ -2,9 +2,9 @@
 
 namespace onphp\main\Utils\Routers;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\BaseException;
-use onPHP\main\Flow\HttpRequest;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\BaseException;
+use onphp\main\Flow\HttpRequest;
 
 /***************************************************************************
  *   Copyright (C) 2008 by Sergey S. Sergeev                               *

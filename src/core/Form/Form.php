@@ -2,15 +2,15 @@
 
 namespace onphp\core\Form;
 
-use onPHP\core\Form\Primitives\PrimitiveAlias;
-use onPHP\core\Form\Primitives\FiltrablePrimitive;
-use onPHP\core\Form\Primitives\BasePrimitive;
-use onPHP\main\EntityProto\EntityProto;
-use onPHP\core\Logic\LogicalObject;
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\MissingElementException;
-use onPHP\core\Form\Primitives\PrimitiveForm;
-use onPHP\core\Form\Primitives\PrimitiveFormsList;
+use onphp\core\Form\Primitives\PrimitiveAlias;
+use onphp\core\Form\Primitives\FiltrablePrimitive;
+use onphp\core\Form\Primitives\BasePrimitive;
+use onphp\main\EntityProto\EntityProto;
+use onphp\core\Logic\LogicalObject;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\MissingElementException;
+use onphp\core\Form\Primitives\PrimitiveForm;
+use onphp\core\Form\Primitives\PrimitiveFormsList;
 
 /****************************************************************************
  *   Copyright (C) 2004-2009 by Konstantin V. Arkhipov, Anton E. Lebedevich *

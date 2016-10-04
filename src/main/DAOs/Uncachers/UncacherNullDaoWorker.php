@@ -2,7 +2,7 @@
 
 namespace onphp\main\DAOs\Uncachers;
 
-use onPHP\core\Base\Assert;
+use onphp\core\Base\Assert;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Aleksey S. Denisov                              *

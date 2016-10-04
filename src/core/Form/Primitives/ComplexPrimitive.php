@@ -2,9 +2,9 @@
 
 namespace onphp\core\Form\Primitives;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Ternary;
-use onPHP\core\Exceptions\UnimplementedFeatureException;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Ternary;
+use onphp\core\Exceptions\UnimplementedFeatureException;
 
 /***************************************************************************
  *   Copyright (C) 2004-2007 by Konstantin V. Arkhipov                     *

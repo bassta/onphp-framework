@@ -2,8 +2,8 @@
 
 namespace onphp\core\OSQL;
 
-use onPHP\core\Base\Identifiable;
-use onPHP\core\Exceptions\UnsupportedMethodException;
+use onphp\core\Base\Identifiable;
+use onphp\core\Exceptions\UnsupportedMethodException;
 
 /***************************************************************************
  *   Copyright (C) 2004-2008 by Konstantin V. Arkhipov                     *

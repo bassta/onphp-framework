@@ -2,7 +2,7 @@
 
 namespace onphp\main\UI\View;
 
-use onPHP\main\Net\Http\HeaderUtils;
+use onphp\main\Net\Http\HeaderUtils;
 
 /***************************************************************************
  *   Copyright (C) 2009 by Ivan Y. Khvostishkov                            *

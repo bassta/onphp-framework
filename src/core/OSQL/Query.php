@@ -2,8 +2,8 @@
 
 namespace onphp\core\OSQL;
 
-use onPHP\core\Base\Identifiable;
-use onPHP\core\Base\Stringable;
+use onphp\core\Base\Identifiable;
+use onphp\core\Base\Stringable;
 
 /***************************************************************************
  *   Copyright (C) 2004-2007 by Konstantin V. Arkhipov                     *

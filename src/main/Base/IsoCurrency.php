@@ -2,7 +2,7 @@
 
 namespace onphp\main\Base;
 
-use onPHP\core\Base\Enumeration;
+use onphp\core\Base\Enumeration;
 
 /***************************************************************************
  *   Copyright (C) 2007-2008 by Dmitry E. Pismenny                         *

@@ -2,20 +2,20 @@
 
 namespace onphp\main\DAOs\Workers;
 
-use onPHP\main\DAOs\Uncachers\UncacherCommonDaoWorker;
-use onPHP\core\Exceptions\UnimplementedFeatureException;
-use onPHP\core\Base\Identifiable;
-use onPHP\core\OSQL\QueryResult;
-use onPHP\core\OSQL\SQLFunction;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\OSQL\SelectQuery;
-use onPHP\core\Logic\LogicalObject;
-use onPHP\core\DB\DBPool;
-use onPHP\core\Exceptions\ObjectNotFoundException;
-use onPHP\core\OSQL\DBField;
-use onPHP\core\Logic\Expression;
-use onPHP\core\Exceptions\CachedObjectNotFoundException;
-use onPHP\core\Cache\Cache;
+use onphp\main\DAOs\Uncachers\UncacherCommonDaoWorker;
+use onphp\core\Exceptions\UnimplementedFeatureException;
+use onphp\core\Base\Identifiable;
+use onphp\core\OSQL\QueryResult;
+use onphp\core\OSQL\SQLFunction;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\OSQL\SelectQuery;
+use onphp\core\Logic\LogicalObject;
+use onphp\core\DB\DBPool;
+use onphp\core\Exceptions\ObjectNotFoundException;
+use onphp\core\OSQL\DBField;
+use onphp\core\Logic\Expression;
+use onphp\core\Exceptions\CachedObjectNotFoundException;
+use onphp\core\Cache\Cache;
 
 /****************************************************************************
  *   Copyright (C) 2004-2008 by Konstantin V. Arkhipov, Anton E. Lebedevich *

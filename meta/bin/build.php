@@ -3,12 +3,12 @@
 
 require dirname(__FILE__).DIRECTORY_SEPARATOR.'../../../../vendor/autoload.php';
 
-use onPHP\core\Exceptions\BaseException;
-use onPHP\main\Utils\ClassUtils;
-use onPHP\meta\classes\ColoredTextOutput;
-use onPHP\meta\classes\MetaConfiguration;
-use onPHP\meta\classes\MetaOutput;
-use onPHP\meta\classes\TextOutput;
+use onphp\core\Exceptions\BaseException;
+use onphp\main\Utils\ClassUtils;
+use onphp\meta\classes\ColoredTextOutput;
+use onphp\meta\classes\MetaConfiguration;
+use onphp\meta\classes\MetaOutput;
+use onphp\meta\classes\TextOutput;
 
 function help()
     {

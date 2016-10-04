@@ -2,11 +2,11 @@
 
 namespace onphp\core\Form;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\MissingElementException;
-use onPHP\core\Form\Primitives\BasePrimitive;
-use onPHP\core\Form\Primitives\FiltrablePrimitive;
-use onPHP\core\Form\Primitives\ListedPrimitive;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\MissingElementException;
+use onphp\core\Form\Primitives\BasePrimitive;
+use onphp\core\Form\Primitives\FiltrablePrimitive;
+use onphp\core\Form\Primitives\ListedPrimitive;
 
 /****************************************************************************
  *   Copyright (C) 2005-2008 by Konstantin V. Arkhipov, Anton E. Lebedevich *

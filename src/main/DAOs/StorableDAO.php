@@ -2,13 +2,13 @@
 
 namespace onphp\main\DAOs;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Identifiable;
-use onPHP\core\Cache\Cache;
-use onPHP\core\DB\DBPool;
-use onPHP\core\Logic\Expression;
-use onPHP\core\OSQL\OSQL;
-use onPHP\core\OSQL\UpdateQuery;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Identifiable;
+use onphp\core\Cache\Cache;
+use onphp\core\DB\DBPool;
+use onphp\core\Logic\Expression;
+use onphp\core\OSQL\OSQL;
+use onphp\core\OSQL\UpdateQuery;
 
 /***************************************************************************
  *   Copyright (C) 2005-2008 by Konstantin V. Arkhipov                     *

@@ -2,13 +2,13 @@
 
 namespace onphp\main\Flow;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Prototyped;
-use onPHP\core\DB\Transaction\InnerTransaction;
-use onPHP\core\Exceptions\BaseException;
-use onPHP\core\Exceptions\DatabaseException;
-use onPHP\core\Form\Form;
-use onPHP\main\DAOs\DAOConnected;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Prototyped;
+use onphp\core\DB\Transaction\InnerTransaction;
+use onphp\core\Exceptions\BaseException;
+use onphp\core\Exceptions\DatabaseException;
+use onphp\core\Form\Form;
+use onphp\main\DAOs\DAOConnected;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

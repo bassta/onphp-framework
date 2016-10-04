@@ -2,8 +2,8 @@
 
 namespace onphp\main\DAOs\Workers;
 
-use onPHP\core\Cache\Cache;
-use onPHP\core\Cache\WatermarkedPeer;
+use onphp\core\Cache\Cache;
+use onphp\core\Cache\WatermarkedPeer;
 
 /***************************************************************************
  *   Copyright (C) 2009 by Denis M. Gabaidulin                             *

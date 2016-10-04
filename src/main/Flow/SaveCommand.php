@@ -2,10 +2,10 @@
 
 namespace onphp\main\Flow;
 
-use onPHP\core\Base\Prototyped;
-use onPHP\core\Form\Form;
-use onPHP\core\Form\FormUtils;
-use onPHP\main\Utils\ClassUtils;
+use onphp\core\Base\Prototyped;
+use onphp\core\Form\Form;
+use onphp\core\Form\FormUtils;
+use onphp\main\Utils\ClassUtils;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Anton E. Lebedevich                        *

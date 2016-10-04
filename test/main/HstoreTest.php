@@ -2,8 +2,8 @@
 
 namespace onphp\test\main;
 
-use onPHP\main\Base\Hstore;
-use onPHP\test\misc\TestCase;
+use onphp\main\Base\Hstore;
+use onphp\test\misc\TestCase;
 
 /***************************************************************************
  *   Copyright (C) by Evgeny M. Stepanov                                   *

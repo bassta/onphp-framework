@@ -2,9 +2,9 @@
 
 namespace onphp\test\main\Autoloader;
 
-use onPHP\main\Autoloader\NamespaceResolverPSR0;
-use onPHP\main\Autoloader\NamespaceResolverOnPHP;
-use onPHP\test\misc\TestCase;
+use onphp\main\Autoloader\NamespaceResolverPSR0;
+use onphp\main\Autoloader\NamespaceResolverOnPHP;
+use onphp\test\misc\TestCase;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Alexey S. Denisov                               *

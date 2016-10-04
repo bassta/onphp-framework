@@ -2,9 +2,9 @@
 
 namespace onphp\main\OQL\Expressions;
 
-use onPHP\core\Exceptions\UnsupportedMethodException;
-use onPHP\core\Logic\Expression;
-use onPHP\core\Logic\InExpression;
+use onphp\core\Exceptions\UnsupportedMethodException;
+use onphp\core\Logic\Expression;
+use onphp\core\Logic\InExpression;
 
 /****************************************************************************
  *   Copyright (C) 2008 by Vladlen Y. Koshelev                              *

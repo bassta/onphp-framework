@@ -2,9 +2,9 @@
 
 namespace onphp\test\main;
 
-use onPHP\main\Flow\Model;
-use onPHP\main\UI\View\JsonView;
-use onPHP\test\misc\TestCase;
+use onphp\main\Flow\Model;
+use onphp\main\UI\View\JsonView;
+use onphp\test\misc\TestCase;
 
 /***************************************************************************
  *   Copyright (C) 2011 by Dmitriy V. Snezhinskiy                          *

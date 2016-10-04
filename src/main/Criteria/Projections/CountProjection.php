@@ -2,10 +2,10 @@
 
 namespace onphp\main\Criteria\Projections;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\OSQL\JoinCapableQuery;
-use onPHP\core\OSQL\SQLFunction;
-use onPHP\main\Criteria\Criteria;
+use onphp\core\Base\Assert;
+use onphp\core\OSQL\JoinCapableQuery;
+use onphp\core\OSQL\SQLFunction;
+use onphp\main\Criteria\Criteria;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Konstantin V. Arkhipov                          *

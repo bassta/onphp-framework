@@ -2,9 +2,9 @@
 
 namespace onphp\test\main\Utils;
 
-use onPHP\main\Utils\WebMoneyUtils;
+use onphp\main\Utils\WebMoneyUtils;
 
-final class WebMoneyUtilsTest extends PHPUnit_Framework_TestCase
+final class WebMoneyUtilsTest extends \PHPUnit_Framework_TestCase
 {
     public static function data()
     {

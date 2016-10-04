@@ -2,9 +2,9 @@
 
 namespace onphp\main\Utils\IO;
 
-use onPHP\core\Exceptions\BaseException;
-use onPHP\core\Exceptions\IOException;
-use onPHP\core\Exceptions\WrongStateException;
+use onphp\core\Exceptions\BaseException;
+use onphp\core\Exceptions\IOException;
+use onphp\core\Exceptions\WrongStateException;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Vladimir A. Altuchov                            *

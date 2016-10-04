@@ -2,13 +2,13 @@
 
 namespace onphp\test\core;
 
-use onPHP\core\Base\Date;
-use onPHP\core\Form\Form;
-use onPHP\core\Form\FormField;
-use onPHP\core\Form\Primitive;
-use onPHP\core\Form\Primitives\PrimitiveRange;
-use onPHP\core\Logic\Expression;
-use onPHP\test\misc\TestCase;
+use onphp\core\Base\Date;
+use onphp\core\Form\Form;
+use onphp\core\Form\FormField;
+use onphp\core\Form\Primitive;
+use onphp\core\Form\Primitives\PrimitiveRange;
+use onphp\core\Logic\Expression;
+use onphp\test\misc\TestCase;
 
 /* $Id$ */
 

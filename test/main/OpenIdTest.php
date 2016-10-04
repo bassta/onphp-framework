@@ -3,15 +3,15 @@
 namespace onphp\test\main;
 
 use Exception;
-use onPHP\core\Exceptions\UnsupportedMethodException;
-use onPHP\main\Flow\HttpRequest;
-use onPHP\main\Net\Http\HttpClient;
-use onPHP\main\Net\Http\HttpResponse;
-use onPHP\main\Net\Http\HttpStatus;
-use onPHP\main\Net\HttpUrl;
-use onPHP\main\OpenId\OpenIdCredentials;
-use onPHP\main\OpenId\OpenIdException;
-use onPHP\test\misc\TestCase;
+use onphp\core\Exceptions\UnsupportedMethodException;
+use onphp\main\Flow\HttpRequest;
+use onphp\main\Net\Http\HttpClient;
+use onphp\main\Net\Http\HttpResponse;
+use onphp\main\Net\Http\HttpStatus;
+use onphp\main\Net\HttpUrl;
+use onphp\main\OpenId\OpenIdCredentials;
+use onphp\main\OpenId\OpenIdException;
+use onphp\test\misc\TestCase;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Anton E. Lebedevich                             *

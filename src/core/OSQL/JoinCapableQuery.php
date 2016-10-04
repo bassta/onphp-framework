@@ -2,7 +2,7 @@
 
 namespace onphp\core\OSQL;
 
-use onPHP\core\Logic\LogicalObject;
+use onphp\core\Logic\LogicalObject;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

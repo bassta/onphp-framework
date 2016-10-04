@@ -2,10 +2,10 @@
 
 namespace onphp\core\DB;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Identifier;
-use onPHP\core\OSQL\InsertQuery;
-use onPHP\core\OSQL\Query;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Identifier;
+use onphp\core\OSQL\InsertQuery;
+use onphp\core\OSQL\Query;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *

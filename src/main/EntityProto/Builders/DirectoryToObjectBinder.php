@@ -2,14 +2,14 @@
 
 namespace onphp\main\EntityProto\Builders;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Identifiable;
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\main\EntityProto\Accessors\DirectoryGetter;
-use onPHP\main\EntityProto\Accessors\ObjectSetter;
-use onPHP\main\EntityProto\DirectoryContext;
-use onPHP\main\EntityProto\EntityProto;
-use onPHP\main\Net\GenericUri;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Identifiable;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\main\EntityProto\Accessors\DirectoryGetter;
+use onphp\main\EntityProto\Accessors\ObjectSetter;
+use onphp\main\EntityProto\DirectoryContext;
+use onphp\main\EntityProto\EntityProto;
+use onphp\main\Net\GenericUri;
 
 /***************************************************************************
  *   Copyright (C) 2009 by Ivan Y. Khvostishkov                            *

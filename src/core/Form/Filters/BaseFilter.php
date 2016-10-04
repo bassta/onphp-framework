@@ -2,8 +2,8 @@
 
 namespace onphp\core\Form\Filters;
 
-use onPHP\core\Base\Instantiatable;
-use onPHP\core\Base\Singleton;
+use onphp\core\Base\Instantiatable;
+use onphp\core\Base\Singleton;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *

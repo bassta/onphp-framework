@@ -2,7 +2,7 @@
 
 namespace onphp\main\Utils\TuringTest;
 
-use onPHP\core\Base\Assert;
+use onphp\core\Base\Assert;
 
 /***************************************************************************
  *   Copyright (C) 2004-2008 by Dmitry E. Demidov                          *

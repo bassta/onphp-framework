@@ -2,12 +2,12 @@
 
 namespace onphp\test\db;
 
-use onPHP\core\Cache\Cache;
-use onPHP\core\DB\DBPool;
-use onPHP\main\Criteria\Criteria;
-use onPHP\test\meta\Business\TestCity;
-use onPHP\test\misc\DBTestPool;
-use onPHP\test\misc\TestCaseDAO;
+use onphp\core\Cache\Cache;
+use onphp\core\DB\DBPool;
+use onphp\main\Criteria\Criteria;
+use onphp\test\meta\Business\TestCity;
+use onphp\test\misc\DBTestPool;
+use onphp\test\misc\TestCaseDAO;
 
 class CriteriaDBTest extends TestCaseDAO
 {

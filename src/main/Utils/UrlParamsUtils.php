@@ -2,8 +2,8 @@
 
 namespace onphp\main\Utils;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\StaticFactory;
+use onphp\core\Base\Assert;
+use onphp\core\Base\StaticFactory;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Alexey S. Denisov                               *

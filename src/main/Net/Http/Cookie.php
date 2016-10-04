@@ -2,9 +2,9 @@
 
 namespace onphp\main\Net\Http;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\main\Base\CollectionItem;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\main\Base\CollectionItem;
 
 /***************************************************************************
  *   Copyright (C) 2008 by Evgeny V. Kokovikhin                            *

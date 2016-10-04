@@ -2,9 +2,9 @@
 
 namespace onphp\core\DB;
 
-use onPHP\core\OSQL\DBColumn;
-use onPHP\core\OSQL\DBValue;
-use onPHP\core\OSQL\DialectString;
+use onphp\core\OSQL\DBColumn;
+use onphp\core\OSQL\DBValue;
+use onphp\core\OSQL\DialectString;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *

@@ -2,8 +2,8 @@
 
 namespace onphp\core\Cache;
 
-use onPHP\core\Exceptions\MissingElementException;
-use onPHP\core\Exceptions\WrongArgumentException;
+use onphp\core\Exceptions\MissingElementException;
+use onphp\core\Exceptions\WrongArgumentException;
 
 /****************************************************************************
  *   Copyright (C) 2011 by Anton E. Lebedevich, Konstantin V. Arkhipov,     *

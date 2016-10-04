@@ -2,8 +2,8 @@
 
 namespace onphp\main\Criteria\Projections;
 
-use onPHP\core\OSQL\JoinCapableQuery;
-use onPHP\main\Criteria\Criteria;
+use onphp\core\OSQL\JoinCapableQuery;
+use onphp\main\Criteria\Criteria;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Anton E. Lebedevich                             *

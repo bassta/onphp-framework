@@ -2,8 +2,8 @@
 
 namespace onphp\main\Monitoring;
 
-use onPHP\core\Base\Singleton;
-use onPHP\core\Exceptions\WrongArgumentException;
+use onphp\core\Base\Singleton;
+use onphp\core\Exceptions\WrongArgumentException;
 
 /****************************************************************************
  *   Copyright (C) 2011 by Evgeny V. Kokovikhin                             *

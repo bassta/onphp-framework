@@ -2,9 +2,9 @@
 
 namespace onphp\test\core;
 
-use onPHP\core\OSQL\CombineQuery;
-use onPHP\core\OSQL\OSQL;
-use onPHP\test\misc\TestCaseDB;
+use onphp\core\OSQL\CombineQuery;
+use onphp\core\OSQL\OSQL;
+use onphp\test\misc\TestCaseDB;
 
 final class UnionTest extends TestCaseDB
 {

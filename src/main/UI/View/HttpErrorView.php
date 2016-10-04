@@ -2,7 +2,7 @@
 
 namespace onphp\main\UI\View;
 
-use onPHP\main\Net\Http\HttpStatus;
+use onphp\main\Net\Http\HttpStatus;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Anton E. Lebedevich                             *

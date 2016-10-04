@@ -2,16 +2,16 @@
 
 namespace onphp\main\UnifiedContainer;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Identifiable;
-use onPHP\core\Base\Singleton;
-use onPHP\core\DB\Transaction\InnerTransactionWrapper;
-use onPHP\core\Exceptions\ObjectNotFoundException;
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\main\Base\Comparator;
-use onPHP\main\Base\SerializedObjectComparator;
-use onPHP\main\Criteria\Criteria;
-use onPHP\main\DAOs\GenericDAO;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Identifiable;
+use onphp\core\Base\Singleton;
+use onphp\core\DB\Transaction\InnerTransactionWrapper;
+use onphp\core\Exceptions\ObjectNotFoundException;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\main\Base\Comparator;
+use onphp\main\Base\SerializedObjectComparator;
+use onphp\main\Criteria\Criteria;
+use onphp\main\DAOs\GenericDAO;
 
 /***************************************************************************
  *   Copyright (C) 2005-2009 by Konstantin V. Arkhipov                     *

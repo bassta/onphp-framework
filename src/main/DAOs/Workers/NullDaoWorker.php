@@ -2,14 +2,14 @@
 
 namespace onphp\main\DAOs\Workers;
 
-use onPHP\core\Base\Identifiable;
-use onPHP\core\Cache\Cache;
-use onPHP\core\Exceptions\ObjectNotFoundException;
-use onPHP\core\Logic\Expression;
-use onPHP\core\Logic\LogicalObject;
-use onPHP\core\OSQL\DBField;
-use onPHP\core\OSQL\SelectQuery;
-use onPHP\main\DAOs\Uncachers\UncacherNullDaoWorker;
+use onphp\core\Base\Identifiable;
+use onphp\core\Cache\Cache;
+use onphp\core\Exceptions\ObjectNotFoundException;
+use onphp\core\Logic\Expression;
+use onphp\core\Logic\LogicalObject;
+use onphp\core\OSQL\DBField;
+use onphp\core\OSQL\SelectQuery;
+use onphp\main\DAOs\Uncachers\UncacherNullDaoWorker;
 
 /***************************************************************************
  *   Copyright (C) 2005-2009 by Konstantin V. Arkhipov                     *

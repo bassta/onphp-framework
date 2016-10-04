@@ -2,10 +2,10 @@
 
 namespace onphp\test\core;
 
-use onPHP\core\DB\ImaginaryDialect;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\OSQL\OSQL;
-use onPHP\test\misc\TestCaseDB;
+use onphp\core\DB\ImaginaryDialect;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\OSQL\OSQL;
+use onphp\test\misc\TestCaseDB;
 
 /* $Id$ */
 

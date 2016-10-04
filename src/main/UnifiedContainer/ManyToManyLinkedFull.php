@@ -2,7 +2,7 @@
 
 namespace onphp\main\UnifiedContainer;
 
-use onPHP\core\DB\DBPool;
+use onphp\core\DB\DBPool;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *

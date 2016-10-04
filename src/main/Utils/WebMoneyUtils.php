@@ -2,7 +2,7 @@
 
 namespace onphp\main\Utils;
 
-use onPHP\core\Base\StaticFactory;
+use onphp\core\Base\StaticFactory;
 
 final class WebMoneyUtils extends StaticFactory
 {

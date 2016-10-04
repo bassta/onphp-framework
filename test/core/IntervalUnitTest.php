@@ -2,10 +2,10 @@
 
 namespace onphp\test\core;
 
-use onPHP\main\Base\TimestampRange;
-use onPHP\core\Base\Timestamp;
-use onPHP\core\Base\IntervalUnit;
-use onPHP\test\misc\TestCase;
+use onphp\main\Base\TimestampRange;
+use onphp\core\Base\Timestamp;
+use onphp\core\Base\IntervalUnit;
+use onphp\test\misc\TestCase;
 
 /* $Id$ */
 

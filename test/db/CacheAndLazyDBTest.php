@@ -2,17 +2,17 @@
 
 namespace onphp\test\db;
 
-use onPHP\core\DB\DBPool;
-use onPHP\core\Logic\Expression;
-use onPHP\main\Criteria\Criteria;
-use onPHP\main\Criteria\Projection;
-use onPHP\test\meta\Business\TestChildObject;
-use onPHP\test\meta\Business\TestEncapsulant;
-use onPHP\test\meta\Business\TestItem;
-use onPHP\test\meta\Business\TestParentObject;
-use onPHP\test\meta\Business\TestSubItem;
-use onPHP\test\misc\DBTestPool;
-use onPHP\test\misc\TestCaseDAO;
+use onphp\core\DB\DBPool;
+use onphp\core\Logic\Expression;
+use onphp\main\Criteria\Criteria;
+use onphp\main\Criteria\Projection;
+use onphp\test\meta\Business\TestChildObject;
+use onphp\test\meta\Business\TestEncapsulant;
+use onphp\test\meta\Business\TestItem;
+use onphp\test\meta\Business\TestParentObject;
+use onphp\test\meta\Business\TestSubItem;
+use onphp\test\misc\DBTestPool;
+use onphp\test\misc\TestCaseDAO;
 
 class CacheAndLazyDBTest extends TestCaseDAO
 {

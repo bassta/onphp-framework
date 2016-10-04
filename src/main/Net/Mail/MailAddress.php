@@ -2,7 +2,7 @@
 
 namespace onphp\main\Net\Mail;
 
-use onPHP\core\Exceptions\WrongArgumentException;
+use onphp\core\Exceptions\WrongArgumentException;
 
 /***************************************************************************
  *   Copyright (C) 2009 by Ivan Y. Khvostishkov                            *

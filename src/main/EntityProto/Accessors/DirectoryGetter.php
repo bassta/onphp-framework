@@ -2,12 +2,12 @@
 
 namespace onphp\main\EntityProto\Accessors;
 
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\core\Form\Primitives\PrimitiveFile;
-use onPHP\core\Form\Primitives\PrimitiveForm;
-use onPHP\core\Form\Primitives\PrimitiveFormsList;
-use onPHP\main\EntityProto\PrototypedGetter;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\core\Form\Primitives\PrimitiveFile;
+use onphp\core\Form\Primitives\PrimitiveForm;
+use onphp\core\Form\Primitives\PrimitiveFormsList;
+use onphp\main\EntityProto\PrototypedGetter;
 
 /***************************************************************************
  *   Copyright (C) 2009 by Ivan Y. Khvostishkov                            *

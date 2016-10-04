@@ -2,9 +2,9 @@
 
 namespace onphp\main\DAOs\Uncachers;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Cache\Cache;
-use onPHP\core\Cache\SemaphorePool;
+use onphp\core\Base\Assert;
+use onphp\core\Cache\Cache;
+use onphp\core\Cache\SemaphorePool;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Aleksey S. Denisov                              *

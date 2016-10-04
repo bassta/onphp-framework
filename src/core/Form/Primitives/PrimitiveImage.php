@@ -2,8 +2,8 @@
 
 namespace onphp\core\Form\Primitives;
 
-use onPHP\core\Exceptions\BaseException;
-use onPHP\main\Base\ImageType;
+use onphp\core\Exceptions\BaseException;
+use onphp\main\Base\ImageType;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

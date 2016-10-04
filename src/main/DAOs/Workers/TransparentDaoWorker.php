@@ -2,13 +2,13 @@
 
 namespace onphp\main\DAOs\Workers;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Identifiable;
-use onPHP\core\Cache\Cache;
-use onPHP\core\Exceptions\CachedObjectNotFoundException;
-use onPHP\core\Exceptions\ObjectNotFoundException;
-use onPHP\core\Logic\LogicalObject;
-use onPHP\core\OSQL\SelectQuery;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Identifiable;
+use onphp\core\Cache\Cache;
+use onphp\core\Exceptions\CachedObjectNotFoundException;
+use onphp\core\Exceptions\ObjectNotFoundException;
+use onphp\core\Logic\LogicalObject;
+use onphp\core\OSQL\SelectQuery;
 
 /***************************************************************************
  *   Copyright (C) 2006-2008 by Konstantin V. Arkhipov                     *

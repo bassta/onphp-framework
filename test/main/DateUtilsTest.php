@@ -2,10 +2,10 @@
 
 namespace onphp\test\main;
 
-use onPHP\core\Base\Timestamp;
-use onPHP\main\Utils\DateUtils;
+use onphp\core\Base\Timestamp;
+use onphp\main\Utils\DateUtils;
 
-final class DateUtilsTest extends PHPUnit_Framework_TestCase
+final class DateUtilsTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider alignToSecondsDataProvider

@@ -2,13 +2,13 @@
 
 namespace onphp\core\OSQL;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\IntervalUnit;
-use onPHP\core\DB\Dialect;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\core\Logic\Expression;
-use onPHP\main\Base\DateRange;
+use onphp\core\Base\Assert;
+use onphp\core\Base\IntervalUnit;
+use onphp\core\DB\Dialect;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\core\Logic\Expression;
+use onphp\main\Base\DateRange;
 
 /***************************************************************************
  *   Copyright (C) 2008 by Ivan Y. Khvostishkov                            *

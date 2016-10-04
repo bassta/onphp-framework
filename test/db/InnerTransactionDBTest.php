@@ -2,13 +2,13 @@
 
 namespace onphp\test\db;
 
-use onPHP\core\DB\DBPool;
-use onPHP\core\DB\Transaction\InnerTransactionWrapper;
-use onPHP\core\Exceptions\ObjectNotFoundException;
-use onPHP\core\Logic\Expression;
-use onPHP\test\meta\Business\TestCity;
-use onPHP\test\misc\DBTestPool;
-use onPHP\test\misc\TestCaseDAO;
+use onphp\core\DB\DBPool;
+use onphp\core\DB\Transaction\InnerTransactionWrapper;
+use onphp\core\Exceptions\ObjectNotFoundException;
+use onphp\core\Logic\Expression;
+use onphp\test\meta\Business\TestCity;
+use onphp\test\misc\DBTestPool;
+use onphp\test\misc\TestCaseDAO;
 
 class InnerTransactionDBTest extends TestCaseDAO
 {

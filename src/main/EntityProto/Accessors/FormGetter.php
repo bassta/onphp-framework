@@ -2,10 +2,10 @@
 
 namespace onphp\main\EntityProto\Accessors;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\main\EntityProto\EntityProto;
-use onPHP\main\EntityProto\PrototypedGetter;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\main\EntityProto\EntityProto;
+use onphp\main\EntityProto\PrototypedGetter;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *

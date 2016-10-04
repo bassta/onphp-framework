@@ -2,9 +2,9 @@
 
 namespace onphp\main\Utils\IO;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\BaseException;
-use onPHP\core\Exceptions\NetworkException;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\BaseException;
+use onphp\core\Exceptions\NetworkException;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *

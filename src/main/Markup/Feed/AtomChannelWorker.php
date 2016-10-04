@@ -2,8 +2,8 @@
 
 namespace onphp\main\Markup\Feed;
 
-use onPHP\core\Base\Singleton;
-use onPHP\core\Exceptions\UnimplementedFeatureException;
+use onphp\core\Base\Singleton;
+use onphp\core\Exceptions\UnimplementedFeatureException;
 use SimpleXMLElement;
 
 /***************************************************************************

@@ -2,13 +2,13 @@
 
 namespace onphp\main\Utils;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\StaticFactory;
-use onPHP\core\DB\DBPool;
-use onPHP\core\Exceptions\DatabaseException;
-use onPHP\core\Logic\Expression;
-use onPHP\core\OSQL\OSQL;
-use onPHP\main\DAOs\DAOConnected;
+use onphp\core\Base\Assert;
+use onphp\core\Base\StaticFactory;
+use onphp\core\DB\DBPool;
+use onphp\core\Exceptions\DatabaseException;
+use onphp\core\Logic\Expression;
+use onphp\core\OSQL\OSQL;
+use onphp\main\DAOs\DAOConnected;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Nickolay G. Korolyov                            *

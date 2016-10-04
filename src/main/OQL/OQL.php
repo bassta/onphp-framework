@@ -2,13 +2,13 @@
 
 namespace onphp\main\OQL;
 
-use onPHP\core\Base\StaticFactory;
-use onPHP\main\OQL\Parsers\OqlGroupByParser;
-use onPHP\main\OQL\Parsers\OqlHavingParser;
-use onPHP\main\OQL\Parsers\OqlOrderByParser;
-use onPHP\main\OQL\Parsers\OqlSelectParser;
-use onPHP\main\OQL\Parsers\OqlSelectPropertiesParser;
-use onPHP\main\OQL\Parsers\OqlWhereParser;
+use onphp\core\Base\StaticFactory;
+use onphp\main\OQL\Parsers\OqlGroupByParser;
+use onphp\main\OQL\Parsers\OqlHavingParser;
+use onphp\main\OQL\Parsers\OqlOrderByParser;
+use onphp\main\OQL\Parsers\OqlSelectParser;
+use onphp\main\OQL\Parsers\OqlSelectPropertiesParser;
+use onphp\main\OQL\Parsers\OqlWhereParser;
 
 /***************************************************************************
  *   Copyright (C) 2008-2009 by Vladlen Y. Koshelev                        *

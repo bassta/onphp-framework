@@ -3,8 +3,8 @@
 namespace onphp\test\main\Utils;
 
 use Exception;
-use onPHP\main\Monitoring\PinbaClient;
-use onPHP\test\misc\TestCase;
+use onphp\main\Monitoring\PinbaClient;
+use onphp\test\misc\TestCase;
 
 final class PinbaTest extends TestCase
 {

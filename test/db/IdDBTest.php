@@ -2,14 +2,14 @@
 
 namespace onphp\test\db;
 
-use onPHP\core\DB\DBPool;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\test\meta\Business\TestLazy;
-use onPHP\test\meta\Business\TestStringIdentifier;
-use onPHP\test\meta\Business\TestStringIdentifierRelated;
-use onPHP\test\meta\Business\TestUser;
-use onPHP\test\misc\DBTestPool;
-use onPHP\test\misc\TestCaseDAO;
+use onphp\core\DB\DBPool;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\test\meta\Business\TestLazy;
+use onphp\test\meta\Business\TestStringIdentifier;
+use onphp\test\meta\Business\TestStringIdentifierRelated;
+use onphp\test\meta\Business\TestUser;
+use onphp\test\misc\DBTestPool;
+use onphp\test\misc\TestCaseDAO;
 
 class IdDBTest extends TestCaseDAO
 {

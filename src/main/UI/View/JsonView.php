@@ -2,9 +2,9 @@
 
 namespace onphp\main\UI\View;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Stringable;
-use onPHP\main\Flow\Model;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Stringable;
+use onphp\main\Flow\Model;
 
 /***************************************************************************
  *   Copyright (C) 2011 by Dmitriy V. Snezhinskiy                          *

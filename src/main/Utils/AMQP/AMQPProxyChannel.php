@@ -3,8 +3,8 @@
 namespace onphp\main\Utils\AMQP;
 
 use Exception;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\main\Utils\AMQP\Exceptions\AMQPServerException;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\main\Utils\AMQP\Exceptions\AMQPServerException;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Evgeniya Tekalin                                *

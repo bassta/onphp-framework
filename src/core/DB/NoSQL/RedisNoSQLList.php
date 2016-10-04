@@ -2,8 +2,8 @@
 
 namespace onphp\core\DB\NoSQL;
 
-use onPHP\core\Base\Listable;
-use onPHP\core\Exceptions\UnimplementedFeatureException;
+use onphp\core\Base\Listable;
+use onphp\core\Exceptions\UnimplementedFeatureException;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Artem Naumenko                                  *

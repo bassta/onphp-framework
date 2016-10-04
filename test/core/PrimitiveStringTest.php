@@ -2,9 +2,9 @@
 
 namespace onphp\test\core;
 
-use onPHP\core\Form\Primitive;
-use onPHP\core\Form\Primitives\PrimitiveString;
-use onPHP\test\misc\TestCase;
+use onphp\core\Form\Primitive;
+use onphp\core\Form\Primitives\PrimitiveString;
+use onphp\test\misc\TestCase;
 
 final class PrimitiveStringTest extends TestCase
 {

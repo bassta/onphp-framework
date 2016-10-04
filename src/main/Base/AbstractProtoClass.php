@@ -2,20 +2,20 @@
 
 namespace onphp\main\Base;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Identifiable;
-use onPHP\core\Base\Prototyped;
-use onPHP\core\Base\Singleton;
-use onPHP\core\Exceptions\MissingElementException;
-use onPHP\core\Exceptions\ObjectNotFoundException;
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\core\Form\Form;
-use onPHP\core\Form\Primitives\BasePrimitive;
-use onPHP\core\OSQL\InsertOrUpdateQuery;
-use onPHP\main\Criteria\FetchStrategy;
-use onPHP\main\DAOs\DAOConnected;
-use onPHP\main\DAOs\ProtoDAO;
-use onPHP\meta\classes\MetaRelation;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Identifiable;
+use onphp\core\Base\Prototyped;
+use onphp\core\Base\Singleton;
+use onphp\core\Exceptions\MissingElementException;
+use onphp\core\Exceptions\ObjectNotFoundException;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\core\Form\Form;
+use onphp\core\Form\Primitives\BasePrimitive;
+use onphp\core\OSQL\InsertOrUpdateQuery;
+use onphp\main\Criteria\FetchStrategy;
+use onphp\main\DAOs\DAOConnected;
+use onphp\main\DAOs\ProtoDAO;
+use onphp\meta\classes\MetaRelation;
 
 /***************************************************************************
  *   Copyright (C) 2006-2008 by Konstantin V. Arkhipov                     *

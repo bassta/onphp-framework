@@ -2,10 +2,10 @@
 
 namespace onphp\test\core;
 
-use onPHP\core\Form\Form;
-use onPHP\core\Form\Primitive;
-use onPHP\main\Base\MimeType;
-use onPHP\test\misc\TestCase;
+use onphp\core\Form\Form;
+use onphp\core\Form\Primitive;
+use onphp\main\Base\MimeType;
+use onphp\test\misc\TestCase;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Georgiy T. Kutsurua                             *

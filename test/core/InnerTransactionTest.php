@@ -3,12 +3,12 @@
 namespace onphp\test\core;
 
 use Exception;
-use onPHP\core\DB\Transaction\InnerTransaction;
-use onPHP\core\DB\Transaction\InnerTransactionWrapper;
-use onPHP\core\Exceptions\DatabaseException;
-use onPHP\core\Exceptions\UnimplementedFeatureException;
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\test\misc\TestCase;
+use onphp\core\DB\Transaction\InnerTransaction;
+use onphp\core\DB\Transaction\InnerTransactionWrapper;
+use onphp\core\Exceptions\DatabaseException;
+use onphp\core\Exceptions\UnimplementedFeatureException;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\test\misc\TestCase;
 
 class InnerTransactionTest extends TestCase
 {

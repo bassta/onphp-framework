@@ -2,9 +2,9 @@
 
 namespace onphp\main\OQL\Expressions;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Identifiable;
-use onPHP\core\OSQL\Query;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Identifiable;
+use onphp\core\OSQL\Query;
 
 /****************************************************************************
  *   Copyright (C) 2008 by Vladlen Y. Koshelev                              *

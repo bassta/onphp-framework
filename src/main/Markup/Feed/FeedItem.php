@@ -2,7 +2,7 @@
 
 namespace onphp\main\Markup\Feed;
 
-use onPHP\core\Base\Timestamp;
+use onphp\core\Base\Timestamp;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Dmitry A. Lomash, Dmitry E. Demidov             *

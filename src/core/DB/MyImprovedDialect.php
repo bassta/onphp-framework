@@ -2,7 +2,7 @@
 
 namespace onphp\core\DB;
 
-use onPHP\core\Base\Identifier;
+use onphp\core\Base\Identifier;
 
 /***************************************************************************
  *   Copyright (C) 2007-2008 by Konstantin V. Arkhipov                     *

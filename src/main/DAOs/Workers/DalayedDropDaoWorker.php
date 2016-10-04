@@ -2,8 +2,8 @@
 
 namespace onphp\main\DAOs\Workers;
 
-use onPHP\core\Base\Assert;
-use onPHP\main\DAOs\Uncachers\UncacherNullDaoWorker;
+use onphp\core\Base\Assert;
+use onphp\main\DAOs\Uncachers\UncacherNullDaoWorker;
 
 /***************************************************************************
  *   Copyright (C) 2008 by Denis M. Gabaidulin                             *

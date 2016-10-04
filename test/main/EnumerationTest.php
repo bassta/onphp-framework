@@ -2,9 +2,9 @@
 
 namespace onphp\test\main;
 
-use onPHP\core\Exceptions\MissingElementException;
-use onPHP\main\Utils\ClassUtils;
-use onPHP\test\misc\TestCase;
+use onphp\core\Exceptions\MissingElementException;
+use onphp\main\Utils\ClassUtils;
+use onphp\test\misc\TestCase;
 
 /* $Id$ */
 

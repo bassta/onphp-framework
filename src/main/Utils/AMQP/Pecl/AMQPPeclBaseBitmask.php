@@ -2,8 +2,8 @@
 
 namespace onphp\main\Utils\AMQP\Pecl;
 
-use onPHP\core\Exceptions\UnimplementedFeatureException;
-use onPHP\main\Utils\AMQP\AMQPBitmaskResolver;
+use onphp\core\Exceptions\UnimplementedFeatureException;
+use onphp\main\Utils\AMQP\AMQPBitmaskResolver;
 
 /***************************************************************************
  *   Copyright (C) 2011 by Sergey S. Sergeev                               *

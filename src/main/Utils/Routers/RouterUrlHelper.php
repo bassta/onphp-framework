@@ -2,7 +2,7 @@
 
 namespace onphp\main\Utils\Routers;
 
-use onPHP\core\Base\StaticFactory;
+use onphp\core\Base\StaticFactory;
 
 /***************************************************************************
  *   Copyright (C) 2008 by Sergey S. Sergeev                               *

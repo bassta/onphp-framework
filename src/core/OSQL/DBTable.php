@@ -2,9 +2,9 @@
 
 namespace onphp\core\OSQL;
 
-use onPHP\core\DB\Dialect;
-use onPHP\core\Exceptions\MissingElementException;
-use onPHP\core\Base\Assert;
+use onphp\core\DB\Dialect;
+use onphp\core\Exceptions\MissingElementException;
+use onphp\core\Base\Assert;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

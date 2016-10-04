@@ -2,11 +2,11 @@
 
 namespace onphp\test\core;
 
-use onPHP\core\Base\Singleton;
-use onPHP\core\Exceptions\BaseException;
-use onPHP\core\Exceptions\MissingElementException;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\test\misc\TestCase;
+use onphp\core\Base\Singleton;
+use onphp\core\Exceptions\BaseException;
+use onphp\core\Exceptions\MissingElementException;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\test\misc\TestCase;
 use ReflectionClass;
 
 /* $Id$ */

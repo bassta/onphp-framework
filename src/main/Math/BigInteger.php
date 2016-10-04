@@ -2,7 +2,7 @@
 
 namespace onphp\main\Math;
 
-use onPHP\core\Base\Stringable;
+use onphp\core\Base\Stringable;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Anton E. Lebedevich                             *

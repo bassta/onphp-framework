@@ -2,8 +2,8 @@
 
 namespace onphp\main\Utils\AMQP;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Timestamp;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Timestamp;
 
 /***************************************************************************
  *   Copyright (C) 2011 by Sergey S. Sergeev                               *

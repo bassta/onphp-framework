@@ -2,7 +2,7 @@
 
 namespace onphp\main\Criteria\Projections;
 
-use onPHP\core\Base\Aliased;
+use onphp\core\Base\Aliased;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

@@ -2,7 +2,7 @@
 
 namespace onphp\main\OQL\Parsers;
 
-use onPHP\main\OQL\Statements\OqlSelectPropertiesClause;
+use onphp\main\OQL\Statements\OqlSelectPropertiesClause;
 
 /****************************************************************************
  *   Copyright (C) 2009 by Vladlen Y. Koshelev                              *

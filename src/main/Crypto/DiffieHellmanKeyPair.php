@@ -2,9 +2,9 @@
 
 namespace onphp\main\Crypto;
 
-use onPHP\core\Base\Assert;
-use onPHP\main\Math\BigInteger;
-use onPHP\main\Math\RandomSource;
+use onphp\core\Base\Assert;
+use onphp\main\Math\BigInteger;
+use onphp\main\Math\RandomSource;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Anton E. Lebedevich                             *

@@ -2,9 +2,9 @@
 
 namespace onphp\main\Utils\TuringTest;
 
-use onPHP\core\Exceptions\UnimplementedFeatureException;
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\main\Base\ImageType;
+use onphp\core\Exceptions\UnimplementedFeatureException;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\main\Base\ImageType;
 
 /***************************************************************************
  *   Copyright (C) 2004-2008 by Dmitry E. Demidov                          *

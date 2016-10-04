@@ -2,7 +2,7 @@
 
 namespace onphp\main\Net\Http;
 
-use onPHP\main\Base\AbstractCollection;
+use onphp\main\Base\AbstractCollection;
 
 /***************************************************************************
  *   Copyright (C) 2008 by Evgeny V. Kokovikhin                            *

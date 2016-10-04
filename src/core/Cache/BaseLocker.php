@@ -2,7 +2,7 @@
 
 namespace onphp\core\Cache;
 
-use onPHP\core\Base\Singleton;
+use onphp\core\Base\Singleton;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *

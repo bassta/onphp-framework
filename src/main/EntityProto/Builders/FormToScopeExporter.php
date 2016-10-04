@@ -2,9 +2,9 @@
 
 namespace onphp\main\EntityProto\Builders;
 
-use onPHP\main\EntityProto\Accessors\FormExporter;
-use onPHP\main\EntityProto\Accessors\ScopeSetter;
-use onPHP\main\EntityProto\EntityProto;
+use onphp\main\EntityProto\Accessors\FormExporter;
+use onphp\main\EntityProto\Accessors\ScopeSetter;
+use onphp\main\EntityProto\EntityProto;
 
 /***************************************************************************
  *   Copyright (C) 2008 by Ivan Y. Khvostishkov                            *

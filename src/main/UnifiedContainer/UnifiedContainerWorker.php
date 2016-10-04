@@ -2,13 +2,13 @@
 
 namespace onphp\main\UnifiedContainer;
 
-use onPHP\core\DB\DBPool;
-use onPHP\core\Logic\Expression;
-use onPHP\core\OSQL\DBField;
-use onPHP\core\OSQL\DBValue;
-use onPHP\core\OSQL\OSQL;
-use onPHP\core\OSQL\SQLFunction;
-use onPHP\main\Criteria\Criteria;
+use onphp\core\DB\DBPool;
+use onphp\core\Logic\Expression;
+use onphp\core\OSQL\DBField;
+use onphp\core\OSQL\DBValue;
+use onphp\core\OSQL\OSQL;
+use onphp\core\OSQL\SQLFunction;
+use onphp\main\Criteria\Criteria;
 
 /***************************************************************************
  *   Copyright (C) 2005-2009 by Konstantin V. Arkhipov                     *

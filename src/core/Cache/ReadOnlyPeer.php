@@ -2,7 +2,7 @@
 
 namespace onphp\core\Cache;
 
-use onPHP\core\Exceptions\UnsupportedMethodException;
+use onphp\core\Exceptions\UnsupportedMethodException;
 
 /***************************************************************************
  *   Copyright (C) 2011 by Alexander A. Klestov                            *

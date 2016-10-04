@@ -2,7 +2,7 @@
 
 namespace onphp\main\DAOs\Handlers;
 
-use onPHP\core\Cache\Cache;
+use onphp\core\Cache\Cache;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Konstantin V. Arkhipov                          *

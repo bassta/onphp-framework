@@ -2,8 +2,8 @@
 
 namespace onphp\main\OpenId;
 
-use onPHP\main\Flow\HttpRequest;
-use onPHP\main\Flow\Model;
+use onphp\main\Flow\HttpRequest;
+use onphp\main\Flow\Model;
 
 /***************************************************************************
  *   Copyright (C) 2010 by Alexander V. Solomatin                          *

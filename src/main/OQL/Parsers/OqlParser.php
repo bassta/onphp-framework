@@ -2,16 +2,16 @@
 
 namespace onphp\main\OQL\Parsers;
 
-use onPHP\core\Exceptions\SyntaxErrorException;
-use onPHP\main\OQL\Expressions\OqlQueryParameter;
-use onPHP\main\OQL\Expressions\OqlPrefixMinusExpression;
-use onPHP\main\OQL\Expressions\OqlQueryExpression;
-use onPHP\core\Logic\InExpression;
-use onPHP\main\OQL\Expressions\OqlInExpression;
-use onPHP\core\Logic\PostfixUnaryExpression;
-use onPHP\core\Logic\PrefixUnaryExpression;
-use onPHP\core\Base\Assert;
-use onPHP\core\Logic\BinaryExpression;
+use onphp\core\Exceptions\SyntaxErrorException;
+use onphp\main\OQL\Expressions\OqlQueryParameter;
+use onphp\main\OQL\Expressions\OqlPrefixMinusExpression;
+use onphp\main\OQL\Expressions\OqlQueryExpression;
+use onphp\core\Logic\InExpression;
+use onphp\main\OQL\Expressions\OqlInExpression;
+use onphp\core\Logic\PostfixUnaryExpression;
+use onphp\core\Logic\PrefixUnaryExpression;
+use onphp\core\Base\Assert;
+use onphp\core\Logic\BinaryExpression;
 
 /****************************************************************************
  *   Copyright (C) 2008-2009 by Vladlen Y. Koshelev                         *

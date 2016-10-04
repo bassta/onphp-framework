@@ -3,8 +3,8 @@
 namespace onphp\main\Monitoring;
 
 use Exception;
-use onPHP\core\Base\Assert;
-use onPHP\core\DB\PgSQL;
+use onphp\core\Base\Assert;
+use onphp\core\DB\PgSQL;
 
 /****************************************************************************
  *   Copyright (C) 2011 by Evgeny V. Kokovikhin                             *

@@ -2,7 +2,7 @@
 
 namespace onphp\main\Utils\Routers;
 
-use onPHP\core\Exceptions\BaseException;
+use onphp\core\Exceptions\BaseException;
 
 /***************************************************************************
  *   Copyright (C) 2008 by Sergey S. Sergeev                               *

@@ -2,19 +2,19 @@
 
 namespace onphp\test\db;
 
-use onPHP\core\Base\Timestamp;
-use onPHP\core\Cache\Cache;
-use onPHP\core\DB\DBPool;
-use onPHP\core\DB\SQLite;
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\core\Logic\Expression;
-use onPHP\main\Criteria\Criteria;
-use onPHP\test\meta\Business\Credentials;
-use onPHP\test\meta\Business\TestCity;
-use onPHP\test\meta\Business\TestEncapsulant;
-use onPHP\test\meta\Business\TestUser;
-use onPHP\test\misc\DBTestPool;
-use onPHP\test\misc\TestCaseDAO;
+use onphp\core\Base\Timestamp;
+use onphp\core\Cache\Cache;
+use onphp\core\DB\DBPool;
+use onphp\core\DB\SQLite;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\core\Logic\Expression;
+use onphp\main\Criteria\Criteria;
+use onphp\test\meta\Business\Credentials;
+use onphp\test\meta\Business\TestCity;
+use onphp\test\meta\Business\TestEncapsulant;
+use onphp\test\meta\Business\TestUser;
+use onphp\test\misc\DBTestPool;
+use onphp\test\misc\TestCaseDAO;
 
 class CountAndUnifiedDBTest extends TestCaseDAO
 {

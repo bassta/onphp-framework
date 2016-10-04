@@ -3,7 +3,7 @@
 namespace onphp\main\Messages;
 
 use;
-use onPHP\core\Base\Timestamp;
+use onphp\core\Base\Timestamp;
 
 onPHP\main\Messages\Interface\Message;
 /***************************************************************************

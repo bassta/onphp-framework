@@ -2,9 +2,9 @@
 
 namespace onphp\test\core;
 
-use onPHP\core\Form\Primitive;
-use onPHP\main\Net\Ip\IpAddress;
-use onPHP\test\misc\TestCase;
+use onphp\core\Form\Primitive;
+use onphp\main\Net\Ip\IpAddress;
+use onphp\test\misc\TestCase;
 
 final class PrimitiveIpTest extends TestCase
 {

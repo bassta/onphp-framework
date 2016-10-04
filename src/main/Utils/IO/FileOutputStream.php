@@ -2,9 +2,9 @@
 
 namespace onphp\main\Utils\IO;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\BaseException;
-use onPHP\core\Exceptions\IOException;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\BaseException;
+use onphp\core\Exceptions\IOException;
 
 /***************************************************************************
  *   Copyright (C) 2007-2009 by Ivan Y. Khvostishkov                       *

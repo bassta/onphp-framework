@@ -3,9 +3,9 @@
 namespace onphp\core\DB;
 
 use Exception;
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Identifier;
-use onPHP\core\Exceptions\UnimplementedFeatureException;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Identifier;
+use onphp\core\Exceptions\UnimplementedFeatureException;
 use PDO;
 
 /***************************************************************************

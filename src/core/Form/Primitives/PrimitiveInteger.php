@@ -2,7 +2,7 @@
 
 namespace onphp\core\Form\Primitives;
 
-use onPHP\core\Base\Assert;
+use onphp\core\Base\Assert;
 
 /****************************************************************************
  *   Copyright (C) 2004-2008 by Konstantin V. Arkhipov, Anton E. Lebedevich *

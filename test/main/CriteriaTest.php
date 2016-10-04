@@ -2,23 +2,23 @@
 
 namespace onphp\test\main;
 
-use onPHP\core\Base\Date;
-use onPHP\core\DB\ImaginaryDialect;
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\core\Logic\BinaryExpression;
-use onPHP\core\Logic\Expression;
-use onPHP\core\OSQL\DBValue;
-use onPHP\core\OSQL\OrderBy;
-use onPHP\core\OSQL\OrderChain;
-use onPHP\core\OSQL\SQLFunction;
-use onPHP\main\Criteria\Criteria;
-use onPHP\main\Criteria\Projection;
-use onPHP\main\Criteria\Projections\ClassProjection;
-use onPHP\test\meta\Business\TestCity;
-use onPHP\test\meta\Business\TestUser;
-use onPHP\test\meta\Business\TestUserWithContact;
-use onPHP\test\meta\Business\TestUserWithContactExtended;
-use onPHP\test\misc\TestCase;
+use onphp\core\Base\Date;
+use onphp\core\DB\ImaginaryDialect;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\core\Logic\BinaryExpression;
+use onphp\core\Logic\Expression;
+use onphp\core\OSQL\DBValue;
+use onphp\core\OSQL\OrderBy;
+use onphp\core\OSQL\OrderChain;
+use onphp\core\OSQL\SQLFunction;
+use onphp\main\Criteria\Criteria;
+use onphp\main\Criteria\Projection;
+use onphp\main\Criteria\Projections\ClassProjection;
+use onphp\test\meta\Business\TestCity;
+use onphp\test\meta\Business\TestUser;
+use onphp\test\meta\Business\TestUserWithContact;
+use onphp\test\meta\Business\TestUserWithContactExtended;
+use onphp\test\misc\TestCase;
 
 final class CriteriaTest extends TestCase
 {

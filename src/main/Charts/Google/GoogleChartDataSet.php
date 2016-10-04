@@ -2,9 +2,9 @@
 
 namespace onphp\main\Charts\Google;
 
-use onPHP\core\Base\Assert;
-use onPHP\main\Base\FloatRange;
-use onPHP\main\Math\MathUtils;
+use onphp\core\Base\Assert;
+use onphp\main\Base\FloatRange;
+use onphp\main\Math\MathUtils;
 
 /***************************************************************************
  *   Copyright (C) 2008 by Denis M. Gabaidulin                             *

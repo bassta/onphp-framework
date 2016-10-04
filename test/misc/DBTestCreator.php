@@ -2,19 +2,19 @@
 
 namespace onphp\test\misc;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Timestamp;
-use onPHP\core\Cache\Cache;
-use onPHP\core\Exceptions\DatabaseException;
-use onPHP\core\Exceptions\ObjectNotFoundException;
-use onPHP\core\Logic\Expression;
-use onPHP\core\OSQL\OSQL;
-use onPHP\main\Criteria\Criteria;
-use onPHP\main\Net\HttpUrl;
-use onPHP\test\meta\Business\Credentials;
-use onPHP\test\meta\Business\TestCity;
-use onPHP\test\meta\Business\TestEncapsulant;
-use onPHP\test\meta\Business\TestUser;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Timestamp;
+use onphp\core\Cache\Cache;
+use onphp\core\Exceptions\DatabaseException;
+use onphp\core\Exceptions\ObjectNotFoundException;
+use onphp\core\Logic\Expression;
+use onphp\core\OSQL\OSQL;
+use onphp\main\Criteria\Criteria;
+use onphp\main\Net\HttpUrl;
+use onphp\test\meta\Business\Credentials;
+use onphp\test\meta\Business\TestCity;
+use onphp\test\meta\Business\TestEncapsulant;
+use onphp\test\meta\Business\TestUser;
 
 class DBTestCreator
 {

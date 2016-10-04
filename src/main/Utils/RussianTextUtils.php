@@ -2,10 +2,10 @@
 
 namespace onphp\main\Utils;
 
-use onPHP\core\Base\Date;
-use onPHP\core\Base\StaticFactory;
-use onPHP\core\Base\Timestamp;
-use onPHP\core\Exceptions\MissingElementException;
+use onphp\core\Base\Date;
+use onphp\core\Base\StaticFactory;
+use onphp\core\Base\Timestamp;
+use onphp\core\Exceptions\MissingElementException;
 
 /***************************************************************************
  *   Copyright (C) 2004-2007 by Sveta A. Smirnova                          *

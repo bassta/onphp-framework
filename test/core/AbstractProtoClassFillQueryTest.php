@@ -2,20 +2,20 @@
 
 namespace onphp\test\core;
 
-use onPHP\core\Base\Prototyped;
-use onPHP\test\meta\Business\TestUserWithContactExtended;
-use onPHP\test\meta\Business\TestContactValueExtended;
-use onPHP\test\meta\Business\TestUser;
-use onPHP\main\Net\Ip\IpAddress;
-use onPHP\test\meta\Business\Credentials;
-use onPHP\test\meta\Business\TestCity;
-use onPHP\main\Base\Hstore;
-use onPHP\core\Base\Timestamp;
-use onPHP\main\Net\HttpUrl;
-use onPHP\core\Base\Time;
-use onPHP\core\DB\ImaginaryDialect;
-use onPHP\core\OSQL\OSQL;
-use onPHP\test\misc\TestCase;
+use onphp\core\Base\Prototyped;
+use onphp\test\meta\Business\TestUserWithContactExtended;
+use onphp\test\meta\Business\TestContactValueExtended;
+use onphp\test\meta\Business\TestUser;
+use onphp\main\Net\Ip\IpAddress;
+use onphp\test\meta\Business\Credentials;
+use onphp\test\meta\Business\TestCity;
+use onphp\main\Base\Hstore;
+use onphp\core\Base\Timestamp;
+use onphp\main\Net\HttpUrl;
+use onphp\core\Base\Time;
+use onphp\core\DB\ImaginaryDialect;
+use onphp\core\OSQL\OSQL;
+use onphp\test\misc\TestCase;
 
 final class AbstractProtoClassFillQueryTest extends TestCase
 {

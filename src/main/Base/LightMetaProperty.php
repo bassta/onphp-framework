@@ -2,20 +2,20 @@
 
 namespace onphp\main\Base;
 
-use onPHP\main\Net\HttpUrl;
-use onPHP\core\DB\DBPool;
-use onPHP\main\DAOs\ProtoDAO;
-use onPHP\core\OSQL\DBBinary;
-use onPHP\core\Base\Identifiable;
-use onPHP\core\Base\Prototyped;
-use onPHP\core\OSQL\InsertOrUpdateQuery;
-use onPHP\core\Form\Form;
-use onPHP\core\Form\Primitives\IdentifiablePrimitive;
-use onPHP\core\Base\Assert;
-use onPHP\meta\classes\MetaRelation;
-use onPHP\main\Criteria\FetchStrategy;
-use onPHP\core\Form\Primitives\PrimitiveInteger;
-use onPHP\core\Base\Stringable;
+use onphp\main\Net\HttpUrl;
+use onphp\core\DB\DBPool;
+use onphp\main\DAOs\ProtoDAO;
+use onphp\core\OSQL\DBBinary;
+use onphp\core\Base\Identifiable;
+use onphp\core\Base\Prototyped;
+use onphp\core\OSQL\InsertOrUpdateQuery;
+use onphp\core\Form\Form;
+use onphp\core\Form\Primitives\IdentifiablePrimitive;
+use onphp\core\Base\Assert;
+use onphp\meta\classes\MetaRelation;
+use onphp\main\Criteria\FetchStrategy;
+use onphp\core\Form\Primitives\PrimitiveInteger;
+use onphp\core\Base\Stringable;
 
 /***************************************************************************
  *   Copyright (C) 2006-2009 by Konstantin V. Arkhipov                     *

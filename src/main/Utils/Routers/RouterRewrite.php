@@ -2,10 +2,10 @@
 
 namespace onphp\main\Utils\Routers;
 
-use onPHP\core\Base\Instantiatable;
-use onPHP\core\Base\Singleton;
-use onPHP\main\Flow\HttpRequest;
-use onPHP\main\Net\HttpUrl;
+use onphp\core\Base\Instantiatable;
+use onphp\core\Base\Singleton;
+use onphp\main\Flow\HttpRequest;
+use onphp\main\Net\HttpUrl;
 
 /***************************************************************************
  *   Copyright (C) 2008 by Sergey S. Sergeev                               *

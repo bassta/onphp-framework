@@ -2,9 +2,9 @@
 
 namespace onphp\main\OQL\Parsers;
 
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\main\OQL\Statements\OqlSelectQuery;
-use onPHP\main\Utils\ClassUtils;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\main\OQL\Statements\OqlSelectQuery;
+use onphp\main\Utils\ClassUtils;
 
 /****************************************************************************
  *   Copyright (C) 2008 by Vladlen Y. Koshelev                              *

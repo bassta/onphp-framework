@@ -2,12 +2,12 @@
 
 namespace onphp\main\Net\Http;
 
-use onPHP\main\Utils\UrlParamsUtils;
-use onPHP\core\Exceptions\NetworkException;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\main\Flow\HttpRequest;
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\MissingElementException;
+use onphp\main\Utils\UrlParamsUtils;
+use onphp\core\Exceptions\NetworkException;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\main\Flow\HttpRequest;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\MissingElementException;
 
 /***************************************************************************
  *   Copyright (C) 2007-2009 by Anton E. Lebedevich                        *

@@ -2,8 +2,8 @@
 
 namespace onphp\test\main\Utils;
 
-use onPHP\main\Utils\IO\Socket;
-use onPHP\test\misc\TestCase;
+use onphp\main\Utils\IO\Socket;
+use onphp\test\misc\TestCase;
 
 final class SocketTest extends TestCase
 {

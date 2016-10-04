@@ -2,9 +2,9 @@
 
 namespace onphp\main\Net\Ip;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\main\Base\SingleRange;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\main\Base\SingleRange;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Vladimir A. Altuchov                            *

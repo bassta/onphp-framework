@@ -2,9 +2,9 @@
 
 namespace onphp\core\Form\Primitives;
 
-use onPHP\core\Base\Assert;
-use onPHP\main\Base\BaseRange;
-use onPHP\main\Utils\ArrayUtils;
+use onphp\core\Base\Assert;
+use onphp\main\Base\BaseRange;
+use onphp\main\Utils\ArrayUtils;
 
 /***************************************************************************
  *   Copyright (C) 2004-2007 by Konstantin V. Arkhipov                     *

@@ -2,8 +2,8 @@
 
 namespace onphp\core\Form\Primitives;
 
-use onPHP\core\Form\Filters\FilterChain;
-use onPHP\core\Form\Filters\Filtrator;
+use onphp\core\Form\Filters\FilterChain;
+use onphp\core\Form\Filters\Filtrator;
 
 /****************************************************************************
  *   Copyright (C) 2005-2008 by Anton E. Lebedevich, Konstantin V. Arkhipov *

@@ -2,8 +2,8 @@
 
 namespace onphp\main\Crypto;
 
-use onPHP\core\Base\Assert;
-use onPHP\main\Math\BigInteger;
+use onphp\core\Base\Assert;
+use onphp\main\Math\BigInteger;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Anton E. Lebedevich                             *

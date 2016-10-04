@@ -2,9 +2,9 @@
 
 namespace onphp\test\core;
 
-use onPHP\core\Base\TimestampTZ;
-use onPHP\core\DB\ImaginaryDialect;
-use onPHP\test\misc\TestCase;
+use onphp\core\Base\TimestampTZ;
+use onphp\core\DB\ImaginaryDialect;
+use onphp\test\misc\TestCase;
 
 /* $Id$ */
 

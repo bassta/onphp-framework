@@ -2,11 +2,11 @@
 
 namespace onphp\test\misc;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Instantiatable;
-use onPHP\core\Base\Singleton;
-use onPHP\core\DB\DB;
-use onPHP\core\DB\MySQLim;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Instantiatable;
+use onphp\core\Base\Singleton;
+use onphp\core\DB\DB;
+use onphp\core\DB\MySQLim;
 
 final class DBTestPool extends Singleton implements Instantiatable
 {

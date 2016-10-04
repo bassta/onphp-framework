@@ -2,7 +2,7 @@
 
 namespace onphp\main\Flow;
 
-use onPHP\core\Base\Prototyped;
+use onphp\core\Base\Prototyped;
 
 /***************************************************************************
  *   Copyright (C) 2006-2008 by Anton E. Lebedevich                        *

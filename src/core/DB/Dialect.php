@@ -2,14 +2,14 @@
 
 namespace onphp\core\DB;
 
-use onPHP\core\Exceptions\UnimplementedFeatureException;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\core\OSQL\DataType;
-use onPHP\core\OSQL\DBColumn;
-use onPHP\core\OSQL\DBValue;
-use onPHP\core\OSQL\DialectString;
-use onPHP\core\OSQL\Query;
+use onphp\core\Exceptions\UnimplementedFeatureException;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\core\OSQL\DataType;
+use onphp\core\OSQL\DBColumn;
+use onphp\core\OSQL\DBValue;
+use onphp\core\OSQL\DialectString;
+use onphp\core\OSQL\Query;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *

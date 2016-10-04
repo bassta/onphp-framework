@@ -2,11 +2,11 @@
 
 namespace onphp\test\main\Ip;
 
-use onPHP\core\DB\ImaginaryDialect;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\main\Net\Ip\IpAddress;
-use onPHP\main\Net\Ip\IpRange;
-use onPHP\test\misc\TestCaseDB;
+use onphp\core\DB\ImaginaryDialect;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\main\Net\Ip\IpAddress;
+use onphp\main\Net\Ip\IpRange;
+use onphp\test\misc\TestCaseDB;
 
 /**
  * @group ibr

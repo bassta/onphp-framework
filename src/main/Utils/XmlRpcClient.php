@@ -2,7 +2,7 @@
 
 namespace onphp\main\Utils;
 
-use onPHP\core\Exceptions\NetworkException;
+use onphp\core\Exceptions\NetworkException;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Anton E. Lebedevich                        *

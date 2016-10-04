@@ -2,10 +2,10 @@
 
 namespace onphp\test\main;
 
-use onPHP\main\Net\Mail\MailEncoding;
-use onPHP\main\Net\Mail\MimeMail;
-use onPHP\main\Net\Mail\MimePart;
-use onPHP\test\misc\TestCase;
+use onphp\main\Net\Mail\MailEncoding;
+use onphp\main\Net\Mail\MimeMail;
+use onphp\main\Net\Mail\MimePart;
+use onphp\test\misc\TestCase;
 
 final class MimeMailTest extends TestCase
 {

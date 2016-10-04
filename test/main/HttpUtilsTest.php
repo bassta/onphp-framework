@@ -2,13 +2,13 @@
 
 namespace onphp\test\main;
 
-use onPHP\core\Exceptions\NetworkException;
-use onPHP\main\Flow\HttpRequest;
-use onPHP\main\Net\Http\CurlHttpClient;
-use onPHP\main\Net\Http\HttpMethod;
-use onPHP\main\Net\Http\HttpStatus;
-use onPHP\main\Net\HttpUrl;
-use onPHP\test\misc\TestCase;
+use onphp\core\Exceptions\NetworkException;
+use onphp\main\Flow\HttpRequest;
+use onphp\main\Net\Http\CurlHttpClient;
+use onphp\main\Net\Http\HttpMethod;
+use onphp\main\Net\Http\HttpStatus;
+use onphp\main\Net\HttpUrl;
+use onphp\test\misc\TestCase;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Anton E. Lebedevich                             *

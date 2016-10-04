@@ -2,7 +2,7 @@
 
 namespace onphp\main\DAOs;
 
-use onPHP\core\Base\Identifiable;
+use onphp\core\Base\Identifiable;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *

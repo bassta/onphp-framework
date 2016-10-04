@@ -2,8 +2,8 @@
 
 namespace onphp\main\Base;
 
-use onPHP\core\Base\Stringable;
-use onPHP\core\Exceptions\ObjectNotFoundException;
+use onphp\core\Base\Stringable;
+use onphp\core\Exceptions\ObjectNotFoundException;
 
 /***************************************************************************
  *   Copyright (C) 2009 by Sergey S. Sergeev                               *

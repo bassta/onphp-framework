@@ -2,11 +2,11 @@
 
 namespace onphp\main\Criteria;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\main\Base\AbstractProtoClass;
-use onPHP\main\DAOs\ProtoDAO;
-use onPHP\main\Utils\ClassUtils;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\main\Base\AbstractProtoClass;
+use onphp\main\DAOs\ProtoDAO;
+use onphp\main\Utils\ClassUtils;
 
 /***************************************************************************
  *   Copyright (C) 2007-2009 by Konstantin V. Arkhipov                     *

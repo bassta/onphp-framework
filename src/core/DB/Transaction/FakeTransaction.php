@@ -2,7 +2,7 @@
 
 namespace onphp\core\DB\Transaction;
 
-use onPHP\core\OSQL\Query;
+use onphp\core\OSQL\Query;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

@@ -2,8 +2,8 @@
 
 namespace onphp\core\OSQL;
 
-use onPHP\core\DB\Dialect;
-use onPHP\core\Exceptions\WrongStateException;
+use onphp\core\DB\Dialect;
+use onphp\core\Exceptions\WrongStateException;
 
 /***************************************************************************
  *   Copyright (C) 2005-2008 by Anton E. Lebedevich                        *

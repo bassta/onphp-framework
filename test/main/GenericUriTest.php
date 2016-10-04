@@ -2,9 +2,9 @@
 
 namespace onphp\test\main;
 
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\main\Utils\ClassUtils;
-use onPHP\test\misc\TestCase;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\main\Utils\ClassUtils;
+use onphp\test\misc\TestCase;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Khvostishkov                               *

@@ -2,7 +2,7 @@
 
 namespace onphp\core\OSQL;
 
-use onPHP\core\DB\Dialect;
+use onphp\core\DB\Dialect;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Timofey A. Anisimov                             *

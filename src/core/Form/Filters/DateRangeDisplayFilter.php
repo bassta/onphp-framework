@@ -2,8 +2,8 @@
 
 namespace onphp\core\Form\Filters;
 
-use onPHP\core\Base\Singleton;
-use onPHP\main\Base\DateRange;
+use onphp\core\Base\Singleton;
+use onphp\main\Base\DateRange;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Igor V. Gulyaev                                 *

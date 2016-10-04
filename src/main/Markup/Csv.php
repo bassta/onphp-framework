@@ -2,9 +2,9 @@
 
 namespace onphp\main\Markup;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\UnimplementedFeatureException;
-use onPHP\main\Utils\ContentTypeHeader;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\UnimplementedFeatureException;
+use onphp\main\Utils\ContentTypeHeader;
 
 /***************************************************************************
  *   Copyright (C) 2008 by Michael V. Tchervyakov                          *

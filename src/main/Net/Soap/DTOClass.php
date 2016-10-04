@@ -2,10 +2,10 @@
 
 namespace onphp\main\Net\Soap;
 
-use onPHP\core\Form\Form;
-use onPHP\main\EntityProto\Builders\FormToObjectConverter;
-use onPHP\main\EntityProto\Builders\ObjectToFormConverter;
-use onPHP\main\EntityProto\PrototypedEntity;
+use onphp\core\Form\Form;
+use onphp\main\EntityProto\Builders\FormToObjectConverter;
+use onphp\main\EntityProto\Builders\ObjectToFormConverter;
+use onphp\main\EntityProto\PrototypedEntity;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *

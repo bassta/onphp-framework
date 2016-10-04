@@ -4,7 +4,7 @@ namespace onphp\core\Base;
 
 use DateTimeZone;
 use Exception;
-use onPHP\core\Exceptions\WrongStateException;
+use onphp\core\Exceptions\WrongStateException;
 
 /***************************************************************************
  *   Copyright (C) 2004-2009 by Garmonbozia Research Group,                *

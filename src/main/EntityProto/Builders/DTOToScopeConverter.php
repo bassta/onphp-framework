@@ -2,10 +2,10 @@
 
 namespace onphp\main\EntityProto\Builders;
 
-use onPHP\main\EntityProto\Accessors\DTOGetter;
-use onPHP\main\EntityProto\Accessors\ScopeSetter;
-use onPHP\main\EntityProto\EntityProto;
-use onPHP\main\EntityProto\PrototypedBuilder;
+use onphp\main\EntityProto\Accessors\DTOGetter;
+use onphp\main\EntityProto\Accessors\ScopeSetter;
+use onphp\main\EntityProto\EntityProto;
+use onphp\main\EntityProto\PrototypedBuilder;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *

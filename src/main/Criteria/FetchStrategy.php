@@ -2,8 +2,8 @@
 
 namespace onphp\main\Criteria;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Enumeration;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Enumeration;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

@@ -2,9 +2,9 @@
 
 namespace onphp\core\Form\Primitives;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\MissingElementException;
-use onPHP\core\Exceptions\WrongStateException;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\MissingElementException;
+use onphp\core\Exceptions\WrongStateException;
 
 /*****************************************************************************
  *   Copyright (C) 2006-2008 by Ivan Y. Khvostishkov, Konstantin V. Arkhipov *

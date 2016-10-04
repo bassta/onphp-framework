@@ -2,12 +2,12 @@
 
 namespace onphp\test\main;
 
-use onPHP\core\Form\Primitive;
-use onPHP\main\EntityProto\EntityProto;
-use onPHP\core\Base\Identifiable;
-use onPHP\main\EntityProto\Builders\ObjectToDirectoryBinder;
-use onPHP\core\Base\Singleton;
-use onPHP\main\EntityProto\Builders\DirectoryToObjectBinder;
+use onphp\core\Form\Primitive;
+use onphp\main\EntityProto\EntityProto;
+use onphp\core\Base\Identifiable;
+use onphp\main\EntityProto\Builders\ObjectToDirectoryBinder;
+use onphp\core\Base\Singleton;
+use onphp\main\EntityProto\Builders\DirectoryToObjectBinder;
 
 /***************************************************************************
  *   Copyright (C) 2009 by Ivan Y. Khvostishkov                            *
@@ -18,7 +18,7 @@ use onPHP\main\EntityProto\Builders\DirectoryToObjectBinder;
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
-final class EntityProtoConvertersTest extends PHPUnit_Framework_TestCase
+final class EntityProtoConvertersTest extends \PHPUnit_Framework_TestCase
 {
     public function testDirectoryBinder()
     {

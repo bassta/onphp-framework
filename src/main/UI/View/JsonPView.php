@@ -2,9 +2,9 @@
 
 namespace onphp\main\UI\View;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Stringable;
-use onPHP\core\Exceptions\WrongArgumentException;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Stringable;
+use onphp\core\Exceptions\WrongArgumentException;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Georgiy T. Kutsurua                             *

@@ -2,7 +2,7 @@
 
 namespace onphp\main\Charts\Google;
 
-use onPHP\core\Base\Stringable;
+use onphp\core\Base\Stringable;
 
 /***************************************************************************
  *   Copyright (C) 2008 by Denis M. Gabaidulin                             *

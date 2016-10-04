@@ -2,8 +2,8 @@
 
 namespace onphp\core\Base;
 
-use onPHP\core\Exceptions\BaseException;
-use onPHP\core\Exceptions\WrongArgumentException;
+use onphp\core\Exceptions\BaseException;
+use onphp\core\Exceptions\WrongArgumentException;
 
 /***************************************************************************
  *   Copyright (C) 2004-2007 by Konstantin V. Arkhipov                     *

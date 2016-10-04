@@ -2,12 +2,12 @@
 
 namespace onphp\meta\builders;
 
-use onPHP\main\Criteria\FetchStrategy;
-use onPHP\meta\classes\MetaClass;
-use onPHP\meta\classes\MetaClassProperty;
-use onPHP\meta\patterns\DictionaryClassPattern;
-use onPHP\meta\patterns\ValueObjectPattern;
-use onPHP\meta\types\ObjectType;
+use onphp\main\Criteria\FetchStrategy;
+use onphp\meta\classes\MetaClass;
+use onphp\meta\classes\MetaClassProperty;
+use onphp\meta\patterns\DictionaryClassPattern;
+use onphp\meta\patterns\ValueObjectPattern;
+use onphp\meta\types\ObjectType;
 
 /***************************************************************************
  *   Copyright (C) 2006-2008 by Konstantin V. Arkhipov                     *

@@ -2,7 +2,7 @@
 
 namespace onphp\main\Application;
 
-use onPHP\core\Base\Singleton;
+use onphp\core\Base\Singleton;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *

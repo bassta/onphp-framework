@@ -2,9 +2,9 @@
 
 namespace onphp\core\Base;
 
-use onPHP\core\Exceptions\UnimplementedFeatureException;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\main\Base\DateRange;
+use onphp\core\Exceptions\UnimplementedFeatureException;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\main\Base\DateRange;
 
 /***************************************************************************
  *   Copyright (C) 2008-2009 by Ivan Y. Khvostishkov                       *

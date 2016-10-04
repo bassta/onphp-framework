@@ -2,9 +2,9 @@
 
 namespace onphp\core\Cache;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Instantiatable;
-use onPHP\core\Base\Singleton;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Instantiatable;
+use onphp\core\Base\Singleton;
 
 /***************************************************************************
  *   Copyright (C) 2005-2008 by Konstantin V. Arkhipov                     *

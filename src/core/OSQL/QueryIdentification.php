@@ -2,8 +2,8 @@
 
 namespace onphp\core\OSQL;
 
-use onPHP\core\DB\ImaginaryDialect;
-use onPHP\core\Exceptions\UnsupportedMethodException;
+use onphp\core\DB\ImaginaryDialect;
+use onphp\core\Exceptions\UnsupportedMethodException;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

@@ -2,9 +2,9 @@
 
 namespace onphp\main\Markup\Feed;
 
-use onPHP\core\Base\Timestamp;
+use onphp\core\Base\Timestamp;
 use SimpleXMLElement;
-use onPHP\core\Base\Singleton;
+use onphp\core\Base\Singleton;
 
 /***************************************************************************
  *   Copyright (C) 2010 by Alexandr S. Krotov                              *

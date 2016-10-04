@@ -2,9 +2,9 @@
 
 namespace onphp\core\Form\Primitives;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Form\Form;
-use onPHP\main\Base\Hstore;
+use onphp\core\Base\Assert;
+use onphp\core\Form\Form;
+use onphp\main\Base\Hstore;
 
 /****************************************************************************
  *   Copyright (C) 2009 by Sergey S. Sergeev                                *

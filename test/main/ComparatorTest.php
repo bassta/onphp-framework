@@ -2,12 +2,12 @@
 
 namespace onphp\test\main;
 
-use onPHP\core\Base\Date;
-use onPHP\core\Base\IdentifiableObject;
-use onPHP\main\Base\DateObjectComparator;
-use onPHP\main\Base\ImmutableObjectComparator;
-use onPHP\main\Base\SerializedObjectComparator;
-use onPHP\test\misc\TestCase;
+use onphp\core\Base\Date;
+use onphp\core\Base\IdentifiableObject;
+use onphp\main\Base\DateObjectComparator;
+use onphp\main\Base\ImmutableObjectComparator;
+use onphp\main\Base\SerializedObjectComparator;
+use onphp\test\misc\TestCase;
 
 final class CompatatorTest extends TestCase
 {

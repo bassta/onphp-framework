@@ -2,7 +2,7 @@
 
 namespace onphp\main\Base;
 
-use onPHP\core\Base\Date;
+use onphp\core\Base\Date;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Anton E. Lebedevich                        *

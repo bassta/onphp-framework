@@ -2,7 +2,7 @@
 
 namespace onphp\main\DAOs\Uncachers;
 
-use onPHP\main\Utils\ClassUtils;
+use onphp\main\Utils\ClassUtils;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Aleksey S. Denisov                              *

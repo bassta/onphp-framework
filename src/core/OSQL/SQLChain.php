@@ -2,11 +2,11 @@
 
 namespace onphp\core\OSQL;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\DB\Dialect;
-use onPHP\core\Logic\LogicalObject;
-use onPHP\core\Logic\MappableObject;
-use onPHP\main\DAOs\ProtoDAO;
+use onphp\core\Base\Assert;
+use onphp\core\DB\Dialect;
+use onphp\core\Logic\LogicalObject;
+use onphp\core\Logic\MappableObject;
+use onphp\main\DAOs\ProtoDAO;
 
 /****************************************************************************
  *   Copyright (C) 2004-2007 by Konstantin V. Arkhipov, Anton E. Lebedevich *

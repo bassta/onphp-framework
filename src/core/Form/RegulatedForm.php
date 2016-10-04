@@ -2,9 +2,9 @@
 
 namespace onphp\core\Form;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\MissingElementException;
-use onPHP\core\Logic\LogicalObject;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\MissingElementException;
+use onphp\core\Logic\LogicalObject;
 
 /***************************************************************************
  *   Copyright (C) 2005-2008 by Konstantin V. Arkhipov                     *

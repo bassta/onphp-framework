@@ -2,16 +2,16 @@
 
 namespace onphp\core\DB;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Cache\Cache;
-use onPHP\core\DB\Transaction\AccessMode;
-use onPHP\core\DB\Transaction\IsolationLevel;
-use onPHP\core\Exceptions\DatabaseException;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\OSQL\Query;
-use onPHP\core\OSQL\SelectQuery;
-use onPHP\main\DAOs\Uncachers\UncacherBase;
-use onPHP\main\DAOs\Uncachers\UncachersPool;
+use onphp\core\Base\Assert;
+use onphp\core\Cache\Cache;
+use onphp\core\DB\Transaction\AccessMode;
+use onphp\core\DB\Transaction\IsolationLevel;
+use onphp\core\Exceptions\DatabaseException;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\OSQL\Query;
+use onphp\core\OSQL\SelectQuery;
+use onphp\main\DAOs\Uncachers\UncacherBase;
+use onphp\main\DAOs\Uncachers\UncachersPool;
 
 /***************************************************************************
  *   Copyright (C) 2004-2008 by Konstantin V. Arkhipov                     *

@@ -2,8 +2,8 @@
 
 namespace onphp\main\DAOs\Handlers;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\BaseException;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\BaseException;
 
 /***************************************************************************
  *   Copyright (C) 2007-2008 by Konstantin V. Arkhipov                     *

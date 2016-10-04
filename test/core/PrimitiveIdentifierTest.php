@@ -2,14 +2,14 @@
 
 namespace onphp\test\core;
 
-use onPHP\core\DB\DBPool;
-use onPHP\core\Form\Primitive;
-use onPHP\core\Logic\Expression;
-use onPHP\core\OSQL\DBValue;
-use onPHP\main\Criteria\Criteria;
-use onPHP\test\meta\Business\TestCity;
-use onPHP\test\misc\DBTestPool;
-use onPHP\test\misc\TestCaseDAO;
+use onphp\core\DB\DBPool;
+use onphp\core\Form\Primitive;
+use onphp\core\Logic\Expression;
+use onphp\core\OSQL\DBValue;
+use onphp\main\Criteria\Criteria;
+use onphp\test\meta\Business\TestCity;
+use onphp\test\misc\DBTestPool;
+use onphp\test\misc\TestCaseDAO;
 
 /* $Id$ */
 

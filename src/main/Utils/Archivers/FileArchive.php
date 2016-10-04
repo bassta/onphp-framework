@@ -2,7 +2,7 @@
 
 namespace onphp\main\Utils\Archivers;
 
-use onPHP\core\Exceptions\WrongStateException;
+use onphp\core\Exceptions\WrongStateException;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *

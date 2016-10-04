@@ -2,11 +2,11 @@
 
 namespace onphp\main\OQL\Statements;
 
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\Logic\BinaryExpression;
-use onPHP\core\Logic\Expression;
-use onPHP\main\Criteria\Criteria;
-use onPHP\main\OQL\Expressions\OqlQueryParameter;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\Logic\BinaryExpression;
+use onphp\core\Logic\Expression;
+use onphp\main\Criteria\Criteria;
+use onphp\main\OQL\Expressions\OqlQueryParameter;
 
 /****************************************************************************
  *   Copyright (C) 2008-2009 by Vladlen Y. Koshelev                         *

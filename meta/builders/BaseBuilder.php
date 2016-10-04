@@ -2,10 +2,10 @@
 
 namespace onphp\meta\builders;
 
-use onPHP\core\Base\StaticFactory;
-use onPHP\core\Exceptions\UnimplementedFeatureException;
-use onPHP\meta\classes\MetaClass;
-use onPHP\meta\patterns\AbstractClassPattern;
+use onphp\core\Base\StaticFactory;
+use onphp\core\Exceptions\UnimplementedFeatureException;
+use onphp\meta\classes\MetaClass;
+use onphp\meta\patterns\AbstractClassPattern;
 
 /***************************************************************************
  *   Copyright (C) 2006-2009 by Konstantin V. Arkhipov                     *

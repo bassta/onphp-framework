@@ -3,16 +3,16 @@
 namespace onphp\core\DB;
 
 use mysqli;
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\BaseException;
-use onPHP\core\Exceptions\DatabaseException;
-use onPHP\core\Exceptions\ObjectNotFoundException;
-use onPHP\core\Exceptions\TooManyRowsException;
-use onPHP\core\Exceptions\UnsupportedMethodException;
-use onPHP\core\OSQL\DataType;
-use onPHP\core\OSQL\DBColumn;
-use onPHP\core\OSQL\DBTable;
-use onPHP\core\OSQL\Query;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\BaseException;
+use onphp\core\Exceptions\DatabaseException;
+use onphp\core\Exceptions\ObjectNotFoundException;
+use onphp\core\Exceptions\TooManyRowsException;
+use onphp\core\Exceptions\UnsupportedMethodException;
+use onphp\core\OSQL\DataType;
+use onphp\core\OSQL\DBColumn;
+use onphp\core\OSQL\DBTable;
+use onphp\core\OSQL\Query;
 
 /***************************************************************************
  *   Copyright (C) 2007-2008 by Konstantin V. Arkhipov                     *

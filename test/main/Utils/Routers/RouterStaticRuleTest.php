@@ -2,10 +2,10 @@
 
 namespace onphp\test\main\Utils\Routers;
 
-use onPHP\main\Flow\HttpRequest;
-use onPHP\main\Utils\Routers\RouterStaticRule;
-use onPHP\test\misc\ServerVarUtils;
-use onPHP\test\misc\TestCase;
+use onphp\main\Flow\HttpRequest;
+use onphp\main\Utils\Routers\RouterStaticRule;
+use onphp\test\misc\ServerVarUtils;
+use onphp\test\misc\TestCase;
 
 /* $Id$ */
 

@@ -2,8 +2,8 @@
 
 namespace onphp\main\Monitoring;
 
-use onPHP\core\Cache\Cache;
-use onPHP\core\Cache\PeclMemcached;
+use onphp\core\Cache\Cache;
+use onphp\core\Cache\PeclMemcached;
 
 /****************************************************************************
  *   Copyright (C) 2011 by Evgeny V. Kokovikhin                             *

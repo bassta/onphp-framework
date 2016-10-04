@@ -2,7 +2,7 @@
 
 namespace onphp\core\Form\Primitives;
 
-use onPHP\core\Exceptions\WrongStateException;
+use onphp\core\Exceptions\WrongStateException;
 
 /***************************************************************************
  *   Copyright (C) 2009 by Konstantin V. Arkhipov                          *

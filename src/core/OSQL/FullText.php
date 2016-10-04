@@ -2,12 +2,12 @@
 
 namespace onphp\core\OSQL;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\UnsupportedMethodException;
-use onPHP\core\Form\Form;
-use onPHP\core\Logic\LogicalObject;
-use onPHP\core\Logic\MappableObject;
-use onPHP\main\DAOs\ProtoDAO;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\UnsupportedMethodException;
+use onphp\core\Form\Form;
+use onphp\core\Logic\LogicalObject;
+use onphp\core\Logic\MappableObject;
+use onphp\main\DAOs\ProtoDAO;
 
 /****************************************************************************
  *   Copyright (C) 2005-2008 by Anton E. Lebedevich, Konstantin V. Arkhipov *

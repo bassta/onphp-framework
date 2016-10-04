@@ -2,8 +2,8 @@
 
 namespace onphp\main\UnifiedContainer;
 
-use onPHP\core\Base\Identifiable;
-use onPHP\main\DAOs\GenericDAO;
+use onphp\core\Base\Identifiable;
+use onphp\main\DAOs\GenericDAO;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *

@@ -2,9 +2,9 @@
 
 namespace onphp\main\Utils;
 
-use onPHP\core\Base\Assert;
-use onPHP\main\Criteria\Projections\ObjectProjection;
-use onPHP\main\DAOs\GenericDAO;
+use onphp\core\Base\Assert;
+use onphp\main\Criteria\Projections\ObjectProjection;
+use onphp\main\DAOs\GenericDAO;
 
 /***************************************************************************
  *   Copyright (C) 2009 by Ivan Y. Khvostishkov                            *

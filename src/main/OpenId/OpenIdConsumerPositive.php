@@ -2,7 +2,7 @@
 
 namespace onphp\main\OpenId;
 
-use onPHP\main\Net\HttpUrl;
+use onphp\main\Net\HttpUrl;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Anton E. Lebedevich                             *

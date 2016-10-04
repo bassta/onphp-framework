@@ -2,17 +2,17 @@
 
 namespace onphp\test\core;
 
-use onPHP\core\Base\IdentifiableObject;
-use onPHP\core\DB\ImaginaryDialect;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\Form\Form;
-use onPHP\core\Form\FormField;
-use onPHP\core\Form\Primitive;
-use onPHP\core\Logic\CallbackLogicalObject;
-use onPHP\core\Logic\Expression;
-use onPHP\core\OSQL\DBField;
-use onPHP\core\OSQL\DBValue;
-use onPHP\test\misc\TestCaseDB;
+use onphp\core\Base\IdentifiableObject;
+use onphp\core\DB\ImaginaryDialect;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\Form\Form;
+use onphp\core\Form\FormField;
+use onphp\core\Form\Primitive;
+use onphp\core\Logic\CallbackLogicalObject;
+use onphp\core\Logic\Expression;
+use onphp\core\OSQL\DBField;
+use onphp\core\OSQL\DBValue;
+use onphp\test\misc\TestCaseDB;
 
 /* $Id$ */
 

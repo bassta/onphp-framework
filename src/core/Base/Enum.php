@@ -2,8 +2,8 @@
 
 namespace onphp\core\Base;
 
-use onPHP\core\Exceptions\MissingElementException;
-use onPHP\core\Exceptions\UnsupportedMethodException;
+use onphp\core\Exceptions\MissingElementException;
+use onphp\core\Exceptions\UnsupportedMethodException;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Georgiy T. Kutsurua                             *

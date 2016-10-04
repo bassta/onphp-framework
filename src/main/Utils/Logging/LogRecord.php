@@ -2,8 +2,8 @@
 
 namespace onphp\main\Utils\Logging;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Timestamp;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Timestamp;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y, Khvostishkov, Denis M. Gabaidulin       *

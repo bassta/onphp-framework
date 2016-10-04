@@ -2,13 +2,13 @@
 
 namespace onphp\main\Utils;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\StaticFactory;
-use onPHP\core\Exceptions\ObjectNotFoundException;
-use onPHP\core\Logic\Expression;
-use onPHP\core\OSQL\DBField;
-use onPHP\main\Criteria\Criteria;
-use onPHP\main\DAOs\FullTextDAO;
+use onphp\core\Base\Assert;
+use onphp\core\Base\StaticFactory;
+use onphp\core\Exceptions\ObjectNotFoundException;
+use onphp\core\Logic\Expression;
+use onphp\core\OSQL\DBField;
+use onphp\main\Criteria\Criteria;
+use onphp\main\DAOs\FullTextDAO;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *

@@ -2,8 +2,8 @@
 
 namespace onphp\main\Markup\Html;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\WrongArgumentException;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\WrongArgumentException;
 
 /***************************************************************************
  *   Copyright (C) 2007-2008 by Ivan Y. Khvostishkov                       *

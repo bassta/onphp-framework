@@ -2,11 +2,11 @@
 
 namespace onphp\main\Net\Soap;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\BaseException;
-use onPHP\core\Exceptions\SoapFault;
-use onPHP\main\EntityProto\Builders\DTOToFormImporter;
-use onPHP\main\EntityProto\Builders\ObjectToFormConverter;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\BaseException;
+use onphp\core\Exceptions\SoapFault;
+use onphp\main\EntityProto\Builders\DTOToFormImporter;
+use onphp\main\EntityProto\Builders\ObjectToFormConverter;
 use ReflectionObject;
 use SoapClient;
 use SoapVar;

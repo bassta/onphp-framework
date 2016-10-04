@@ -2,10 +2,10 @@
 
 namespace onphp\test\main;
 
-use onPHP\core\Logic\Expression;
-use onPHP\core\OSQL\DBValue;
-use onPHP\core\OSQL\OSQL;
-use onPHP\test\misc\TestCaseDB;
+use onphp\core\Logic\Expression;
+use onphp\core\OSQL\DBValue;
+use onphp\core\OSQL\OSQL;
+use onphp\test\misc\TestCaseDB;
 
 final class OsqlInsertTest extends TestCaseDB
 {

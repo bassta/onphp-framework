@@ -2,10 +2,10 @@
 
 namespace onphp\core\Form\Primitives;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\ClassNotFoundException;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\main\Utils\ClassUtils;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\ClassNotFoundException;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\main\Utils\ClassUtils;
 
 /***************************************************************************
  *   Copyright (C) 2008 by Konstantin V. Arkhipov                          *

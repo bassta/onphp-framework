@@ -2,9 +2,9 @@
 
 namespace onphp\test\main\Ip;
 
-use onPHP\main\Net\Ip\IpAddress;
-use onPHP\main\Net\Ip\IpNetwork;
-use onPHP\test\misc\TestCase;
+use onphp\main\Net\Ip\IpAddress;
+use onphp\main\Net\Ip\IpNetwork;
+use onphp\test\misc\TestCase;
 
 /* $Id$ */
 

@@ -2,8 +2,8 @@
 
 namespace onphp\main\OQL\Parsers;
 
-use onPHP\main\OQL\Expressions\OqlOrderByExpression;
-use onPHP\main\OQL\Statements\OqlOrderByClause;
+use onphp\main\OQL\Expressions\OqlOrderByExpression;
+use onphp\main\OQL\Statements\OqlOrderByClause;
 
 /****************************************************************************
  *   Copyright (C) 2009 by Vladlen Y. Koshelev                              *

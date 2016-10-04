@@ -2,7 +2,7 @@
 
 namespace onphp\main\OQL\Parsers;
 
-use onPHP\main\OQL\Statements\OqlHavingClause;
+use onphp\main\OQL\Statements\OqlHavingClause;
 
 /****************************************************************************
  *   Copyright (C) 2009 by Vladlen Y. Koshelev                              *

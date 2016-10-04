@@ -2,8 +2,8 @@
 
 namespace onphp\main\EntityProto\Accessors;
 
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\Form\Primitives\PrimitiveForm;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\Form\Primitives\PrimitiveForm;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *

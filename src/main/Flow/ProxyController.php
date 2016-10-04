@@ -2,8 +2,8 @@
 
 namespace onphp\main\Flow;
 
-use onPHP\core\Base\Assert;
-use onPHP\main\Base\RequestType;
+use onphp\core\Base\Assert;
+use onphp\main\Base\RequestType;
 
 /****************************************************************************
  *   Copyright (C) 2008 by Dmitry V. Sokolov, Denis M. Gabaidulin           *

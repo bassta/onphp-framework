@@ -2,11 +2,11 @@
 
 namespace onphp\core\Form\Primitives;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Date;
-use onPHP\core\Base\Timestamp;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\main\Utils\ClassUtils;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Date;
+use onphp\core\Base\Timestamp;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\main\Utils\ClassUtils;
 
 /***************************************************************************
  *   Copyright (C) 2004-2008 by Konstantin V. Arkhipov                     *

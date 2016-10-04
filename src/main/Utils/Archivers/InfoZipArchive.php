@@ -2,8 +2,8 @@
 
 namespace onphp\main\Utils\Archivers;
 
-use onPHP\core\Exceptions\UnsupportedMethodException;
-use onPHP\core\Exceptions\WrongStateException;
+use onphp\core\Exceptions\UnsupportedMethodException;
+use onphp\core\Exceptions\WrongStateException;
 use ZipArchive;
 
 /***************************************************************************

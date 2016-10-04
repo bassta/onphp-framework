@@ -2,9 +2,9 @@
 
 namespace onphp\core\OSQL;
 
-use onPHP\core\DB\Dialect;
-use onPHP\core\Logic\MappableObject;
-use onPHP\main\DAOs\ProtoDAO;
+use onphp\core\DB\Dialect;
+use onphp\core\Logic\MappableObject;
+use onphp\main\DAOs\ProtoDAO;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Konstantin V. Arkhipov                          *

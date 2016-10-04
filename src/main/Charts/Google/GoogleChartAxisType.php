@@ -2,7 +2,7 @@
 
 namespace onphp\main\Charts\Google;
 
-use onPHP\core\Base\Enumeration;
+use onphp\core\Base\Enumeration;
 
 /***************************************************************************
  *   Copyright (C) 2008-2009 by Denis M. Gabaidulin                        *

@@ -2,11 +2,11 @@
 
 namespace onphp\main\UnifiedContainer;
 
-use onPHP\core\DB\DBPool;
-use onPHP\core\Logic\Expression;
-use onPHP\core\OSQL\DBField;
-use onPHP\core\OSQL\OSQL;
-use onPHP\main\Utils\ArrayUtils;
+use onphp\core\DB\DBPool;
+use onphp\core\Logic\Expression;
+use onphp\core\OSQL\DBField;
+use onphp\core\OSQL\OSQL;
+use onphp\main\Utils\ArrayUtils;
 
 /***************************************************************************
  *   Copyright (C) 2005-2007 by Konstantin V. Arkhipov                     *

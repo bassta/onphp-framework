@@ -4,10 +4,10 @@ namespace onphp\main\Messages;
 
 use;
 use;
-use onPHP\core\Base\Assert;
-use onPHP\core\Base\Timestamp;
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\main\Utils\IO\FileInputStream;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Timestamp;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\main\Utils\IO\FileInputStream;
 
 onPHP\main\Messages\Interface\MessageQueue;
 onPHP\main\Messages\Interface\MessageQueueReceiver;

@@ -2,11 +2,11 @@
 
 namespace onphp\test\main\Utils\Routers;
 
-use onPHP\main\Flow\HttpRequest;
-use onPHP\core\Exceptions\BaseException;
-use onPHP\main\Utils\Routers\RouterRegexpRule;
-use onPHP\test\misc\ServerVarUtils;
-use onPHP\test\misc\TestCase;
+use onphp\main\Flow\HttpRequest;
+use onphp\core\Exceptions\BaseException;
+use onphp\main\Utils\Routers\RouterRegexpRule;
+use onphp\test\misc\ServerVarUtils;
+use onphp\test\misc\TestCase;
 
 /* $Id$ */
 

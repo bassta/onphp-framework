@@ -2,11 +2,11 @@
 
 namespace onphp\core\DB;
 
-use onPHP\core\Base\Instantiatable;
-use onPHP\core\Base\Singleton;
-use onPHP\core\Exceptions\MissingElementException;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\main\DAOs\GenericDAO;
+use onphp\core\Base\Instantiatable;
+use onphp\core\Base\Singleton;
+use onphp\core\Exceptions\MissingElementException;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\main\DAOs\GenericDAO;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

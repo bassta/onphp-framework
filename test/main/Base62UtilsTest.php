@@ -2,9 +2,9 @@
 
 namespace onphp\test\main;
 
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\main\Crypto\Base62Utils;
-use onPHP\test\misc\TestCase;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\main\Crypto\Base62Utils;
+use onphp\test\misc\TestCase;
 
 /***************************************************************************
  *   Copyright (C) 2011 by Sergey S. Sergeev                               *

@@ -5,9 +5,9 @@ namespace onphp\main\Messages;
 use;
 use;
 use;
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\main\Utils\IO\FileOutputStream;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\main\Utils\IO\FileOutputStream;
 
 onPHP\main\Messages\Interface\Message;
 onPHP\main\Messages\Interface\MessageQueue;

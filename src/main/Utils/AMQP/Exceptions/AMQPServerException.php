@@ -2,7 +2,7 @@
 
 namespace onphp\main\Utils\AMQP\Exceptions;
 
-use onPHP\core\Exceptions\BaseException;
+use onphp\core\Exceptions\BaseException;
 
 /***************************************************************************
  *   Copyright (C) 2011 by Sergey S. Sergeev                               *

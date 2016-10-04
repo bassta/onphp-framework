@@ -2,11 +2,11 @@
 
 namespace onphp\core\Logic;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\Form\Form;
-use onPHP\core\OSQL\SelectQuery;
-use onPHP\core\OSQL\SQLChain;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\Form\Form;
+use onphp\core\OSQL\SelectQuery;
+use onphp\core\OSQL\SQLChain;
 
 /****************************************************************************
  *   Copyright (C) 2004-2007 by Konstantin V. Arkhipov, Anton E. Lebedevich *

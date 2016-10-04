@@ -2,12 +2,12 @@
 
 namespace onphp\test\main;
 
-use onPHP\core\Base\Singleton;
-use onPHP\core\DB\ImaginaryDialect;
-use onPHP\core\Exceptions\ClassNotFoundException;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\main\Utils\ClassUtils;
-use onPHP\test\misc\TestCase;
+use onphp\core\Base\Singleton;
+use onphp\core\DB\ImaginaryDialect;
+use onphp\core\Exceptions\ClassNotFoundException;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\main\Utils\ClassUtils;
+use onphp\test\misc\TestCase;
 
 /* $Id$ */
 

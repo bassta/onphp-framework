@@ -2,10 +2,10 @@
 
 namespace onphp\core\DB\NoSQL;
 
-use onPHP\core\Cache\Cache;
-use onPHP\core\Cache\CachePeer;
-use onPHP\core\Cache\ListGenerator;
-use onPHP\core\Exceptions\UnimplementedFeatureException;
+use onphp\core\Cache\Cache;
+use onphp\core\Cache\CachePeer;
+use onphp\core\Cache\ListGenerator;
+use onphp\core\Exceptions\UnimplementedFeatureException;
 
 /***************************************************************************
  *   Copyright (C) 2012 by Artem Naumenko                                  *

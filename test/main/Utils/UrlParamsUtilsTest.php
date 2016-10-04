@@ -2,9 +2,9 @@
 
 namespace onphp\test\main\Utils;
 
-use onPHP\core\Exceptions\BaseException;
-use onPHP\main\Utils\UrlParamsUtils;
-use onPHP\test\misc\TestCase;
+use onphp\core\Exceptions\BaseException;
+use onphp\main\Utils\UrlParamsUtils;
+use onphp\test\misc\TestCase;
 
 final class UrlParamsUtilsTest extends TestCase
 {

@@ -2,7 +2,7 @@
 
 namespace onphp\main\EntityProto\Builders;
 
-use onPHP\main\EntityProto\PrototypedBuilder;
+use onphp\main\EntityProto\PrototypedBuilder;
 
 /***************************************************************************
  *   Copyright (C) 2007 by Ivan Y. Khvostishkov                            *

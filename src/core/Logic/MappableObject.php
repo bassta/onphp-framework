@@ -2,9 +2,9 @@
 
 namespace onphp\core\Logic;
 
-use onPHP\core\OSQL\DialectString;
-use onPHP\core\OSQL\JoinCapableQuery;
-use onPHP\main\DAOs\ProtoDAO;
+use onphp\core\OSQL\DialectString;
+use onphp\core\OSQL\JoinCapableQuery;
+use onphp\main\DAOs\ProtoDAO;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

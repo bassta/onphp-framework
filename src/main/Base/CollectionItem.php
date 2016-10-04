@@ -2,7 +2,7 @@
 
 namespace onphp\main\Base;
 
-use onPHP\core\Base\IdentifiableObject;
+use onphp\core\Base\IdentifiableObject;
 
 /***************************************************************************
  *   Copyright (C) 2008 by Denis M. Gabaidulin                             *

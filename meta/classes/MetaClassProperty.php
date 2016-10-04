@@ -2,22 +2,22 @@
 
 namespace onphp\meta\classes;
 
-use onPHP\meta\types\BooleanType;
-use onPHP\meta\patterns\InternalClassPattern;
-use onPHP\meta\patterns\DictionaryClassPattern;
-use onPHP\meta\patterns\EnumClassPattern;
-use onPHP\meta\patterns\EnumerationClassPattern;
-use onPHP\meta\types\StringType;
-use onPHP\meta\types\IntegerType;
-use onPHP\meta\patterns\ValueObjectPattern;
-use onPHP\meta\types\InternalType;
-use onPHP\meta\types\ObjectType;
-use onPHP\main\Criteria\FetchStrategy;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\core\Base\Assert;
-use onPHP\meta\types\NumericType;
-use onPHP\meta\types\BasePropertyType;
-use onPHP\main\Base\LightMetaProperty;
+use onphp\meta\types\BooleanType;
+use onphp\meta\patterns\InternalClassPattern;
+use onphp\meta\patterns\DictionaryClassPattern;
+use onphp\meta\patterns\EnumClassPattern;
+use onphp\meta\patterns\EnumerationClassPattern;
+use onphp\meta\types\StringType;
+use onphp\meta\types\IntegerType;
+use onphp\meta\patterns\ValueObjectPattern;
+use onphp\meta\types\InternalType;
+use onphp\meta\types\ObjectType;
+use onphp\main\Criteria\FetchStrategy;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\core\Base\Assert;
+use onphp\meta\types\NumericType;
+use onphp\meta\types\BasePropertyType;
+use onphp\main\Base\LightMetaProperty;
 
 /***************************************************************************
  *   Copyright (C) 2006-2009 by Konstantin V. Arkhipov                     *

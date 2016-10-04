@@ -2,8 +2,8 @@
 
 namespace onphp\main\Net\Mail;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\UnimplementedFeatureException;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\UnimplementedFeatureException;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

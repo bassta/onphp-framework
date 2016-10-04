@@ -2,13 +2,13 @@
 
 namespace onphp\core\OSQL;
 
-use onPHP\core\DB\Dialect;
-use onPHP\core\Exceptions\UnsupportedMethodException;
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\WrongStateException;
-use onPHP\core\Logic\LogicalObject;
-use onPHP\core\Base\Aliased;
-use onPHP\core\Base\Named;
+use onphp\core\DB\Dialect;
+use onphp\core\Exceptions\UnsupportedMethodException;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\WrongStateException;
+use onphp\core\Logic\LogicalObject;
+use onphp\core\Base\Aliased;
+use onphp\core\Base\Named;
 
 /****************************************************************************
  *   Copyright (C) 2004-2007 by Konstantin V. Arkhipov, Anton E. Lebedevich *
