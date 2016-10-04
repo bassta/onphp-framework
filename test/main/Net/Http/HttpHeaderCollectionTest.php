@@ -8,8 +8,12 @@
  *   License, or (at your option) any later version.                       *
  *                                                                         *
  ***************************************************************************/
-
-	class HttpHeaderCollectionTest extends TestCase
+    
+	namespace onphp\test\main\Net\Http;
+    
+    use onphp\test\misc\TestCase;
+    
+    class HttpHeaderCollectionTest extends TestCase
 	{
 		public function testSetter()
 		{
