@@ -25,7 +25,8 @@
     "autoload": {
         "psr-4": {
             "onphp\\": "src/"
-        }
+        },
+        "files": ["src/global.php"]
     },
     "autoload-dev": {
         "psr-4": {
