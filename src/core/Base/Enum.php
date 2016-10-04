@@ -23,7 +23,7 @@ use onphp\core\Exceptions\UnsupportedMethodException;
  * @ingroup Base
  * @ingroup Module
  **/
-abstract class Enum extends NamedObject implements Serializable
+abstract class Enum extends NamedObject implements \Serializable
 {
     protected static $names = array();
 
