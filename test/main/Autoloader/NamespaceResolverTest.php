@@ -31,31 +31,31 @@ final class NamespaceResolverTest extends TestCase
         $this->assertEquals($result, $resolver->getClassPathList());
         $this->assertEquals($this->getBasePath().'onPHP/MyForm.class.php', $resolver->getClassPath('MyForm'));
         $this->assertNull($resolver->getClassPath('MyFormSub'));
-        $this->assertNull($resolver->getClassPath('\\onPHP\\MyFormSub'));
-        $this->assertNull($resolver->getClassPath('\\onPHP\\MyFormSup'));
+        $this->assertNull($resolver->getClassPath('\\onphp\\MyFormSub'));
+        $this->assertNull($resolver->getClassPath('\\onphp\\MyFormSup'));
         //setup
         $resolver->addPaths(array($this->getBasePath().'onPHP/Sub/', $this->getBasePath().'onPHP/Up/'), 'onPHP');
         //expectation
         $result[1]                    = $this->getBasePath().'onPHP/Sub/';
-        $result['\\onPHP\\MyFormSub'] = 1;
+        $result['\\onphp\\MyFormSub'] = 1;
         $result[2]                    = $this->getBasePath().'onPHP/Up/';
-        $result['\\onPHP\\MyFormUp']  = 2;
+        $result['\\onphp\\MyFormUp']  = 2;
         //execution
         $this->assertEquals($result, $resolver->getClassPathList());
         $this->assertEquals($this->getBasePath().'onPHP/MyForm.class.php', $resolver->getClassPath('\\MyForm'));
         $this->assertNull($resolver->getClassPath('MyFormSub'));
-        $this->assertEquals($this->getBasePath().'onPHP/Sub/MyFormSub.class.php', $resolver->getClassPath('\\onPHP\\MyFormSub'));
-        $this->assertNull($resolver->getClassPath('\\onPHP\\MyFormSup'));
+        $this->assertEquals($this->getBasePath().'onPHP/Sub/MyFormSub.class.php', $resolver->getClassPath('\\onphp\\MyFormSub'));
+        $this->assertNull($resolver->getClassPath('\\onphp\\MyFormSup'));
         //setup
         $resolver->setClassExtension('.clazz.php');
         //expecation
-        $result = array(0 => $this->getBasePath().'onPHP/', 1 => $this->getBasePath().'onPHP/Sub/', '\\onPHP\\MyFormSup' => 1, 2 => $this->getBasePath().'onPHP/Up/');
+        $result = array(0 => $this->getBasePath().'onPHP/', 1 => $this->getBasePath().'onPHP/Sub/', '\\onphp\\MyFormSup' => 1, 2 => $this->getBasePath().'onPHP/Up/');
         //execution
         $this->assertEquals($result, $resolver->getClassPathList());
         $this->assertNull($resolver->getClassPath('\\MyForm'));
         $this->assertNull($resolver->getClassPath('MyFormSub'));
-        $this->assertNull($resolver->getClassPath('\\onPHP\\MyFormSub'));
-        $this->assertEquals($this->getBasePath().'onPHP/Sub/MyFormSup.clazz.php', $resolver->getClassPath('\\onPHP\\MyFormSup'));
+        $this->assertNull($resolver->getClassPath('\\onphp\\MyFormSub'));
+        $this->assertEquals($this->getBasePath().'onPHP/Sub/MyFormSup.clazz.php', $resolver->getClassPath('\\onphp\\MyFormSup'));
     }
 
     public function testPSR0ResolverEmptyBaseNamespace()
@@ -63,33 +63,33 @@ final class NamespaceResolverTest extends TestCase
         //setup
         $resolver = NamespaceResolverPSR0::create()->addPath($this->getBasePath());
         //expectation
-        $result = array(0 => $this->getBasePath(), 1 => $this->getBasePath().'MyNS/', '\\MyNS\\Class1' => 1, 2 => $this->getBasePath().'MyNS/Sub/', '\\MyNS\\Sub\\Class2' => 2, 3 => $this->getBasePath().'onPHP/', 4 => $this->getBasePath().'onPHP/Sub/', 5 => $this->getBasePath().'onPHP/Up/', '\\onPHP\\MyForm' => 3, '\\onPHP\\Sub\\MyFormSub' => 4, '\\onPHP\\Up\\MyFormUp' => 5);
+        $result = array(0 => $this->getBasePath(), 1 => $this->getBasePath().'MyNS/', '\\MyNS\\Class1' => 1, 2 => $this->getBasePath().'MyNS/Sub/', '\\MyNS\\Sub\\Class2' => 2, 3 => $this->getBasePath().'onPHP/', 4 => $this->getBasePath().'onPHP/Sub/', 5 => $this->getBasePath().'onPHP/Up/', '\\onphp\\MyForm' => 3, '\\onphp\\Sub\\MyFormSub' => 4, '\\onphp\\Up\\MyFormUp' => 5);
         //execution
         $this->assertEquals($result, $resolver->getClassPathList());
         $this->assertEquals($this->getBasePath().'MyNS/Sub/Class2.class.php', $resolver->getClassPath('\\MyNS\\Sub\\Class2'));
         $this->assertNull($resolver->getClassPath('\\MyNS\\Sub\\Class1'));
-        $this->assertNull($resolver->getClassPath('\\onPHP\\Sub\\MyFormSup'));
+        $this->assertNull($resolver->getClassPath('\\onphp\\Sub\\MyFormSup'));
         //setup
         $resolver->setClassExtension('.clazz.php');
         //expectation
-        $result = array(0 => $this->getBasePath(), 1 => $this->getBasePath().'MyNS/', 2 => $this->getBasePath().'MyNS/Sub/', 3 => $this->getBasePath().'onPHP/', 4 => $this->getBasePath().'onPHP/Sub/', '\\onPHP\\Sub\\MyFormSup' => 4, 5 => $this->getBasePath().'onPHP/Up/');
+        $result = array(0 => $this->getBasePath(), 1 => $this->getBasePath().'MyNS/', 2 => $this->getBasePath().'MyNS/Sub/', 3 => $this->getBasePath().'onPHP/', 4 => $this->getBasePath().'onPHP/Sub/', '\\onphp\\Sub\\MyFormSup' => 4, 5 => $this->getBasePath().'onPHP/Up/');
         //execution
         $this->assertEquals($result, $resolver->getClassPathList());
         $this->assertNull($resolver->getClassPath('\\MyNS\\Sub\\Class2'));
-        $this->assertEquals($this->getBasePath().'onPHP/Sub/MyFormSup.clazz.php', $resolver->getClassPath('\\onPHP\\Sub\\MyFormSup'));
+        $this->assertEquals($this->getBasePath().'onPHP/Sub/MyFormSup.clazz.php', $resolver->getClassPath('\\onphp\\Sub\\MyFormSup'));
     }
 
     public function testPSR0ResolverStartWithNamespace()
     {
         //setup
-        $resolver = NamespaceResolverPSR0::create()->addPath($this->getBasePath().'onPHP', '\\onPHP\\');
+        $resolver = NamespaceResolverPSR0::create()->addPath($this->getBasePath().'onPHP', '\\onphp\\');
         //expectation
-        $result = array(0 => $this->getBasePath().'onPHP/', '\\onPHP\\MyForm' => 0, 1 => $this->getBasePath().'onPHP/Sub/', '\\onPHP\\Sub\\MyFormSub' => 1, 2 => $this->getBasePath().'onPHP/Up/', '\\onPHP\\Up\\MyFormUp' => 2);
+        $result = array(0 => $this->getBasePath().'onPHP/', '\\onphp\\MyForm' => 0, 1 => $this->getBasePath().'onPHP/Sub/', '\\onphp\\Sub\\MyFormSub' => 1, 2 => $this->getBasePath().'onPHP/Up/', '\\onphp\\Up\\MyFormUp' => 2);
         //execution
         $this->assertEquals($result, $resolver->getClassPathList());
-        $this->assertEquals($this->getBasePath().'onPHP/Up/MyFormUp.class.php', $resolver->getClassPath('onPHP\\Up\\MyFormUp'));
+        $this->assertEquals($this->getBasePath().'onPHP/Up/MyFormUp.class.php', $resolver->getClassPath('onphp\\Up\\MyFormUp'));
         $this->assertNull($resolver->getClassPath('\\MyNS\\Sub\\Class1'));
-        $this->assertNull($resolver->getClassPath('\\onPHP\\Sub\\MyFormSup'));
+        $this->assertNull($resolver->getClassPath('\\onphp\\Sub\\MyFormSup'));
     }
 
     public function testPSR0WithUnderlineNoBaseNamespace()

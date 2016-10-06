@@ -9,9 +9,9 @@ use onphp\core\Base\Assert;
 use onphp\core\Exceptions\WrongStateException;
 use onphp\main\Utils\IO\FileOutputStream;
 
-onPHP\main\Messages\Interface\Message;
-onPHP\main\Messages\Interface\MessageQueue;
-onPHP\main\Messages\Interface\MessageQueueSender;
+onphp\main\Messages\Interface\Message;
+onphp\main\Messages\Interface\MessageQueue;
+onphp\main\Messages\Interface\MessageQueueSender;
 /***************************************************************************
  *   Copyright (C) 2009 by Ivan Y. Khvostishkov                            *
  *                                                                         *

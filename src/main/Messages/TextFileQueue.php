@@ -4,7 +4,7 @@ namespace onphp\main\Messages;
 
 use;
 
-onPHP\main\Messages\Interface\MessageQueue;
+onphp\main\Messages\Interface\MessageQueue;
 /***************************************************************************
  *   Copyright (C) 2009 by Ivan Y. Khvostishkov                            *
  *                                                                         *

@@ -2,7 +2,7 @@
 
 namespace onphp\meta\types;
 
-use onPHP\main\Base\LightMetaProperty;
+use onphp\main\Base\LightMetaProperty;
 
 /***************************************************************************
  *   Copyright (C) 2007-2008 by Konstantin V. Arkhipov                     *

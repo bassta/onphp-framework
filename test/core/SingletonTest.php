@@ -31,9 +31,9 @@ final class SingletonMultiArgumentTestInstance extends Singleton
 
 final class SingletonTest extends TestCase
 {
-    const CLASS_NAME = 'SingletonTestInstance';
-    const SINGLE_CLASS_NAME = 'SingletonSingleArgumentTestInstance';
-    const MULTI_CLASS_NAME = 'SingletonMultiArgumentTestInstance';
+    const CLASS_NAME = 'onphp\test\core\SingletonTestInstance';
+    const SINGLE_CLASS_NAME = 'onphp\test\core\SingletonSingleArgumentTestInstance';
+    const MULTI_CLASS_NAME = 'onphp\test\core\SingletonMultiArgumentTestInstance';
 
     public function testFactoryLikeCall()
     {
@@ -43,7 +43,7 @@ final class SingletonTest extends TestCase
     public function testNonSingletonChilds()
     {
         try {
-            Singleton::getInstance('Ternary');
+            Singleton::getInstance('onphp\core\Base\Ternary');
             $this->fail();
         } catch (WrongArgumentException $e) {
         }
@@ -72,8 +72,16 @@ final class SingletonTest extends TestCase
             $this->fail();
         } catch (BaseException $e) {
         }
-        $this->assertSameInstances(self::SINGLE_CLASS_NAME, Singleton::getInstance(self::SINGLE_CLASS_NAME, 'val1'), Singleton::getInstance(self::SINGLE_CLASS_NAME, 'val2'));
-        $this->assertSameInstances(self::MULTI_CLASS_NAME, Singleton::getInstance(self::MULTI_CLASS_NAME, 'val1', 'val2', 'val3'), Singleton::getInstance(self::MULTI_CLASS_NAME, 'val1', 'val2'));
+        $this->assertSameInstances(
+            self::SINGLE_CLASS_NAME,
+            Singleton::getInstance(self::SINGLE_CLASS_NAME, 'val1'),
+            Singleton::getInstance(self::SINGLE_CLASS_NAME, 'val2')
+        );
+        $this->assertSameInstances(
+            self::MULTI_CLASS_NAME,
+            Singleton::getInstance(self::MULTI_CLASS_NAME, 'val1', 'val2', 'val3'),
+            Singleton::getInstance(self::MULTI_CLASS_NAME, 'val1', 'val2')
+        );
     }
 
     private function assertSameInstances($className, Singleton $instance1, Singleton $instance2)

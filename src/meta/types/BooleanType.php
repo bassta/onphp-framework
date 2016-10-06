@@ -2,10 +2,10 @@
 
 namespace onphp\meta\types;
 
-use onPHP\core\Base\Assert;
-use onPHP\core\Exceptions\WrongArgumentException;
-use onPHP\meta\classes\MetaClass;
-use onPHP\meta\classes\MetaClassProperty;
+use onphp\core\Base\Assert;
+use onphp\core\Exceptions\WrongArgumentException;
+use onphp\meta\classes\MetaClass;
+use onphp\meta\classes\MetaClassProperty;
 
 /***************************************************************************
  *   Copyright (C) 2006-2007 by Konstantin V. Arkhipov                     *

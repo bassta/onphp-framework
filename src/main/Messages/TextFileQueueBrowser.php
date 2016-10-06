@@ -6,8 +6,8 @@ use;
 use;
 use onphp\core\Exceptions\UnimplementedFeatureException;
 
-onPHP\main\Messages\Interface\MessageQueue;
-onPHP\main\Messages\Interface\MessageQueueBrowser;
+onphp\main\Messages\Interface\MessageQueue;
+onphp\main\Messages\Interface\MessageQueueBrowser;
 /***************************************************************************
  *   Copyright (C) 2009 by Ivan Y. Khvostishkov                            *
  *                                                                         *

@@ -22,7 +22,7 @@ final class SchemaBuilder extends BaseBuilder
 {
     public static function buildTable($tableName, array $propertyList)
     {
-        $out     = "\$schema->\n\taddTable(\n\t\tonPHP\\core\\OSQL\\DBTable::create('{$tableName}')->\n";
+        $out     = "\$schema->\n\taddTable(\n\t\tonphp\\core\\OSQL\\DBTable::create('{$tableName}')->\n";
         $columns = array();
         foreach ($propertyList as $property) {
             if ($property->getRelation() && $property->getRelationId() != MetaRelation::ONE_TO_ONE) {
@@ -74,7 +74,7 @@ final class SchemaBuilder extends BaseBuilder
                     if ($property->getRelationColumnName() == $foreignPropery->getColumnName()) {
                         $foreignPropery->setColumnName($class->getTableName().'_'.$property->getConvertedName().'_id');
                     }
-                    $out .= "\$schema->\n\taddTable(\n\t\tonPHP\\core\\OSQL\\DBTable::create('{$tableName}')->\n\t\t{$property->toColumn()}->\n\t\t{$foreignPropery->toColumn()}->\n\t\taddUniques('{$property->getRelationColumnName()}', '{$foreignPropery->getColumnName()}')\n\t);\n\n";
+                    $out .= "\$schema->\n\taddTable(\n\t\tonphp\\core\\OSQL\\DBTable::create('{$tableName}')->\n\t\t{$property->toColumn()}->\n\t\t{$foreignPropery->toColumn()}->\n\t\taddUniques('{$property->getRelationColumnName()}', '{$foreignPropery->getColumnName()}')\n\t);\n\n";
                 } else {
                     $sourceTable  = $class->getTableName();
                     $sourceColumn = $property->getRelationColumnName();
@@ -90,7 +90,7 @@ final class SchemaBuilder extends BaseBuilder
     public static function getHead()
     {
         $out = parent::getHead();
-        $out .= '$schema = new onPHP\\core\\OSQL\\DBSchema();
+        $out .= '$schema = new onphp\\core\\OSQL\\DBSchema();
 
 ';
         return $out;

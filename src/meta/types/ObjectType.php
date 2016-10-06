@@ -2,13 +2,13 @@
 
 namespace onphp\meta\types;
 
-use onPHP\main\Criteria\FetchStrategy;
-use onPHP\meta\classes\MetaClass;
-use onPHP\meta\classes\MetaClassProperty;
-use onPHP\meta\classes\MetaConfiguration;
-use onPHP\meta\classes\MetaRelation;
-use onPHP\meta\patterns\EnumClassPattern;
-use onPHP\meta\patterns\EnumerationClassPattern;
+use onphp\main\Criteria\FetchStrategy;
+use onphp\meta\classes\MetaClass;
+use onphp\meta\classes\MetaClassProperty;
+use onphp\meta\classes\MetaConfiguration;
+use onphp\meta\classes\MetaRelation;
+use onphp\meta\patterns\EnumClassPattern;
+use onphp\meta\patterns\EnumerationClassPattern;
 
 /***************************************************************************
  *   Copyright (C) 2006-2008 by Konstantin V. Arkhipov                     *

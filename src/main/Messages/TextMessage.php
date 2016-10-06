@@ -5,7 +5,7 @@ namespace onphp\main\Messages;
 use;
 use onphp\core\Base\Timestamp;
 
-onPHP\main\Messages\Interface\Message;
+onphp\main\Messages\Interface\Message;
 /***************************************************************************
  *   Copyright (C) 2009 by Ivan Y. Khvostishkov                            *
  *                                                                         *

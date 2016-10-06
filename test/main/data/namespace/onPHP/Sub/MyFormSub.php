@@ -1,7 +1,7 @@
 <?php
 
 namespace onphp\test\main\data\
-namespace\onPHP\Sub;
+namespace\onphp\Sub;
 
 ?>
     nothing here, just for tests autoloaders<?php 

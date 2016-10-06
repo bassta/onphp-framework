@@ -1,7 +1,7 @@
 #!/usr/bin/php
 <?php
 
-require dirname(__FILE__).DIRECTORY_SEPARATOR.'../../../../vendor/autoload.php';
+require dirname(__FILE__).DIRECTORY_SEPARATOR.'../../vendor/autoload.php';
 
 use onphp\core\Exceptions\BaseException;
 use onphp\main\Utils\ClassUtils;
@@ -50,9 +50,9 @@ Possible options:
 
     function init()
     {
-        define('ONPHP_META_BUILDERS', ONPHP_META_PATH.'builders'.DIRECTORY_SEPARATOR);
-        define('ONPHP_META_PATTERNS', ONPHP_META_PATH.'patterns'.DIRECTORY_SEPARATOR);
-        define('ONPHP_META_TYPES', ONPHP_META_PATH.'types'.DIRECTORY_SEPARATOR);
+//        define('ONPHP_META_BUILDERS', ONPHP_META_PATH.'builders'.DIRECTORY_SEPARATOR);
+//        define('ONPHP_META_PATTERNS', ONPHP_META_PATH.'patterns'.DIRECTORY_SEPARATOR);
+//        define('ONPHP_META_TYPES', ONPHP_META_PATH.'types'.DIRECTORY_SEPARATOR);
 
 //        AutoloaderPool::get('onPHP')->
 //            addPaths(array(
@@ -205,16 +205,16 @@ Possible options:
     }
 
     // manual includes due to unincluded yet project's config
-    $metaRoot =
-        dirname(dirname($_SERVER['argv'][0]))
-        .DIRECTORY_SEPARATOR
-        .'classes'
-        .DIRECTORY_SEPARATOR;
+//    $metaRoot =
+//        dirname(dirname($_SERVER['argv'][0]))
+//        .DIRECTORY_SEPARATOR
+//        .'classes'
+//        .DIRECTORY_SEPARATOR;
 
-    include_once $metaRoot.'ConsoleMode.php';
-    include_once $metaRoot.'MetaOutput.php';
-    include_once $metaRoot.'TextOutput.php';
-    include_once $metaRoot.'ColoredTextOutput.php';
+//    include_once $metaRoot.'ConsoleMode.php';
+//    include_once $metaRoot.'MetaOutput.php';
+//    include_once $metaRoot.'TextOutput.php';
+//    include_once $metaRoot.'ColoredTextOutput.php';
 
     if (
         isset($_SERVER['TERM'])

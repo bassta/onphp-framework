@@ -4,7 +4,7 @@ namespace onphp\test\misc;
 
 use onphp\core\Cache\Cache;
 
-final class TestSuite extends PHPUnit_Framework_TestSuite
+final class TestSuite extends \PHPUnit_Framework_TestSuite
 {
     public function setUp()
     {

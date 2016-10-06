@@ -326,7 +326,7 @@ class MetaClassProperty
                 }
             }
         }
-        $propertyClassName = $inner ? 'onPHP\\main\\Base\\InnerMetaProperty' : 'onPHP\\main\\Base\\LightMetaProperty';
+        $propertyClassName = $inner ? 'onphp\\main\\Base\\InnerMetaProperty' : 'onphp\\main\\Base\\LightMetaProperty';
         if ($this->getType() instanceof IntegerType) {
             $size = $this->getType()->getSize();
         } elseif ($this->getType() instanceof ObjectType && $this->getRelationId() == MetaRelation::ONE_TO_ONE && ($identifier = $this->getType()

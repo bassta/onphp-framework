@@ -9,8 +9,8 @@ use onphp\core\Base\Timestamp;
 use onphp\core\Exceptions\WrongStateException;
 use onphp\main\Utils\IO\FileInputStream;
 
-onPHP\main\Messages\Interface\MessageQueue;
-onPHP\main\Messages\Interface\MessageQueueReceiver;
+onphp\main\Messages\Interface\MessageQueue;
+onphp\main\Messages\Interface\MessageQueueReceiver;
 /***************************************************************************
  *   Copyright (C) 2009 by Ivan Y. Khvostishkov                            *
  *                                                                         *

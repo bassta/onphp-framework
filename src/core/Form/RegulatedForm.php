@@ -4,6 +4,7 @@ namespace onphp\core\Form;
 
 use onphp\core\Base\Assert;
 use onphp\core\Exceptions\MissingElementException;
+use onphp\core\Exceptions\WrongArgumentException;
 use onphp\core\Logic\LogicalObject;
 
 /***************************************************************************

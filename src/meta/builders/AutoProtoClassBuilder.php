@@ -26,7 +26,7 @@ final class AutoProtoClassBuilder extends BaseBuilder
         if ($class->hasBuildableParent()) {
             $parentName = 'Proto'.$parent->getName();
         } else {
-            $parentName = 'onPHP\\main\\Base\\AbstractProtoClass';
+            $parentName = 'onphp\\main\\Base\\AbstractProtoClass';
         }
         $out .= "abstract class AutoProto{$class->getName()} extends {$parentName}\n{";
         $classDump = self::dumpMetaClass($class);

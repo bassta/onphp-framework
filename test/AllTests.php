@@ -1,5 +1,16 @@
 <?php
-	if (!extension_loaded('onphp')) {
+    namespace onphp\test;
+    
+    use Exception;
+    use onphp\core\Base\Singleton;
+    use onphp\core\DB\DBPool;
+    use onphp\meta\classes\MetaConfiguration;
+    use onphp\test\misc\DBTestCreator;
+    use onphp\test\misc\DBTestPool;
+    use onphp\test\misc\TestSuite;
+    use PHPUnit_TextUI_TestRunner;
+
+    if (!extension_loaded('onphp')) {
 		echo 'Trying to load onPHP extension.. ';
 		
 		if (!@dl('onphp.so')) {
@@ -12,14 +23,14 @@
 	date_default_timezone_set('Europe/Moscow');
 	define('ONPHP_TEST_PATH', dirname(__FILE__).DIRECTORY_SEPARATOR);
 	
-	require ONPHP_TEST_PATH.'../global.inc.php.tpl';
+//	require ONPHP_TEST_PATH.'../global.inc.php.tpl';
 	
 	define('ENCODING', 'UTF-8');
 	
 	mb_internal_encoding(ENCODING);
 	mb_regex_encoding(ENCODING);
 	
-	AutoloaderPool::get('onPHP')->addPath(ONPHP_TEST_PATH.'misc');
+//	AutoloaderPool::get('onPHP')->addPath(ONPHP_TEST_PATH.'misc');
 	
 	$testPathes = array(
 		ONPHP_TEST_PATH.'core'.DIRECTORY_SEPARATOR,
@@ -37,8 +48,8 @@
 	$config = dirname(__FILE__).'/config.inc.php';
 	
 	include is_readable($config) ? $config : $config.'.tpl';
-	
-	final class AllTests
+    
+    final class AllTests
 	{
 		public static $dbs = null;
 		public static $paths = null;
@@ -59,16 +70,16 @@
 					/**
 					 * @todo fail - constructor with argument, but static method 'me' - without
 					 */
-					Singleton::getInstance('DBTestPool', self::$dbs)->connect();
+					Singleton::getInstance('onphp\test\misc\DBTestPool', self::$dbs)->connect();
 				} catch (Exception $e) {
-					Singleton::dropInstance('DBTestPool');
-					Singleton::getInstance('DBTestPool');
+					Singleton::dropInstance('onphp\test\misc\DBTestPool');
+					Singleton::getInstance('onphp\test\misc\DBTestPool');
 				}
 				
 				// build stuff from meta
 				
 				$metaDir = ONPHP_TEST_PATH.'meta'.DIRECTORY_SEPARATOR;
-				$path = ONPHP_META_PATH.'bin'.DIRECTORY_SEPARATOR.'build.php';
+				$path = ONPHP_META_PATH.'../../meta/bin'.DIRECTORY_SEPARATOR.'build.php';
 				
 				$_SERVER['argv'] = array();
 				
@@ -83,16 +94,6 @@
 				$_SERVER['argv'][] = '--drop-stale-files';
 				
 				include $path;
-				
-				AutoloaderPool::get('onPHP')->addPaths(array(
-						ONPHP_META_AUTO_BUSINESS_DIR,
-						ONPHP_META_AUTO_DAO_DIR,
-						ONPHP_META_AUTO_PROTO_DIR,
-
-						ONPHP_META_DAO_DIR,
-						ONPHP_META_BUSINESS_DIR,
-						ONPHP_META_PROTO_DIR
-					));
 				
 				$dBCreator = DBTestCreator::create()->
 					setSchemaPath(ONPHP_META_AUTO_DIR.'schema.php')->

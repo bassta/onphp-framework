@@ -2,49 +2,49 @@
 
 namespace onphp\meta\classes;
 
-use onphp\core\OSQL\OSQL;
-use onphp\main\Utils\ClassUtils;
-use onphp\meta\patterns\GenerationPattern;
-use ReflectionProperty;
 use DOMDocument;
+use onphp\core\Base\Assert;
+use onphp\core\Base\Enum;
+use onphp\core\Base\Enumeration;
+use onphp\core\Base\Instantiatable;
+use onphp\core\Base\Singleton;
+use onphp\core\DB\DBPool;
+use onphp\core\Exceptions\BaseException;
+use onphp\core\Exceptions\MissingElementException;
+use onphp\core\Exceptions\ObjectNotFoundException;
 use onphp\core\Exceptions\UnimplementedFeatureException;
-use onphp\meta\types\ObjectType;
-use onphp\meta\types\HttpUrlType;
-use onphp\meta\types\NumericType;
-use onphp\meta\types\FixedLengthStringType;
+use onphp\core\Exceptions\UnsupportedMethodException;
 use onphp\core\Exceptions\WrongArgumentException;
-use SimpleXMLElement;
 use onphp\core\Form\Form;
 use onphp\core\Form\FormUtils;
 use onphp\core\Logic\Expression;
-use onphp\main\Criteria\Criteria;
-use onphp\main\DAOs\DAOConnected;
-use onphp\core\Base\Enum;
-use onphp\core\Base\Enumeration;
-use ReflectionClass;
-use onphp\main\Autoloader\AutoloaderPool;
-use onphp\meta\builders\ContainerClassBuilder;
 use onphp\core\OSQL\DBTable;
-use onphp\core\Exceptions\ObjectNotFoundException;
-use onphp\core\Exceptions\BaseException;
-use onphp\core\DB\DBPool;
+use onphp\core\OSQL\OSQL;
+use onphp\main\Autoloader\AutoloaderPool;
+use onphp\main\Criteria\Criteria;
+use onphp\main\Criteria\FetchStrategy;
+use onphp\main\DAOs\DAOConnected;
+use onphp\main\Utils\ClassUtils;
+use onphp\meta\builders\ContainerClassBuilder;
+use onphp\meta\builders\SchemaBuilder;
+use onphp\meta\patterns\AbstractClassPattern;
+use onphp\meta\patterns\BasePattern;
+use onphp\meta\patterns\DictionaryClassPattern;
 use onphp\meta\patterns\EnumClassPattern;
 use onphp\meta\patterns\EnumerationClassPattern;
-use onphp\meta\patterns\BasePattern;
-use onphp\meta\builders\SchemaBuilder;
-use onphp\main\Criteria\FetchStrategy;
-use onphp\meta\patterns\SpookedEnumPattern;
-use onphp\meta\patterns\SpookedEnumerationPattern;
-use onphp\meta\patterns\SpookedClassPattern;
-use onphp\meta\patterns\AbstractClassPattern;
+use onphp\meta\patterns\GenerationPattern;
 use onphp\meta\patterns\InternalClassPattern;
+use onphp\meta\patterns\SpookedClassPattern;
+use onphp\meta\patterns\SpookedEnumerationPattern;
+use onphp\meta\patterns\SpookedEnumPattern;
 use onphp\meta\patterns\ValueObjectPattern;
-use onphp\core\Exceptions\MissingElementException;
-use onphp\core\Exceptions\UnsupportedMethodException;
-use onphp\meta\patterns\DictionaryClassPattern;
-use onphp\core\Base\Assert;
-use onphp\core\Base\Instantiatable;
-use onphp\core\Base\Singleton;
+use onphp\meta\types\FixedLengthStringType;
+use onphp\meta\types\HttpUrlType;
+use onphp\meta\types\NumericType;
+use onphp\meta\types\ObjectType;
+use ReflectionClass;
+use ReflectionProperty;
+use SimpleXMLElement;
 
 /***************************************************************************
  *   Copyright (C) 2006-2008 by Konstantin V. Arkhipov                     *
@@ -76,7 +76,7 @@ final class MetaConfiguration extends Singleton implements Instantiatable
      **/
     public static function me()
     {
-        return Singleton::getInstance('onPHP\meta\classes\MetaConfiguration');
+        return Singleton::getInstance('onphp\meta\classes\MetaConfiguration');
     }
 
     /**
@@ -177,10 +177,15 @@ final class MetaConfiguration extends Singleton implements Instantiatable
                 if ($property->getRelationId() == MetaRelation::ONE_TO_ONE) {
                     if (($property->getType()->getClass()
                                   ->getPattern() instanceof SpookedClassPattern || $property->getType()->getClass()
-                                                                                            ->getPattern() instanceof SpookedEnumerationPattern || $property->getType()
-                                                                                                                                                            ->getClass()
-                                                                                                                                                            ->getPattern() instanceof SpookedEnumPattern) && ($property->getFetchStrategy() && $property->getFetchStrategy()
-                                                                                                                                                                                                                                                        ->getId() != FetchStrategy::LAZY)
+                                                                                            ->getPattern(
+                                                                                            ) instanceof SpookedEnumerationPattern || $property->getType(
+                            )
+                                                                                                                                               ->getClass(
+                                                                                                                                               )
+                                                                                                                                               ->getPattern(
+                                                                                                                                               ) instanceof SpookedEnumPattern) && ($property->getFetchStrategy(
+                            ) && $property->getFetchStrategy()
+                                          ->getId() != FetchStrategy::LAZY)
                     ) {
                         $property->setFetchStrategy(FetchStrategy::cascade());
                     } else {
@@ -321,8 +326,8 @@ final class MetaConfiguration extends Singleton implements Instantiatable
     public function checkIntegrity()
     {
         $out = $this->getOutput()->newLine()->infoLine('Checking sanity of generated files: ')->newLine();
-        AutoloaderPool::get('onPHP')
-                      ->addPaths(array(ONPHP_META_BUSINESS_DIR, ONPHP_META_DAO_DIR, ONPHP_META_PROTO_DIR, ONPHP_META_AUTO_BUSINESS_DIR, ONPHP_META_AUTO_DAO_DIR, ONPHP_META_AUTO_PROTO_DIR));
+//        AutoloaderPool::get('onPHP')
+//                      ->addPaths(array(ONPHP_META_BUSINESS_DIR, ONPHP_META_DAO_DIR, ONPHP_META_PROTO_DIR, ONPHP_META_AUTO_BUSINESS_DIR, ONPHP_META_AUTO_DAO_DIR, ONPHP_META_AUTO_PROTO_DIR));
         $out->info('	');
         $formErrors = array();
         foreach ($this->classes as $name => $class) {
@@ -534,7 +539,7 @@ final class MetaConfiguration extends Singleton implements Instantiatable
         } else {
             $typeClass = 'ObjectType';
         }
-        $typeClass = 'onPHP\\meta\\types\\'.$typeClass;
+        $typeClass = 'onphp\\meta\\types\\'.$typeClass;
         
         $property = new MetaClassProperty($name, new $typeClass($type), $class);
         if ($size) {
@@ -553,7 +558,7 @@ final class MetaConfiguration extends Singleton implements Instantiatable
     {
         $class = $name.'Pattern';
         if (is_readable(ONPHP_META_PATTERNS.$class.EXT_CLASS)) {
-            return Singleton::getInstance('onPHP\\meta\\patterns\\'.$class);
+            return Singleton::getInstance('onphp\\meta\\patterns\\'.$class);
         }
         throw new MissingElementException("unknown pattern '{$name}'");
     }

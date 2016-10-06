@@ -2,7 +2,7 @@
 
 namespace onphp\meta\types;
 
-use onPHP\core\Base\Assert;
+use onphp\core\Base\Assert;
 
 /***************************************************************************
  *   Copyright (C) 2007-2009 by Konstantin V. Arkhipov                     *
