@@ -11,7 +11,7 @@ final class DbConnectionTest extends TestCase
 {
     public function setUp()
     {
-        DBPool::me()->addLink('badLink', DB::spawn('PinbedPgSQL', 'postgres', '', 'localhost', 'wrongDatabase'));
+        DBPool::me()->addLink('badLink', DB::spawn('onphp\main\Monitoring\PinbedPgSQL', 'postgres', '', 'localhost', 'wrongDatabase'));
     }
 
     public function testPostgresql()
