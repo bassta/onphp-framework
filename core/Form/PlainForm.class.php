@@ -177,4 +177,3 @@
 			return $this->primitives;
 		}
 	}
-	
