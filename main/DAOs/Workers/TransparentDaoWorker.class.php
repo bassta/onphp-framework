@@ -23,7 +23,7 @@
 		
 		/// single object getters
 		//@{
-		public function getById($id)
+		public function getById($id, $expires = Cache::EXPIRES_MEDIUM)
 		{
 			try {
 				return parent::getById($id, Cache::EXPIRES_FOREVER);
@@ -35,12 +35,12 @@
 			}
 		}
 		
-		public function getByLogic(LogicalObject $logic)
+		public function getByLogic(LogicalObject $logic, $expires = Cache::DO_NOT_CACHE)
 		{
 			return parent::getByLogic($logic, Cache::EXPIRES_FOREVER);
 		}
 		
-		public function getByQuery(SelectQuery $query)
+		public function getByQuery(SelectQuery $query, $expires = Cache::DO_NOT_CACHE)
 		{
 			try {
 				return parent::getByQuery($query, Cache::EXPIRES_FOREVER);
@@ -52,7 +52,7 @@
 			}
 		}
 		
-		public function getCustom(SelectQuery $query)
+		public function getCustom(SelectQuery $query, $expires = Cache::DO_NOT_CACHE)
 		{
 			try {
 				return parent::getCustom($query, Cache::EXPIRES_FOREVER);
@@ -67,7 +67,7 @@
 		
 		/// object's list getters
 		//@{
-		public function getListByIds(array $ids)
+		public function getListByIds(array $ids, $expires = Cache::EXPIRES_MEDIUM)
 		{
 			$list = array();
 			$toFetch = array();
@@ -115,7 +115,7 @@
 			return $list;
 		}
 		
-		public function getListByQuery(SelectQuery $query)
+		public function getListByQuery(SelectQuery $query, $expires = Cache::DO_NOT_CACHE)
 		{
 			$list = $this->getCachedList($query);
 			
@@ -136,12 +136,12 @@
 			Assert::isUnreachable();
 		}
 		
-		public function getListByLogic(LogicalObject $logic)
+		public function getListByLogic(LogicalObject $logic, $expires = Cache::DO_NOT_CACHE)
 		{
 			return parent::getListByLogic($logic, Cache::EXPIRES_FOREVER);
 		}
 		
-		public function getPlainList()
+		public function getPlainList($expires = Cache::EXPIRES_MEDIUM)
 		{
 			return parent::getPlainList(Cache::EXPIRES_FOREVER);
 		}
@@ -149,7 +149,7 @@
 		
 		/// custom list getters
 		//@{
-		public function getCustomList(SelectQuery $query)
+		public function getCustomList(SelectQuery $query, $expires = Cache::DO_NOT_CACHE)
 		{
 			try {
 				return parent::getCustomList($query, Cache::EXPIRES_FOREVER);
@@ -161,7 +161,7 @@
 			}
 		}
 		
-		public function getCustomRowList(SelectQuery $query)
+		public function getCustomRowList(SelectQuery $query, $expires = Cache::DO_NOT_CACHE)
 		{
 			try {
 				return parent::getCustomRowList($query, Cache::EXPIRES_FOREVER);
@@ -176,7 +176,7 @@
 		
 		/// query result getters
 		//@{
-		public function getQueryResult(SelectQuery $query)
+		public function getQueryResult(SelectQuery $query, $expires = Cache::DO_NOT_CACHE)
 		{
 			return parent::getQueryResult($query, Cache::EXPIRES_FOREVER);
 		}
